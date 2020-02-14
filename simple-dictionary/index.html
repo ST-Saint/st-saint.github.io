@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>vue_test</title>
+        <!-- <link rel="stylesheet" href="element-ui.css"> -->
+        <link rel=" stylesheet" href="https://unpkg.com/element-ui@2.13.0/lib/theme-chalk/index.css">
+        <script src="vue.js"></script>
+        <script src="element-ui.js"></script>
+        <style>
+         html,body {
+             width: 100%;
+             height: 100%;
+             margin: 0;
+             padding: 0;
+         }
+         .content {
+             width: 600px;
+             height: 800px;
+             margin: 0 auto; /*水平居中*/
+             position: relative;
+             top: 50%; /*偏移*/
+             margin-top: -400px;
+         }
+         .correct{
+             color: green;
+         }
+         .incorrect{
+             color: red;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div id="app" style="">
+                <el-container>
+                    <el-main>
+                        <!-- <el-input v-model="message" :style="{ color : correct?'green':'red' }" @keyup="correctSpelling"></el-input>
+                             <el-input v-model="message" style="color:red" @keyup="correctSpelling"></el-input> -->
+                        <el-card class="box-card">
+                            <div slot="header" class="clearfix" style="height: 30px">
+                                <span style="float: left; padding: 8px 0">Dictionary</span>
+                                <el-button style="float: right; padding: 10px 0" type="text">Defination</el-button>
+                            </div>
+                            <center>
+                                <el-row :span="8" style="height: 80px">
+                                    <el-card type="primary" shadow="hover">
+                                        Vocabulary
+                                    </el-card>
+                                </el-row>
+                                <el-row :gutter="20" style="height: 200px; padding: 10px 0">
+                                    <el-col :span="11" :offset="1">
+                                        <el-button @click="pickNext" style="width: 200px; height: 150px;">word1</el-button>
+                                    </el-col>
+                                    <el-col :span="11">
+                                        <el-button @click="pickNext" style="width: 200px; height: 150px;">word2</el-button>
+                                    </el-col>
+                                </el-row>
+                                <el-row :gutter="20" style="height: 180px">
+                                    <el-col :span="11" :offset="1">
+                                        <el-button @click="pickNext" style="width: 200px; height: 150px;">word3</el-button>
+                                    </el-col>
+                                    <el-col :span="11">
+                                        <el-button @click="pickNext" style="width: 200px; height: 150px;">word4</el-button>
+                                    </el-col>
+                                </el-row>
+                                <el-rate :max="value" show-score style="height: 30px"></el-rate>
+                                <el-rate :max="value" show-score style="height: 50px"></el-rate>
+                            </center>
+                            <div id="next">
+                                <center>
+                                    <el-button type="primary" @click="pickNext">Next</el-button>
+                                    <el-button type="primary" @click="updateColor">Submit</el-button>
+                                </center>
+                            </div>
+                        </el-card>
+                    </el-main>
+                </el-container>
+            </div>
+        </div>
+        <script>
+         var vm = new Vue({
+             el: '#app',
+             data: {
+                 message: "test",
+                 word: "skeptical",
+                 info: "",
+                 value: 10,
+                 correct: false,
+             },
+             methods: {
+                 pickNext: function(){
+                     this.message = "wryyyyyyy";
+                 },
+                 updateColor: function(){
+                     this.message = "colorchanged";
+                 },
+                 getColor: function(){
+                     return this.correct;
+                 },
+                 correctSpelling: function(){
+                     if( this.message.length <= this.word.length && this.word.substring(0, this.message.length).trim() == this.message.trim() ){
+                         this.correct = true;
+                     }
+                     else{
+                         this.correct = false;
+                     }
+                     return this.correct;
+                 }
+             }
+         })
+        </script>
+    </body>
+
+</html>
