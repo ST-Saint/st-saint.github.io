@@ -3,11 +3,13 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>vue_test</title>
-        <!-- <link rel="stylesheet" href="element-ui.css"> -->
+        <title>Simple Dictionary</title>
         <link rel=" stylesheet" href="https://unpkg.com/element-ui@2.13.0/lib/theme-chalk/index.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
         <script src="https://unpkg.com/element-ui@2.13.0/lib/index.js"></script>
+        <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+        <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+        <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
         <style>
          html,body {
              width: 100%;
@@ -45,13 +47,19 @@
                             </div>
                             <center>
                                 <el-row :span="8" style="height: 80px">
-                                    <el-card type="primary" shadow="hover">
-                                        Vocabulary
+                                    <el-card v-model="word" type="primary" shadow="hover">
+                                        {{ word }}
                                     </el-card>
                                 </el-row>
                                 <el-row :gutter="20" style="height: 200px; padding: 10px 0">
                                     <el-col :span="11" :offset="1">
-                                        <el-button @click="pickNext" style="width: 200px; height: 150px;">word1</el-button>
+                                        <el-button v-model="meaning1" style="width: 200px; height: 150px;">
+                                            <div style="padding: 0px;">
+                                                <li v-for="(k, m) in meaning1" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
+                                                    {{m + k}}
+                                                </li>
+                                            </div>
+                                        </el-button>
                                     </el-col>
                                     <el-col :span="11">
                                         <el-button @click="pickNext" style="width: 200px; height: 150px;">word2</el-button>
@@ -65,36 +73,42 @@
                                         <el-button @click="pickNext" style="width: 200px; height: 150px;">word4</el-button>
                                     </el-col>
                                 </el-row>
-                                <el-rate :max="value" show-score style="height: 30px"></el-rate>
-                                <el-rate :max="value" show-score style="height: 50px"></el-rate>
                             </center>
-                            <div id="next">
-                                <center>
-                                    <el-button type="primary" @click="pickNext">Next</el-button>
-                                    <el-button type="primary" @click="updateColor">Submit</el-button>
-                                </center>
-                            </div>
+                            <el-rate :max="value" show-score style="height: 30px;padding-left: 140px"></el-rate>
+                            <el-rate :max="value" show-score style="height: 50px;padding-left: 140px"></el-rate>
+                            <center>
+                                <el-button type="primary" @click="pickNext">Next</el-button>
+                                <el-button type="primary" @click="updateColor">Submit</el-button>
+                            </center>
                         </el-card>
                     </el-main>
                 </el-container>
             </div>
         </div>
-        <script>
+        <script type="text/javascript">
          var vm = new Vue({
              el: '#app',
              data: {
                  message: "test",
-                 word: "skeptical",
+                 word: "",
+                 meaning1: "",
                  info: "",
                  value: 10,
                  correct: false,
              },
              methods: {
                  pickNext: function(){
-                     this.message = "wryyyyyyy";
+                     var rnd = this.getRndInteger(this.wordlist.length);
+                     var idx = this.getRndInteger(4);
+                     this.word = this.wordlist[rnd];
+                     this.meaning1 = this.dictionary[this.word].meaning;
                  },
                  updateColor: function(){
-                     this.message = "colorchanged";
+                     for(var t in this.dictionary){
+                         console.log(this.dictionary[t].word);
+                         this.word = this.dictionary[t].word;
+                         break;
+                     }
                  },
                  getColor: function(){
                      return this.correct;
@@ -107,7 +121,25 @@
                          this.correct = false;
                      }
                      return this.correct;
+                 },
+                 getRndInteger: function(maxi){
+                     return Math.round(Math.random() * maxi);
+                 },
+                 getDictionary: async function(){
+                     const dictionaryURL = "./dictionary.json";
+                     axios.get('./dictionary.json')
+                          .then(response => {
+                              this.dictionary = response.data;
+                              this.wordlist = []
+                              for(var w in this.dictionary){
+                                  this.wordlist.push(w);
+                              }
+                              this.pickNext();
+                          })
                  }
+             },
+             mounted: function(){
+                 this.getDictionary();
              }
          })
         </script>
