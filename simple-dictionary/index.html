@@ -98,24 +98,42 @@
                                 </el-row>
                                 <el-row :gutter="20" style="height: 200px; padding: 10px 0">
                                     <el-col :span="11" :offset="1">
-                                        <el-button v-model="meaning1" style="width: 200px; height: 150px;">
-                                            <div style="padding: 0px;">
-                                                <li v-for="(k, m) in meaning1" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
+                                        <el-button :type="readingCorrectType[0]" style="width: 200px; height: 150px;" @click="readingSubmit(0)">
+                                            <div v-model="meanings[0]" style="padding: 0px;">
+                                                <li v-for="(k, m) in meanings[0]" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
                                                     {{m + k}}
                                                 </li>
                                             </div>
                                         </el-button>
                                     </el-col>
                                     <el-col :span="11">
-                                        <el-button @click="pickNext" style="width: 200px; height: 150px;">word2</el-button>
+                                        <el-button :type="readingCorrectType[1]" v-model="meanings[1]" style="width: 200px; height: 150px;" @click="readingSubmit(1)">
+                                            <div style="padding: 0px;">
+                                                <li v-for="(k, m) in meanings[1]" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
+                                                    {{m + k}}1
+                                                </li>
+                                            </div>
+                                        </el-button>
                                     </el-col>
                                 </el-row>
                                 <el-row :gutter="20" style="height: 180px">
                                     <el-col :span="11" :offset="1">
-                                        <el-button @click="pickNext" style="width: 200px; height: 150px;">word3</el-button>
+                                        <el-button :type="readingCorrectType[2]" v-model="meanings[2]" style="width: 200px; height: 150px;" @click="readingSubmit(2)">
+                                            <div style="padding: 0px;">
+                                                <li v-for="(k, m) in meanings[2]" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
+                                                    {{m + k}}
+                                                </li>
+                                            </div>
+                                        </el-button>
                                     </el-col>
                                     <el-col :span="11">
-                                        <el-button @click="pickNext" style="width: 200px; height: 150px;">word4</el-button>
+                                        <el-button :type="readingCorrectType[3]" v-model="meanings[3]" style="width: 200px; height: 150px;" @click="readingSubmit(3)">
+                                            <div style="padding: 0px;">
+                                                <li v-for="(k, m) in meanings[3]" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
+                                                    {{m + k}}
+                                                </li>
+                                            </div>
+                                        </el-button>
                                     </el-col>
                                 </el-row>
                             </center>
@@ -145,7 +163,7 @@
                                 <el-row style="height: 250px; padding: 30px 0">
                                     <el-card class="box-card">
                                         <div style="padding: 0px;">
-                                            <li v-for="(k, m) in meaning1" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
+                                            <li v-for="(k, m) in meaning[0]" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
                                                 {{m + k}}
                                             </li>
                                         </div>

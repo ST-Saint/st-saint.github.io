@@ -1,10 +1,21 @@
+const shuffle = ([...arr]) => {
+    let m = arr.length;
+    while (m) {
+        const i = Math.floor(Math.random() * m--);
+        [arr[m], arr[i]] = [arr[i], arr[m]];
+    }
+    return arr;
+};
+
+
 var vm = new Vue({
     el: '#app',
 
     data: {
-        message: "test",
         word: "",
-        meaning1: "",
+        readingAnswer: 0,
+        readingCorrectType:  ["", "", "", ""],
+        meanings: [],
         info: "",
         value: 10,
         correct: false,
@@ -23,10 +34,26 @@ var vm = new Vue({
             this.spellingCorrect = false,
             this.spellingSubmitted = false;
             var rnd = this.getRndInteger(this.wordlist.length);
-            var idx = this.getRndInteger(4);
             this.word = this.wordlist[rnd];
+            this.readingAnswer = rnd;
+            this.readingCorrectType = ["", "", "", ""];
             this.getAudio(this.word);
-            this.meaning1 = this.dictionary[this.word].meaning;
+            let idx = [rnd];
+            for(let i = 0 ; i < 3 ; ++i){
+                rnd = this.getRndInteger(this.wordlist.length);
+                while( idx.includes(rnd) ){
+                    rnd = this.getRndInteger(this.wordlist.length);
+                }
+                idx.push(rnd);
+            }
+            idx = shuffle(idx);
+            this.meanings = [];
+            for(let i = 0 ; i < 4 ; ++i){
+                if( idx[i] == this.readingAnswer  ){
+                    this.readingAnswer = i;
+                }
+                this.meanings[i] = this.dictionary[this.wordlist[idx[i]]].meaning;
+            }
         },
 
         wrapWord: function(filename){
@@ -93,6 +120,17 @@ var vm = new Vue({
                         this.wordlist.push(w);
                     }
                 });
+        },
+
+        readingSubmit: function(choice){
+            choice_idx = parseInt(choice);
+            this.readingCorrectType = ["", "", "", ""];
+            if( choice == this.readingAnswer ){
+                this.readingCorrectType[choice_idx] = "success";
+            }
+            else{
+                this.readingCorrectType[choice_idx] = "danger";
+            }
         },
 
         spellingSubmit: function(){
