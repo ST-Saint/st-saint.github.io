@@ -86,7 +86,7 @@ var vm = new Vue({
             params.append("curtime", curTime);
             axios(
                 {
-                    url: "http://openapi.youdao.com/api",
+                    url: "https://openapi.youdao.com/api",
                     method: "post",
                     dataType: "jsonp",
                     withCredentials: true,
