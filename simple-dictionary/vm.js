@@ -54,7 +54,7 @@ var vm = new Vue({
                 idx.push(rnd);
             }
             idx = shuffle(idx);
-            this.requestMeaning(this.word);
+            // this.requestMeaning(this.word);
             this.meanings = [];
             for(let i = 0 ; i < 4 ; ++i){
                 if( idx[i] == this.readingAnswer  ){
@@ -75,23 +75,41 @@ var vm = new Vue({
             var to = "zh-CHS";
             var str = appKey + truncate(query) + salt + curTime + key;
             var sign = sha256(str);
-            let params = new URLSearchParams();
-            params.append("q", query);
-            params.append("appKey", appKey);
-            params.append("salt", salt);
-            params.append("from", from);
-            params.append("to", to);
-            params.append("sign", sign);
-            params.append("signType", "v3");
-            params.append("curtime", curTime);
-            axios(
-                {
-                    url: "https://openapi.youdao.com/api",
-                    method: "post",
-                    dataType: "jsonp",
-                    withCredentials: true,
-                    data: params,
-                }).then((response)=>{console.log(response);});
+            // let params = new URLSearchParams();
+            // params.append("q", query);
+            // params.append("appKey", appKey);
+            // params.append("salt", salt);
+            // params.append("from", from);
+            // params.append("to", to);
+            // params.append("sign", sign);
+            // params.append("signType", "v3");
+            // params.append("curtime", curTime);
+            // axios(
+            //     {
+            //         url: "https://openapi.youdao.com/api",
+            //         method: "post",
+            //         dataType: "jsonp",
+            //         withCredentials: true,
+            //         data: params,
+            //     }).then((response)=>{console.log(response);});
+            $.ajax({
+                url: 'http://openapi.youdao.com/api',
+                type: 'post',
+                dataType: 'jsonp',
+                data: {
+                    q: query,
+                    appKey: appKey,
+                    salt: salt,
+                    from: from,
+                    to: to,
+                    sign: sign,
+                    signType: "v3",
+                    curtime: curTime,
+                },
+                success: (data) => {
+                    console.log(data);
+                }
+            });
         },
 
         wrapWord: function(filename){
