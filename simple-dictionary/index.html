@@ -3,11 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title>Simple Dictionary</title>
-        <link rel=" stylesheet" href="https://unpkg.com/element-ui@2.13.0/lib/theme-chalk/index.css">
+        <link rel="stylesheet" href="https://unpkg.com/element-ui@2.13.0/lib/theme-chalk/index.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
         <script src="https://unpkg.com/element-ui@2.13.0/lib/index.js"></script>
         <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
         <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+        <script src="https://cdn.bootcss.com/js-sha256/0.9.0/sha256.js"></script>
+        <script src="http://shared.ydstatic.com/js/jquery/jquery-3.1.1.min.js"></script>
         <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
         <style>
@@ -85,7 +87,7 @@
 
                 <el-container>
                     <el-card class="box-card" style="margin: 0 0;width: 600px;">
-                        <div slot="header" class="clearfix" style="height: 30px">
+                        <div slot="header" class="clearfix" style="height: 30px" v-if="dictionaryMode!=''">
                             <span style="float: left; padding: 8px 0">Dictionary</span>
                             <el-button style="float: right; padding: 10px 0" type="text">Defination</el-button>
                         </div>
@@ -110,7 +112,7 @@
                                         <el-button :type="readingCorrectType[1]" v-model="meanings[1]" style="width: 200px; height: 150px;" @click="readingSubmit(1)">
                                             <div style="padding: 0px;">
                                                 <li v-for="(k, m) in meanings[1]" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
-                                                    {{m + k}}1
+                                                    {{m + k}}
                                                 </li>
                                             </div>
                                         </el-button>
@@ -154,21 +156,21 @@
                                     </el-card>
                                 </el-row>
                                 <el-ro>
-                                <el-row  :span="8">
-                                    <el-button type="primary" class="el-icon-video-play" circle @click="playWordAudio"></el-button>
-                                </el-row>
-                                <el-row >
-                                    <el-input v-model="spellingInput" maxlength="30" @keyup.enter.native="spellingSubmit" style="width: 300px"></el-input>
-                                </el-row>
-                                <el-row style="height: 250px; padding: 30px 0">
-                                    <el-card class="box-card">
-                                        <div style="padding: 0px;">
-                                            <li v-for="(k, m) in meaning[0]" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
-                                                {{m + k}}
-                                            </li>
-                                        </div>
-                                    </el-card>
-                                </el-row>
+                                    <el-row  :span="8">
+                                        <el-button type="primary" class="el-icon-video-play" circle @click="playWordAudio"></el-button>
+                                    </el-row>
+                                    <el-row >
+                                        <el-input v-model="spellingInput" maxlength="30" @keyup.enter.native="spellingSubmit" style="width: 300px"></el-input>
+                                    </el-row>
+                                    <el-row style="height: 250px; padding: 30px 0">
+                                        <el-card class="box-card">
+                                            <div style="padding: 0px;">
+                                                <li v-for="(k, m) in meanings[0]" class="text item" style="white-space:normal;height: 20%;padding: 5px;">
+                                                    {{m + k}}
+                                                </li>
+                                            </div>
+                                        </el-card>
+                                    </el-row>
                             </center>
                             <el-row>
                                 <el-rate :max="value" show-score style="height: 30px;padding-left: 140px"></el-rate>
@@ -185,6 +187,6 @@
                 </el-container>
             </el-container>
         </div>
-        <script type="text/javascript" src="vue.js"></script>
+        <script type="text/javascript" src="vm.js"></script>
     </body>
 </html>

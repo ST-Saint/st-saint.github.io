@@ -1,3 +1,9 @@
+function truncate(q){
+    var len = q.length;
+    if(len<=20) return q;
+    return q.substring(0, 10) + len + q.substring(len-10, len);
+};
+
 const shuffle = ([...arr]) => {
     let m = arr.length;
     while (m) {
@@ -36,6 +42,7 @@ var vm = new Vue({
             var rnd = this.getRndInteger(this.wordlist.length);
             this.word = this.wordlist[rnd];
             this.readingAnswer = rnd;
+            this.readingSubmitted = false;
             this.readingCorrectType = ["", "", "", ""];
             this.getAudio(this.word);
             let idx = [rnd];
@@ -47,6 +54,7 @@ var vm = new Vue({
                 idx.push(rnd);
             }
             idx = shuffle(idx);
+            // this.requestMeaning(this.word);
             this.meanings = [];
             for(let i = 0 ; i < 4 ; ++i){
                 if( idx[i] == this.readingAnswer  ){
@@ -54,6 +62,38 @@ var vm = new Vue({
                 }
                 this.meanings[i] = this.dictionary[this.wordlist[idx[i]]].meaning;
             }
+        },
+
+        requestMeaning: function(volcabulary){
+            var appKey = "37ddc7564c10f775";
+            var key = "mDI8ZDIVAVlLD5mCeaVa6ktwEyLvw1xh";
+            var salt = (new Date).getTime();
+            var curTime = Math.round(new Date().getTime()/1000);
+            var query = volcabulary;
+            // 多个query可以用\n连接  如 query='apple\norange\nbanana\npear'
+            var from = "en";
+            var to = "zh-CHS";
+            var str1 = appKey + truncate(query) + salt + curTime + key;
+            console.log(str1);
+            var sign = sha256(str1);
+            $.ajax({
+                url: 'http://openapi.youdao.com/api',
+                type: 'post',
+                dataType: 'jsonp',
+                data: {
+                    q: query,
+                    appKey: appKey,
+                    salt: salt,
+                    from: from,
+                    to: to,
+                    sign: sign,
+                    signType: "v3",
+                    curtime: curTime,
+                },
+                success: function (data) {
+                    console.log(data);
+                }
+            });
         },
 
         wrapWord: function(filename){
@@ -123,27 +163,35 @@ var vm = new Vue({
         },
 
         readingSubmit: function(choice){
-            choice_idx = parseInt(choice);
-            this.readingCorrectType = ["", "", "", ""];
-            if( choice == this.readingAnswer ){
-                this.readingCorrectType[choice_idx] = "success";
+            if( !this.readingSubmitted ){
+                this.readingCorrectType = ["", "", "", ""];
+                this.readingCorrectType[this.readingAnswer] = "success";
+                if( choice != this.readingAnswer ){
+                    this.readingCorrectType[choice] = "danger";
+                }
+                this.playWordAudio();
+                this.readingSubmitted = true;
             }
             else{
-                this.readingCorrectType[choice_idx] = "danger";
+                if( choice == this.readingAnswer ){
+                    this.pickNext();
+                }
             }
         },
 
         spellingSubmit: function(){
             if( !this.spellingSubmitted ){
-                this.spellingSubmitted = true;
+                this.playWordAudio();
                 var ele = document.getElementById("spellingword");
                 if( ele ){
                     ele.style.visibility = "";
                 }
                 this.spellingCorrect = this.spellingInput.trim() == this.word.trim();
                 this.spellingCorrectType = this.spellingCorrect ? "success" : "danger";
+                this.spellingSubmitted = true;
             }
             else if( !this.spellingCorrect ){
+                this.playWordAudio();
                 this.spellingCorrect = this.spellingInput.trim() == this.word.trim();
                 this.spellingCorrectType = this.spellingCorrect ? "success" : "danger";
             }
