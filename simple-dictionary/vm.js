@@ -36,31 +36,41 @@ var vm = new Vue({
 
     methods: {
         pickNext: function(){
-            this.spellingInput = "";
-            this.spellingCorrect = false,
-            this.spellingSubmitted = false;
-            var rnd = this.getRndInteger(this.wordlist.length);
-            this.word = this.wordlist[rnd];
-            this.readingAnswer = rnd;
-            this.readingSubmitted = false;
-            this.readingCorrectType = ["", "", "", ""];
-            this.getAudio(this.word);
-            let idx = [rnd];
-            for(let i = 0 ; i < 3 ; ++i){
-                rnd = this.getRndInteger(this.wordlist.length);
-                while( idx.includes(rnd) ){
+            if( this.dictionaryMode == "reading" ){
+                var rnd = this.getRndInteger(this.wordlist.length);
+                this.word = this.wordlist[rnd];
+                this.readingAnswer = rnd;
+                this.readingSubmitted = false;
+                this.readingCorrectType = ["", "", "", ""];
+                this.getAudio(this.word);
+                let idx = [rnd];
+                for(let i = 0 ; i < 3 ; ++i){
                     rnd = this.getRndInteger(this.wordlist.length);
+                    while( idx.includes(rnd) ){
+                        rnd = this.getRndInteger(this.wordlist.length);
+                    }
+                    idx.push(rnd);
                 }
-                idx.push(rnd);
+                idx = shuffle(idx);
+                this.meanings = [];
+                for(let i = 0 ; i < 4 ; ++i){
+                    if( idx[i] == this.readingAnswer  ){
+                        this.readingAnswer = i;
+                    }
+                    this.meanings[i] = this.dictionary[this.wordlist[idx[i]]].meaning;
+                }
             }
-            idx = shuffle(idx);
-            // this.requestMeaning(this.word);
-            this.meanings = [];
-            for(let i = 0 ; i < 4 ; ++i){
-                if( idx[i] == this.readingAnswer  ){
-                    this.readingAnswer = i;
-                }
-                this.meanings[i] = this.dictionary[this.wordlist[idx[i]]].meaning;
+            else if( this.dictionaryMode == "spelling" ){
+                this.spellingInput = "";
+                this.spellingCorrect = false,
+                this.spellingSubmitted = false;
+                var rnd = this.getRndInteger(this.wordlist.length);
+                this.word = this.wordlist[rnd];
+                this.meanings[0] = this.dictionary[this.word].meaning;
+                this.readingAnswer = rnd;
+                this.readingSubmitted = false;
+                this.readingCorrectType = ["", "", "", ""];
+                this.getAudio(this.word);
             }
         },
 
