@@ -81,6 +81,11 @@ func GetDomain(u string) string {
 	return up.Host
 }
 
+func BasicRequest(w http.ResponseWriter, req *http.Request, word string) {
+	// pDict := SimpleRequest(word)
+	// req.Write
+}
+
 func ParseRequest(w http.ResponseWriter, req *http.Request) {
 	fmt.Println()
 	// req.ParseForm()
@@ -114,6 +119,7 @@ func ParseRequest(w http.ResponseWriter, req *http.Request) {
 
 	word := GetBody(req)
 	if method == "basic" {
+		BasicRequest(w, req, word)
 	} else if method == "audio" {
 	}
 	// Response()

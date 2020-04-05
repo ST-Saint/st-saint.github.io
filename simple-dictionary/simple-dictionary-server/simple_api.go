@@ -1,18 +1,19 @@
 package main
 
 import (
-//  "encoding/json"
-// "fmt"
-// "github.com/google/uuid"
-// _ "github.com/lib/pq"
-// "io/ioutil"
-// _ "log"
-// "net/http"
-// "net/url"
-// "strconv"
-// "strings"
-// "time"
-// "xorm.io/xorm"
+	//  "encoding/json"
+	"./Postgres"
+	"fmt"
+	// "github.com/google/uuid"
+	// _ "github.com/lib/pq"
+	// "io/ioutil"
+	// _ "log"
+	// "net/http"
+	// "net/url"
+	// "strconv"
+	// "strings"
+	// "time"
+	// "xorm.io/xorm"
 )
 
 type BasicDictionary struct {
@@ -27,4 +28,19 @@ type BasicDictionary struct {
 
 func UpdateDictionary(dict *BasicDictionary) error {
 	return nil
+}
+
+func SimpleRequest(word string) *BasicDictionary {
+	pDict := BasicDictionary{Word: word}
+	has, err := Postgres.Psql.Get(&pDict)
+	if err != nil {
+		fmt.Println(err)
+		return &pDict
+	}
+	if has {
+
+	} else {
+
+	}
+	return &pDict
 }

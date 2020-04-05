@@ -1,6 +1,7 @@
 package main
 
 import (
+	"./Postgres"
 	"encoding/json"
 	"fmt"
 	"github.com/google/uuid"
@@ -12,15 +13,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"xorm.io/xorm"
-)
-
-const (
-	host     = "47.95.112.59"
-	port     = 5432
-	dbname   = "dictionary"
-	user     = "dictionary"
-	password = "simple_dictionary"
 )
 
 type YouDaoBasic struct {
@@ -78,16 +70,8 @@ func RequestExplains(word string) {
 
 	var ydDict YoudaoDict
 	json.Unmarshal(body, &ydDict)
-
-	psqlSource := fmt.Sprintf("host=%s port=%d user=%s "+"password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
-
-	psql, err := xorm.NewEngine("postgres", psqlSource)
-	psql.ShowSQL(true)
-	if err != nil {
-		return
-	}
 	pDict := BasicDictionary{Word: word}
-	has, err := psql.Get(&pDict)
+	has, err := Postgres.Psql.Get(&pDict)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -103,8 +87,8 @@ func RequestExplains(word string) {
 		pDict.Expains, err = json.Marshal(ydDict.Basic.Explains)
 	}
 	if has {
-		psql.Update(&pDict, &BasicDictionary{Word: word})
+		Postgres.Psql.Update(&pDict, &BasicDictionary{Word: word})
 	} else {
-		psql.Insert(&pDict)
+		Postgres.Psql.Insert(&pDict)
 	}
 }
