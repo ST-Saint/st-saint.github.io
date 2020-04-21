@@ -1,9 +1,9 @@
-package main
+package exdict
 
 import (
 	//  "encoding/json"
-	"./Postgres"
 	"fmt"
+	"github.com/st-saint/st-saint.github.io/simple-dictionary-server/Postgres"
 	// "github.com/google/uuid"
 	// _ "github.com/lib/pq"
 	// "io/ioutil"

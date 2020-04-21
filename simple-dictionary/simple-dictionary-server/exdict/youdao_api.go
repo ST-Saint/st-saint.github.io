@@ -1,11 +1,13 @@
-package main
+package exdict
 
 import (
-	"./Postgres"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"github.com/google/uuid"
 	_ "github.com/lib/pq"
+	"github.com/st-saint/st-saint.github.io/simple-dictionary-server/Postgres"
 	"io/ioutil"
 	_ "log"
 	"net/http"
@@ -36,6 +38,16 @@ func Truncate(word string) string {
 	} else {
 		return word[0:10] + string(size) + word[size-10:size]
 	}
+}
+
+func HashHexDigest(s string) string {
+	hx := sha256.Sum256([]byte(s))
+	hxByte := make([]byte, 0, len(hx))
+	for _, b := range hx {
+		hxByte = append(hxByte, byte(b))
+	}
+	hashDigest := hex.EncodeToString(hxByte)
+	return hashDigest
 }
 
 func RequestExplains(word string) {

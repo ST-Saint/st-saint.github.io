@@ -5,7 +5,7 @@ import (
 	// "archive/zip"
 	"crypto/sha256"
 	"encoding/hex"
-	// "encoding/json"
+	"encoding/json"
 	"fmt"
 	// "os"
 	// "io"
@@ -28,16 +28,6 @@ var ALLOWEDIP = [2]string{"127.0.0.1", "222.247.92.177"}
 func GetBody(req *http.Request) string {
 	body, _ := ioutil.ReadAll(req.Body)
 	return string(body)
-}
-
-func HashHexDigest(s string) string {
-	hx := sha256.Sum256([]byte(s))
-	hxByte := make([]byte, 0, len(hx))
-	for _, b := range hx {
-		hxByte = append(hxByte, byte(b))
-	}
-	hashDigest := hex.EncodeToString(hxByte)
-	return hashDigest
 }
 
 func RemoteIP(req *http.Request) string {
@@ -83,7 +73,6 @@ func GetDomain(u string) string {
 
 func BasicRequest(w http.ResponseWriter, req *http.Request, word string) {
 	// pDict := SimpleRequest(word)
-	// req.Write
 }
 
 func ParseRequest(w http.ResponseWriter, req *http.Request) {
