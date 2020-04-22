@@ -3,10 +3,10 @@ package main
 import (
 	// "bytes"
 	// "archive/zip"
-	"crypto/sha256"
-	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"os"
+
 	// "os"
 	// "io"
 	"io/ioutil"
@@ -15,6 +15,9 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/st-saint/st-saint.github.io/simple-dictionary-server/Postgres"
+	"github.com/st-saint/st-saint.github.io/simple-dictionary-server/exdict"
 )
 
 const (
@@ -73,11 +76,61 @@ func GetDomain(u string) string {
 
 func BasicRequest(w http.ResponseWriter, req *http.Request, word string) {
 	// pDict := SimpleRequest(word)
+	pDict := exdict.BasicDictionary{Word: word}
+	has, err := Postgres.Psql.Get(&pDict)
+
+	if err != nil {
+		fmt.Println(err)
+		w.WriteHeader(403)
+		return
+	}
+	if has {
+		if pDict.Wav == "" {
+			pDict.Wav = exdict.RequestAudio(word)
+		}
+		data, err := json.Marshal(pDict)
+		if err != nil {
+			log.Println(err)
+			w.WriteHeader(500)
+			return
+		}
+		w.WriteHeader(200)
+		w.Write(data)
+	} else {
+		w.WriteHeader(403)
+	}
+}
+
+func BasicAudioRequest(w http.ResponseWriter, req *http.Request, word string) {
+	pDict := exdict.BasicDictionary{Word: word}
+	has, err := Postgres.Psql.Get(&pDict)
+
+	if err != nil {
+		fmt.Println(err)
+		w.WriteHeader(403)
+		return
+	}
+	if has {
+		if pDict.Wav == "" {
+			pDict.Wav = exdict.RequestAudio(word)
+		}
+		f, err := os.Open(pDict.Wav)
+		var wavData []byte
+		f.Read(wavData)
+		if err != nil {
+			log.Println(err)
+			w.WriteHeader(500)
+			return
+		}
+		w.WriteHeader(200)
+		w.Write(wavData)
+	} else {
+		w.WriteHeader(403)
+	}
 }
 
 func ParseRequest(w http.ResponseWriter, req *http.Request) {
 	fmt.Println()
-	// req.ParseForm()
 	// fmt.Println(req.Form)
 	// fmt.Println(req.Host)
 	// fmt.Println(req.RequestURI)
@@ -100,16 +153,20 @@ func ParseRequest(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
+
 	method := ""
 
+	req.ParseForm()
 	if req.Form.Get("method") != "" {
 		method = req.Form.Get("method")
 	}
 
 	word := GetBody(req)
+	log.Println("accept:", remoteIP, method, word)
 	if method == "basic" {
 		BasicRequest(w, req, word)
 	} else if method == "audio" {
+		BasicAudioRequest(w, req, word)
 	}
 	// Response()
 }
@@ -117,6 +174,7 @@ func ParseRequest(w http.ResponseWriter, req *http.Request) {
 func main() {
 	http.HandleFunc("/", ParseRequest)
 	err := http.ListenAndServe(":6024", nil)
+	fmt.Println("???")
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}

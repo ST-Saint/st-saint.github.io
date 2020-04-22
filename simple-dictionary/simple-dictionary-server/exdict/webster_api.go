@@ -67,7 +67,7 @@ func UpdatePostgresWav(word string, wavFile string) {
 	}
 }
 
-func RequestAudio(word string) {
+func RequestAudio(word string) string {
 	baseURL := "https://www.dictionaryapi.com/api/v1/references/collegiate/xml/"
 	key := "fcd21bf9-2c02-4223-be22-a8d3fe9bf6a2"
 	URL := baseURL + word + "?key=" + key
@@ -76,7 +76,7 @@ func RequestAudio(word string) {
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		fmt.Println(err)
-		return
+		return ""
 	}
 	defer resp.Body.Close()
 	// body, _ := ioutil.ReadAll(resp.Body)
@@ -102,9 +102,10 @@ func RequestAudio(word string) {
 	resp, err = http.DefaultClient.Do(req)
 	if err != nil {
 		fmt.Println(err)
-		return
+		return ""
 	}
 	defer resp.Body.Close()
 	WriteToWavFile(resp, "../wav/"+word, wavFile)
 	UpdatePostgresWav(word, "wav/"+word+"/"+wavFile)
+	return "wav/" + word + "/" + wavFile
 }
