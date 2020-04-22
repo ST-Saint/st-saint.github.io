@@ -26,7 +26,7 @@ const (
 	ROOT          = "/home/saint/Program/CryptoCrawler/data/HTML"
 )
 
-var ALLOWEDIP = [2]string{"127.0.0.1", "222.247.92.177"}
+var ALLOWEDIP = [2]string{"127.0.0.1", "222.244.198.102"}
 
 func GetBody(req *http.Request) string {
 	body, _ := ioutil.ReadAll(req.Body)
