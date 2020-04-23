@@ -5,7 +5,6 @@ import (
 	// "archive/zip"
 	"encoding/json"
 	"fmt"
-	"os"
 
 	// "os"
 	// "io"
@@ -78,6 +77,7 @@ func BasicRequest(w http.ResponseWriter, req *http.Request, word string) {
 	// pDict := SimpleRequest(word)
 	pDict := exdict.BasicDictionary{Word: word}
 	has, err := Postgres.Psql.Get(&pDict)
+	// has, err := Postgres.Psql.Get(&pDict)
 
 	if err != nil {
 		fmt.Println(err)
@@ -114,9 +114,7 @@ func BasicAudioRequest(w http.ResponseWriter, req *http.Request, word string) {
 		if pDict.Wav == "" {
 			pDict.Wav = exdict.RequestAudio(word)
 		}
-		f, err := os.Open(pDict.Wav)
-		var wavData []byte
-		f.Read(wavData)
+		wavData, err := ioutil.ReadFile(pDict.Wav)
 		if err != nil {
 			log.Println(err)
 			w.WriteHeader(500)
@@ -153,7 +151,6 @@ func ParseRequest(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-
 	method := ""
 
 	req.ParseForm()
@@ -173,8 +170,8 @@ func ParseRequest(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 	http.HandleFunc("/", ParseRequest)
+	defer Postgres.Psql.Close()
 	err := http.ListenAndServe(":6024", nil)
-	fmt.Println("???")
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
