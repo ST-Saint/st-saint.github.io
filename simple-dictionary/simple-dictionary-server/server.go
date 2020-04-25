@@ -152,13 +152,17 @@ func ParseRequest(w http.ResponseWriter, req *http.Request) {
 	}
 
 	method := ""
+	word := ""
+	// word := GetBody(req)
 
 	req.ParseForm()
 	if req.Form.Get("method") != "" {
 		method = req.Form.Get("method")
 	}
+	if req.Form.Get("word") != "" {
+		method = req.Form.Get("word")
+	}
 
-	word := GetBody(req)
 	log.Println("accept:", remoteIP, method, word)
 	if method == "basic" {
 		BasicRequest(w, req, word)

@@ -139,17 +139,12 @@ var vm = new Vue({
 
         getAudio: function(word){
             this.audioReady = false;
-            baseURL= "https://www.dictionaryapi.com/api/v1/references/collegiate/xml/";
-            key = "fcd21bf9-2c02-4223-be22-a8d3fe9bf6a2";
-            URL = baseURL + word + "?key=" + key;
-            axios.get(URL).then(response => {
-                var parser = new DOMParser();
-                var xmlDoc = parser.parseFromString(response.data, "text/xml");
-                var wavfile = xmlDoc.getElementsByTagName("sound")[0].getElementsByTagName("wav")[0].textContent;
-                var wordAudioURL = "https://media.merriam-webster.com/soundc11/" + this.wrapWord(wavfile);
-                this.audio.src = wordAudioURL;
-                this.audio.addEventListener("canplaythrough", ()=>{this.audioReady=true;this.playWordAudio();}, false);
-            });
+            // baseURL= "https://www.dictionaryapi.com/api/v1/references/collegiate/xml/";
+            // key = "fcd21bf9-2c02-4223-be22-a8d3fe9bf6a2";
+            // URL = baseURL + word + "?key=" + key;
+            URL = "http://47.95.112.59:6024"
+            this.audio.src= URL + "/?word=" + word + "&method=audio"
+            this.audio.addEventListener("canplaythrough", ()=>{this.audioReady=true;this.playWordAudio();}, false);
         },
 
         playWordAudio: function(){
