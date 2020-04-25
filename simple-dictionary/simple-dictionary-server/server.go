@@ -160,10 +160,12 @@ func ParseRequest(w http.ResponseWriter, req *http.Request) {
 		method = req.Form.Get("method")
 	}
 	if req.Form.Get("word") != "" {
-		method = req.Form.Get("word")
+		word = req.Form.Get("word")
 	}
-
-	log.Println("accept:", remoteIP, method, word)
+	log.Println("receive:", remoteIP, method, word)
+	if method == "" || word == "" {
+		w.WriteHeader(404)
+	}
 	if method == "basic" {
 		BasicRequest(w, req, word)
 	} else if method == "audio" {
