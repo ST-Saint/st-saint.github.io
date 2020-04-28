@@ -57,7 +57,8 @@ var vm = new Vue({
                     if( idx[i] == this.readingAnswer  ){
                         this.readingAnswer = i;
                     }
-                    this.meanings[i] = this.dictionary[this.wordlist[idx[i]]].meaning;
+                    // this.meanings[i] = this.dictionary[this.wordlist[idx[i]]].meaning;
+                    this.requestMeaning(this.wordlist[idx[i]], i)
                 }
             }
             else if( this.dictionaryMode == "spelling" ){
@@ -74,7 +75,19 @@ var vm = new Vue({
             }
         },
 
-        requestMeaning: function(volcabulary){
+        requestMeaning: function(volcabulary, idx){
+            $.ajax({
+                url: 'http://47.95.112.59:6024/?method=basic&word='+volcabulary,
+                type: 'get',
+                success: (data) => {
+                    var message = $.parseJSON(data);
+                    console.log(message);
+                    this.meanings[idx] = message
+                }
+            });
+        },
+
+        requestMeaning1: function(volcabulary){
             var appKey = "37ddc7564c10f775";
             var key = "mDI8ZDIVAVlLD5mCeaVa6ktwEyLvw1xh";
             var salt = (new Date).getTime();
@@ -172,8 +185,8 @@ var vm = new Vue({
         },
 
         getDictionary: async function(){
-            const dictionaryURL = "./dictionary.json";
-            axios.get('./dictionary.json')
+            const dictionaryURL = "./dataset/dictionary.json";
+            axios.get('./dataset/dictionary.json')
                 .then(response => {
                     this.dictionary = response.data;
                     this.wordlist = [];

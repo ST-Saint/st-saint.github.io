@@ -50,7 +50,7 @@ func HashHexDigest(s string) string {
 	return hashDigest
 }
 
-func RequestExplains(word string) {
+func RequestExplains(word string) (phonetic string, explain []byte) {
 	basic_url := "https://openapi.youdao.com/api"
 	appKey := "37ddc7564c10f775"
 	key := "mDI8ZDIVAVlLD5mCeaVa6ktwEyLvw1xh"
@@ -95,12 +95,13 @@ func RequestExplains(word string) {
 			pDict.Phonetic = ydDict.Basic.Phonetic
 		}
 	}
-	if pDict.Expains == nil {
-		pDict.Expains, err = json.Marshal(ydDict.Basic.Explains)
+	if pDict.Explains == nil {
+		pDict.Explains, err = json.Marshal(ydDict.Basic.Explains)
 	}
 	if has {
 		Postgres.Psql.Update(&pDict, &BasicDictionary{Word: word})
 	} else {
 		Postgres.Psql.Insert(&pDict)
 	}
+	return pDict.Phonetic, pDict.Explains
 }

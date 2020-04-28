@@ -85,6 +85,9 @@ func BasicRequest(w http.ResponseWriter, req *http.Request, word string) {
 		return
 	}
 	if has {
+		if pDict.Phonetic == "" || pDict.Explains == nil {
+			pDict.Phonetic, pDict.Explains = exdict.RequestExplains(word)
+		}
 		if pDict.Wav == "" {
 			pDict.Wav = exdict.RequestAudio(word)
 		}
@@ -97,6 +100,7 @@ func BasicRequest(w http.ResponseWriter, req *http.Request, word string) {
 		w.WriteHeader(200)
 		w.Write(data)
 	} else {
+		log.Println(word, "not found")
 		w.WriteHeader(403)
 	}
 }
