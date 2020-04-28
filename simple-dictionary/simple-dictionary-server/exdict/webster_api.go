@@ -38,14 +38,17 @@ func CheckFileExist(fileName string) bool {
 func WriteToWavFile(resp *http.Response, path string, fileName string) {
 	body, _ := ioutil.ReadAll(resp.Body)
 
-	os.MkdirAll(path, os.ModePerm)
+	err := os.MkdirAll(path, os.ModePerm)
+	if err != nil {
+		log.Println(err)
+	}
 
 	if !CheckFileExist(path + "/" + fileName) {
 		f, err := os.Create(path + "/" + fileName) //创建文件
-		f.Write(body)
 		if err != nil {
 			fmt.Println(err)
 		}
+		f.Write(body)
 		f.Close()
 	}
 }
@@ -105,7 +108,7 @@ func RequestAudio(word string) string {
 		return ""
 	}
 	defer resp.Body.Close()
-	WriteToWavFile(resp, "../wav/"+word, wavFile)
+	WriteToWavFile(resp, "wav/"+word, wavFile)
 	UpdatePostgresWav(word, "wav/"+word+"/"+wavFile)
 	return "wav/" + word + "/" + wavFile
 }
