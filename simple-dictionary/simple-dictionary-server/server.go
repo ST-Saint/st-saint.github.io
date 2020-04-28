@@ -142,13 +142,14 @@ func ParseRequest(w http.ResponseWriter, req *http.Request) {
 	// fmt.Println(req.Form["url_long"])
 
 	remoteIP := RemoteIP(req)
-	flag := false
-	for _, IP := range ALLOWEDIP {
-		if IP == remoteIP {
-			flag = true
-			break
-		}
-	}
+	flag := true
+	// flag := false
+	// for _, IP := range ALLOWEDIP {
+	// 	if IP == remoteIP {
+	// 		flag = true
+	// 		break
+	// 	}
+	// }
 
 	if !flag {
 		w.WriteHeader(403)
