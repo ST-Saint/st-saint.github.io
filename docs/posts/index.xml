@@ -34,15 +34,6 @@
     </item>
     
     <item>
-      <title>Org Cheat Shell</title>
-      <link>https://st-saint.github.io/posts/org/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/org/</guid>
-      <description>A brief description of Hugo Shortcodes</description>
-    </item>
-    
-    <item>
       <title>Rich Content</title>
       <link>https://st-saint.github.io/posts/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
@@ -96,6 +87,20 @@
       <description>shell  find files  1 2 3 4  find ./fuzz-results/crashes -type f -name &amp;#34;id:$1*&amp;#34; -print0 | while read -d $&amp;#39;\0&amp;#39; file do echo $file done      xargs  多行转单行输入, 默认分隔符为换行
 1  pacman -Q | grep -i &amp;#34;haskell&amp;#34; | xargs sudo pacman -S --noconfirm     placeholder
 1 2  xargs -I {} mv dir1/{} dir2/{} xargs -I &amp;#39;{}&amp;#39; mv dir1/&amp;#39;{}&amp;#39; dir2/&amp;#39;{}&amp;#39;      stream     symbol meanings   0 stdin   1 stdout   2 stderr   2&amp;gt;&amp;amp;1 stderr to stdout   1&amp;gt; stdout redirect   2&amp;gt; stderr redirect   1&amp;gt;/dev/null write to void      uniq  仅输出 unique 行</description>
+    </item>
+    
+    <item>
+      <title>Org Cheat Shell</title>
+      <link>https://st-saint.github.io/posts/org/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/org/</guid>
+      <description>configuration    reveal.js
+  1  #+REVEAL_THEME: Serif      all
+  1 2 3  #+OPTIONS: broken-links:t \n:t #+LATEX_HEADER: \hypersetup{colorlinks=true,linkcolor=black} #+SETUPFILE: /home/yayu/org/org-html-themes/org/theme-readtheorg-local.setup      连接
+1  #+OPTIONS: broken-links:t \n:t      换行
+1  #+OPTIONS: \n:t      TOC 颜色
+1  #+LATEX_HEADER: \hypersetup{colorlinks=true,linkcolor=black}      HTML theme</description>
     </item>
     
   </channel>

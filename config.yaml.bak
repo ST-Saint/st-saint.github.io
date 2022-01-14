@@ -3,7 +3,7 @@ title: Yayu Wang
 paginate: 5
 theme:
     - hugo-PaperMod
-    # - hugo-book
+    - hugo-book
 
 publishDir: docs
 enableInlineShortcodes: true
@@ -12,7 +12,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 enableEmoji: true
-# googleAnalytics: UA-123-45
+googleAnalytics: UA-123-45
 
 minify:
     disableXML: true
@@ -155,7 +155,7 @@ markup:
         guessSyntax: true
         lineNos: true
         # noClasses: false
-        style: adap
+        style: vs
     goldmark:
         renderer:
             unsafe: true
