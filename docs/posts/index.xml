@@ -1,23 +1,101 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on PaperMod</title>
+    <title>Posts on Yayu Wang</title>
     <link>https://st-saint.github.io/posts/</link>
-    <description>Recent content in Posts on PaperMod</description>
-    <image>
-      <url>https://st-saint.github.io/papermod-cover.png</url>
-      <link>https://st-saint.github.io/papermod-cover.png</link>
-    </image>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Posts on Yayu Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux</title>
+      <title>Markdown Syntax Guide For L2</title>
+      <link>https://st-saint.github.io/posts/markdown-syntax.fr/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/markdown-syntax.fr/</guid>
+      <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
+    </item>
+    
+    <item>
+      <title>Markdown Syntax Guide For RTL</title>
+      <link>https://st-saint.github.io/posts/markdown-syntax.fa/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/markdown-syntax.fa/</guid>
+      <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
+    </item>
+    
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>https://st-saint.github.io/posts/markdown-syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/markdown-syntax/</guid>
+      <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
+    </item>
+    
+    <item>
+      <title>Org Cheat Shell</title>
+      <link>https://st-saint.github.io/posts/org/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/org/</guid>
+      <description>A brief description of Hugo Shortcodes</description>
+    </item>
+    
+    <item>
+      <title>Rich Content</title>
+      <link>https://st-saint.github.io/posts/rich-content/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/rich-content/</guid>
+      <description>A brief description of Hugo Shortcodes</description>
+    </item>
+    
+    <item>
+      <title>Placeholder Text</title>
+      <link>https://st-saint.github.io/posts/placeholder-text/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/placeholder-text/</guid>
+      <description>Lorem Ipsum Dolor Si Amet</description>
+    </item>
+    
+    <item>
+      <title>Math Typesetting</title>
+      <link>https://st-saint.github.io/posts/math-typesetting/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/math-typesetting/</guid>
+      <description>A brief guide to setup KaTeX</description>
+    </item>
+    
+    <item>
+      <title>Emoji Support</title>
+      <link>https://st-saint.github.io/posts/emoji-support/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/emoji-support/</guid>
+      <description>Guide to emoji usage in Hugo</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://st-saint.github.io/posts/page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/page/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title>Linux Cheat Sheet</title>
       <link>https://st-saint.github.io/posts/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://st-saint.github.io/posts/linux/</guid>
-      <description>shell find files find ./fuzz-results/crashes -type f -name &amp;#34;id:$1*&amp;#34; -print0 | while read -d $&amp;#39;\0&amp;#39; file do echo $file done xargs 多行转单行输入, 默认分隔符为换行
-pacman -Q | grep -i &amp;#34;haskell&amp;#34; | xargs sudo pacman -S --noconfirm placeholder
-xargs -I {} mv dir1/{} dir2/{} xargs -I &amp;#39;{}&amp;#39; mv dir1/&amp;#39;{}&amp;#39; dir2/&amp;#39;{}&amp;#39; stream    symbol meanings     0 stdin   1 stdout   2 stderr   2&amp;gt;&amp;amp;1 stderr to stdout   1&amp;gt; stdout redirect   2&amp;gt; stderr redirect   1&amp;gt;/dev/null write to void    uniq 仅输出 unique 行</description>
+      <description>shell  find files  1 2 3 4  find ./fuzz-results/crashes -type f -name &amp;#34;id:$1*&amp;#34; -print0 | while read -d $&amp;#39;\0&amp;#39; file do echo $file done      xargs  多行转单行输入, 默认分隔符为换行
+1  pacman -Q | grep -i &amp;#34;haskell&amp;#34; | xargs sudo pacman -S --noconfirm     placeholder
+1 2  xargs -I {} mv dir1/{} dir2/{} xargs -I &amp;#39;{}&amp;#39; mv dir1/&amp;#39;{}&amp;#39; dir2/&amp;#39;{}&amp;#39;      stream     symbol meanings   0 stdin   1 stdout   2 stderr   2&amp;gt;&amp;amp;1 stderr to stdout   1&amp;gt; stdout redirect   2&amp;gt; stderr redirect   1&amp;gt;/dev/null write to void      uniq  仅输出 unique 行</description>
     </item>
     
   </channel>

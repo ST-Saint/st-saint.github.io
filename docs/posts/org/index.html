@@ -1,0 +1,401 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Org Cheat Shell | Yayu Wang</title>
+<meta name=keywords content="shortcodes,privacy">
+<meta name=description content="A brief description of Hugo Shortcodes">
+<meta name=author content="ST-Saint">
+<link rel=canonical href=https://st-saint.github.io/posts/org/>
+<meta name=google-site-verification content="XYZabc">
+<meta name=yandex-verification content="XYZabc">
+<meta name=msvalidate.01 content="XYZabc">
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
+<link rel=icon href=https://st-saint.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://st-saint.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://st-saint.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://st-saint.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://st-saint.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.91.2">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="Org Cheat Shell">
+<meta property="og:description" content="A brief description of Hugo Shortcodes">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://st-saint.github.io/posts/org/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2019-03-10T00:00:00+00:00">
+<meta property="article:modified_time" content="2019-03-10T00:00:00+00:00"><meta property="og:site_name" content="ST_Saint Blog">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Org Cheat Shell">
+<meta name=twitter:description content="A brief description of Hugo Shortcodes">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://st-saint.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Org Cheat Shell","item":"https://st-saint.github.io/posts/org/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Org Cheat Shell","name":"Org Cheat Shell","description":"A brief description of Hugo Shortcodes","keywords":["shortcodes","privacy"],"articleBody":"configuration #   reveal.js   1  #+REVEAL_THEME: Serif    all   1 2 3  #+OPTIONS: broken-links:t \\n:t #+LATEX_HEADER: \\hypersetup{colorlinks=true,linkcolor=black} #+SETUPFILE: /home/yayu/org/org-html-themes/org/theme-readtheorg-local.setup     连接\n1  #+OPTIONS: broken-links:t \\n:t     换行\n1  #+OPTIONS: \\n:t     TOC 颜色\n1  #+LATEX_HEADER: \\hypersetup{colorlinks=true,linkcolor=black}     HTML theme\n1  #+SETUPFILE: /home/yayu/org/org-html-themes/org/theme-readtheorg-local.setup     fonts #  Emphasis and Monospace #   bold italic underlined verbatim code strike-through  open #    快速打开文件\n1  (\" n f\" '+default/find-in-notes)     capture #   capture 文件位置加入 org 文档   1 2  (\" X\" 'org-capture) (\"C-c C-w\" 'refile)   capture\nlink #  插入链接 #  1  (\" m l l\" 'org-insert-link)   编辑连接 #  1 2  (\"C-c '\" 'org-edit-special) (\"C-C C-l\" 'org-insert-link)   图片 #   调整图片大小   1  #+attr_html: :width 1000px   Code Snippet #  edit #  进入模式编辑\n1  (\"C-c '\" 'org-edit-special)   execute #  1  (\"C-c C-c\" 'org-ctrl-c-ctrl-c)   cpp test file\nagenda #  open agenda #  1  (\" o A\" 'org-agenda)   pomodoro #   start   1 2  (\" p m\" 'org-pomodoro) (\"C-c p m\" 'org-pomodoro)    recent task   1  (\" n o\" 'org-clock-goto)   time #  插入时间 #  1 2  (\"C-c .\" 'org-time-stamp) (\" m d t\" 'org-time-stamp)   time range #   in one day   1  2021-06-06 Sun 18:00-20:00    cross days   1  2021-06-06 Sun--2021-06-08 Tue    evaluate time range   1  (\" m c t\" 'org-evaluate-time-range)   ","wordCount":"186","inLanguage":"en","datePublished":"2019-03-10T00:00:00Z","dateModified":"2019-03-10T00:00:00Z","author":[{"@type":"Person","name":"ST-Saint"}],"mainEntityOfPage":{"@type":"WebPage","@id":"https://st-saint.github.io/posts/org/"},"publisher":{"@type":"Organization","name":"Yayu Wang","logo":{"@type":"ImageObject","url":"https://st-saint.github.io/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://st-saint.github.io/ accesskey=h title="Home (Alt + H)">Home</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://st-saint.github.io/archives title=Archive>
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href=https://st-saint.github.io/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+<li>
+<a href=https://st-saint.github.io/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://st-saint.github.io/tags/ title=tags>
+<span>tags</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=markdown>
+<h1>
+<a href=/posts/org/>Org Cheat Shell</a>
+</h1>
+<h5>March 10, 2019</h5>
+<div>
+<a href=/tags/shortcodes/>shortcodes</a>,
+<a href=/tags/privacy/>privacy</a>
+</div>
+<h2 id=configuration>
+configuration
+<a class=anchor href=#configuration>#</a>
+</h2>
+<ul>
+<li>reveal.js</li>
+</ul>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-org data-lang=org><span style=color:#75715e>#+REVEAL_THEME</span><span style=color:#75715e>: Serif</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>all</li>
+</ul>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-org data-lang=org><span style=color:#75715e>#+OPTIONS</span><span style=color:#75715e>: broken-links:t \n:t</span>
+<span style=color:#75715e>#+LATEX_HEADER</span><span style=color:#75715e>: \hypersetup{colorlinks=true,linkcolor=black}</span>
+<span style=color:#75715e>#+SETUPFILE</span><span style=color:#75715e>: /home/yayu/org/org-html-themes/org/theme-readtheorg-local.setup</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>连接</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-org data-lang=org>  #+OPTIONS: broken-links:t \n:t
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>换行</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-org data-lang=org>  #+OPTIONS: \n:t
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>TOC 颜色</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-org data-lang=org><span style=color:#75715e>#+LATEX_HEADER</span><span style=color:#75715e>: \hypersetup{colorlinks=true,linkcolor=black}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>HTML theme</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-org data-lang=org><span style=color:#75715e>#+SETUPFILE</span><span style=color:#75715e>: /home/yayu/org/org-html-themes/org/theme-readtheorg-local.setup</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id=fonts>
+fonts
+<a class=anchor href=#fonts>#</a>
+</h2>
+<h3 id=emphasis-and-monospace>
+Emphasis and Monospace
+<a class=anchor href=#emphasis-and-monospace>#</a>
+</h3>
+<ol>
+<li><strong>bold</strong></li>
+<li><em>italic</em></li>
+<li><span class=underline>underlined</span></li>
+<li><code>verbatim</code></li>
+<li><code>code</code></li>
+<li><del>strike-through</del></li>
+</ol>
+<h2 id=open>
+open
+<a class=anchor href=#open>#</a>
+</h2>
+<ul>
+<li>
+<p>快速打开文件</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;&lt;SPC&gt; n f&#34;</span> <span style=color:#e6db74>&#39;+default/find-in-notes</span>)
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id=capture>
+capture
+<a class=anchor href=#capture>#</a>
+</h2>
+<ul>
+<li>capture 文件位置加入 org 文档</li>
+</ul>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;&lt;SPC&gt; X&#34;</span> <span style=color:#e6db74>&#39;org-capture</span>)
+(<span style=color:#e6db74>&#34;C-c C-w&#34;</span> <span style=color:#e6db74>&#39;refile</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p><a href=/posts/org/>capture</a></p>
+<h2 id=link>
+link
+<a class=anchor href=#link>#</a>
+</h2>
+<h3 id=插入链接>
+插入链接
+<a class=anchor href=#%e6%8f%92%e5%85%a5%e9%93%be%e6%8e%a5>#</a>
+</h3>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;&lt;SPC&gt; m l l&#34;</span> <span style=color:#e6db74>&#39;org-insert-link</span>)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=编辑连接>
+编辑连接
+<a class=anchor href=#%e7%bc%96%e8%be%91%e8%bf%9e%e6%8e%a5>#</a>
+</h3>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;C-c &#39;&#34;</span> <span style=color:#e6db74>&#39;org-edit-special</span>)
+(<span style=color:#e6db74>&#34;C-C C-l&#34;</span> <span style=color:#e6db74>&#39;org-insert-link</span>)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=图片>
+图片
+<a class=anchor href=#%e5%9b%be%e7%89%87>#</a>
+</h3>
+<ul>
+<li>调整图片大小</li>
+</ul>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-org data-lang=org><span style=color:#75715e>#+attr_html</span><span style=color:#75715e>: :width 1000px</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=code-snippet>
+Code Snippet
+<a class=anchor href=#code-snippet>#</a>
+</h2>
+<h3 id=edit>
+edit
+<a class=anchor href=#edit>#</a>
+</h3>
+<p>进入模式编辑</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;C-c &#39;&#34;</span> <span style=color:#e6db74>&#39;org-edit-special</span>)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=execute>
+execute
+<a class=anchor href=#execute>#</a>
+</h3>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;C-c C-c&#34;</span> <span style=color:#e6db74>&#39;org-ctrl-c-ctrl-c</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p><a href=~/Project/Cpp/test.cpp>cpp test file</a></p>
+<h2 id=agenda>
+agenda
+<a class=anchor href=#agenda>#</a>
+</h2>
+<h3 id=open-agenda>
+open agenda
+<a class=anchor href=#open-agenda>#</a>
+</h3>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;&lt;SPC&gt; o A&#34;</span> <span style=color:#e6db74>&#39;org-agenda</span>)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=pomodoro>
+pomodoro
+<a class=anchor href=#pomodoro>#</a>
+</h3>
+<ul>
+<li>start</li>
+</ul>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;&lt;SPC&gt; p m&#34;</span> <span style=color:#e6db74>&#39;org-pomodoro</span>)
+(<span style=color:#e6db74>&#34;C-c p m&#34;</span> <span style=color:#e6db74>&#39;org-pomodoro</span>)
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>recent task</li>
+</ul>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;&lt;SPC&gt; n o&#34;</span> <span style=color:#e6db74>&#39;org-clock-goto</span>)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=time>
+time
+<a class=anchor href=#time>#</a>
+</h3>
+<h4 id=插入时间>
+插入时间
+<a class=anchor href=#%e6%8f%92%e5%85%a5%e6%97%b6%e9%97%b4>#</a>
+</h4>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;C-c .&#34;</span> <span style=color:#e6db74>&#39;org-time-stamp</span>)
+(<span style=color:#e6db74>&#34;&lt;SPC&gt; m d t&#34;</span> <span style=color:#e6db74>&#39;org-time-stamp</span>)
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=time-range>
+time range
+<a class=anchor href=#time-range>#</a>
+</h4>
+<ol>
+<li>in one day</li>
+</ol>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-org data-lang=org>&lt;<span style=color:#e6db74>2021-06-06 Sun 18:00-20:00</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>cross days</li>
+</ol>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-org data-lang=org>&lt;<span style=color:#e6db74>2021-06-06 Sun</span>&gt;--&lt;<span style=color:#e6db74>2021-06-08 Tue</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>evaluate time range</li>
+</ol>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-emacs-lisp data-lang=emacs-lisp>(<span style=color:#e6db74>&#34;&lt;SPC&gt; m c t&#34;</span> <span style=color:#e6db74>&#39;org-evaluate-time-range</span>)
+</code></pre></td></tr></table>
+</div>
+</div></article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://st-saint.github.io/>Yayu Wang</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerText='copy';function d(){a.innerText='copied!',setTimeout(()=>{a.innerText='copy'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
+</body>
+</html>
