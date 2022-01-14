@@ -1,6 +1,5 @@
 ---
 title: "Hugo"
-date: Thu Jan 13 09:11:11 PM CST 2022
 # weight: 1
 # aliases: ["/first"]
 tags: ["first"]

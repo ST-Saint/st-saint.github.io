@@ -4,12 +4,11 @@
     <title>Posts on Yayu Wang</title>
     <link>https://st-saint.github.io/posts/</link>
     <description>Recent content in Posts on Yayu Wang</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Markdown Syntax Guide For L2</title>
       <link>https://st-saint.github.io/posts/markdown-syntax.fr/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://st-saint.github.io/posts/markdown-syntax.fr/</guid>
       <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
@@ -18,52 +17,16 @@
     <item>
       <title>Markdown Syntax Guide For RTL</title>
       <link>https://st-saint.github.io/posts/markdown-syntax.fa/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://st-saint.github.io/posts/markdown-syntax.fa/</guid>
       <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
     </item>
     
     <item>
-      <title>Markdown Syntax Guide</title>
-      <link>https://st-saint.github.io/posts/markdown-syntax/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/markdown-syntax/</guid>
-      <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
-    </item>
-    
-    <item>
-      <title>Rich Content</title>
-      <link>https://st-saint.github.io/posts/rich-content/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/rich-content/</guid>
-      <description>A brief description of Hugo Shortcodes</description>
-    </item>
-    
-    <item>
-      <title>Placeholder Text</title>
-      <link>https://st-saint.github.io/posts/placeholder-text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/placeholder-text/</guid>
-      <description>Lorem Ipsum Dolor Si Amet</description>
-    </item>
-    
-    <item>
-      <title>Math Typesetting</title>
-      <link>https://st-saint.github.io/posts/math-typesetting/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/math-typesetting/</guid>
-      <description>A brief guide to setup KaTeX</description>
-    </item>
-    
-    <item>
       <title>Emoji Support</title>
       <link>https://st-saint.github.io/posts/emoji-support/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://st-saint.github.io/posts/emoji-support/</guid>
       <description>Guide to emoji usage in Hugo</description>
@@ -90,6 +53,24 @@
     </item>
     
     <item>
+      <title>Markdown Syntax Guide</title>
+      <link>https://st-saint.github.io/posts/markdown-syntax/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/markdown-syntax/</guid>
+      <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
+    </item>
+    
+    <item>
+      <title>Math Typesetting</title>
+      <link>https://st-saint.github.io/posts/math-typesetting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/math-typesetting/</guid>
+      <description>A brief guide to setup KaTeX</description>
+    </item>
+    
+    <item>
       <title>Org Cheat Shell</title>
       <link>https://st-saint.github.io/posts/org/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -101,6 +82,33 @@
 1  #+OPTIONS: broken-links:t \n:t      换行
 1  #+OPTIONS: \n:t      TOC 颜色
 1  #+LATEX_HEADER: \hypersetup{colorlinks=true,linkcolor=black}      HTML theme</description>
+    </item>
+    
+    <item>
+      <title>Placeholder Text</title>
+      <link>https://st-saint.github.io/posts/placeholder-text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/placeholder-text/</guid>
+      <description>Lorem Ipsum Dolor Si Amet</description>
+    </item>
+    
+    <item>
+      <title>Rich Content</title>
+      <link>https://st-saint.github.io/posts/rich-content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/rich-content/</guid>
+      <description>A brief description of Hugo Shortcodes</description>
+    </item>
+    
+    <item>
+      <title>Shell Cheat Sheet</title>
+      <link>https://st-saint.github.io/posts/shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/shell/</guid>
+      <description>循环 1 2  for it in $array; do done   条件 中括号 单中括号 [ ]  两个符号左右都要有空格分隔 内部操作符与操作变量之间要有空格：如 [ &amp;ldquo;a&amp;rdquo; = &amp;ldquo;b&amp;rdquo; ] 字符串比较中，&amp;gt; &amp;lt; 需要写成&amp;gt; \&amp;lt; 进行转义 中字符串或者${}变量尽量使用&amp;quot;&amp;ldquo;双引号扩住，以避免值未定义引用而出错 中可以使用 –a –o 进行逻辑运算 是 shell 内置命令  双中括号  [[ ]] 两个符号左右都要有空格分隔 [[ ]] 内部操作符与操作变量之间要有空格：如 [[ &amp;quot;a&amp;quot; = &amp;quot;b&amp;quot; ]] [[ ]] 字符串比较中，可以直接使用 &amp;gt; &amp;lt; 无需转义 [[ ]] 中字符串或者${}变量尽量使用&amp;rdquo;&amp;quot; 双引号扩住，如未使用&amp;quot;&amp;ldquo;会进行模式和元字符匹配 [[ ]] 内部可以使用 &amp;amp;&amp;amp; || 进行逻辑运算 [[ ]] 是 bash keyword  文件夹或文件 存在    文件夹</description>
     </item>
     
   </channel>

@@ -24,13 +24,12 @@
 <meta property="og:description" content="Guide to emoji usage in Hugo">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://st-saint.github.io/posts/emoji-support/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2019-03-05T00:00:00+00:00">
-<meta property="article:modified_time" content="2019-03-05T00:00:00+00:00"><meta property="og:site_name" content="ST_Saint Blog">
+<meta property="og:site_name" content="ST_Saint Blog">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Emoji Support">
 <meta name=twitter:description content="Guide to emoji usage in Hugo">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://st-saint.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Emoji Support","item":"https://st-saint.github.io/posts/emoji-support/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Emoji Support","name":"Emoji Support","description":"Guide to emoji usage in Hugo","keywords":["emoji"],"articleBody":"Emoji can be enabled in a Hugo project in a number of ways.\nThe emojify function can be called directly in templates or Inline Shortcodes.\nTo enable emoji globally, set enableEmoji to true in your site’s configuration and then you can type emoji shorthand codes directly in content files; e.g.\n🙈 🙈 🙉 🙉 🙊 🙊\nThe Emoji cheat sheet is a useful reference for emoji shorthand codes.\n N.B. The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.\n1 2 3  .emoji { font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols; }    .emojify { font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols; font-size: 2rem; vertical-align: middle; } @media screen and (max-width:650px) { .nowrap { display: block; margin: 25px 0; } } ","wordCount":"167","inLanguage":"en","datePublished":"2019-03-05T00:00:00Z","dateModified":"2019-03-05T00:00:00Z","author":{"@type":"Person","name":"Hugo Authors"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://st-saint.github.io/posts/emoji-support/"},"publisher":{"@type":"Organization","name":"Yayu Wang","logo":{"@type":"ImageObject","url":"https://st-saint.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Emoji Support","name":"Emoji Support","description":"Guide to emoji usage in Hugo","keywords":["emoji"],"articleBody":"Emoji can be enabled in a Hugo project in a number of ways.\nThe emojify function can be called directly in templates or Inline Shortcodes.\nTo enable emoji globally, set enableEmoji to true in your site’s configuration and then you can type emoji shorthand codes directly in content files; e.g.\n🙈 🙈 🙉 🙉 🙊 🙊\nThe Emoji cheat sheet is a useful reference for emoji shorthand codes.\n N.B. The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.\n1 2 3  .emoji { font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols; }    .emojify { font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols; font-size: 2rem; vertical-align: middle; } @media screen and (max-width:650px) { .nowrap { display: block; margin: 25px 0; } } ","wordCount":"167","inLanguage":"en","datePublished":"0001-01-01T00:00:00Z","dateModified":"0001-01-01T00:00:00Z","author":{"@type":"Person","name":"Hugo Authors"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://st-saint.github.io/posts/emoji-support/"},"publisher":{"@type":"Organization","name":"Yayu Wang","logo":{"@type":"ImageObject","url":"https://st-saint.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -45,22 +44,27 @@
 </div>
 <ul id=menu>
 <li>
+<a href=https://st-saint.github.io/posts title=Posts>
+<span>Posts</span>
+</a>
+</li>
+<li>
 <a href=https://st-saint.github.io/archives title=Archive>
 <span>Archive</span>
 </a>
 </li>
 <li>
-<a href=https://st-saint.github.io/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://st-saint.github.io/search title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://st-saint.github.io/categories/ title=Categories>
+<a href=https://st-saint.github.io/categories title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://st-saint.github.io/tags/ title=tags>
+<a href=https://st-saint.github.io/tags title=tags>
 <span>tags</span>
 </a>
 </li>
@@ -76,7 +80,7 @@ Emoji Support
 <div class=post-description>
 Guide to emoji usage in Hugo
 </div>
-<div class=post-meta><span title="2019-03-05 00:00:00 +0000 UTC">March 3, 5053</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Hugo Authors&nbsp;|&nbsp;<a href=https://github.com/st-saint/st-saint.github.io/content/posts/emoji-support.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
+<div class=post-meta>1 min&nbsp;·&nbsp;Hugo Authors&nbsp;|&nbsp;<a href=https://github.com/st-saint/st-saint.github.io/content/posts/emoji-support.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
 </div>
 </header>
 <div class=post-content><p>Emoji can be enabled in a Hugo project in a number of ways.</p>
@@ -106,10 +110,10 @@ font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol,
 <li><a href=https://st-saint.github.io/tags/emoji/>emoji</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://st-saint.github.io/posts/math-typesetting/>
+<a class=prev href=https://st-saint.github.io/posts/markdown-syntax.fa/>
 <span class=title>« Prev Page</span>
 <br>
-<span>Math Typesetting</span>
+<span>Markdown Syntax Guide For RTL</span>
 </a>
 <a class=next href=https://st-saint.github.io/posts/page/>
 <span class=title>Next Page »</span>
