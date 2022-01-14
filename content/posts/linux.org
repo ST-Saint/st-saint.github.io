@@ -1,0 +1,145 @@
+#+TITLE: Linux Cheat Sheet
+#+TAGS[]: linux
+
+* shell
+** find files
+#+begin_src shell
+find ./fuzz-results/crashes -type f -name "id:$1*" -print0 | while read -d $'\0' file
+do
+    echo $file
+done
+#+end_src
+
+** xargs
+多行转单行输入, 默认分隔符为换行
+#+begin_src shell
+pacman -Q | grep -i "haskell" | xargs sudo pacman -S --noconfirm
+#+end_src
+
+placeholder
+
+#+begin_src shell
+xargs -I {} mv dir1/{} dir2/{}
+xargs -I '{}' mv dir1/'{}' dir2/'{}'
+#+end_src
+
+** stream
+| symbol      | meanings         |
+| 0           | stdin            |
+| 1           | stdout           |
+| 2           | stderr           |
+| 2>&1        | stderr to stdout |
+| 1>          | stdout redirect  |
+| 2>          | stderr redirect  |
+| 1>/dev/null | write to void    |
+
+** uniq
+仅输出 unique 行
+#+begin_src shell
+uniq -u
+#+end_src
+
+** grep
+grep
+
+* zip
+** zip
+- -q 不显示命令
+- -r 递归
+- -y 不解析 symbol link
+
+#+begin_src shell
+zip -qry zip_file.zip file1 file2 dir1
+#+end_src
+
+- -d
+#+begin_src shell
+unzip jacoco-0.8.7.zip -d jacoco
+#+end_src
+** tar
+*** 解压
+#+begin_src shell
+tar -xzvf sample.tar.gz -C ./sample
+#+end_src
+
+* network
+** iw
+- 格式
+#+begin_src shell
+iw [ OPTIONS ] { help [ command ] | OBJECT COMMAND }
+OBJECT := { dev | phy | reg }
+OPTIONS := { --version | --debug }
+#+end_src
+- 搜索
+#+begin_src shell
+iw dev <devname> scan
+#+end_src
+- 显示设备
+#+begin_src shell
+iw dev
+#+end_src
+- 显示设备信息
+#+begin_src shell
+iw dev <devename> info
+#+end_src
+- 显示连接信息
+#+begin_src shell
+iw dev <devname> link
+#+end_src
+- 连接
+#+begin_src shell
+iw dev <devname> connect [-w] <SSID> [<freq in MHz>] [<bssid>] [key 0:abcde d:1:6162636465] [mfp:req/opt/no]
+# Join the network with the given SSID (and frequency, BSSID).
+#+end_src
+
+** Network Manager
+- 扫描
+#+begin_src shell
+nmcli device wifi rescan
+#+end_src
+- 显示
+#+begin_src shell
+nmcli device wifi list
+#+end_src
+- 连接
+#+begin_src shell
+nmcli device wifi connect <SSID> password <password> [hidden yes]
+#+end_src
+* user management
+
+** add user
+- 连接到服务器
+#+BEGIN_SRC bash
+ssh root@10.105.250.92
+#+END_SRC
+
+- 创建用户
+#+BEGIN_SRC bash
+adduser example
+#+END_SRC
+
+- 添加 ~sudo~
+#+BEGIN_SRC bash
+adduser example sudo
+#+END_SRC
+
+** ssh pem
+
+- 生成密钥
+#+BEGIN_SRC bash
+sudo su example
+cd ~/.ssh
+ssh-keygen -t ed25519 -C "example@mail.com"
+#+END_SRC
+
+- 修改权限
+#+BEGIN_SRC bash
+cp ed25519.pub authorized_keys
+chmod 600 authorized_keys
+chmod 700 ~/.ssh
+#+END_SRC
+
+- 拷贝密钥
+#+BEGIN_SRC bash
+scp root@10.105.250.92:/home/example/.ssh/ed25519 ~/.ssh/
+#+END_SRC
