@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://st-saint.github.io/sitemap.xml
+Sitemap: https://st-saint.github.io/doks/sitemap.xml
