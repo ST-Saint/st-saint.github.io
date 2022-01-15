@@ -4,7 +4,6 @@ paginate: 5
 theme:
     - hugo-PaperMod
 
-publishDir: docs
 enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
@@ -16,6 +15,33 @@ enableEmoji: true
 minify:
     disableXML: true
     minifyOutput: true
+
+menu:
+    main:
+        - identifier: posts
+          name: Posts
+          url: posts
+          weight: 10
+        - identifier: doks
+          name: docs
+          url: doks
+          weight: 15
+        - identifier: archives
+          name: Archive
+          url: archives
+          weight: 20
+        - identifier: search
+          name: Search
+          url: search
+          weight: 30
+        - identifier: categories
+          name: Categories
+          url: categories
+          weight: 40
+        - identifier: tags
+          name: tags
+          url: tags
+          weight: 50
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -41,19 +67,6 @@ params:
     hideSummary: false
     showtoc: true
     tocopen: false
-
-
-    # hugo-book
-    BookTheme: "light"
-    BookToc: true
-    BookSection: docs
-    BookRepo: https://github.com/alex-shpak/hugo-book
-    BookDateFormat: <2022-01-15 Sat>
-    BookSearch: true
-    BookComments: true
-    BookPortableLinks: true
-    BookServiceWorker: true
-    BookTranslatedOnly: false
 
 
     assets:
@@ -82,8 +95,8 @@ params:
         buttons:
             - name: Posts
               url: posts
-            - name: Tags
-              url: tags
+            - name: Docs
+              url: doks
 
     # home-info mode
     homeInfoParams:
@@ -127,32 +140,6 @@ params:
         minMatchCharLength: 0
         keys: ["title", "permalink", "summary", "content"]
 
-menu:
-    main:
-        - identifier: posts
-          name: Posts
-          url: posts
-          weight: 10
-        - identifier: cheatsheet
-          name: CheatSheet
-          url: cheatsheet
-          weight: 15
-        - identifier: archives
-          name: Archive
-          url: archives
-          weight: 20
-        - identifier: search
-          name: Search
-          url: search
-          weight: 30
-        - identifier: categories
-          name: Categories
-          url: categories
-          weight: 40
-        - identifier: tags
-          name: tags
-          url: tags
-          weight: 50
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true

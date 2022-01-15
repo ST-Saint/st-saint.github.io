@@ -3,7 +3,6 @@ title: Yayu Wang
 paginate: 5
 theme:
     - hugo-PaperMod
-    - hugo-book
 
 publishDir: docs
 enableInlineShortcodes: true
