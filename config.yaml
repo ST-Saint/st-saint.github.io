@@ -16,33 +16,81 @@ enableEmoji: true
 minify:
     disableXML: true
     minifyOutput: true
+languages:
+    en:
+        languageName: "English"
+        baseURL: "https://st-saint.github.io/"
+        weight: 0
+        menu:
+            main:
+                - identifier: posts
+                  name: Posts
+                  url: posts
+                  weight: 10
+                - identifier: doks
+                  name: docs
+                  url: doks
+                  weight: 15
+                - identifier: archives
+                  name: Archive
+                  url: archives
+                  weight: 20
+                - identifier: search
+                  name: Search
+                  url: search
+                  weight: 30
+                - identifier: categories
+                  name: Categories
+                  url: categories
+                  weight: 40
+                - identifier: tags
+                  name: tags
+                  url: tags
+                  weight: 50
 
-menu:
-    main:
-        - identifier: posts
-          name: Posts
-          url: posts
-          weight: 10
-        - identifier: doks
-          name: docs
-          url: doks
-          weight: 15
-        - identifier: archives
-          name: Archive
-          url: archives
-          weight: 20
-        - identifier: search
-          name: Search
-          url: search
-          weight: 30
-        - identifier: categories
-          name: Categories
-          url: categories
-          weight: 40
-        - identifier: tags
-          name: tags
-          url: tags
-          weight: 50
+    doks:
+        languageName: ":doks:"
+        baseURL: "https://st-saint.github.io/doks"
+        weight: 1
+        contentDir: content/doks
+        # title: PaperModL2
+        # profileMode:
+        #     enabled: true
+        #     title: PaperMod
+        #     # imageUrl: "#"
+        #     # imageTitle: my image
+        #     # imageWidth: 120
+        #     # imageHeight: 120
+        #     subtitle: "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
+        #     buttons:
+        #         - name: Blog
+        #           url: posts
+        #         - name: Tags
+        #           url: tags
+        # menu:
+        #     main:
+        #         - name: Archive
+        #           url: archives/
+        #           weight: 5
+        #         - name: Tags
+        #           url: tags
+        #           weight: 10
+        #         - name: Categories
+        #           url: categories
+        #           weight: 10
+        #         - name: Series
+        #           url: series
+        #           weight: 10
+        #         - name: NullLink
+        #           url: "#"
+        #         - name: NullLink2
+        #           url: "#"
+        #         - name: NullLink3
+        #           url: "#"
+
+    #     homeInfoParams:
+    #         Title: "Hi there \U0001F44B"
+    #         Content: Welcome to RTL layout
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
