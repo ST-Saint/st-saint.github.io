@@ -1,6 +1,7 @@
 #+TITLE: Org Cheat Shell
 #+author:    ST-Saint
 #+email:     st.saint.wyy@gmail.com
+#+layout: cheatsheet
 #+SETUPFILE: /home/yayu/org/org-html-themes/org/theme-readtheorg-local.setup
 
 * configuration

@@ -3,7 +3,6 @@ title: Yayu Wang
 paginate: 5
 theme:
     - hugo-PaperMod
-    # - hugo-book
 
 publishDir: docs
 enableInlineShortcodes: true
@@ -26,7 +25,7 @@ params:
 
     author: ST_Saint
     images: []
-    DateFormat: <2022-01-14 Fri 21:03>
+    DateFormat: <2022-01-15 Sat>
 
     defaultTheme: auto # dark, light
     disableThemeToggle: false
@@ -42,6 +41,20 @@ params:
     hideSummary: false
     showtoc: true
     tocopen: false
+
+
+    # hugo-book
+    BookTheme: "light"
+    BookToc: true
+    BookSection: docs
+    BookRepo: https://github.com/alex-shpak/hugo-book
+    BookDateFormat: <2022-01-15 Sat>
+    BookSearch: true
+    BookComments: true
+    BookPortableLinks: true
+    BookServiceWorker: true
+    BookTranslatedOnly: false
+
 
     assets:
         disableHLJS: true # to disable highlight.js
@@ -120,6 +133,10 @@ menu:
           name: Posts
           url: posts
           weight: 10
+        - identifier: cheatsheet
+          name: CheatSheet
+          url: cheatsheet
+          weight: 15
         - identifier: archives
           name: Archive
           url: archives

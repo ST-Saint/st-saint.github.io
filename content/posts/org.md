@@ -1,8 +1,10 @@
-+++
-title = "Org Cheat Shell"
-author = ["ST-Saint"]
-draft = false
-+++
+---
+title: "Org Cheat Shell"
+author: ["ST-Saint"]
+draft: false
+date: <2022-01-15 Sat>
+layout: cheatsheet
+---
 
 ## configuration {#configuration}
 
@@ -129,8 +131,6 @@ draft = false
 ```emacs-lisp
 ("C-c C-c" 'org-ctrl-c-ctrl-c)
 ```
-
-[cpp test file](~/Project/Cpp/test.cpp)
 
 
 ## agenda {#agenda}
