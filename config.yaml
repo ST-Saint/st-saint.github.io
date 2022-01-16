@@ -28,7 +28,7 @@ languages:
                   url: posts
                   weight: 10
                 - identifier: doks
-                  name: docs
+                  name: Docs
                   url: doks
                   weight: 15
                 - identifier: archives
