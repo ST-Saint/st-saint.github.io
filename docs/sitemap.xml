@@ -6,6 +6,21 @@
   </url><url>
     <loc>https://st-saint.github.io/posts/papermod/papermod-features/</loc>
   </url><url>
+    <loc>https://st-saint.github.io/posts/papermod/papermod-faq/</loc>
+  </url><url>
+    <loc>https://st-saint.github.io/posts/papermod/papermod-icons/</loc>
+  </url><url>
+    <loc>https://st-saint.github.io/posts/papermod/papermod-variables/</loc>
+  </url><url>
+    <loc>https://st-saint.github.io/posts/hugo/</loc>
+    <lastmod>2022-01-28T23:05:33+08:00</lastmod>
+  </url><url>
+    <loc>https://st-saint.github.io/posts/</loc>
+    <lastmod>2022-01-28T23:05:33+08:00</lastmod>
+  </url><url>
+    <loc>https://st-saint.github.io/</loc>
+    <lastmod>2022-01-28T23:05:33+08:00</lastmod>
+  </url><url>
     <loc>https://st-saint.github.io/archives.doks/</loc>
   </url><url>
     <loc>https://st-saint.github.io/archives/</loc>
@@ -18,8 +33,6 @@
   </url><url>
     <loc>https://st-saint.github.io/posts/papermod/</loc>
   </url><url>
-    <loc>https://st-saint.github.io/posts/</loc>
-  </url><url>
     <loc>https://st-saint.github.io/search/</loc>
   </url><url>
     <loc>https://st-saint.github.io/search.fr/</loc>
@@ -27,7 +40,5 @@
     <loc>https://st-saint.github.io/series/</loc>
   </url><url>
     <loc>https://st-saint.github.io/tags/</loc>
-  </url><url>
-    <loc>https://st-saint.github.io/</loc>
   </url>
 </urlset>

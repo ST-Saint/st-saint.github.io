@@ -9,5 +9,5 @@
 # end
 
 build:
-	hugo; \
-	cd doks && hugo -d ../docs/doks
+	hugo -D; \
+	cd doks && hugo -D -d ../docs/doks
