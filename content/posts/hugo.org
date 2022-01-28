@@ -1,6 +1,9 @@
 ---
 title: "Hugo"
+summary: hugo things
 date: Fri, 28 Jan 2022 23:05:33 +0800
+tags: ["hugo"]
+categories: ["hugo"]
 draft: true
 ---
 
