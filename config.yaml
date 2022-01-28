@@ -1,6 +1,6 @@
 baseURL: "https://st-saint.github.io/"
 title: Yayu Wang
-paginate: 5
+paginate: 6
 theme:
     - hugo-PaperMod
 
@@ -19,7 +19,7 @@ minify:
 languages:
     en:
         languageName: "English"
-        baseURL: "https://st-saint.github.io/"
+        # baseURL: "https://st-saint.github.io/"
         weight: 0
         menu:
             main:
@@ -44,49 +44,49 @@ languages:
                   url: categories
                   weight: 40
                 - identifier: tags
-                  name: tags
+                  name: Tags
                   url: tags
                   weight: 50
 
-    doks:
-        languageName: ":doks:"
-        baseURL: "https://st-saint.github.io/doks"
-        weight: 1
-        contentDir: content/doks
-        # title: PaperModL2
-        # profileMode:
-        #     enabled: true
-        #     title: PaperMod
-        #     # imageUrl: "#"
-        #     # imageTitle: my image
-        #     # imageWidth: 120
-        #     # imageHeight: 120
-        #     subtitle: "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
-        #     buttons:
-        #         - name: Blog
-        #           url: posts
-        #         - name: Tags
-        #           url: tags
-        # menu:
-        #     main:
-        #         - name: Archive
-        #           url: archives/
-        #           weight: 5
-        #         - name: Tags
-        #           url: tags
-        #           weight: 10
-        #         - name: Categories
-        #           url: categories
-        #           weight: 10
-        #         - name: Series
-        #           url: series
-        #           weight: 10
-        #         - name: NullLink
-        #           url: "#"
-        #         - name: NullLink2
-        #           url: "#"
-        #         - name: NullLink3
-        #           url: "#"
+    # doks:
+    #     languageName: ":doks:"
+    #     baseURL: "https://st-saint.github.io/doks"
+    #     weight: 1
+    #     contentDir: content/doks
+    #     title: PaperModL2
+    #     profileMode:
+    #         enabled: true
+    #         title: PaperMod
+    #         # imageUrl: "#"
+    #         # imageTitle: my image
+    #         # imageWidth: 120
+    #         # imageHeight: 120
+    #         subtitle: "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
+    #         buttons:
+    #             - name: Blog
+    #               url: posts
+    #             - name: Tags
+    #               url: tags
+    #     menu:
+    #         main:
+    #             - name: Archive
+    #               url: archives/
+    #               weight: 5
+    #             - name: Tags
+    #               url: tags
+    #               weight: 10
+    #             - name: Categories
+    #               url: categories
+    #               weight: 10
+    #             - name: Series
+    #               url: series
+    #               weight: 10
+    #             - name: NullLink
+    #               url: "#"
+    #             - name: NullLink2
+    #               url: "#"
+    #             - name: NullLink3
+    #               url: "#"
 
     #     homeInfoParams:
     #         Title: "Hi there \U0001F44B"
@@ -100,7 +100,8 @@ params:
 
     author: ST_Saint
     images: []
-    DateFormat: <2022-01-15 Sat>
+    DateFormat: "Jan 02, 2006  Mon 15:04"
+
 
     defaultTheme: auto # dark, light
     disableThemeToggle: false

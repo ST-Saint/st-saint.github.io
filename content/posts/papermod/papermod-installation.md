@@ -6,6 +6,7 @@ weight: 1
 aliases: ["/papermod-installation"]
 tags: ["PaperMod"]
 author: "Aditya Telange"
+date: <2022-01-28 Fri>
 ---
 
 ## Intro
