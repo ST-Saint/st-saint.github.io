@@ -1,0 +1,23 @@
+:root {
+  --main-width: 960px;
+}
+.post-content table {
+  border: 2px solid grey;
+  display: table;
+}
+
+.post-content table td {
+  border: 1px solid #dddddd;
+  font-size: 16px;
+}
+
+.post-content table th {
+  border: 1px solid #dddddd;
+  font-size: 18px;
+  text-align: start;
+  background-color: #f5f5f5;
+}
+
+/* .post-content table tr:hover { */
+/*   background-color: #dddddd; */
+/* } */

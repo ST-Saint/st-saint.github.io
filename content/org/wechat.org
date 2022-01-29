@@ -1,0 +1,8 @@
+#+TITLE: Wechat
+#+tags[]： [diary, wechat]
+
+* WX的十宗罪
++ 说实话啊， wx真nmd是个畜生啊
+
+** 战犯日志
++ <2023-01-20 Sun> windows wx一天闪退 10 次

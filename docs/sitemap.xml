@@ -33,9 +33,11 @@
     <loc>https://st-saint.github.io/</loc>
     <lastmod>2022-01-28T23:05:33+08:00</lastmod>
   </url><url>
-    <loc>https://st-saint.github.io/archives.doks/</loc>
-  </url><url>
     <loc>https://st-saint.github.io/archives/</loc>
+  </url><url>
+    <loc>https://st-saint.github.io/tags/diary/</loc>
+  </url><url>
+    <loc>https://st-saint.github.io/org/</loc>
   </url><url>
     <loc>https://st-saint.github.io/tags/papermod/</loc>
   </url><url>
@@ -45,8 +47,12 @@
   </url><url>
     <loc>https://st-saint.github.io/search/</loc>
   </url><url>
-    <loc>https://st-saint.github.io/search.fr/</loc>
-  </url><url>
     <loc>https://st-saint.github.io/series/</loc>
+  </url><url>
+    <loc>https://st-saint.github.io/org/wechat/</loc>
+  </url><url>
+    <loc>https://st-saint.github.io/posts/diary/wechat/</loc>
+  </url><url>
+    <loc>https://st-saint.github.io/tags/wechat/</loc>
   </url>
 </urlset>

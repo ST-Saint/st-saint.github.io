@@ -7,11 +7,23 @@ categories: ["hugo"]
 draft: true
 ---
 
+* org
++ 理论上原生支持org, 好像直接解释为markdown了
++ 分割线
+  + 需要5个 ~dash -~
+
+-----
 
 * 使用不同主题
 + hugo 并不支持在一个site中使用多个theme
 ** Solution
 + 在不同子路径下创建多个仓库生成不同站点，生成到同一个public目录下
+
+-----
+
+* css
++ 与theme相关
++ 一般直接在assets/
 
 * DateFormat
 + 折磨
@@ -41,7 +53,9 @@ const (
 + 在 ~config.yaml~ 中可以设置 ~DateFormat~, format 格式为
   + example: =DateFormat: "Jan 02, 2006  Mon 15:04"=
 
+#+ATTR_HTML: :class table
 | *Format Symbol* | *Description*                                                      | *Value*                  |
+|-----------------+--------------------------------------------------------------------+--------------------------|
 |          Monday | A full textual representation of the day of the week               | Monday through Sunday    |
 |             Mon | A textual representation of a day, three letters                   | Mon through Sun          |
 |            2006 | A full numeric representation of a year, 4 digits                  | 2017 or 1986             |

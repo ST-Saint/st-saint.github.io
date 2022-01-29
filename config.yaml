@@ -106,7 +106,7 @@ params:
     defaultTheme: auto # dark, light
     disableThemeToggle: false
     ShowShareButtons: true
-    ShowReadingTime: true
+    ShowReadingTime: false
     ShowPostNavLinks: true
     ShowBreadCrumbs: true
     ShowCodeCopyButtons: true
