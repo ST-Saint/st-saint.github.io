@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://st-saint.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -30,7 +30,7 @@
 <meta name=twitter:title content="Hugo">
 <meta name=twitter:description content="hugo things">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://st-saint.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Hugo","item":"https://st-saint.github.io/posts/hugo/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hugo","name":"Hugo","description":"hugo things","keywords":["hugo"],"articleBody":" org    理论上原生支持org, 好像直接解释为markdown了\n  分割线\n  需要5个 dash -\n       使用不同主题    hugo 并不支持在一个site中使用多个theme\n  Solution    在不同子路径下创建多个仓库生成不同站点，生成到同一个public目录下\n       css    与theme相关\n  一般直接在assets/\n    DateFormat    折磨\n  文章 date 字段需要是以下格式\n  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const ( Layout = \"01/02 03:04:05PM '06 -0700\" // The reference time, in numerical order. \tANSIC = \"Mon Jan _2 15:04:05 2006\" UnixDate = \"Mon Jan _2 15:04:05 MST 2006\" RubyDate = \"Mon Jan 02 15:04:05 -0700 2006\" RFC822 = \"02 Jan 06 15:04 MST\" RFC822Z = \"02 Jan 06 15:04 -0700\" // RFC822 with numeric zone \tRFC850 = \"Monday, 02-Jan-06 15:04:05 MST\" RFC1123 = \"Mon, 02 Jan 2006 15:04:05 MST\" RFC1123Z = \"Mon, 02 Jan 2006 15:04:05 -0700\" // RFC1123 with numeric zone \tRFC3339 = \"2006-01-02T15:04:05Z07:00\" RFC3339Nano = \"2006-01-02T15:04:05.999999999Z07:00\" Kitchen = \"3:04PM\" // Handy time stamps. \tStamp = \"Jan _2 15:04:05\" StampMilli = \"Jan _2 15:04:05.000\" StampMicro = \"Jan _2 15:04:05.000000\" StampNano = \"Jan _2 15:04:05.000000000\" )      在 config.yaml 中可以设置 DateFormat, format 格式为\n  example: DateFormat: \"Jan 02, 2006 Mon 15:04\"\n      Format Symbol Description Value     Monday A full textual representation of the day of the week Monday through Sunday   Mon A textual representation of a day, three letters Mon through Sun   2006 A full numeric representation of a year, 4 digits 2017 or 1986   06 A two digit representation of a year 17 or 86   January A full textual representation of a month, such as January or March January through December   Jan A short textual representation of a month, three letters January through December   01 Numeric representation of a month, with leading zeros 01 through 12   1 Numeric representation of a month, without leading zeros 1 through 12   02 Day of the month, 2 digits with leading zeros 01 through 31   15 24-hour format of an hour with leading zeros 00 through 24   3 12-hour format of an hour without leading zeros 1 through 12   03 12-hour format of an hour with leading zeros 01 through 12   PM Indicator if AM or PM AM or PM   4 Minutes without leading zeros 1 through 59   04 Minutes with leading zeros 01 through 59   5 Seconds, without leading zeros 1 through 59   05 Seconds, with leading zeros 01 through 59   MST Timezone Example: UTC, MST   -0700 Difference to GMT as ±hhmm +0000   -07:00 Difference to GMT as ±hh:mm +00:00   -07 Difference to GMT as ±hh +00   Z0700 Difference to GMT as Z or ±hhmm Z or ±hhmm   Z07:00 Difference to GMT as Z or ±hh:mm Z or ±hh:mm   Z07 Difference to GMT as Z or ±hh Z or ±hh      ","wordCount":"426","inLanguage":"en","datePublished":"2022-01-28T23:05:33+08:00","dateModified":"2022-01-28T23:05:33+08:00","author":{"@type":"Person","name":"ST_Saint"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://st-saint.github.io/posts/hugo/"},"publisher":{"@type":"Organization","name":"Yayu Wang","logo":{"@type":"ImageObject","url":"https://st-saint.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hugo","name":"Hugo","description":"hugo things","keywords":["hugo"],"articleBody":" org   理论上原生支持org, 好像直接解释为markdown了  分割线\n 需要5个 dash -       使用不同主题   hugo 并不支持在一个site中使用多个theme  Solution   在不同子路径下创建多个仓库生成不同站点，生成到同一个public目录下       css   与theme相关 一般直接在assets/    DateFormat   折磨 文章 date 字段需要是以下格式  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const ( Layout = \"01/02 03:04:05PM '06 -0700\" // The reference time, in numerical order. \tANSIC = \"Mon Jan _2 15:04:05 2006\" UnixDate = \"Mon Jan _2 15:04:05 MST 2006\" RubyDate = \"Mon Jan 02 15:04:05 -0700 2006\" RFC822 = \"02 Jan 06 15:04 MST\" RFC822Z = \"02 Jan 06 15:04 -0700\" // RFC822 with numeric zone \tRFC850 = \"Monday, 02-Jan-06 15:04:05 MST\" RFC1123 = \"Mon, 02 Jan 2006 15:04:05 MST\" RFC1123Z = \"Mon, 02 Jan 2006 15:04:05 -0700\" // RFC1123 with numeric zone \tRFC3339 = \"2006-01-02T15:04:05Z07:00\" RFC3339Nano = \"2006-01-02T15:04:05.999999999Z07:00\" Kitchen = \"3:04PM\" // Handy time stamps. \tStamp = \"Jan _2 15:04:05\" StampMilli = \"Jan _2 15:04:05.000\" StampMicro = \"Jan _2 15:04:05.000000\" StampNano = \"Jan _2 15:04:05.000000000\" )      在 config.yaml 中可以设置 DateFormat, format 格式为\n example: DateFormat: \"Jan 02, 2006 Mon 15:04\"      Format Symbol Description Value     Monday A full textual representation of the day of the week Monday through Sunday   Mon A textual representation of a day, three letters Mon through Sun   2006 A full numeric representation of a year, 4 digits 2017 or 1986   06 A two digit representation of a year 17 or 86   January A full textual representation of a month, such as January or March January through December   Jan A short textual representation of a month, three letters January through December   01 Numeric representation of a month, with leading zeros 01 through 12   1 Numeric representation of a month, without leading zeros 1 through 12   02 Day of the month, 2 digits with leading zeros 01 through 31   15 24-hour format of an hour with leading zeros 00 through 24   3 12-hour format of an hour without leading zeros 1 through 12   03 12-hour format of an hour with leading zeros 01 through 12   PM Indicator if AM or PM AM or PM   4 Minutes without leading zeros 1 through 59   04 Minutes with leading zeros 01 through 59   5 Seconds, without leading zeros 1 through 59   05 Seconds, with leading zeros 01 through 59   MST Timezone Example: UTC, MST   -0700 Difference to GMT as ±hhmm +0000   -07:00 Difference to GMT as ±hh:mm +00:00   -07 Difference to GMT as ±hh +00   Z0700 Difference to GMT as Z or ±hhmm Z or ±hhmm   Z07:00 Difference to GMT as Z or ±hh:mm Z or ±hh:mm   Z07 Difference to GMT as Z or ±hh Z or ±hh      ","wordCount":"426","inLanguage":"en","datePublished":"2022-01-28T23:05:33+08:00","dateModified":"2022-01-28T23:05:33+08:00","author":{"@type":"Person","name":"ST_Saint"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://st-saint.github.io/posts/hugo/"},"publisher":{"@type":"Organization","name":"Yayu Wang","logo":{"@type":"ImageObject","url":"https://st-saint.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -94,15 +94,11 @@ org
 </h2>
 <div id=outline-text-headline-1 class=outline-text-2>
 <ul>
-<li>
-<p>理论上原生支持org, 好像直接解释为markdown了</p>
-</li>
+<li>理论上原生支持org, 好像直接解释为markdown了</li>
 <li>
 <p>分割线</p>
 <ul>
-<li>
-<p>需要5个 <code>dash -</code></p>
-</li>
+<li>需要5个 <code>dash -</code></li>
 </ul>
 </li>
 </ul>
@@ -115,9 +111,7 @@ org
 </h2>
 <div id=outline-text-headline-2 class=outline-text-2>
 <ul>
-<li>
-<p>hugo 并不支持在一个site中使用多个theme</p>
-</li>
+<li>hugo 并不支持在一个site中使用多个theme</li>
 </ul>
 <div id=outline-container-headline-3 class=outline-3>
 <h3 id=headline-3>
@@ -125,9 +119,7 @@ Solution
 </h3>
 <div id=outline-text-headline-3 class=outline-text-3>
 <ul>
-<li>
-<p>在不同子路径下创建多个仓库生成不同站点，生成到同一个public目录下</p>
-</li>
+<li>在不同子路径下创建多个仓库生成不同站点，生成到同一个public目录下</li>
 </ul>
 <hr>
 </div>
@@ -140,12 +132,8 @@ css
 </h2>
 <div id=outline-text-headline-4 class=outline-text-2>
 <ul>
-<li>
-<p>与theme相关</p>
-</li>
-<li>
-<p>一般直接在assets/</p>
-</li>
+<li>与theme相关</li>
+<li>一般直接在assets/</li>
 </ul>
 </div>
 </div>
@@ -155,12 +143,8 @@ DateFormat
 </h2>
 <div id=outline-text-headline-5 class=outline-text-2>
 <ul>
-<li>
-<p>折磨</p>
-</li>
-<li>
-<p>文章 <code>date</code> 字段需要是以下格式</p>
-</li>
+<li>折磨</li>
+<li>文章 <code>date</code> 字段需要是以下格式</li>
 </ul>
 <div class="src src-go">
 <div class=highlight><div style=color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
@@ -212,9 +196,7 @@ DateFormat
 <li>
 <p>在 <code>config.yaml</code> 中可以设置 <code>DateFormat</code>, format 格式为</p>
 <ul>
-<li>
-<p>example: <code class=verbatim>DateFormat: "Jan 02, 2006 Mon 15:04"</code></p>
-</li>
+<li>example: <code class=verbatim>DateFormat: "Jan 02, 2006 Mon 15:04"</code></li>
 </ul>
 </li>
 </ul>
