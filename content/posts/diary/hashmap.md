@@ -1,11 +1,11 @@
-+++
-title = "Hashmap"
-author = ["ST-Saint"]
-draft = false
-date = "Tue, 01 Feb 2022 22:14:25 +0800"
-categories = ["diary"]
-tags = ["diary", "hash"]
-+++
+---
+title: "Hashmap"
+author: ["ST-Saint"]
+draft: false
+date: "Tue, 01 Feb 2022 22:14:25 +0800"
+tags: ["diary", "hash"]
+categories: "diary"
+---
 
 ## Hashmap {#hashmap}
 

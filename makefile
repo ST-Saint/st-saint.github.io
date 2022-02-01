@@ -11,4 +11,4 @@
 build:
 	rm -r ./docs ; \
 	hugo -D ; \
-	cd doks && hugo -D -d ../docs/doks
+	cd doks && hugo --gc --minify -D -d ../docs/doks
