@@ -1,18 +1,18 @@
 :root {
-  --main-width: 960px;
+  --main-width: 760px;
 }
 .post-content table {
-  border: 2px solid grey;
+  /* border: 2px solid grey; */
   display: table;
 }
 
 .post-content table td {
-  border: 1px solid #dddddd;
+  /* border: 1px solid #dddddd; */
   font-size: 16px;
 }
 
 .post-content table th {
-  border: 1px solid #dddddd;
+  /* border-bottom: 2px solid black; */
   font-size: 18px;
   text-align: start;
   background-color: #f5f5f5;

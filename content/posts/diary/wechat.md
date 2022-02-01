@@ -3,6 +3,7 @@ title = "Wechat"
 author = ["ST-Saint"]
 draft = false
 tags = ["diary", "wechat"]
+date = "Fri, 28 Jan 2022 14:14:25 +0800"
 summary = "说实话嗷，wx真不是个人啊"
 +++
 
