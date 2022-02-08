@@ -23,32 +23,5 @@
       <description>Learn About All Features in PaperMod</description>
     </item>
     
-    <item>
-      <title>FAQs</title>
-      <link>https://st-saint.github.io/posts/papermod/papermod-faq/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/papermod/papermod-faq/</guid>
-      <description>Frequently Asked Questions</description>
-    </item>
-    
-    <item>
-      <title>Icons</title>
-      <link>https://st-saint.github.io/posts/papermod/papermod-icons/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/papermod/papermod-icons/</guid>
-      <description>List of all Icons supported by PaperMod</description>
-    </item>
-    
-    <item>
-      <title>Variables | Front Matter</title>
-      <link>https://st-saint.github.io/posts/papermod/papermod-variables/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/papermod/papermod-variables/</guid>
-      <description>List of Front Matter variables used by PaperMod</description>
-    </item>
-    
   </channel>
 </rss>

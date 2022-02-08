@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>diary on Yayu Wang</title>
-    <link>https://st-saint.github.io/tags/diary/</link>
-    <description>Recent content in diary on Yayu Wang</description>
+    <title>Diary on Yayu Wang</title>
+    <link>https://st-saint.github.io/posts/diary/</link>
+    <description>Recent content in Diary on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 01 Feb 2022 22:14:25 +0800</lastBuildDate><atom:link href="https://st-saint.github.io/tags/diary/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Feb 2022 16:22:35 +0800</lastBuildDate><atom:link href="https://st-saint.github.io/posts/diary/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hashmap</title>
       <link>https://st-saint.github.io/posts/diary/hashmap/</link>

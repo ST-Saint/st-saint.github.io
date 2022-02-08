@@ -100,8 +100,7 @@ params:
 
     author: ST_Saint
     images: []
-    DateFormat: "Jan 02, 2006  Mon 15:04"
-
+    DateFormat: "< 2006-01-02 Fri 15:04 >"
 
     defaultTheme: auto # dark, light
     disableThemeToggle: false

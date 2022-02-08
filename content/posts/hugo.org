@@ -4,15 +4,27 @@ summary: hugo things
 date: Fri, 28 Jan 2022 23:05:33 +0800
 tags: ["hugo"]
 categories: ["hugo"]
-draft: true
 ---
 
 * org
 + 理论上原生支持org, 好像直接解释为markdown了
 + 分割线
   + 需要5个 ~dash -~
-
 -----
+** =Front matter=
++ 是个啥呢
+  + =#+__property__: __value__=
++ 这样设置一些属性
+*** example
+#+begin_src org
+#+date: Fri, 28 Jan 2022 23:05:33 +0800
+#+summary: hugo things
+#+tags[]: tagA tagB
+#+categories[] catA catB
+#+end_src
+** FIXME TOC
++ ORG 的 TOC 好像有点问题
++ 不过是根据 ~theme~ 来的，所以应该还好
 
 * 使用不同主题
 + hugo 并不支持在一个site中使用多个theme
@@ -24,6 +36,15 @@ draft: true
 * css
 + 与theme相关
 + 一般直接在assets/
+
++ 想给 =<h1>= 前加个 =<hr>= 加不上..
+
+** font
++ 不是很好看
++ 准备换一下
++ header 也改一下
+
++ 找不到好看字体摆烂了，直接 ~system ui~
 
 * DateFormat
 + 折磨
