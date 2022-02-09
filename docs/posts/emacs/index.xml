@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>emacs on Yayu Wang</title>
+    <link>https://st-saint.github.io/posts/emacs/</link>
+    <description>Recent content in emacs on Yayu Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 09 Feb 2022 21:48:19 +0800</lastBuildDate><atom:link href="https://st-saint.github.io/posts/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calendar</title>
+      <link>https://st-saint.github.io/posts/emacs/calendar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/emacs/calendar/</guid>
+      <description> calfw    A calendar framework for Emacs
+  org-gcal - Synchronization with google calenda  google cloud calendar    could api 改版了真的好难用, 文档给的也过时了
+  还是勉勉强强按文档同步了, project 测试版就可以用
+    sync    直接 org-ical-sync 就可以fetch，但是怎么push呢
+  在 org-heading 上 call org-gcal-post-at-point 加个 properties, schedule 也会被写到 properties, 感觉差不多能用
+    TODO auto archive    之后再研究一下
+        </description>
+    </item>
+    
+  </channel>
+</rss>
