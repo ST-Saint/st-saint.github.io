@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>emacs on Yayu Wang</title>
-    <link>https://st-saint.github.io/posts/emacs/</link>
+    <link>https://st-saint.github.io/tags/emacs/</link>
     <description>Recent content in emacs on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 09 Feb 2022 21:48:19 +0800</lastBuildDate><atom:link href="https://st-saint.github.io/posts/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Feb 2022 00:14:23 +0800</lastBuildDate><atom:link href="https://st-saint.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Calendar</title>
       <link>https://st-saint.github.io/posts/emacs/calendar/</link>

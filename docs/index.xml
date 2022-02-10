@@ -5,7 +5,7 @@
     <link>https://st-saint.github.io/</link>
     <description>Recent content on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 09 Feb 2022 21:48:19 +0800</lastBuildDate><atom:link href="https://st-saint.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Feb 2022 00:14:23 +0800</lastBuildDate><atom:link href="https://st-saint.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installation | Update</title>
       <link>https://st-saint.github.io/posts/papermod/papermod-installation/</link>
@@ -22,6 +22,21 @@
       
       <guid>https://st-saint.github.io/posts/papermod/papermod-features/</guid>
       <description>Learn About All Features in PaperMod</description>
+    </item>
+    
+    <item>
+      <title>Calendar</title>
+      <link>https://st-saint.github.io/posts/emacs/calendar/</link>
+      <pubDate>Fri, 11 Feb 2022 00:14:23 +0800</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/emacs/calendar/</guid>
+      <description>calfw    A calendar framework for Emacs
+  org-gcal - Synchronization with google calenda    老项目不维护了, 新地址 org-gcal
+  google cloud calendar    could api 改版了真的好难用, 文档给的也过时了
+  还是勉勉强强按文档同步了, project 测试版就可以用
+    sync    直接 org-ical-sync 就可以fetch，但是怎么push呢
+  在 org-heading 上 call org-gcal-post-at-point 加个 properties, schedule 也会被写到 properties, 感觉差不多能用
+  有个小问题是，sync一次之后，老是出现 rx--translate-bounded-repetition: rx ‘**’ range error</description>
     </item>
     
     <item>
@@ -59,21 +74,6 @@
       <description>hugo things</description>
     </item>
     
-    
-    <item>
-      <title>Calendar</title>
-      <link>https://st-saint.github.io/posts/emacs/calendar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/emacs/calendar/</guid>
-      <description> calfw    A calendar framework for Emacs
-  org-gcal - Synchronization with google calenda  google cloud calendar    could api 改版了真的好难用, 文档给的也过时了
-  还是勉勉强强按文档同步了, project 测试版就可以用
-    sync    直接 org-ical-sync 就可以fetch，但是怎么push呢
-  在 org-heading 上 call org-gcal-post-at-point 加个 properties, schedule 也会被写到 properties, 感觉差不多能用
-    TODO auto archive    之后再研究一下
-        </description>
-    </item>
     
     
   </channel>
