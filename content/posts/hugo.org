@@ -22,9 +22,10 @@ categories: ["hugo"]
 #+tags[]: tagA tagB
 #+categories[] catA catB
 #+end_src
-** FIXME TOC
-+ ORG 的 TOC 好像有点问题
-+ 不过是根据 ~theme~ 来的，所以应该还好
+** TOC
++ +ORG 的 TOC 好像有点问题+
++ +不过是根据 theme 来的，所以应该还好+
++ _*<2022-02-23 Wed> UPDATE*_ toc 直接 ={{ .TableofContents }}= 就可以生成
 
 * 使用不同主题
 + hugo 并不支持在一个site中使用多个theme

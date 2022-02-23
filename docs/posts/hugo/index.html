@@ -30,7 +30,7 @@
 <meta name=twitter:title content="Hugo">
 <meta name=twitter:description content="hugo things">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://st-saint.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Hugo","item":"https://st-saint.github.io/posts/hugo/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hugo","name":"Hugo","description":"hugo things","keywords":["hugo"],"articleBody":" org    理论上原生支持org, 好像直接解释为markdown了\n  分割线\n  需要5个 dash -\n     Front matter    是个啥呢\n  #+__property__: __value__\n    这样设置一些属性\n  example  1 2 3 4  #+date: Fri, 28 Jan 2022 23:05:33 +0800 #+summary: hugo things #+tags[]: tagA tagB #+categories[] catA catB        FIXME TOC    ORG 的 TOC 好像有点问题\n  不过是根据 theme 来的，所以应该还好\n      使用不同主题    hugo 并不支持在一个site中使用多个theme\n  Solution    在不同子路径下创建多个仓库生成不同站点，生成到同一个public目录下\n       css    与theme相关\n  一般直接在assets/\n  想给  前加个  加不上..\n  font    不是很好看\n  准备换一下\n  header 也改一下\n  找不到好看字体摆烂了，直接 system ui\n      DateFormat    折磨\n  文章 date 字段需要是以下格式\n  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const ( Layout = \"01/02 03:04:05PM '06 -0700\" // The reference time, in numerical order. \tANSIC = \"Mon Jan _2 15:04:05 2006\" UnixDate = \"Mon Jan _2 15:04:05 MST 2006\" RubyDate = \"Mon Jan 02 15:04:05 -0700 2006\" RFC822 = \"02 Jan 06 15:04 MST\" RFC822Z = \"02 Jan 06 15:04 -0700\" // RFC822 with numeric zone \tRFC850 = \"Monday, 02-Jan-06 15:04:05 MST\" RFC1123 = \"Mon, 02 Jan 2006 15:04:05 MST\" RFC1123Z = \"Mon, 02 Jan 2006 15:04:05 -0700\" // RFC1123 with numeric zone \tRFC3339 = \"2006-01-02T15:04:05Z07:00\" RFC3339Nano = \"2006-01-02T15:04:05.999999999Z07:00\" Kitchen = \"3:04PM\" // Handy time stamps. \tStamp = \"Jan _2 15:04:05\" StampMilli = \"Jan _2 15:04:05.000\" StampMicro = \"Jan _2 15:04:05.000000\" StampNano = \"Jan _2 15:04:05.000000000\" )      在 config.yaml 中可以设置 DateFormat, format 格式为\n  example: DateFormat: \"Jan 02, 2006 Mon 15:04\"\n      Format Symbol Description Value     Monday A full textual representation of the day of the week Monday through Sunday   Mon A textual representation of a day, three letters Mon through Sun   2006 A full numeric representation of a year, 4 digits 2017 or 1986   06 A two digit representation of a year 17 or 86   January A full textual representation of a month, such as January or March January through December   Jan A short textual representation of a month, three letters January through December   01 Numeric representation of a month, with leading zeros 01 through 12   1 Numeric representation of a month, without leading zeros 1 through 12   02 Day of the month, 2 digits with leading zeros 01 through 31   15 24-hour format of an hour with leading zeros 00 through 24   3 12-hour format of an hour without leading zeros 1 through 12   03 12-hour format of an hour with leading zeros 01 through 12   PM Indicator if AM or PM AM or PM   4 Minutes without leading zeros 1 through 59   04 Minutes with leading zeros 01 through 59   5 Seconds, without leading zeros 1 through 59   05 Seconds, with leading zeros 01 through 59   MST Timezone Example: UTC, MST   -0700 Difference to GMT as ±hhmm +0000   -07:00 Difference to GMT as ±hh:mm +00:00   -07 Difference to GMT as ±hh +00   Z0700 Difference to GMT as Z or ±hhmm Z or ±hhmm   Z07:00 Difference to GMT as Z or ±hh:mm Z or ±hh:mm   Z07 Difference to GMT as Z or ±hh Z or ±hh      ","wordCount":"475","inLanguage":"en","datePublished":"2022-01-28T23:05:33+08:00","dateModified":"2022-01-28T23:05:33+08:00","author":{"@type":"Person","name":"ST_Saint"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://st-saint.github.io/posts/hugo/"},"publisher":{"@type":"Organization","name":"Yayu Wang","logo":{"@type":"ImageObject","url":"https://st-saint.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hugo","name":"Hugo","description":"hugo things","keywords":["hugo"],"articleBody":" org    理论上原生支持org, 好像直接解释为markdown了\n  分割线\n  需要5个 dash -\n     Front matter    是个啥呢\n  #+__property__: __value__\n    这样设置一些属性\n  example  1 2 3 4  #+date: Fri, 28 Jan 2022 23:05:33 +0800 #+summary: hugo things #+tags[]: tagA tagB #+categories[] catA catB        TOC    ORG 的 TOC 好像有点问题\n  不过是根据 theme 来的，所以应该还好\n   UPDATE toc 直接 {{ .TableofContents }} 就可以生成\n      使用不同主题    hugo 并不支持在一个site中使用多个theme\n  Solution    在不同子路径下创建多个仓库生成不同站点，生成到同一个public目录下\n       css    与theme相关\n  一般直接在assets/\n  想给  前加个  加不上..\n  font    不是很好看\n  准备换一下\n  header 也改一下\n  找不到好看字体摆烂了，直接 system ui\n      DateFormat    折磨\n  文章 date 字段需要是以下格式\n  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const ( Layout = \"01/02 03:04:05PM '06 -0700\" // The reference time, in numerical order. \tANSIC = \"Mon Jan _2 15:04:05 2006\" UnixDate = \"Mon Jan _2 15:04:05 MST 2006\" RubyDate = \"Mon Jan 02 15:04:05 -0700 2006\" RFC822 = \"02 Jan 06 15:04 MST\" RFC822Z = \"02 Jan 06 15:04 -0700\" // RFC822 with numeric zone \tRFC850 = \"Monday, 02-Jan-06 15:04:05 MST\" RFC1123 = \"Mon, 02 Jan 2006 15:04:05 MST\" RFC1123Z = \"Mon, 02 Jan 2006 15:04:05 -0700\" // RFC1123 with numeric zone \tRFC3339 = \"2006-01-02T15:04:05Z07:00\" RFC3339Nano = \"2006-01-02T15:04:05.999999999Z07:00\" Kitchen = \"3:04PM\" // Handy time stamps. \tStamp = \"Jan _2 15:04:05\" StampMilli = \"Jan _2 15:04:05.000\" StampMicro = \"Jan _2 15:04:05.000000\" StampNano = \"Jan _2 15:04:05.000000000\" )      在 config.yaml 中可以设置 DateFormat, format 格式为\n  example: DateFormat: \"Jan 02, 2006 Mon 15:04\"\n      Format Symbol Description Value     Monday A full textual representation of the day of the week Monday through Sunday   Mon A textual representation of a day, three letters Mon through Sun   2006 A full numeric representation of a year, 4 digits 2017 or 1986   06 A two digit representation of a year 17 or 86   January A full textual representation of a month, such as January or March January through December   Jan A short textual representation of a month, three letters January through December   01 Numeric representation of a month, with leading zeros 01 through 12   1 Numeric representation of a month, without leading zeros 1 through 12   02 Day of the month, 2 digits with leading zeros 01 through 31   15 24-hour format of an hour with leading zeros 00 through 24   3 12-hour format of an hour without leading zeros 1 through 12   03 12-hour format of an hour with leading zeros 01 through 12   PM Indicator if AM or PM AM or PM   4 Minutes without leading zeros 1 through 59   04 Minutes with leading zeros 01 through 59   5 Seconds, without leading zeros 1 through 59   05 Seconds, with leading zeros 01 through 59   MST Timezone Example: UTC, MST   -0700 Difference to GMT as ±hhmm +0000   -07:00 Difference to GMT as ±hh:mm +00:00   -07 Difference to GMT as ±hh +00   Z0700 Difference to GMT as Z or ±hhmm Z or ±hhmm   Z07:00 Difference to GMT as Z or ±hh:mm Z or ±hh:mm   Z07 Difference to GMT as Z or ±hh Z or ±hh      ","wordCount":"483","inLanguage":"en","datePublished":"2022-01-28T23:05:33+08:00","dateModified":"2022-01-28T23:05:33+08:00","author":{"@type":"Person","name":"ST_Saint"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://st-saint.github.io/posts/hugo/"},"publisher":{"@type":"Organization","name":"Yayu Wang","logo":{"@type":"ImageObject","url":"https://st-saint.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -86,7 +86,45 @@ Hugo
 </h1>
 <div class=post-meta><span title="2022-01-28 23:05:33 +0800 CST">< 2022-01-28 Fri 23:05 ></span>&nbsp;·&nbsp;ST_Saint&nbsp;|&nbsp;<a href=https://github.com/st-saint/st-saint.github.io/content/posts/hugo.org rel="noopener noreferrer" target=_blank>Suggest Changes</a>
 </div>
-</header>
+</header> <div class=toc>
+<details end>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#headline-1>org</a>
+<ul>
+<li><a href=#headline-2><code class=verbatim>Front matter</code></a>
+<ul>
+<li><a href=#headline-3>example</a>
+</li>
+</ul>
+</li>
+<li><a href=#headline-4>TOC</a>
+</li>
+</ul>
+</li>
+<li><a href=#headline-5>使用不同主题</a>
+<ul>
+<li><a href=#headline-6>Solution</a>
+</li>
+</ul>
+</li>
+<li><a href=#headline-7>css</a>
+<ul>
+<li><a href=#headline-8>font</a>
+</li>
+</ul>
+</li>
+<li><a href=#headline-9>DateFormat</a>
+</li>
+</ul>
+</nav>
+</div>
+</details>
+</div>
 <div class=post-content>
 <div id=outline-container-headline-1 class=outline-2>
 <h2 id=headline-1>
@@ -152,15 +190,18 @@ example
 </div>
 <div id=outline-container-headline-4 class=outline-3>
 <h3 id=headline-4>
-FIXME TOC
+TOC
 </h3>
 <div id=outline-text-headline-4 class=outline-text-3>
 <ul>
 <li>
-<p>ORG 的 TOC 好像有点问题</p>
+<p><del>ORG 的 TOC 好像有点问题</del></p>
 </li>
 <li>
-<p>不过是根据 <code>theme</code> 来的，所以应该还好</p>
+<p><del>不过是根据 theme 来的，所以应该还好</del></p>
+</li>
+<li>
+<p><span style=text-decoration:underline><strong><span class=timestamp>&lt;2022-02-23 Wed></span> UPDATE</strong></span> toc 直接 <code class=verbatim>{{ .TableofContents }}</code> 就可以生成</p>
 </li>
 </ul>
 </div>
