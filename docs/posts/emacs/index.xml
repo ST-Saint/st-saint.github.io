@@ -7,18 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 09 Feb 2022 21:48:19 +0800</lastBuildDate><atom:link href="https://st-saint.github.io/posts/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Native Emacs</title>
+      <link>https://st-saint.github.io/posts/emacs/native/</link>
+      <pubDate>Fri, 25 Feb 2022 23:31:11 +0800</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/emacs/native/</guid>
+      <description>align   第一次知道 C-u M-x 调用的命令跟直接 M-x 调用的还是不一样的  C-u M-x align-regexp 使用的是更高级的 align-regexp
+ regexp: match the place you are interested in aligning; to do it, one of its parenthesis groups will be extended with spaces, or shortened by deleting characters parenthesis group: choose which one spacing: if the group is shorter than this, spaces will be added to it; if it&amp;#39;s longer, characters will be deleted from it, starting at the end (unless it&amp;#39;s longer for the purposes of alignment, of course) repeat: well, this is obvious, I think justify: non-blank characters inside the group won&amp;#39;t be deleted, and necessary spaces will be added/deleted from the left.</description>
+    </item>
+    
+    <item>
       <title>Calendar</title>
       <link>https://st-saint.github.io/posts/emacs/calendar/</link>
       <pubDate>Fri, 11 Feb 2022 00:14:23 +0800</pubDate>
       
       <guid>https://st-saint.github.io/posts/emacs/calendar/</guid>
-      <description>calfw    A calendar framework for Emacs
-  org-gcal - Synchronization with google calenda    老项目不维护了, 新地址 org-gcal
-  google cloud calendar    could api 改版了真的好难用, 文档给的也过时了
-  还是勉勉强强按文档同步了, project 测试版就可以用
-    sync    直接 org-ical-sync 就可以fetch，但是怎么push呢
-  在 org-heading 上 call org-gcal-post-at-point 加个 properties, schedule 也会被写到 properties, 感觉差不多能用
-  有个小问题是，sync一次之后，老是出现 rx--translate-bounded-repetition: rx ‘**’ range error</description>
+      <description> calfw   A calendar framework for Emacs  org-gcal - Synchronization with google calenda   老项目不维护了, 新地址 org-gcal  google cloud calendar   could api 改版了真的好难用, 文档给的也过时了 还是勉勉强强按文档同步了, project 测试版就可以用    sync   直接 org-ical-sync 就可以fetch，但是怎么push呢 在 org-heading 上 call org-gcal-post-at-point 加个 properties, schedule 也会被写到 properties, 感觉差不多能用 有个小问题是，sync一次之后，老是出现 rx--translate-bounded-repetition: rx ‘**’ range error    auto archive   auto archive g 了，sync的 rx &amp;#39;**&amp;#39; range error 是auto archive来的 PR还没merge, 先disable掉吧        </description>
     </item>
     
   </channel>

@@ -3,8 +3,7 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Emacs | Yayu Wang</title>
-<meta name=keywords content>
+<title>Emacs | Yayu Wang</title><meta name=keywords content>
 <meta name=description content="emacs">
 <meta name=author content="ST_Saint">
 <link rel=canonical href=https://st-saint.github.io/posts/emacs/>
@@ -16,12 +15,10 @@
 <link rel=mask-icon href=https://st-saint.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.93.1">
 <link rel=alternate type=application/rss+xml href=https://st-saint.github.io/posts/emacs/index.xml>
 <noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:title" content="Emacs">
+<style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Emacs">
 <meta property="og:description" content="emacs">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://st-saint.github.io/posts/emacs/"><meta property="og:site_name" content="ST_Saint Blog">
@@ -29,9 +26,8 @@
 <meta name=twitter:title content="Emacs">
 <meta name=twitter:description content="emacs">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://st-saint.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Emacs","item":"https://st-saint.github.io/posts/emacs/"}]}</script>
-</head>
-<body class=list id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+</head><body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -40,78 +36,55 @@
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 </span>
-</div>
-<ul id=menu>
+</div><ul id=menu>
 <li>
 <a href=https://st-saint.github.io/posts title=Posts>
 <span>Posts</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://st-saint.github.io/doks title=Docs>
 <span>Docs</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://st-saint.github.io/archives title=Archive>
 <span>Archive</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://st-saint.github.io/search title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://st-saint.github.io/categories title=Categories>
 <span>Categories</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://st-saint.github.io/tags title=Tags>
 <span>Tags</span>
 </a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<header class=page-header><div class=breadcrumbs><a href=https://st-saint.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://st-saint.github.io/posts/>Posts</a></div>
-<h1>Emacs</h1>
-<div class=post-description>
+</li></ul></nav></header><main class=main>
+<header class=page-header><div class=breadcrumbs><a href=https://st-saint.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://st-saint.github.io/posts/>Posts</a></div><h1>Emacs</h1><div class=post-description>
 emacs
-</div>
-</header>
-<article class=post-entry>
+</div></header><article class=post-entry>
+<header class=entry-header>
+<h2>Native Emacs
+</h2></header><section class=entry-content>
+<p>align 第一次知道 C-u M-x 调用的命令跟直接 M-x 调用的还是不一样的 C-u M-x align-regexp 使用的是更高级的 align-regexp
+regexp: match the place you are interested in aligning; to do it, one of its parenthesis groups will be extended with spaces, or shortened by deleting characters parenthesis group: choose which one spacing: if the group is shorter than this, spaces will be added to it; if it's longer, characters will be deleted from it, starting at the end (unless it's longer for the purposes of alignment, of course) repeat: well, this is obvious, I think justify: non-blank characters inside the group won't be deleted, and necessary spaces will be added/deleted from the left....</p></section><footer class=entry-footer><span title="2022-02-25 23:31:11 +0800 CST">< 2022-02-25 Fri 23:31 ></span>&nbsp;·&nbsp;ST_Saint</footer><a class=entry-link aria-label="post link to Native Emacs" href=https://st-saint.github.io/posts/emacs/native/></a>
+</article><article class=post-entry>
 <header class=entry-header>
 <h2>Calendar
-</h2>
-</header>
-<section class=entry-content>
-<p>calfw A calendar framework for Emacs
-org-gcal - Synchronization with google calenda 老项目不维护了, 新地址 org-gcal
-google cloud calendar could api 改版了真的好难用, 文档给的也过时了
-还是勉勉强强按文档同步了, project 测试版就可以用
-sync 直接 org-ical-sync 就可以fetch，但是怎么push呢
-在 org-heading 上 call org-gcal-post-at-point 加个 properties, schedule 也会被写到 properties, 感觉差不多能用
-有个小问题是，sync一次之后，老是出现 rx--translate-bounded-repetition: rx ‘**’ range error...</p>
-</section>
-<footer class=entry-footer><span title="2022-02-11 00:14:23 +0800 CST">< 2022-02-11 Fri 00:14 ></span>&nbsp;·&nbsp;ST_Saint</footer>
-<a class=entry-link aria-label="post link to Calendar" href=https://st-saint.github.io/posts/emacs/calendar/></a>
-</article>
-</main>
-<footer class=footer>
+</h2></header><section class=entry-content>
+<p> calfw A calendar framework for Emacs org-gcal - Synchronization with google calenda 老项目不维护了, 新地址 org-gcal google cloud calendar could api 改版了真的好难用, 文档给的也过时了 还是勉勉强强按文档同步了, project 测试版就可以用 sync 直接 org-ical-sync 就可以fetch，但是怎么push呢 在 org-heading 上 call org-gcal-post-at-point 加个 properties, schedule 也会被写到 properties, 感觉差不多能用 有个小问题是，sync一次之后，老是出现 rx--translate-bounded-repetition: rx ‘**’ range error auto archive auto archive g 了，sync的 rx '**' range error 是auto archive来的 PR还没merge, 先disable掉吧 </p></section><footer class=entry-footer><span title="2022-02-11 00:14:23 +0800 CST">< 2022-02-11 Fri 00:14 ></span>&nbsp;·&nbsp;ST_Saint</footer><a class=entry-link aria-label="post link to Calendar" href=https://st-saint.github.io/posts/emacs/calendar/></a>
+</article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://st-saint.github.io/>Yayu Wang</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script>
+</body></html>
