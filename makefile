@@ -12,3 +12,6 @@ build:
 	rm -r ./docs ; \
 	hugo ; \
 	cd doks && hugo --gc --minify -d ../docs/doks
+
+server:
+	hugo server -D --disableFastRender

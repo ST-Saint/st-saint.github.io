@@ -1,5 +1,6 @@
 #+TITLE: Native Emacs
 #+tags[]: emacs
+#+date: Fri, 25 Feb 2022 23:31:11 +0800
 #+lastmod: Fri, 25 Feb 2022 23:31:11 +0800
 
 * align

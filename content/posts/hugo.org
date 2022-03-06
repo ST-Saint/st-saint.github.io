@@ -22,6 +22,8 @@ categories: ["hugo"]
 #+tags[]: tagA tagB
 #+categories[] catA catB
 #+end_src
++ front matter 得有 =date= 才能识别到 =archive= 里面
+
 ** TOC
 + +ORG 的 TOC 好像有点问题+
 + +不过是根据 theme 来的，所以应该还好+
@@ -74,6 +76,7 @@ const (
 
 + 在 ~config.yaml~ 中可以设置 ~DateFormat~, format 格式为
   + example: =DateFormat: "Jan 02, 2006  Mon 15:04"=
+
 
 #+ATTR_HTML: :class table
 | *Format Symbol* | *Description*                                                      | *Value*                  |
