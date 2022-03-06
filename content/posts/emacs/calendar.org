@@ -1,7 +1,9 @@
 #+TITLE: Calendar
+#+categories[]: emacs
 #+tags[]: emacs
 #+date: Fri, 11 Feb 2022 00:14:23 +0800
 #+lastmod: Fri, 11 Feb 2022 00:14:23 +0800
+#+summary: Emacs Calendar & Google Calendar
 
 * [[https://github.com/kiwanami/emacs-calfw][calfw]]
 + A calendar framework for Emacs

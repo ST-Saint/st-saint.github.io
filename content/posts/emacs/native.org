@@ -1,7 +1,9 @@
 #+TITLE: Native Emacs
 #+tags[]: emacs
+#+categories[]: emacs
 #+date: Fri, 25 Feb 2022 23:31:11 +0800
 #+lastmod: Fri, 25 Feb 2022 23:31:11 +0800
+#+summary: Native Emacs Manuals
 
 * align
 + 第一次知道 =C-u M-x= 调用的命令跟直接 =M-x= 调用的还是不一样的

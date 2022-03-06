@@ -7,7 +7,7 @@
 <meta name=description content="emacs">
 <meta name=author content="ST_Saint">
 <link rel=canonical href=https://st-saint.github.io/posts/emacs/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.486543f02001b414dad8d81af38998028aed5aec367faeded96410f521845ac4.css integrity="sha256-SGVD8CABtBTa2Nga84mYAortWuw2f67e2WQQ9SGEWsQ=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.55e245a21918b7c2c8995af7c91375d0b345bc15035b8283bbbaaff62335b009.css integrity="sha256-VeJFohkYt8LImVr3yRN10LNFvBUDW4KDu7qv9iM1sAk=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://st-saint.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://st-saint.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://st-saint.github.io/favicon-32x32.png>
@@ -18,7 +18,7 @@
 <meta name=generator content="Hugo 0.93.1">
 <link rel=alternate type=application/rss+xml href=https://st-saint.github.io/posts/emacs/index.xml>
 <noscript>
-<style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Emacs">
+<style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(146, 146, 151);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Emacs">
 <meta property="og:description" content="emacs">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://st-saint.github.io/posts/emacs/"><meta property="og:site_name" content="ST_Saint Blog">
@@ -66,15 +66,19 @@
 emacs
 </div></header><article class=post-entry>
 <header class=entry-header>
+<h2>Calc
+</h2></header><section class=entry-content>
+<p>Emacs Calculator!</p></section><footer class=entry-footer><span title="2022-03-06 14:34:58 +0800 CST">< 2022-03-06 Fri 14:34 ></span>&nbsp;·&nbsp;ST_Saint</footer><a class=entry-link aria-label="post link to Calc" href=https://st-saint.github.io/posts/emacs/calc/></a>
+</article><article class=post-entry>
+<header class=entry-header>
 <h2>Native Emacs
 </h2></header><section class=entry-content>
-<p>align 第一次知道 C-u M-x 调用的命令跟直接 M-x 调用的还是不一样的 C-u M-x align-regexp 使用的是更高级的 align-regexp
-regexp: match the place you are interested in aligning; to do it, one of its parenthesis groups will be extended with spaces, or shortened by deleting characters parenthesis group: choose which one spacing: if the group is shorter than this, spaces will be added to it; if it's longer, characters will be deleted from it, starting at the end (unless it's longer for the purposes of alignment, of course) repeat: well, this is obvious, I think justify: non-blank characters inside the group won't be deleted, and necessary spaces will be added/deleted from the left....</p></section><footer class=entry-footer><span title="2022-02-25 23:31:11 +0800 CST">< 2022-02-25 Fri 23:31 ></span>&nbsp;·&nbsp;ST_Saint</footer><a class=entry-link aria-label="post link to Native Emacs" href=https://st-saint.github.io/posts/emacs/native/></a>
+<p>Native Emacs Manuals</p></section><footer class=entry-footer><span title="2022-02-25 23:31:11 +0800 CST">< 2022-02-25 Fri 23:31 ></span>&nbsp;·&nbsp;ST_Saint</footer><a class=entry-link aria-label="post link to Native Emacs" href=https://st-saint.github.io/posts/emacs/native/></a>
 </article><article class=post-entry>
 <header class=entry-header>
 <h2>Calendar
 </h2></header><section class=entry-content>
-<p> calfw A calendar framework for Emacs org-gcal - Synchronization with google calenda 老项目不维护了, 新地址 org-gcal google cloud calendar could api 改版了真的好难用, 文档给的也过时了 还是勉勉强强按文档同步了, project 测试版就可以用 sync 直接 org-ical-sync 就可以fetch，但是怎么push呢 在 org-heading 上 call org-gcal-post-at-point 加个 properties, schedule 也会被写到 properties, 感觉差不多能用 有个小问题是，sync一次之后，老是出现 rx--translate-bounded-repetition: rx ‘**’ range error auto archive auto archive g 了，sync的 rx '**' range error 是auto archive来的 PR还没merge, 先disable掉吧 </p></section><footer class=entry-footer><span title="2022-02-11 00:14:23 +0800 CST">< 2022-02-11 Fri 00:14 ></span>&nbsp;·&nbsp;ST_Saint</footer><a class=entry-link aria-label="post link to Calendar" href=https://st-saint.github.io/posts/emacs/calendar/></a>
+<p>Emacs Calendar & Google Calendar</p></section><footer class=entry-footer><span title="2022-02-11 00:14:23 +0800 CST">< 2022-02-11 Fri 00:14 ></span>&nbsp;·&nbsp;ST_Saint</footer><a class=entry-link aria-label="post link to Calendar" href=https://st-saint.github.io/posts/emacs/calendar/></a>
 </article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://st-saint.github.io/>Yayu Wang</a></span>
 <span>
