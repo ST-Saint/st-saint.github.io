@@ -31,11 +31,12 @@
 + =a^3 + a^2 b / c d - a / b=
 + "big language"
 + 使用 =evaluates-to= 赋值
+
 #+begin_example
-                 2
-     3   b a    a
-1:  a  + ---- - -
-         c d    b
+                  2
+      3   b a    a
+ 1:  a  + ---- - -
+          c d    b
 #+end_example
 *** 图形
 + gnuplot

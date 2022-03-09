@@ -1,3 +1,7 @@
 .post-content code {
   font-size: 14px;
 }
+
+.post-content pre.example {
+  color: #e5e5e5;
+}
