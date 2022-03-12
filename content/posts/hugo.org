@@ -51,6 +51,9 @@ categories: ["hugo"]
 
 * DateFormat
 + 折磨
++ 又 debug 一晚上, hugo 不会 build 超过当前日期的时间, 且 Hugo 默认采用的是格林尼治标准时间, 所以默认 8h 内的文章不会显示
+  1) 强制 build 未来文章: =hugo --buildFuture= / =buildFuture = true=
+  2) 用识别时区的格式 =Sat, 12 Mar 2022 23:43:48 +0800=
 + 文章 ~date~ 字段需要是以下格式
 #+begin_src go
 const (
