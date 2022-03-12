@@ -1,0 +1,8 @@
+#+TITLE: Java
+#+categories[]: java
+#+tags[]: java
+#+date: Sat Mar 12 23:40:55 CST 2022
+#+summary: something in java
+
+* template
++ template 是 compilation feature, cannot instantiate a template with dynamic class at runtime

@@ -1,0 +1,5 @@
+#+TITLE: languages
+#+description: program languages
+#+summary: some languages
+#+date: Wed, 09 Feb 2022 21:48:19 +0800
+#+lastmod: Wed, 09 Feb 2022 21:48:19 +0800
