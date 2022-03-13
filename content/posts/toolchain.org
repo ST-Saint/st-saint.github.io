@@ -1,0 +1,114 @@
+#+TITLE: ToolChain
+#+date: Sun Mar 13 08:23:21 CST 2022
+#+categories[]: tools
+#+tags[]: tools
+#+summary: tools I am using
+
+* Internet
+** Network connection
+*** VPN
++ v2ray & v2rayA
+
+*** proxy
++ proxychains
+*** anonymous
++ Tor
+
+** Web browsers
++ Chrome
+
+** Communication
+*** Email
++ gmail
++ mu4e
+
+** remote desktop
+*** Remote desktop servers
++ TigerVNC
++ NoMachine
+*** Remote desktop clients
++ TigerVNC
++ Anydesk
+
+* Multimedia
+** Image
+*** Image viewer
++ geeqie
+*** Image processing
++ Krita
+*** font editor
++ fontforge
+*** Screenshot
++ flameshot
++ snipaste
+
+** audio
+*** system
++ alsamixer
+*** editor
++ Audacity
+
+** video
+*** player
++ VLC
+
+* Utilities
+** Terminal
+*** Command shells
++ fish
+  + starship
+*** Terminal Emulator
++ alacritty
++ vterm
+
+** Files
+*** File Manager
++ SpaceFM
+*** Archive managers
++ 7zip
+
+** development
+*** Emacs
++ doom emacs
+
+** Text Input
+
+*** ibus
+
++ ibus-rime
+
+** System
+
+*** Task managers
++ btop
++ htop
+*** System log viewers
++ journalctl
+*** Font Viewer
++ NA
+*** Fonts
++ awesome font
++ SauceCodePro Nerd Font Mono
+
+* Documents and texts
+** Office
++ freeoffice
+** Readers and viewers
++ pdfstudioviewer
+* Security
+** Password managers
++ gpg
+* Others
+** Desktop environments
+*** Window Manager
++ Xmonad
+*** Task Bar
++ Xmobar
+*** System tray
++ stalonetrayer
+*** Wallpaper
++ nitrogen
+*** Notification
++ dunst
+*** Logout
++ sddm

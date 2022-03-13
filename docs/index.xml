@@ -5,7 +5,7 @@
     <link>https://st-saint.github.io/</link>
     <description>Recent content on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 13 Mar 2022 00:39:10 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Mar 2022 08:23:21 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installation | Update</title>
       <link>https://st-saint.github.io/posts/papermod/papermod-installation/</link>
@@ -25,21 +25,30 @@
     </item>
     
     <item>
+      <title>ToolChain</title>
+      <link>https://st-saint.github.io/posts/toolchain/</link>
+      <pubDate>Sun, 13 Mar 2022 08:23:21 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/toolchain/</guid>
+      <description>tools I am using</description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://st-saint.github.io/posts/language/java/</link>
+      <pubDate>Sun, 13 Mar 2022 08:23:05 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/language/java/</guid>
+      <description> template   template 是 compilation feature, cannot instantiate a template with dynamic class at runtime    </description>
+    </item>
+    
+    <item>
       <title>Regex</title>
       <link>https://st-saint.github.io/posts/language/regex/</link>
       <pubDate>Sun, 13 Mar 2022 00:39:10 +0000</pubDate>
       
       <guid>https://st-saint.github.io/posts/language/regex/</guid>
       <description>something in regex</description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://st-saint.github.io/posts/language/java/</link>
-      <pubDate>Sat, 12 Mar 2022 23:40:55 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/language/java/</guid>
-      <description>something in java</description>
     </item>
     
     <item>
