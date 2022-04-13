@@ -5,7 +5,7 @@
     <link>https://st-saint.github.io/</link>
     <description>Recent content on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 13 Mar 2022 08:23:21 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Apr 2022 23:12:50 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installation | Update</title>
       <link>https://st-saint.github.io/posts/papermod/papermod-installation/</link>
@@ -25,6 +25,51 @@
     </item>
     
     <item>
+      <title>Git</title>
+      <link>https://st-saint.github.io/posts/language/git/</link>
+      <pubDate>Fri, 08 Apr 2022 23:12:50 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/language/git/</guid>
+      <description>Git</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://st-saint.github.io/posts/language/python/</link>
+      <pubDate>Sun, 03 Apr 2022 11:18:36 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/language/python/</guid>
+      <description>Python</description>
+    </item>
+    
+    <item>
+      <title>Elisp</title>
+      <link>https://st-saint.github.io/posts/emacs/elisp/</link>
+      <pubDate>Thu, 31 Mar 2022 16:53:37 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/emacs/elisp/</guid>
+      <description>Elisp</description>
+    </item>
+    
+    <item>
+      <title>F1</title>
+      <link>https://st-saint.github.io/posts/diary/f1/</link>
+      <pubDate>Thu, 31 Mar 2022 16:12:40 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/diary/f1/</guid>
+      <description>F1 notebook</description>
+    </item>
+    
+    <item>
+      <title>Doom</title>
+      <link>https://st-saint.github.io/posts/emacs/doom/</link>
+      <pubDate>Thu, 31 Mar 2022 15:39:10 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/emacs/doom/</guid>
+      <description>Doom-Emacs</description>
+    </item>
+    
+    <item>
       <title>ToolChain</title>
       <link>https://st-saint.github.io/posts/toolchain/</link>
       <pubDate>Sun, 13 Mar 2022 08:23:21 +0000</pubDate>
@@ -39,7 +84,7 @@
       <pubDate>Sun, 13 Mar 2022 08:23:05 +0000</pubDate>
       
       <guid>https://st-saint.github.io/posts/language/java/</guid>
-      <description> template   template 是 compilation feature, cannot instantiate a template with dynamic class at runtime    </description>
+      <description>Java</description>
     </item>
     
     <item>

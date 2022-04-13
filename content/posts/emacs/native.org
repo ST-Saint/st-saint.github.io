@@ -5,6 +5,14 @@
 #+lastmod: Fri, 25 Feb 2022 23:31:11 +0800
 #+summary: Native Emacs Manuals
 
+* Keymap
+| Keymap | Function                             |
+|--------+--------------------------------------|
+| C-M-f  | forward-sexp (coresponding bracket)  |
+| C-M-b  | backward-sexp (coresponding bracket) |
+
+
+
 * align
 + 第一次知道 =C-u M-x= 调用的命令跟直接 =M-x= 调用的还是不一样的
 + =C-u M-x align-regexp= 使用的是更高级的 =align-regexp=
@@ -32,3 +40,13 @@
 + =gpg --gen-key=
 
 ** [[https://wiki.archlinux.org/title/GnuPG#Cache_passwords][cache password]]
+
+* debug
++ =M-x debug-on-entry= 设置入口
++ 直接运行函数
+
+** keymap
+ | Shortcut | Function           |
+ |----------+--------------------|
+ | s        | step through       |
+ | c        | continue(step out) |

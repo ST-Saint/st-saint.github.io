@@ -1,0 +1,13 @@
+#+TITLE: Git
+#+date: Fri Apr 08 23:12:50 CST 2022
+#+categories[]: git
+#+tags[]: git
+#+summary: Git
+
+* git cli
+** git branch
++ =git rev-parse --abbrev-ref HEAD=
+** git tags
++ =git describe --abbrev=0 --tags HEAD=
+** git hash
++ =git rev-parse HEAD=

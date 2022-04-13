@@ -1,0 +1,91 @@
+#+TITLE: F1
+#+date: Thu Mar 31 16:12:40 CST 2022
+#+categories[]: F1
+#+tags[]: F1
+#+summary: F1 notebook
+
+* Rules
+
+** 轮胎
++ 每场比赛至少使用两种轮胎
++ 每个赛事周提供 5 种 13 套轮胎
+
+*** 干胎
++ UltraSoft, SuperSoft, Soft, Medium, Hard
++ 赛时根据比赛场地提供三种干轮, 作为该场的 Soft, Medium, Hard
+
+*** 雨胎
++ Intermediate, Wet
+
+* Theory
+
+** Tyres
+
+*** 工作温度
++ 越硬工作温度越高
++ Tyre blankets 可以提供大概 70℃
++ 理论上每种胎每圈速度差分别在 0.5s 和 0.8s, 但是具体赛道有差别
+
+| Tyres  | Temperature(℃) |
+|--------+----------------|
+| Hard   | 110 - 140      |
+| Middle | 100 - 130      |
+| Soft   | 90 - 120       |
+
+
+*** 磨损
++ 跟车时在弯道下压力不足打滑会增大磨损
+
+** Undercut & Overcut
++ ref: [[https://www.youtube.com/watch?v=sQVrQdB89kY][Chain Bear: Triggering undercuts and stretching the tyre life - How Strategy shaped the French Grand Prix]]
++ 通过一些进站策略拿到位置, 避免正面对抗
++ 适用情况: 在对手身后, 落后 1 ~ 3 s, 不好直接进攻
+  - 注意出站后是否在 *free air*
+*** Undercut
++ 早进站, 靠新轮胎优势追进 *pit delta* (约25+-s)
++ 对手如果进站会落在身后
+
+*** Overcut
++ 如果对手换新胎升温慢/难达到工作温度, 前几圈速度较慢
++ 靠旧胎速度优势将对手拉开 *pit delta*
++ 再进站, 出站后在对手身前
+
+* Techniques
+
+** Overtake & Defense
+
+** TC
+
+*** introduction
++ TC(Traction Control) 可以帮助控制引擎输出功率, 防止打滑
++ 也限制了输出功率, 以及一些需要轻微打滑的时候没有办法让轮胎打滑
++ 本质上是 RPM 的问题
+
+*** drive without TC
++ 非常非常困难, 关了 TC 每次急了油门给大一点都是 spin
+**** throttle
++ 过弯 apex 之后, 油门不要超过 1/2, 方向打正前不能全油门, 在回正方向过程中可以缓慢增大油门
++ 感受轮胎/赛道抓地力动态调整出弯油门的极限
++ Throttle Linearity 设置成 50 左右可以有效防止加油过快
+***** save the car
++ 感觉到失去抓地力即将打滑的时候, 轻松油门, 快速反打方向, 并回正(或继续反打)
+**** short-shifting
++ 出弯时, 不用等到转速达到上限才升档, 8000-10000 转即可升档
++ 提前换档可以提前踩更多油门
++ 低档位和雨天效果明显
+**** ERS
++ 在获得足够抓地力/方向盘回正全油门之前开 ERS 容易 spin
+**** kerbs
++ 在路肩上加油门 *非常* 容易 spin !
+**** on-throttle differential
++ 开高速度更快但更容易 spin
++ 轻微降低可以显著避免 spin
+
+*** reference
++ https://www.youtube.com/watch?v=1SJXAanpEJ4
++ https://www.youtube.com/watch?v=pUuxiD-iNFg&t=1s
+
+* Strategy
++ [[http://givemenbastreams.com/f1.php?g=f1][stream]]
+
+* settings

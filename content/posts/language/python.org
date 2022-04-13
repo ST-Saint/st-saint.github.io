@@ -1,0 +1,30 @@
+#+TITLE: Python
+#+date: Sun Apr 03 11:18:36 CST 2022
+#+categories[]: program_languages
+#+tags[]: python
+#+summary: Python
+
+
+* String & Bytes
+** bytes to string
+#+begin_src python
+return b"abc123".decode("utf-8")
+#+end_src
+
+#+RESULTS:
+: abc123
+** string to bytes
+#+begin_src python
+return "abc123".encode("utf-8")
+#+end_src
+
+#+RESULTS:
+: b'abc123'
+
+* class
+** super
+ + 理论上 =super()= 可以直接 call 嗷, 返回父类
+   - 调用父类函数时候, self指向的是子类
+
+ + 多继承的时候, 直接 =super().func()= 会从 mro 中, 从第二个找拥有 =func()= 的类
+   - 如果使用 =super(clazz, self).func()= 则会从 clazz.mro 中的第二个类开始找

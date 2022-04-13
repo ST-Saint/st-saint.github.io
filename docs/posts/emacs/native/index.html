@@ -7,7 +7,7 @@
 <meta name=description content="Native Emacs Manuals">
 <meta name=author content="ST_Saint">
 <link rel=canonical href=https://st-saint.github.io/posts/emacs/native/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.61754986a1ec107a94201585aaaa2615b4f36b2d6b6d02ef0f186c09cbcab91a.css integrity="sha256-YXVJhqHsEHqUIBWFqqomFbTzay1rbQLvDxhsCcvKuRo=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.ae5088d9dc0ac0863393b6320311164696e06e36bffa280fc4038677e20bd726.css integrity="sha256-rlCI2dwKwIYzk7YyAxEWRpbgbja/+igPxAOGd+IL1yY=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://st-saint.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://st-saint.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://st-saint.github.io/favicon-32x32.png>
@@ -27,7 +27,7 @@
 <meta name=twitter:title content="Native Emacs">
 <meta name=twitter:description content="Native Emacs Manuals">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://st-saint.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Emacs","item":"https://st-saint.github.io/posts/emacs/"},{"@type":"ListItem","position":3,"name":"Native Emacs","item":"https://st-saint.github.io/posts/emacs/native/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Native Emacs","name":"Native Emacs","description":"Native Emacs Manuals","keywords":["emacs"],"articleBody":" align   第一次知道 C-u M-x 调用的命令跟直接 M-x 调用的还是不一样的  C-u M-x align-regexp 使用的是更高级的 align-regexp\n regexp: match the place you are interested in aligning; to do it, one of its parenthesis groups will be extended with spaces, or shortened by deleting characters parenthesis group: choose which one spacing: if the group is shorter than this, spaces will be added to it; if it's longer, characters will be deleted from it, starting at the end (unless it's longer for the purposes of alignment, of course) repeat: well, this is obvious, I think justify: non-blank characters inside the group won't be deleted, and necessary spaces will be added/deleted from the left. On your second case, try: regexp \\([0-9]+\\), group -1. column (instead of spacing): align to that fixed column (of course, it doesn't work well with “repeat”).      GPG   keeping your secrets encrypted on your file system is an easy way of keeping your secrets secret\n  Gpg(GNU Privacy Guard) is natively supported in emacs called EasyPG 只用一个gpg key管理所有加密文件和链接 可以不用每次输密码获取 root 权限  authinfo   auth-sources 变量指定 authinfo 文件  格式 machine  login  port  password \n example machine localhost login root port sudo password rootpasswd123      Creating a key   gpg --gen-key    cache password     ","wordCount":"195","inLanguage":"en","datePublished":"2022-02-25T23:31:11+08:00","dateModified":"2022-02-25T23:31:11+08:00","author":{"@type":"Person","name":"ST_Saint"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://st-saint.github.io/posts/emacs/native/"},"publisher":{"@type":"Organization","name":"Yayu Wang","logo":{"@type":"ImageObject","url":"https://st-saint.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Native Emacs","name":"Native Emacs","description":"Native Emacs Manuals","keywords":["emacs"],"articleBody":" Keymap     Keymap Function     C-M-f forward-sexp (coresponding bracket)   C-M-b backward-sexp (coresponding bracket)      align   第一次知道 C-u M-x 调用的命令跟直接 M-x 调用的还是不一样的  C-u M-x align-regexp 使用的是更高级的 align-regexp\n regexp: match the place you are interested in aligning; to do it, one of its parenthesis groups will be extended with spaces, or shortened by deleting characters parenthesis group: choose which one spacing: if the group is shorter than this, spaces will be added to it; if it's longer, characters will be deleted from it, starting at the end (unless it's longer for the purposes of alignment, of course) repeat: well, this is obvious, I think justify: non-blank characters inside the group won't be deleted, and necessary spaces will be added/deleted from the left. On your second case, try: regexp \\([0-9]+\\), group -1. column (instead of spacing): align to that fixed column (of course, it doesn't work well with “repeat”).      GPG   keeping your secrets encrypted on your file system is an easy way of keeping your secrets secret\n  Gpg(GNU Privacy Guard) is natively supported in emacs called EasyPG 只用一个gpg key管理所有加密文件和链接 可以不用每次输密码获取 root 权限  authinfo   auth-sources 变量指定 authinfo 文件  格式 machine  login  port  password \n example machine localhost login root port sudo password rootpasswd123      Creating a key   gpg --gen-key    cache password     debug   M-x debug-on-entry 设置入口 直接运行函数  keymap     Shortcut Function     s step through   c continue(step out)        ","wordCount":"220","inLanguage":"en","datePublished":"2022-02-25T23:31:11+08:00","dateModified":"2022-02-25T23:31:11+08:00","author":{"@type":"Person","name":"ST_Saint"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://st-saint.github.io/posts/emacs/native/"},"publisher":{"@type":"Organization","name":"Yayu Wang","logo":{"@type":"ImageObject","url":"https://st-saint.github.io/favicon.ico"}}}</script>
 </head><body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script>
 <header class=header>
@@ -77,43 +77,72 @@ Native Emacs
 <div class=inner>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#headline-1>align</a>
-</li><li><a href=#headline-2>GPG</a>
+<li><a href=#headline-1>Keymap</a>
+</li><li><a href=#headline-2>align</a>
+</li><li><a href=#headline-3>GPG</a>
 <ul>
-<li><a href=#headline-3>authinfo</a>
-</li><li><a href=#headline-4>Creating a key</a>
-</li><li><a href=#headline-5>cache password</a>
+<li><a href=#headline-4>authinfo</a>
+</li><li><a href=#headline-5>Creating a key</a>
+</li><li><a href=#headline-6>cache password</a>
+</li></ul></li><li><a href=#headline-7>debug</a>
+<ul>
+<li><a href=#headline-8>keymap</a>
 </li></ul></li></ul></nav></div></details>
 </div><div class=post-content>
 <div id=outline-container-headline-1 class=outline-2>
 <h2 id=headline-1>
-align
+Keymap
 </h2><div id=outline-text-headline-1 class=outline-text-2>
+<table>
+<thead>
+<tr>
+<th>Keymap</th><th>Function</th></tr></thead><tbody>
+<tr>
+<td>C-M-f</td><td>forward-sexp (coresponding bracket)</td></tr><tr>
+<td>C-M-b</td><td>backward-sexp (coresponding bracket)</td></tr></tbody></table></div></div><div id=outline-container-headline-2 class=outline-2>
+<h2 id=headline-2>
+align
+</h2><div id=outline-text-headline-2 class=outline-text-2>
 <ul>
 <li>第一次知道 <code class=verbatim>C-u M-x</code> 调用的命令跟直接 <code class=verbatim>M-x</code> 调用的还是不一样的</li><li>
 <p><code class=verbatim>C-u M-x align-regexp</code> 使用的是更高级的 <code class=verbatim>align-regexp</code></p><ul>
-<li><strong>regexp</strong>: match the place you are interested in aligning; to do it, one of its parenthesis groups will be extended with spaces, or shortened by deleting characters</li><li><strong>parenthesis</strong> group: choose which one</li><li><strong>spacing</strong>: if the group is shorter than this, spaces will be added to it; if it's longer, characters will be deleted from it, starting at the end (unless it's longer for the purposes of alignment, of course)</li><li><strong>repeat</strong>: well, this is obvious, I think</li><li><strong>justify</strong>: non-blank characters inside the group won't be deleted, and necessary spaces will be added/deleted from the left. On your second case, try: regexp \([0-9]+\), group -1.</li><li><strong>column</strong> (instead of spacing): align to that fixed column (of course, it doesn't work well with “repeat”).</li></ul></li></ul></div></div><div id=outline-container-headline-2 class=outline-2>
-<h2 id=headline-2>
+<li><strong>regexp</strong>: match the place you are interested in aligning; to do it, one of its parenthesis groups will be extended with spaces, or shortened by deleting characters</li><li><strong>parenthesis</strong> group: choose which one</li><li><strong>spacing</strong>: if the group is shorter than this, spaces will be added to it; if it's longer, characters will be deleted from it, starting at the end (unless it's longer for the purposes of alignment, of course)</li><li><strong>repeat</strong>: well, this is obvious, I think</li><li><strong>justify</strong>: non-blank characters inside the group won't be deleted, and necessary spaces will be added/deleted from the left. On your second case, try: regexp \([0-9]+\), group -1.</li><li><strong>column</strong> (instead of spacing): align to that fixed column (of course, it doesn't work well with “repeat”).</li></ul></li></ul></div></div><div id=outline-container-headline-3 class=outline-2>
+<h2 id=headline-3>
 GPG
-</h2><div id=outline-text-headline-2 class=outline-text-2>
+</h2><div id=outline-text-headline-3 class=outline-text-2>
 <blockquote>
 <p>keeping your secrets encrypted on your file system is an easy way of keeping your secrets secret</p></blockquote><ul>
-<li>Gpg(GNU Privacy Guard) is natively supported in emacs called EasyPG</li><li>只用一个gpg key管理所有加密文件和链接</li><li>可以不用每次输密码获取 root 权限</li></ul><div id=outline-container-headline-3 class=outline-3>
-<h3 id=headline-3>
+<li>Gpg(GNU Privacy Guard) is natively supported in emacs called EasyPG</li><li>只用一个gpg key管理所有加密文件和链接</li><li>可以不用每次输密码获取 root 权限</li></ul><div id=outline-container-headline-4 class=outline-3>
+<h3 id=headline-4>
 authinfo
-</h3><div id=outline-text-headline-3 class=outline-text-3>
+</h3><div id=outline-text-headline-4 class=outline-text-3>
 <ul>
 <li><code class=verbatim>auth-sources</code> 变量指定 authinfo 文件</li><li>
 <p>格式 <code class=verbatim>machine &lt;HOST> login &lt;ACCOUNT> port &lt;PORT> password &lt;PASSWORD></code></p><ul>
-<li>example <code class=verbatim>machine localhost login root port sudo password rootpasswd123</code></li></ul></li></ul></div></div><div id=outline-container-headline-4 class=outline-3>
-<h3 id=headline-4>
-Creating a key
-</h3><div id=outline-text-headline-4 class=outline-text-3>
-<ul>
-<li><code class=verbatim>gpg --gen-key</code></li></ul></div></div><div id=outline-container-headline-5 class=outline-3>
+<li>example <code class=verbatim>machine localhost login root port sudo password rootpasswd123</code></li></ul></li></ul></div></div><div id=outline-container-headline-5 class=outline-3>
 <h3 id=headline-5>
+Creating a key
+</h3><div id=outline-text-headline-5 class=outline-text-3>
+<ul>
+<li><code class=verbatim>gpg --gen-key</code></li></ul></div></div><div id=outline-container-headline-6 class=outline-3>
+<h3 id=headline-6>
 <a href=https://wiki.archlinux.org/title/GnuPG#Cache_passwords>cache password</a>
-</h3></div></div></div></div><footer class=post-footer>
+</h3></div></div></div><div id=outline-container-headline-7 class=outline-2>
+<h2 id=headline-7>
+debug
+</h2><div id=outline-text-headline-7 class=outline-text-2>
+<ul>
+<li><code class=verbatim>M-x debug-on-entry</code> 设置入口</li><li>直接运行函数</li></ul><div id=outline-container-headline-8 class=outline-3>
+<h3 id=headline-8>
+keymap
+</h3><div id=outline-text-headline-8 class=outline-text-3>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th><th>Function</th></tr></thead><tbody>
+<tr>
+<td>s</td><td>step through</td></tr><tr>
+<td>c</td><td>continue(step out)</td></tr></tbody></table></div></div></div></div></div><footer class=post-footer>
 <ul class=post-tags>
 <li><a href=https://st-saint.github.io/tags/emacs/>emacs</a></li></ul><nav class=paginav>
 <a class=prev href=https://st-saint.github.io/posts/emacs/calc/>
