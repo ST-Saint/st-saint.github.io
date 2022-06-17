@@ -29,4 +29,4 @@
 
 + auto archive g 了，sync的 =rx '**' range error= 是auto archive来的
 
-+ [[https://github.com/kidd/org-gcal.el/issues/172][PR]]还没merge, 先disable掉吧
++ [[https://github.com/kidd/org-gcal.el/issues/172][PR]] +还没+ merge了 +, 先disable掉吧+

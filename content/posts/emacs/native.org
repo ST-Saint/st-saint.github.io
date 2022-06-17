@@ -36,6 +36,7 @@
 + =auth-sources= 变量指定 authinfo 文件
 + 格式 =machine <HOST> login <ACCOUNT> port <PORT> password <PASSWORD>=
   + example =machine localhost login root port sudo password rootpasswd123=
++ shell access =gpg2 -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | sed -n 's,^machine gmail.com .*password \([^ ]*\).*,\1,p'=
 ** Creating a key
 + =gpg --gen-key=
 
@@ -48,5 +49,5 @@
 ** keymap
  | Shortcut | Function           |
  |----------+--------------------|
- | s        | step through       |
+ | d        | step through       |
  | c        | continue(step out) |

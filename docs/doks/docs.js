@@ -154,7 +154,7 @@ Source:
         href: "/doks/docs/prologue/introduction/",
         title: "Introduction",
         description: "Doks is a Hugo theme for building secure, fast, and SEO-ready documentation websites, which you can easily update and customize.",
-        content: "Get started # There are two main ways to get started with Doks:\nTutorial # 👉  The Tutorial is intended for novice to intermediate users.   Step-by-step instructions on how to start a new Doks project. Tutorial →\nQuick Start # 👉  The Quick Start is intended for intermediate to advanced users.   One page summary of how to start a new Doks project. Quick Start →\nGo further # Recipes, Reference Guides, Extensions, and Showcase.\nRecipes # Get instructions on how to accomplish common tasks with Doks. Recipes →\nReference Guides # Learn how to customize Doks to fully make it your own. Reference Guides →\nExtensions # Get instructions on how to add even more to Doks. Extensions →\nShowcase # See what others have build with Doks. Showcase →\nContributing # Find out how to contribute to Doks. Contributing →\nHelp # Get help on Doks. Help →\n"
+        content: "Get started # There are two main ways to get started with Doks:\nTutorial # 👉 The Tutorial is intended for novice to intermediate users. Step-by-step instructions on how to start a new Doks project. Tutorial →\nQuick Start # 👉 The Quick Start is intended for intermediate to advanced users. One page summary of how to start a new Doks project. Quick Start →\nGo further # Recipes, Reference Guides, Extensions, and Showcase.\nRecipes # Get instructions on how to accomplish common tasks with Doks. Recipes →\nReference Guides # Learn how to customize Doks to fully make it your own. Reference Guides →\nExtensions # Get instructions on how to add even more to Doks. Extensions →\nShowcase # See what others have build with Doks. Showcase →\nContributing # Find out how to contribute to Doks. Contributing →\nHelp # Get help on Doks. Help →\n"
       })
       .add(
       {
@@ -162,7 +162,7 @@ Source:
         href: "/doks/docs/prologue/quick-start/",
         title: "Quick Start",
         description: "One page summary of how to start a new Doks project.",
-        content: "Requirements # Doks uses npm to centralize dependency management, making it easy to update resources, build tooling, plugins, and build scripts:\n Download and install Node.js (it includes npm) for your platform.  Start a new Doks project # Create a new site, change directories, install dependencies, and start development server.\nCreate a new site # Doks is available as a child theme, and a starter theme:\n Use the Doks child theme, if you do not plan to customize a lot, and/or need future Doks updates. Use the Doks starter theme, if you plan to customize a lot, and/or do not need future Doks updates.  Not quite sure? Use the Doks child theme.\nDoks child theme # git clone https://github.com/h-enk/doks-child-theme.git my-doks-site  Doks starter theme # git clone https://github.com/h-enk/doks.git my-doks-site  Change directories # cd my-doks-site  Install dependencies # npm install  Start development server # npm run start  Doks will start the Hugo development webserver accessible by default at http://localhost:1313. Saved changes will live reload in the browser.\nOther commands # Doks comes with commands for common tasks. Commands →\n"
+        content: "Requirements # Doks uses npm to centralize dependency management, making it easy to update resources, build tooling, plugins, and build scripts:\nDownload and install Node.js (it includes npm) for your platform. Start a new Doks project # Create a new site, change directories, install dependencies, and start development server.\nCreate a new site # Doks is available as a child theme, and a starter theme:\nUse the Doks child theme, if you do not plan to customize a lot, and/or need future Doks updates. Use the Doks starter theme, if you plan to customize a lot, and/or do not need future Doks updates. Not quite sure? Use the Doks child theme.\nDoks child theme # git clone https://github.com/h-enk/doks-child-theme.git my-doks-site Doks starter theme # git clone https://github.com/h-enk/doks.git my-doks-site Change directories # cd my-doks-site Install dependencies # npm install Start development server # npm run start Doks will start the Hugo development webserver accessible by default at http://localhost:1313. Saved changes will live reload in the browser.\nOther commands # Doks comes with commands for common tasks. Commands →\n"
       })
       .add(
       {
@@ -170,7 +170,7 @@ Source:
         href: "/doks/docs/prologue/commands/",
         title: "Commands",
         description: "Doks comes with commands for common tasks.",
-        content: "💡  You can change the commands in the scripts section of `./package.json`.   create # Create new content for your site:\nnpm run create [path] [flags]  See also the Hugo docs: hugo new.\nlint # Check scripts, styles, and markdown for errors:\nnpm run lint  scripts # Check scripts for errors:\nnpm run lint:scripts [-- --fix]  styles # Check styles for errors:\nnpm run lint:styles [-- --fix]  markdown # Check markdown for errors:\nnpm run lint:markdown [-- --fix]  clean # Delete temporary directories:\nnpm run clean  start # Start local development server:\nnpm run start  build # Build production website:\nnpm run build  functions # Build Lambda functions:\nnpm run build:functions  preview # Build production website including draft and future content:\nnpm run build:preview  "
+        content: " 💡 You can change the commands in the scripts section of `./package.json`. create # Create new content for your site:\nnpm run create [path] [flags] See also the Hugo docs: hugo new.\nlint # Check scripts, styles, and markdown for errors:\nnpm run lint scripts # Check scripts for errors:\nnpm run lint:scripts [-- --fix] styles # Check styles for errors:\nnpm run lint:styles [-- --fix] markdown # Check markdown for errors:\nnpm run lint:markdown [-- --fix] clean # Delete temporary directories:\nnpm run clean start # Start local development server:\nnpm run start build # Build production website:\nnpm run build functions # Build Lambda functions:\nnpm run build:functions preview # Build production website including draft and future content:\nnpm run build:preview "
       })
       .add(
       {
@@ -178,7 +178,7 @@ Source:
         href: "/doks/docs/help/how-to-update/",
         title: "How to Update",
         description: "Regularly update the installed npm packages to keep your Doks website stable, usable, and secure.",
-        content: "💡  Learn more about semantic versioning and advanced range syntax.   Check for outdated packages # The npm outdated command will check the registry to see if any (or, specific) installed packages are currently outdated:\nnpm outdated [[\u0026lt;@scope\u0026gt;/]\u0026lt;pkg\u0026gt; ...]  Update packages # The npm update command will update all the packages listed to the latest version (specified by the tag config), respecting semver:\nnpm update [\u0026lt;pkg\u0026gt;...]  "
+        content: " 💡 Learn more about semantic versioning and advanced range syntax. Check for outdated packages # The npm outdated command will check the registry to see if any (or, specific) installed packages are currently outdated:\nnpm outdated [[\u0026lt;@scope\u0026gt;/]\u0026lt;pkg\u0026gt; ...] Update packages # The npm update command will update all the packages listed to the latest version (specified by the tag config), respecting semver:\nnpm update [\u0026lt;pkg\u0026gt;...] "
       })
       .add(
       {
@@ -186,7 +186,7 @@ Source:
         href: "/doks/docs/help/troubleshooting/",
         title: "Troubleshooting",
         description: "Solutions to common problems.",
-        content: "Problems updating npm packages # Delete the ./node_modules folder, and run again:\nnpm install  Problems with cache # Delete the temporary directories:\nnpm run clean  "
+        content: "Problems updating npm packages # Delete the ./node_modules folder, and run again:\nnpm install Problems with cache # Delete the temporary directories:\nnpm run clean "
       })
       .add(
       {
@@ -194,7 +194,7 @@ Source:
         href: "/doks/docs/help/faq/",
         title: "FAQ",
         description: "Answers to frequently asked questions.",
-        content: "Hyas? # Doks is a Hyas theme build by the creator of Hyas.\nFooter notice? # Please keep it in place.\nKeyboard shortcuts for search? #  focus: Ctrl + / select: ↓ and ↑ open: Enter close: Esc  Other documentation? #  Netlify Hugo  Can I get support? # Create a topic:\n Netlify Community Hugo Forums Doks Discussions  Contact the creator? # Send h-enk a message:\n Netlify Community Hugo Forums Doks Discussions  "
+        content: "Hyas? # Doks is a Hyas theme build by the creator of Hyas.\nFooter notice? # Please keep it in place.\nKeyboard shortcuts for search? # focus: Ctrl + / select: ↓ and ↑ open: Enter close: Esc Other documentation? # Netlify Hugo Can I get support? # Create a topic:\nNetlify Community Hugo Forums Doks Discussions Contact the creator? # Send h-enk a message:\nNetlify Community Hugo Forums Doks Discussions "
       })
       .add(
       {

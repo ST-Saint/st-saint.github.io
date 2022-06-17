@@ -1,0 +1,22 @@
+#+TITLE: Docker
+#+date: Sat May 21 10:59:56 CST 2022
+#+categories[]: tool
+#+tags[]: docker
+#+summary: Docker
+
+
+* Dockerfile
+
+* Docker command
+** run
+*** description
++ 创建和启动一个新的容器实例
+*** options
+** exec
+*** description
++ 已运行的容器中, 执行命令
+*** options
+| Option | Description |
+| -i     | interaction |
+| -t     | terminal    |
+| -w     | workspace   |

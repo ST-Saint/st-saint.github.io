@@ -1,6 +1,6 @@
 #+TITLE: Git
 #+date: Fri Apr 08 23:12:50 CST 2022
-#+categories[]: git
+#+categories[]: tool
 #+tags[]: git
 #+summary: Git
 
