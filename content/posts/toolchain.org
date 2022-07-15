@@ -55,7 +55,8 @@
 * Utilities
 ** Terminal
 *** Command shells
-+ fish
++ +fish+ (bash incompatible)
++ zsh
   + starship
 *** Terminal Emulator
 + alacritty
@@ -63,7 +64,8 @@
 
 ** Files
 *** File Manager
-+ SpaceFM
++ +SpaceFM+ (severe problem: NO TRASH FOLDER)
++ nemo
 *** Archive managers
 + 7zip
 
@@ -98,6 +100,7 @@
 * Security
 ** Password managers
 + gpg
+
 * Others
 ** Desktop environments
 *** Window Manager
@@ -106,6 +109,7 @@
 + Xmobar
 *** System tray
 + stalonetrayer
++ trayer
 *** Wallpaper
 + nitrogen
 *** Notification

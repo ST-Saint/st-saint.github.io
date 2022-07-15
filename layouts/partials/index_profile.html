@@ -5,7 +5,11 @@
         <img src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "profile image" }}"
             height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
         {{- end }}
-        <h1>{{ .title | default $.Site.Title | markdownify }}</h1>
+        <h1>{{ .title | default $.Site.Title | markdownify }}
+        </h1>
+        <a style="font-size: 12px" href="https://translate.google.com/?sl=zh-CN&tl=zh-CN&text=%E7%8E%8B%20%E4%BA%9A%E5%AE%87&op=translate"></a>
+        <i class="fa-solid fa-volume"></i>
+        <i class="fa-light fa-volume"></i>
         <span>{{ .subtitle | markdownify }}</span>
         {{- partial "social_icons.html" $.Site.Params.socialIcons -}}
 
