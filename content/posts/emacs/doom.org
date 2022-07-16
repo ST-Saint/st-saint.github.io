@@ -4,8 +4,8 @@
 #+tags[]: Emacs
 #+summary: Doom-Emacs
 
-* [[https://docs.projectile.mx/projectile/index.html][projectile
-]]
+* [[https://docs.projectile.mx/projectile/index.html][projectile]]
+
 + 好像并不是所有常见项目都会被识别成 projectile , 所以根目录加一个空 .projectile 文件
 
 ** ignore

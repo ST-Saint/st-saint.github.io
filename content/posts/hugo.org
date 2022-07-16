@@ -11,7 +11,7 @@ categories: ["hugo"]
 + 分割线
   + 需要5个 ~dash -~
 -----
-** =Front matter=
+** Front matter
 + 是个啥呢
   + =#+__property__: __value__=
 + 这样设置一些属性
@@ -47,7 +47,9 @@ categories: ["hugo"]
 + 准备换一下
 + header 也改一下
 
-+ 找不到好看字体摆烂了，直接 ~system ui~
++ +找不到好看字体摆烂了，直接 ~system ui~+
+
++ 换上 ~sauce code pro~ + ~dejavu~ 了
 
 * DateFormat
 + 折磨

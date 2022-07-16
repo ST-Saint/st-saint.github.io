@@ -1,5 +1,6 @@
 .post-content code {
   font-size: 16px;
+  font-family: "SauceCodePro Nerd Font", sans-serif;
 }
 
 .post-content pre.example {
@@ -12,3 +13,10 @@
   padding-bottom: 5px;
   border-radius: 4px;
 }
+
+.chroma .lntable {
+  width: auto;
+  overflow: auto;
+  display: block;
+}
+
