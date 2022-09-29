@@ -1,0 +1,265 @@
+#+TITLE: Linux Cheat Sheet
+#+categories[]: linux
+#+tags[]: linux cheatsheet
+#+summary: linux manual
+#+date: Sun Jul 24 16:16:09 CST 2022
+
+
+
+* shell
+** for loop
+
+#+begin_src shell
+for it in $array; do
+done
+#+end_src
+
+** time
+#+begin_src shell
+date "+%F %H:%M:%S.%N"
+#+end_src
+
+** copy to clipboard
+#+begin_src shell
+echo "" | xclip -set clip
+#+end_src
+
+** sort
+*** options
+| *-k* [n, m] | 选择区间           |
+| *-t*        | g分隔符            |
+| *-M*        | 排序月份           |
+| *-n*        | 以数值型进行排序   |
+| *-h*        | 可读的数字(带单位) |
+| *-f*        | 忽略大小写         |
+*** example
+
+** tmux
+
+*** config
+#+begin_src sh
+unbind C-b
+set-option -g prefix M-Space
+bind-key M-Space send-prefix
+
+set -g default-terminal screen-256color
+set-option -ga terminal-overrides ",*256col*:Tc"
+#+end_src
+
+*** options
++ start =tmux new -s *SESSION_NAME*=
++ attach =tmux a -t *SESSION_NAME*=
++ detach =send-prefix d=
++ create window =send-prefix c=
+
+** jobs
+*** list background process
++ =jobs=
+
+** environment
+
+** condition
+*** 中括号
+**** 单中括号 [ ]
+a. [ ] 两个符号左右都要有空格分隔
+b. 内部操作符与操作变量之间要有空格：如 [ "a" = "b" ]
+c. 字符串比较中，> < 需要写成> \< 进行转义
+d. [ ] 中字符串或者${}变量尽量使用""双引号扩住，以避免值未定义引用而出错
+e. [ ] 中可以使用 –a –o 进行逻辑运算
+f. [ ] 是 shell 内置命令
+**** 双中括号
+a. =[[ ]]= 两个符号左右都要有空格分隔
+b. =[[ ]]= 内部操作符与操作变量之间要有空格：如 =[[ "a" = "b" ]]=
+c. =[[ ]]= 字符串比较中，可以直接使用 > < 无需转义
+d. =[[ ]]= 中字符串或者${}变量尽量使用"" 双引号扩住，如未使用""会进行模式和元字符匹配
+e. =[[ ]]= 内部可以使用 && || 进行逻辑运算
+f. =[[ ]]= 是 bash keyword
+
+*** exist
+
+**** environment variable
+
+#+begin_src bash
+if [[ -z ${env} ]]; then
+fi
+#+end_src
+
+**** command
+#+begin_src bash
+if ! command -v python &> /dev/null
+fi
+#+end_src
+
+*** 文件夹或文件
+
+**** 文件夹
+#+begin_src shell
+if [ ! -d "folder" ];then
+fi
+#+end_src
+
+**** 文件
+
+#+begin_src shell
+if [ ! -f "file" ];then
+fi
+#+end_src
+
+
+** find files
+#+begin_src shell
+find ./fuzz-results/crashes -type f -name "id:$1*" -print0 | while read -d $'\0' file
+do
+    echo $file
+done
+#+end_src
+
+** xargs
+多行转单行输入, 默认分隔符为换行
+#+begin_src shell
+pacman -Q | grep -i "haskell" | xargs sudo pacman -S --noconfirm
+#+end_src
+
+placeholder
+
+#+begin_src shell
+xargs -I {} mv dir1/{} dir2/{}
+xargs -I '{}' mv dir1/'{}' dir2/'{}'
+#+end_src
+
+** stream
+| symbol      | meanings         |
+| 0           | stdin            |
+| 1           | stdout           |
+| 2           | stderr           |
+| 2>&1        | stderr to stdout |
+| 1>          | stdout redirect  |
+| 2>          | stderr redirect  |
+| 1>/dev/null | write to void    |
+
+** uniq
+仅输出 unique 行
+#+begin_src shell
+uniq -u
+#+end_src
+
+** grep & rg
+*** grep
+
+** pacman
+*** 清除
++ sudo pacman -R $(pacman -Qdtq)
+
+** zip
+*** zip
+- -q 不显示命令
+- -r 递归
+- -y 不解析 symbol link
+
+#+begin_src shell
+zip -qry zip_file.zip file1 file2 dir1
+#+end_src
+
+- -d
+#+begin_src shell
+unzip jacoco-0.8.7.zip -d jacoco
+#+end_src
+*** tar
+**** 解压
+#+begin_src shell
+tar -xzvf sample.tar.gz -C ./sample
+#+end_src
+**** 压缩
+#+begin_src
+tar -czf sample.tar.gz ./sample
+#+end_src
+
+* kernel
+
+** dependencies
+#+begin_src shell
+sudo apt-get install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf llvm
+#+end_src
+
+* network
+** iw
+- 格式
+#+begin_src shell
+iw [ OPTIONS ] { help [ command ] | OBJECT COMMAND }
+OBJECT := { dev | phy | reg }
+OPTIONS := { --version | --debug }
+#+end_src
+- 搜索
+#+begin_src shell
+iw dev <devname> scan
+#+end_src
+- 显示设备
+#+begin_src shell
+iw dev
+#+end_src
+- 显示设备信息
+#+begin_src shell
+iw dev <devename> info
+#+end_src
+- 显示连接信息
+#+begin_src shell
+iw dev <devname> link
+#+end_src
+- 连接
+#+begin_src shell
+iw dev <devname> connect [-w] <SSID> [<freq in MHz>] [<bssid>] [key 0:abcde d:1:6162636465] [mfp:req/opt/no]
+# Join the network with the given SSID (and frequency, BSSID).
+#+end_src
+
+** Network Manager
+- 扫描
+#+begin_src shell
+nmcli device wifi rescan
+#+end_src
+- 显示
+#+begin_src shell
+nmcli device wifi list
+#+end_src
+- 连接
+#+begin_src shell
+nmcli device wifi connect <SSID> password <password> [hidden yes]
+#+end_src
+
+* user management
+
+** add user
+- 连接到服务器
+#+BEGIN_SRC bash
+ssh root@10.105.250.92
+#+END_SRC
+
+- 创建用户
+#+BEGIN_SRC bash
+adduser example
+#+END_SRC
+
+- 添加 ~sudo~
+#+BEGIN_SRC bash
+adduser example sudo
+#+END_SRC
+
+** ssh pem
+
+- 生成密钥
+#+BEGIN_SRC bash
+sudo su example
+cd ~/.ssh
+ssh-keygen -t ed25519 -C "example@mail.com"
+#+END_SRC
+
+- 修改权限
+#+BEGIN_SRC bash
+cp ed25519.pub authorized_keys
+chmod 600 authorized_keys
+chmod 700 ~/.ssh
+#+END_SRC
+
+- 拷贝密钥
+#+BEGIN_SRC bash
+scp root@10.105.250.92:/home/example/.ssh/ed25519 ~/.ssh/
+#+END_SRC

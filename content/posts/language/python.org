@@ -21,6 +21,55 @@ return "abc123".encode("utf-8")
 #+RESULTS:
 : b'abc123'
 
+* time
+#+begin_src python
+from time import gmtime, strftime
+return strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+#+end_src
+
+#+RESULTS:
+: Mon, 19 Sep 2022 23:21:00 +0000
+
+* socket
+
+** server
+#+begin_src python
+# Echo server program
+import socket
+from time import gmtime, strftime
+
+HOST = '192.168.97.2'                 # Symbolic name meaning all available interfaces
+PORT = 50007              # Arbitrary non-privileged port
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.bind((HOST, PORT))
+    s.listen(1)
+    conn, addr = s.accept()
+    with conn:
+        print('Connected by', addr)
+        while True:
+            data = conn.recv(1024)
+            print(strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime()) + "receive: " + str(data))
+            if not data: break
+            conn.sendall(data)
+#+end_src
+
+** client
+#+begin_src python
+# Echo client program
+import socket
+import time
+
+HOST = '192.168.97.2'    # The remote host
+PORT = 50007              # The same port as used by the server
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.connect((HOST, PORT))
+    while True:
+        s.sendall(b'Hello, world')
+        data = s.recv(1024)
+        print('Received', repr(data))
+        time.sleep(1)
+#+end_src
+
 * class
 ** super
  + 理论上 =super()= 可以直接 call 嗷, 返回父类

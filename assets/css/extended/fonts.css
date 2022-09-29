@@ -1,20 +1,18 @@
 @font-face {
-  font-family: 'SauceCodePro Nerd Font';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/Sauce Code Pro Nerd Font Complete.ttf') format('truetype'), /* Safari, Android, iOS */
+    font-family: "SauceCodePro Nerd Font";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/Sauce Code Pro Nerd Font Complete.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
 @font-face {
-  font-family: 'DejaVuSansMono Nerd Font';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/DejaVu Sans Mono Nerd Font Complete.ttf') format('truetype'), /* Safari, Android, iOS */
+    font-family: "DejaVuSansMono Nerd Font";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/DejaVu Sans Mono Nerd Font Complete.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
-
-
 body {
-  font-family: "SauceCodePro Nerd Font", sans-serif;
-  /* font-family: "DejaVuSansMono Nerd Font"; */
+    font-family: "SauceCodePro Nerd Font";
+    /* font-family: "DejaVuSansMono Nerd Font"; */
 }
