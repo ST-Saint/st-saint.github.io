@@ -138,8 +138,8 @@ params:
         title: Yayu Wang
         subtitle: "ST_Saint"
         imageUrl: "yayu.jpg"
-        imageWidth: 120
-        imageHeight: 120
+        imageWidth: 200
+        imageHeight: 200
         imageTitle: my image
         buttons:
             - name: Posts
