@@ -4,6 +4,56 @@
 #+tags[]: tools
 #+summary: tools I am using
 
+* arch packages
++ manjora plasma
+#+begin_src shell
+sudo pacman -S \
+     base-devel \
+     bear \
+     cmake \
+     ctags \
+     global \
+     cpio \  # linux kernel prerequisite
+     pahole \
+     grub \
+     rofi \  # application launcher
+     nitrogen \  # wallpapers
+     words \  # dictionary complition
+     stow \  # dotconfig management
+     ibus-rime \  # Chinese input
+     nemo \
+     pavucontrol \
+     pasystray \
+     ripgrep \
+     btop \  # resource monitor
+     picom \  #
+     flameshot \  # screen shot
+     aspell \
+     libgccjit \
+     libvirt \  # VM management
+     virt-manager \  # sudo usermod -a -G libvirt $USER
+     virt-install \
+     bridge-utils \  # VM bridge network
+     qemu-full
+
+pip install epc six
+
+sudo pamac \
+     build \
+     google-chrome \
+     nerd-fonts-complete \
+     mu-git
+#+end_src
+
+** personal pakcages
+#+begin_src shell
+sudo pacman -S \
+     discord \
+     zoom \
+     slack
+#+end_src
+
+
 * Internet
 ** Network connection
 *** VPN
