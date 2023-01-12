@@ -34,6 +34,18 @@ echo "" | xclip -set clip
 | *-f*        | 忽略大小写         |
 *** example
 
+** sed
+*** replace
+#+begin_src shell
+sed -E -i 's/SEARCH_REGEX/REPLACEMENT/g' INPUTFILE
+sed -E -i 's/Xft.dpi: [0-9]+/Xtf.dpi 144/g' ~/.Xresources
+#+end_src
+
++ ~-i~ - Don't write the output to stdout.
++ ~s~ - The substitute command.
++ ~///~ - Delimiter character. It can be any character but usually the slash (/) character is used.
++ ~g~ - Global replacement flag. All occurrences are replaced if ~g~ provided.
+
 ** tmux
 
 *** config
