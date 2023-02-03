@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>git on Yayu Wang</title>
+    <link>https://st-saint.github.io/tags/git/</link>
+    <description>Recent content in git on Yayu Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 08 Apr 2022 23:12:50 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://st-saint.github.io/posts/language/git/</link>
+      <pubDate>Fri, 08 Apr 2022 23:12:50 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/language/git/</guid>
+      <description>Git</description>
+    </item>
+    
+  </channel>
+</rss>
