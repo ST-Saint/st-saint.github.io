@@ -12,7 +12,6 @@ buildFuture: true
 buildExpired: false
 enableEmoji: true
 # googleAnalytics: UA-123-45
-
 enableGitInfo: true
 
 frontmatter:

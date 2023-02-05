@@ -39,6 +39,8 @@
 </script>
 {{- end }}
 
+{{ if .Params.katex }}{{ partial "katex.html" . }}{{ end }}
+
 <header class="header">
     <nav class="nav">
         <div class="logo">
