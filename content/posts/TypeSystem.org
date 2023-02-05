@@ -1,0 +1,61 @@
+#+title: Type System
+#+date: Sat Feb 04 22:04:44 PST 2023
+#+katex: true
+#+STARTUP: latexpreview
+
+* Terminology
+
+** Judgement
+- A judgement is something we may know, that is, an object of knowledge
+- A judgement is evident if we in fact know it
+
+- \(e:t\) \Rightarrow the expression e has type t
+
+- \(\Gamma\) \Rightarrow Context: a set of <variable, type> pairs
+
+  + \(\vdash\) \Rightarrow turnstile
+
+  + \(\Gamma \vdash e : t\) \Rightarrow expression e has type t in the context \(\Gamma\)
+
+  + \(\Gamma , x:\tau\) \Rightarrow extends \(\Gamma\) with knowledge: \(x:\tau\)
+
+** Inference Rules
+
+- \(\frac{P1\ P2\ P3\ ...}{C}\)
+  + C \Rightarrow conclusion
+  + P \Rightarrow premise
+  + If we konw P1 & P2 & P3 then we know C
+
+
+*** Derivation
+#+begin_quote
+In ML, a typing derivation is a proof that some expression can have some type, given a particular context, not that the expression can only have that type or that the expression will have that type no matter where we encounter it.
+
+a derivation for ρ ⊢ e : t is a proof that in some context ρ (which assigns types to variables in e), we can show that e can have (at least) the type t, and possibly others.
+#+end_quote
+
+- The one-step evaluation relation → is the smallest binary relation on terms
+- When the pair (t , t') is in the evaluation relation, we say that "the evaluation statement (or judgment) t → t' is derivable."
+
+**** Derivation Tree
+\begin{equation}
+\notag \large \dfrac{\dfrac{\dfrac{x:Bool \in x: Bool}{x:Bool \vdash x:Bool}}{\vdash \lambda x:Bool . x : Bool \rightarrow Bool} \qquad \dfrac{}{\vdash true: Bool} }{\vdash (\lambda x: Bool.x )\ true: Bool}
+\end{equation}
+
+\begin{align*}
+x&=\sqrt{b} \\
+&=b^{\frac{1}{2}}
+\end{align*}
+** Reduction
+
+$$\frac{}{if True then e1 else e2 \rightarrow e1}$$
+
+- $$\frac{e \Downarrow True}{if\ e\ then\ e1\ else\ e2}$$ $${if\ True\ then\ e1\ else\ e2\ \rightarrow\ e1}$$
+
+** Substitution
+
+- $$e[x \backslash e^a]$$
+
+$$[x \rightarrow e^{'}]e \Rightarrow [ x \rightarrow e^{'}](let y=e_1\; in\; e_2 ) = let y=[x \rightarrow e^{'}]e_1\; in\; [x \rightarrow e^{'}]e_2 $$
+
+** Unification

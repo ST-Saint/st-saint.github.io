@@ -10,6 +10,7 @@
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
         <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
     </span>
+
 </footer>
 {{- end }}
 
@@ -22,6 +23,8 @@
 {{- end }}
 
 {{- partial "extend_footer.html" . }}
+
+{{ if .Params.katex }}{{ partial "katex.html" . }}{{ end }}
 
 <script>
     let menu = document.getElementById('menu')
