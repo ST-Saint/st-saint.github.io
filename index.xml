@@ -5,7 +5,7 @@
     <link>https://st-saint.github.io/</link>
     <description>Recent content on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 04 Feb 2023 18:22:26 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Feb 2023 22:04:44 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installation | Update</title>
       <link>https://st-saint.github.io/posts/papermod/papermod-installation/</link>
@@ -22,6 +22,16 @@
       
       <guid>https://st-saint.github.io/posts/papermod/papermod-features/</guid>
       <description>Learn About All Features in PaperMod</description>
+    </item>
+    
+    <item>
+      <title>Type System</title>
+      <link>https://st-saint.github.io/posts/typesystem/</link>
+      <pubDate>Sat, 04 Feb 2023 22:04:44 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/typesystem/</guid>
+      <description>Terminology Judgement A judgement is something we may know, that is, an object of knowledge A judgement is evident if we in fact know it \(e:t\) ⇒ the expression e has type t \(\Gamma\) ⇒ Context: a set of &amp;lt;variable, type&amp;gt; pairs
+\(\vdash\) ⇒ turnstile \(\Gamma \vdash e : t\) ⇒ expression e has type t in the context \(\Gamma\) \(\Gamma , x:\tau\) ⇒ extends \(\Gamma\) with knowledge: \(x:\tau\) Inference Rules \(\frac{P1\ P2\ P3\ .</description>
     </item>
     
     <item>
