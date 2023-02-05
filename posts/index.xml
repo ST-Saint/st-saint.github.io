@@ -5,7 +5,25 @@
     <link>https://st-saint.github.io/posts/</link>
     <description>Recent content in Posts on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 13 Jan 2023 16:00:00 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Feb 2023 18:22:26 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KVM</title>
+      <link>https://st-saint.github.io/posts/kvm/</link>
+      <pubDate>Sat, 04 Feb 2023 18:22:26 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/kvm/</guid>
+      <description>Setup KVM with customized Linux kernel</description>
+    </item>
+    
+    <item>
+      <title>GDB Cheat Sheet</title>
+      <link>https://st-saint.github.io/posts/gdb/</link>
+      <pubDate>Thu, 26 Jan 2023 00:00:01 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/gdb/</guid>
+      <description>GDB</description>
+    </item>
+    
     <item>
       <title>JIT</title>
       <link>https://st-saint.github.io/posts/jit/</link>
@@ -40,15 +58,6 @@
       
       <guid>https://st-saint.github.io/posts/hugo/</guid>
       <description>hugo things</description>
-    </item>
-    
-    <item>
-      <title>kvm</title>
-      <link>https://st-saint.github.io/posts/kvm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://st-saint.github.io/posts/kvm/</guid>
-      <description>bridge NOTE: start dhcpcd.service 1 2 3 4 5 6 7 8 9 10 nmcli connection add type bridge ifname br0 stp no nmcli connection add type bridge-slave ifname enp7s0 master br0 nmcli connection show --active nmcli connection down bridge-br0 nmcli connection down Wired\ connection\ 1 nmcli connection show nmcli connection up bridge-br0 nmcli connection up bridge-slave-enp7s0 kernel compilation Cannot find LILO manually update boot loader 1 sudo pacman -S grub mkinitcpio serial console 1 2 3 4 5 GRUB_TERMINAL=&amp;#34;serial console&amp;#34; GRUB_SERIAL_COMMAND=&amp;#34;serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1&amp;#34; systemctl enable serial-getty@ttyS0.</description>
     </item>
     
   </channel>
