@@ -3,7 +3,7 @@
 #+tags[]: linux cheatsheet
 #+summary: linux manual
 #+date: Sun Jul 24 16:16:09 CST 2022
-
+#+lastmod: Sat Feb 04 17:05:37 PST 2023
 
 
 * shell
@@ -17,11 +17,12 @@ done
 ** time
 #+begin_src shell
 date "+%F %H:%M:%S.%N"
+# 2023-01-25 23:55:00.152982295
 #+end_src
 
 ** copy to clipboard
 #+begin_src shell
-echo "" | xclip -set clip
+echo "copy" | xclip -set clip
 #+end_src
 
 ** sort
@@ -86,17 +87,31 @@ c. =[[ ]]= 字符串比较中，可以直接使用 > < 无需转义
 d. =[[ ]]= 中字符串或者${}变量尽量使用"" 双引号扩住，如未使用""会进行模式和元字符匹配
 e. =[[ ]]= 内部可以使用 && || 进行逻辑运算
 f. =[[ ]]= 是 bash keyword
+***** example
+****** equal
+#+begin_src shell
+if [[ $randm == 1 ]] ; then
+    echo $random == 1
+fi
+#+end_src
+****** not equal
+#+begin_src shell
+if [[ $randm != 1 ]] ; then
+    echo $random != 1
+fi
+#+end_src
 
 *** exist
 
 **** environment variable
-
+- check if a environment variable is set
 #+begin_src bash
 if [[ -z ${env} ]]; then
 fi
 #+end_src
 
 **** command
+- check if a command exists
 #+begin_src bash
 if ! command -v python &> /dev/null
 fi
@@ -106,14 +121,14 @@ fi
 
 **** 文件夹
 #+begin_src shell
-if [ ! -d "folder" ];then
+if [ ! -d "folder" ] ; then
 fi
 #+end_src
 
 **** 文件
 
 #+begin_src shell
-if [ ! -f "file" ];then
+if [ ! -f "file" ] ; then
 fi
 #+end_src
 

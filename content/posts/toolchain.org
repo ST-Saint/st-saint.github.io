@@ -11,15 +11,17 @@ sudo pacman -S \
      base-devel \
      bear \
      cmake \
+     boost \
+     gdb \
      ctags \
      global \
      cpio \  # linux kernel prerequisite
      pahole \
      grub \
      rofi \  # application launcher
-     nitrogen \  # wallpapers
      words \  # dictionary complition
      stow \  # dotconfig management
+     tree-sitter \
      ibus-rime \  # Chinese input
      nemo \
      pavucontrol \
@@ -28,9 +30,11 @@ sudo pacman -S \
      btop \  # resource monitor
      picom \  #
      flameshot \  # screen shot
-     aspell \
+     aspell \  # dictionary completion
+     aspell-en \
      libgccjit \
      libvirt \  # VM management
+     texlive-most \  # Latex
      virt-manager \  # sudo usermod -a -G libvirt $USER
      virt-install \
      bridge-utils \  # VM bridge network
@@ -48,9 +52,19 @@ sudo pamac \
 ** personal pakcages
 #+begin_src shell
 sudo pacman -S \
+     nitrogen \  # wallpapers
      discord \
+     dunst \
      zoom \
-     slack
+     slack \
+     isync \
+     msmtp \
+     pasystray
+
+sudo pamac build
+           tree-sitter-yaml-git \  # tree-sitter yaml
+           lib32-udis86-git \
+           deepin-wine-wechat  # wine wechat
 #+end_src
 
 

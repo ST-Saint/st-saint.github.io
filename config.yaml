@@ -13,6 +13,15 @@ buildExpired: false
 enableEmoji: true
 # googleAnalytics: UA-123-45
 
+enableGitInfo: true
+
+frontmatter:
+    lastmod:
+        - :git
+        - lastmod
+        - date
+        - publishDate
+
 minify:
     disableXML: true
     minifyOutput: true

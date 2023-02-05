@@ -1,0 +1,13 @@
+#+TITLE: GDB Cheat Sheet
+#+categories[]: linux
+#+tags[]: GDB cheatsheet
+#+summary: GDB
+#+date: Thu Jan 26 00:00:01 PST 2023
+
+* Configuration
+- Save history
+#+begin_src conf
+set history save on
+#+end_src
+
+* Layout
