@@ -9,6 +9,7 @@
 #+begin_src shell
 sudo pacman -S \
      base-devel \
+     alacritty \  # terminal
      bear \
      cmake \
      boost \
@@ -29,7 +30,6 @@ sudo pacman -S \
      ripgrep \
      btop \  # resource monitor
      picom \  #
-     flameshot \  # screen shot
      aspell \  # dictionary completion
      aspell-en \
      libgccjit \
@@ -57,12 +57,23 @@ sudo pacman -S \
      dunst \
      zoom \
      slack \
+     flameshot \  # screen shot
      isync \
      msmtp \
-     pasystray
+     pasystray \
+     hugo \
+     fzf \
+     exa \
+     starship
 
 sudo pamac build
            tree-sitter-yaml-git \  # tree-sitter yaml
+           tree-sitter-toml-git \
+           tree-sitter-javascript-git \
+           tree-sitter-typescript-git \
+           autojump \
+           krita \  # digital artists
+           netease-cloud-music \
            lib32-udis86-git \
            deepin-wine-wechat  # wine wechat
 #+end_src
@@ -121,7 +132,11 @@ sudo pamac build
 *** Command shells
 + +fish+ (bash incompatible)
 + zsh
-  + starship
+  - oh-my-zsh
+  - starship
+  - fzf-tab
+  - zsh-syntax-highlighting
+
 *** Terminal Emulator
 + alacritty
 + vterm
@@ -140,7 +155,6 @@ sudo pamac build
 ** Text Input
 
 *** ibus
-
 + ibus-rime
 
 ** System
