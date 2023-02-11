@@ -2,6 +2,7 @@
 #+date: Sat Feb 04 22:04:44 PST 2023
 #+katex: true
 #+STARTUP: latexpreview
+#+summary: I don't know what is type system
 
 * Terminology
 
@@ -47,8 +48,11 @@ x&=\sqrt{b} \\
 &=b^{\frac{1}{2}}
 \end{align*}
 ** Reduction
+- Also known as *subject evaluation*, *type preservation* or simply *preservation*
 
-$$\frac{}{if True then e1 else e2 \rightarrow e1}$$
+$$\frac{\Gamma \vdash e_1:\tau\qquad e_1 \rightarrow e_2}{\Gamma \vdash e_2:\tau}$$
+
+$$\frac{}{if\ True\ then\ e1\ else\ e2 \rightarrow e1}$$
 
 - $$\frac{e \Downarrow True}{if\ e\ then\ e1\ else\ e2}$$ $${if\ True\ then\ e1\ else\ e2\ \rightarrow\ e1}$$
 
@@ -59,3 +63,7 @@ $$\frac{}{if True then e1 else e2 \rightarrow e1}$$
 $$[x \rightarrow e^{'}]e \Rightarrow [ x \rightarrow e^{'}](let y=e_1\; in\; e_2 ) = let y=[x \rightarrow e^{'}]e_1\; in\; [x \rightarrow e^{'}]e_2 $$
 
 ** Unification
+
+** landin' knot
+- represent recursion
+  + 13.5.8
