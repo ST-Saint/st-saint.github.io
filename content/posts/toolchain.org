@@ -38,7 +38,8 @@ sudo pacman -S \
      virt-manager \  # sudo usermod -a -G libvirt $USER
      virt-install \
      bridge-utils \  # VM bridge network
-     qemu-full
+     qemu-full \
+     go  # golang
 
 pip install epc six
 
