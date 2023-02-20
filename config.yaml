@@ -166,7 +166,7 @@ params:
         - name: facebook
           url: "https://www.facebook.com/yayu.wang.1029/"
         - name: email
-          url: "eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiWWF5dSBXYW5nIiwiZW1haWwiOiJ5YXl1d2FuZ0Bjcy51YmMuY2EifQ.e-5G_qdh02Srl8TLWTPVld1SPHdusRKJHibCDiekVtc"
+          url: "posts/email"
 
     editPost:
         URL: "https://github.com/st-saint/st-saint.github.io/content"

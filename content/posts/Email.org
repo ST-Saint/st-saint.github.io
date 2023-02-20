@@ -1,0 +1,10 @@
+#+TITLE: Email
+#+DATE: Sun Feb 19 18:14:33 PST 2023
+#+ShowToc:
+
+
+#+begin_src js
+((token, signature) => {
+    return jwt.verify(token, signature)
+}) ("eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiWWF5dSBXYW5nIiwiZW1haWwiOiJ5YXl1d2FuZ0Bjcy51YmMuY2EifQ.e-5G_qdh02Srl8TLWTPVld1SPHdusRKJHibCDiekVtc", "再次鼓起失去的勇气. Regain lost courage.")
+#+end_src
