@@ -5,7 +5,16 @@
     <link>https://st-saint.github.io/posts/</link>
     <description>Recent content in Posts on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 04 Feb 2023 22:04:44 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 18:14:33 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Email</title>
+      <link>https://st-saint.github.io/posts/email/</link>
+      <pubDate>Sun, 19 Feb 2023 18:14:33 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/email/</guid>
+      <description> 1 2 3 ((token, signature) =&amp;gt; { return jwt.verify(token, signature) }) (&amp;#34;eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiWWF5dSBXYW5nIiwiZW1haWwiOiJ5YXl1d2FuZ0Bjcy51YmMuY2EifQ.e-5G_qdh02Srl8TLWTPVld1SPHdusRKJHibCDiekVtc&amp;#34;, &amp;#34;再次鼓起失去的勇气. Regain lost courage.&amp;#34;) </description>
+    </item>
+    
     <item>
       <title>Type System</title>
       <link>https://st-saint.github.io/posts/typesystem/</link>
