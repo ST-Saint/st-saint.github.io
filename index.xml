@@ -30,7 +30,7 @@
       <pubDate>Sun, 19 Feb 2023 18:14:33 +0000</pubDate>
       
       <guid>https://st-saint.github.io/posts/email/</guid>
-      <description> 1 2 3 ((token, signature) =&amp;gt; { return jwt.verify(token, signature) }) (&amp;#34;eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiWWF5dSBXYW5nIiwiZW1haWwiOiJ5YXl1d2FuZ0Bjcy51YmMuY2EifQ.e-5G_qdh02Srl8TLWTPVld1SPHdusRKJHibCDiekVtc&amp;#34;, &amp;#34;再次鼓起失去的勇气. Regain lost courage.&amp;#34;) </description>
+      <description>Email</description>
     </item>
     
     <item>
