@@ -9,9 +9,22 @@
 
 * Docker command
 ** run
+#+begin_src shell
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+# example
+docker run --name sample_docker -it ubuntu:20.04 /bin/bash
+#+end_src
+
 *** description
 + 创建和启动一个新的容器实例
++ create and start a new container instance
 *** options
+| Option | Description                          |
+| --name | Name                                 |
+| -i     | Keep STDIN open even if not attached |
+| -t     | Allocate a pseudo-TTY                |
+
 ** exec
 *** description
 + 已运行的容器中, 执行命令

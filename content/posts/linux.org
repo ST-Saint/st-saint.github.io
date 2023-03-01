@@ -252,6 +252,23 @@ nmcli device wifi list
 nmcli device wifi connect <SSID> password <password> [hidden yes]
 #+end_src
 
+* High DPI
+
+** Netease Music
+#+begin_src conf
+# /opt/netease/netease-cloud-music/netease-cloud-music.bash
+
+export QT_SCALE_FACTOR=2
+#+end_src
+
+** ghidra
+#+begin_src conf
+#/opt/ghidra/support/launch.properties
+
+VMARGS_LINUX=-Dsun.java2d.uiScale=2
+#+end_src
+
+
 * user management
 
 ** add user
