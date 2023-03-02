@@ -1,0 +1,55 @@
+#+TITLE: dudect
+#+DATE: Wed Mar 01 22:10:34 PST 2023
+#+Summary: Dude, is my code constant time?
+#+categories[]: side-channel
+#+tags[]: constant-time, side-channel
+
+* Related works
+1. [ ] ctgrind: dynamic analysis [Lan10]
+2. [ ] Flow-tracker: Rodrigues Silva [RQaPA16]
+3. [ ] ctverif: a static analyzer [ABB+16]
+
+**  drawback
++ have to model the hardware
++ correct hardware models are not easy to build [Ber14]
+
+* Approach
+- The approach is based on leakage detection tests
+- Measure the execution time of 2 different input data *classes*
+
+** Step 1. execution time
+
+*** classes definition
+
+**** fix-vs-random
+- the first class input data is fixed to a constant value
+- the second class input data is chosen at random for each measurement
+- The fixed value might be chosen to trigger certain "special" corner-case processing (such as low-weight input for arithmetic operations).
+
+*** Cycle counters
+- TSC register in intel
+- systick peripheral in ARM
+
+*** Environmental conditions
+- The class assignment and input preparation tasks are prior to the measurement
+
+** Step 2. Apply post-processing
+
+*** cropping
+- crop the measurements that are larger than a fixed, class-independent threshold
+
+*** Higher-order preprocessing
+- idk
+#+begin_quote
+Depending on the statistical test applied, it may be beneficial to apply some higherorder pre-processing, such as centered product [CJRR99] mimicking higher-order DPA attacks. Higher-order leakage detection tests already appeared in other contexts [SM15].
+#+end_quote
+
+** Step 3: Apply statistical test
+- apply a statistical test to the hypothesis "the two timing distributions are equal"
+
+*** t-test
+- Welch’s t-test
+
+*** Non-parametric tests
+- rely on fewer assumptions about the underlying distributions
+- converge slower and require more samples
