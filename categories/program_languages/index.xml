@@ -33,5 +33,14 @@
       <description>Java</description>
     </item>
     
+    <item>
+      <title>Golang</title>
+      <link>https://st-saint.github.io/posts/language/golang/</link>
+      <pubDate>Tue, 01 Mar 2022 17:42:23 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/language/golang/</guid>
+      <description>Golang</description>
+    </item>
+    
   </channel>
 </rss>
