@@ -1,0 +1,10 @@
+#+TITLE: Diary
+#+DATE: Fri Mar 03 00:00:00 PST 2023
+#+Summary: Diary
+#+categories[]: Diary
+#+tags[]: Diary
+
+
+* <2023-03-02 Thu>[0/2]
+- [ ] 为什么 Dynamic Link Library 跟 process isolation 可以兼容？process isolation 给每个 process 独立的 virtual address, 每个 process 访问 so 应该都需要拷贝一份到自己VA. 这 so 哪里 shared 了?
+- [ ] ebpf 的 data segment 在 verifier 阶段是不确定的吗？ code segment 应该已经确定了 base address 不然 verifier 怎么做到 rewrtie indirect jumps to direct jumps? code 确定 data 不确定这合理吗
