@@ -5,7 +5,7 @@
     <link>https://st-saint.github.io/</link>
     <description>Recent content on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 01 Mar 2023 22:10:34 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installation | Update</title>
       <link>https://st-saint.github.io/posts/papermod/papermod-installation/</link>
@@ -22,6 +22,15 @@
       
       <guid>https://st-saint.github.io/posts/papermod/papermod-features/</guid>
       <description>Learn About All Features in PaperMod</description>
+    </item>
+    
+    <item>
+      <title>Diary</title>
+      <link>https://st-saint.github.io/posts/diary/</link>
+      <pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/diary/</guid>
+      <description>Diary</description>
     </item>
     
     <item>
@@ -134,10 +143,10 @@
     
     <item>
       <title>F1</title>
-      <link>https://st-saint.github.io/posts/diary/f1/</link>
+      <link>https://st-saint.github.io/posts/f1/</link>
       <pubDate>Thu, 31 Mar 2022 16:12:40 +0000</pubDate>
       
-      <guid>https://st-saint.github.io/posts/diary/f1/</guid>
+      <guid>https://st-saint.github.io/posts/f1/</guid>
       <description>F1 notebook</description>
     </item>
     
@@ -215,10 +224,10 @@
     
     <item>
       <title>Hashmap</title>
-      <link>https://st-saint.github.io/posts/diary/hashmap/</link>
+      <link>https://st-saint.github.io/posts/hashmap/</link>
       <pubDate>Tue, 01 Feb 2022 22:14:25 +0800</pubDate>
       
-      <guid>https://st-saint.github.io/posts/diary/hashmap/</guid>
+      <guid>https://st-saint.github.io/posts/hashmap/</guid>
       <description>一般都说 hashmap 复杂度O(1), 感觉应该不完全是 研究一下 Werid things 容易想到如果有无限大数组, 直接当作桶对 object 取 hash, 期望不会 collide 就行 显然没有无限大内存，怎么做 index Java implement 实现是 hash_array (length: n to the pow of 2) 处理 collision
 linkedlist R-B tree Index index map 的话, length 是 2 的幂次, hash 值直接取后n位, 作为 array 的 index
 有人说是高位和低位异或的, 听起来更有道理, 之后看看源码 array 小还是比较容易碰撞的, 元素多了就扩容 Resize when 有个 loadFactor , 估计是说 array 的 density 高了 or 碰撞太多就 resize, 之后看看源码 how double length 之后 array 都得遍历一下吧,</description>
@@ -226,10 +235,10 @@ linkedlist R-B tree Index index map 的话, length 是 2 的幂次, hash 值直�
     
     <item>
       <title>Wechat</title>
-      <link>https://st-saint.github.io/posts/diary/wechat/</link>
+      <link>https://st-saint.github.io/posts/wechat/</link>
       <pubDate>Fri, 28 Jan 2022 23:14:25 +0800</pubDate>
       
-      <guid>https://st-saint.github.io/posts/diary/wechat/</guid>
+      <guid>https://st-saint.github.io/posts/wechat/</guid>
       <description>说实话嗷，wx真不是个人啊</description>
     </item>
     
