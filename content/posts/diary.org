@@ -4,8 +4,20 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
-* <2023-03-03 Fri>[0/0]
-- [ ] DEFCON 上面应该没有 serverlesss attack 的 talk, 应该需要在 [[https://www.blackhat.com/html/archives.html][blackhat]] 上找找
+
+* <2023-03-08 Wed>[0/4]
+- fk trt, 怎么会这么 jb 冷啊, 5点钟太阳直接照瞎, dt 还没地方玩
+- [ ] secure boot 好像也只是一个 checksum 证明一个 OS/image 是你知道的那个 image 吧, 但是也没有证明这个 OS/image 有哪个些 property 啊. 比如一个 application contact 说我不会恶意监控你的 sensor 扫你的盘, 我怎么知道这个 app 会不会遵守协议.
+- [ ] 在 cloud 上对所有 application 先做 verification 加个 signature 再允许部署不好吗, 直接解决 peer adversary 的问题. 当然要 verify 的好像有点多
+- [ ] zero-knowledge 到底能证明什么 knowledge 啊, 感觉不能验证上面的东西, 但是只是证明自己知道个数也太弱了吧
+- [ ] network QoS的问题, 如果 NIC 一直 duplicate packet 去到两个独立的 server, 是不是用两倍的 bandwidth + server 资源可以保证 ~2-p~ 的 QoS.
+  - 不过 ~2-p~ 的 QoS 好像也没好到哪去……
+
+
+
+* <2023-03-03 Fri>[1/1]
+- [X] DEFCON 上面应该没有 serverlesss attack 的 talk, 应该需要在 [[https://www.blackhat.com/html/archives.html][blackhat]] 上找找
+  - blackhat 也没有
 
 * <2023-03-02 Thu>[1/2]
 - [X] 为什么 Dynamic Link Library 跟 process isolation 可以兼容？process isolation 给每个 process 独立的 virtual address, 每个 process 访问 so 应该都需要拷贝一份到自己VA. 这 so 哪里 shared 了?
