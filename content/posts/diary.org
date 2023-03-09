@@ -5,6 +5,9 @@
 #+tags[]: Diary
 
 
+* <2023-03-09 Thu>[0/0]
+- 这些个 b paper 给个 git repo 不带 docker 给个勾八跑不起来的脚本全 tm 狗屎狗屎狗屎 bsbsbs
+
 * <2023-03-08 Wed>[0/4]
 - fk trt, 怎么会这么 jb 冷啊, 5点钟太阳直接照瞎, dt 还没地方玩
 - [ ] secure boot 好像也只是一个 checksum 证明一个 OS/image 是你知道的那个 image 吧, 但是也没有证明这个 OS/image 有哪个些 property 啊. 比如一个 application contact 说我不会恶意监控你的 sensor 扫你的盘, 我怎么知道这个 app 会不会遵守协议.
@@ -12,7 +15,6 @@
 - [ ] zero-knowledge 到底能证明什么 knowledge 啊, 感觉不能验证上面的东西, 但是只是证明自己知道个数也太弱了吧
 - [ ] network QoS的问题, 如果 NIC 一直 duplicate packet 去到两个独立的 server, 是不是用两倍的 bandwidth + server 资源可以保证 ~2-p~ 的 QoS.
   - 不过 ~2-p~ 的 QoS 好像也没好到哪去……
-
 
 
 * <2023-03-03 Fri>[1/1]
