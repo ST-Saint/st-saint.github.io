@@ -33,3 +33,15 @@ docker run --name sample_docker -it ubuntu:20.04 /bin/bash
 | -i     | interaction |
 | -t     | terminal    |
 | -w     | workspace   |
+
+** start
+#+begin_src shell
+docker attach docker_name/docker_id [-i]
+#+end_src
+
+- ~-i~ interact
+
+** attach
+#+begin_src shell
+docker attach [docker_name/docker_id]
+#+end_src
