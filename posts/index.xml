@@ -5,7 +5,16 @@
     <link>https://st-saint.github.io/posts/</link>
     <description>Recent content in Posts on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Mar 2023 17:16:54 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ctgrind</title>
+      <link>https://st-saint.github.io/posts/ctgrind/</link>
+      <pubDate>Fri, 10 Mar 2023 17:16:54 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/ctgrind/</guid>
+      <description>Checking that functions are constant time with Valgrind.</description>
+    </item>
+    
     <item>
       <title>Diary</title>
       <link>https://st-saint.github.io/posts/diary/</link>
