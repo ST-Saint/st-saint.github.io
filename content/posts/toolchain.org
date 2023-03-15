@@ -67,6 +67,7 @@ sudo pacman -S \
      hugo \
      fzf \
      exa \
+     pandoc \
      starship
 
 sudo pamac build
