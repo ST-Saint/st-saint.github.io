@@ -157,3 +157,19 @@ Unfortunately, this approach has some problems, too:
 
 3. The byte array stream implementations included in the java.io package are designed to be general enough to perform reasonable well for data of different sizes and to be safe to use in a multi-threaded environment. These characteristics, however, slow down ByteArrayOutputStream and (to a lesser extent) ByteArrayInputStream.
 #+end_quote
+
+* Disassembly
+
+** class
+- Parse class file
+#+begin_src shell
+javap [-c] <class_name>.class
+#+end_src
+| options | description          |
+| -c      | Disassemble the code |
+
+** jar
+- extract
+#+begin_src shell
+jar xf <jar_file>.jar
+#+end_src

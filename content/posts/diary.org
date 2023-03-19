@@ -4,12 +4,38 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+
+* <2023-03-19 Sun>[0/4]
+- 人贵自知
+- 它猫猫的
+- 怎么这么多b事
+
+** TODO Constant-time + Data-oblivious
+
+- 读+测试 binsec/rel + pitchfork
+
+** TODO ebpf
+- parse bpd bytecode
+  - 带 indirect jump 的 code 要怎么 parse 啊?
+- instrument USLH
+  - 真的有必要 USLH 吗, 又有点忘了
+  - 还真要, USLH 多了 ~rep~, ~arith~ 虽然不知道为什么需要特殊处理 ~arith~
+
+** TODO type-system
+- 做个 TAL/checked-C ++ 算了
+- 普通 taint analysis 分析 secret independent control-flow + memory access
+
+** TODO upfuzz dinv
+- reconstruct output stream
+- 普通记录个 =bytestream= 先
+
 * <2023-03-14 Tue>
 #+begin_quote
 怪不得故事里的反派会一脸欢愉地盘算着阴谋诡计，我终于有些理解他们的心情了
 #+end_quote
 
-- [ ] emacs 配置真难做吧, project + vertico 搭配不好, sort 又慢, 可能还得自己写 cache 或者等 project.el 自己加 sort, workspace 也难搞的一b, 为什么所有人想的都是 restore 一个 layout 呢, 就没有人想单纯的切换一个基于 project 隔离 buffer 的工作区吗
+- [X] emacs 配置真难做吧, project + vertico 搭配不好, sort 又慢, 可能还得自己写 cache 或者等 project.el 自己加 sort, workspace 也难搞的一b, 为什么所有人想的都是 restore 一个 layout 呢, 就没有人想单纯的切换一个基于 project 隔离 buffer 的工作区吗
+  - 居然一晚上自己搞好了, 我真nb
 
 * <2023-03-09 Thu>[0/0]
 - 这些个 b paper 给个 git repo 不带 docker 给个勾八跑不起来的脚本全 tm 狗屎狗屎狗屎 bsbsbs

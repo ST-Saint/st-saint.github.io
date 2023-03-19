@@ -314,3 +314,22 @@ chmod 700 ~/.ssh
 #+BEGIN_SRC bash
 scp root@10.105.250.92:/home/example/.ssh/ed25519 ~/.ssh/
 #+END_SRC
+
+* ssh
+
+** sshd
+
+#+begin_src conf
+Match User yayu
+      X11Forwarding yes
+      X11UseLocalhost no
+      AllowTcpForwarding yes
+#+end_src
+
+** ssh
+#+begin_src conf
+ Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/yayu
+#+end_src
