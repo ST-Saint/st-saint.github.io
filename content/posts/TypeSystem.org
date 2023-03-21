@@ -67,3 +67,47 @@ $$[x \rightarrow e^{'}]e \Rightarrow [ x \rightarrow e^{'}](let y=e_1\; in\; e_2
 ** landin' knot
 - represent recursion
   + 13.5.8
+
+* Refinement Types
+
+** Introduction
+- programs can do things wrong:
+  1. Divided by zero
+  2. Buffer overflow
+  3. mismatched dimension
+     - wrong type casting
+  4. logic bug
+     - integer range [min, max]
+  5. Correctness error
+- Refinement type system uses predicates to enrich the type information
+
+*** passes
+1) STCL
+2) branch conditions -- path-sensitive
+3) infer refinements
+4) type polymorphism -- context-sensitive
+5) polymorphic data types
+6) refinement polymorphism for different invariants
+7) verify termination???
+8) proof proposition over UDF
+
+** Simply Typed \lambda-calculus
+- primitive constants: =nat=
+- primitive operations: =add=
+- function type with constrain
+
+*** Verification Conditions
+- take the annotated program as input and return a VC
+
+*** arithmetic overflow
+- seems like we can simply add a upper bound (2^31 or 2^63) to avoid overflow here
+
+** Branches and Recursion
+- also convert to branches conditions to similar VC
+
+** questions
+*** Differences between refinement type system and symbolic execution
+- To formally verify the division by, buffer overflow and integer range problems, refinement type system also add predicates and constrains over variable and use SMT solver to resolve these constrains, so what does refinement types do differently? or actually symbolic execution is one component of refinement type system?
+*** what would the refinement type system do if the conditions cannot be solved by SMT?
+- if the condition cannot be satisfied, then it should be a logic bug?
+*** it is a bit confusing that how could you verify termination with a recursion function?
