@@ -5,7 +5,25 @@
     <link>https://st-saint.github.io/tags/</link>
     <description>Recent content in Tags on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Mar 2023 17:16:54 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Mar 2023 23:42:28 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bugs</title>
+      <link>https://st-saint.github.io/tags/bugs/</link>
+      <pubDate>Mon, 20 Mar 2023 23:42:28 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/tags/bugs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://st-saint.github.io/tags/rust/</link>
+      <pubDate>Mon, 20 Mar 2023 22:56:37 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/tags/rust/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>constant-time</title>
       <link>https://st-saint.github.io/tags/constant-time/</link>

@@ -5,7 +5,16 @@
     <link>https://st-saint.github.io/posts/</link>
     <description>Recent content in Posts on Yayu Wang</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Mar 2023 17:16:54 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Mar 2023 23:42:28 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>llvm-project/llvm/utils/benchmark/src/benchmark_register.h:17:30</title>
+      <link>https://st-saint.github.io/posts/misc/llvm9-compilation/</link>
+      <pubDate>Mon, 20 Mar 2023 23:42:28 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/misc/llvm9-compilation/</guid>
+      <description>llvm/utils/benchmark: add missing &amp;lt;limits&amp;gt; inclusion</description>
+    </item>
+    
     <item>
       <title>ctgrind</title>
       <link>https://st-saint.github.io/posts/ctgrind/</link>

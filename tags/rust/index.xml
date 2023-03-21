@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rust on Yayu Wang</title>
+    <link>https://st-saint.github.io/tags/rust/</link>
+    <description>Recent content in Rust on Yayu Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 20 Mar 2023 22:56:37 +0000</lastBuildDate><atom:link href="https://st-saint.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust</title>
+      <link>https://st-saint.github.io/posts/language/rust/</link>
+      <pubDate>Mon, 20 Mar 2023 22:56:37 +0000</pubDate>
+      
+      <guid>https://st-saint.github.io/posts/language/rust/</guid>
+      <description>Rust</description>
+    </item>
+    
+  </channel>
+</rss>
