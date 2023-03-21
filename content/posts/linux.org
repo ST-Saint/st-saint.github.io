@@ -333,3 +333,12 @@ Match User yayu
     User git
     IdentityFile ~/.ssh/yayu
 #+end_src
+
+* Archlinux
+
+** pacman
+
+** yay
+| option | description        |
+| -S     | install            |
+| -Ss    | search the package |

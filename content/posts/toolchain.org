@@ -41,7 +41,8 @@ sudo pacman -S \
      qemu-full \
      docker \
      tmux \
-     go  # golang
+     go \  # golang
+     rust  # rustc & Cargo
 
 pip install epc six
 

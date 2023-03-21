@@ -173,3 +173,7 @@ javap [-c] <class_name>.class
 #+begin_src shell
 jar xf <jar_file>.jar
 #+end_src
+
+* Debug
+
+** jprofiler
