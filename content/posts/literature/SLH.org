@@ -1,0 +1,195 @@
+#+TITLE: SLH
+#+DATE: Tue Mar 21 15:46:32 PDT 2023
+#+Summary: SLH & SSLH & USLH
+#+categories[]: side-channel
+#+tags[]: SLH, side-channel
+
+
+* SLH
+
+
+** LLVM SLH
+- [[https://llvm.org/docs/SpeculativeLoadHardening.html]]
+
+*** sample
+**** original
+#+begin_src c
+void leak(int data);
+void example(int* pointer1, int* pointer2) {
+  if (condition) {
+    // ... lots of code ...
+    leak(*pointer1);
+  } else {
+    // ... more code ...
+    leak(*pointer2);
+  }
+}
+#+end_src
+**** transformation
+
+#+begin_src c
+uintptr_t all_ones_mask = std::numerical_limits<uintptr_t>::max();
+uintptr_t all_zeros_mask = 0;
+void leak(int data);
+void example(int* pointer1, int* pointer2) {
+  uintptr_t predicate_state = all_ones_mask;
+  if (condition) {
+    // Assuming ?: is implemented using branchless logic...
+    predicate_state = !condition ? all_zeros_mask : predicate_state;
+    // ... lots of code ...
+    //
+    // Harden the pointer so it can't be loaded
+    pointer1 &= predicate_state;
+    leak(*pointer1);
+  } else {
+    predicate_state = condition ? all_zeros_mask : predicate_state;
+    // ... more code ...
+    //
+    // Alternative: Harden the loaded value
+    int value2 = *pointer2 & predicate_state;
+    leak(value2);
+  }
+}
+#+end_src
+
+#+begin_src c
+uintptr_t all_ones_mask = std::numerical_limits<uintptr_t>::max();
+uintptr_t all_zeros_mask = 0;
+void leak(int data);
+void example(int* pointer1, int* pointer2) {
+  uintptr_t predicate_state = all_ones_mask;
+  switch (condition) {
+  case 0:
+    // Assuming ?: is implemented using branchless logic...
+    predicate_state = (condition != 0) ? all_zeros_mask : predicate_state;
+    // ... lots of code ...
+    //
+    // Harden the pointer so it can't be loaded
+    pointer1 &= predicate_state;
+    leak(*pointer1);
+    break;
+  case 1:
+    predicate_state = (condition != 1) ? all_zeros_mask : predicate_state;
+    // ... more code ...
+    //
+    // Alternative: Harden the loaded value
+    int value2 = *pointer2 & predicate_state;
+    leak(value2);
+    break;
+    // ...
+  }
+}
+#+end_src
+
+
+*** implementation details
+
+**** accumulating the predicate state through the control flow graph
+- We accumulate it using the x86 conditional move instruction (~cmov*~) which also reads the flag registers where the state resides
+  + these conditional move instructions are not to be predicted
+- along each edge coming out of a conditional branch we do a conditional move that in a correct execution will be a no-op, but if misspeculated, will replace the %rax with the value of %r8.
+
+***** indirect branch, call and return
+- we need to check where we came from rather than where we are going
+- test the input to the jump table within each destination
+
+***** sample
+#+begin_src asm
+# %bb.0:                                # %entry
+        pushq   %rax
+        testl   %edi, %edi
+        jne     .LBB0_4
+# %bb.1:                                # %then1
+        testl   %esi, %esi
+        jne     .LBB0_4
+# %bb.2:                                # %then2
+        testl   %edx, %edx
+        je      .LBB0_3
+.LBB0_4:                                # %exit
+        popq    %rax
+        retq
+.LBB0_3:                                # %danger
+        movl    (%rcx), %edi
+        callq   leak
+        popq    %rax
+        retq
+
+-----
+
+# %bb.0:                                # %entry
+        pushq   %rax
+        xorl    %eax, %eax              # Zero out initial predicate state.
+        movq    $-1, %r8                # Put all-ones mask into a register.
+        testl   %edi, %edi
+        jne     .LBB0_1
+# %bb.2:                                # %then1
+        cmovneq %r8, %rax               # Conditionally update predicate state.
+        testl   %esi, %esi
+        jne     .LBB0_1
+# %bb.3:                                # %then2
+        cmovneq %r8, %rax               # Conditionally update predicate state.
+        testl   %edx, %edx
+        je      .LBB0_4
+.LBB0_1:
+        cmoveq  %r8, %rax               # Conditionally update predicate state.
+        popq    %rax
+        retq
+.LBB0_4:                                # %danger
+        cmovneq %r8, %rax               # Conditionally update predicate state.
+        ...
+
+-----
+
+        pushq   %rax
+        xorl    %eax, %eax              # Zero out initial predicate state.
+        movq    $-1, %r8                # Put all-ones mask into a register.
+        jmpq    *.LJTI0_0(,%rdi,8)      # Indirect jump through table.
+.LBB0_2:                                # %sw.bb
+        testq   $0, %rdi                # Validate index used for jump table.
+        cmovneq %r8, %rax               # Conditionally update predicate state.
+        ...
+        jmp     _Z4leaki                # TAILCALL
+
+.LBB0_3:                                # %sw.bb1
+        testq   $1, %rdi                # Validate index used for jump table.
+        cmovneq %r8, %rax               # Conditionally update predicate state.
+        ...
+        jmp     _Z4leaki                # TAILCALL
+
+.LBB0_5:                                # %sw.bb10
+        testq   $2, %rdi                # Validate index used for jump table.
+        cmovneq %r8, %rax               # Conditionally update predicate state.
+        ...
+        jmp     _Z4leaki                # TAILCALL
+        ...
+
+        .section        .rodata,"a",@progbits
+        .p2align        3
+.LJTI0_0:
+        .quad   .LBB0_2
+        .quad   .LBB0_3
+        .quad   .LBB0_5
+        ...
+#+end_src
+
+**** checking the loads
+
+**** checking control transfers between procedures
+
+** Strong SLH
+- protect againt all Spectre v1 attacks
+- divide the address space into a private and a public heap
+- still leak the information by writing it into the public heap or through address-based side-channel
+
+*** Load address hardening
+- SSLH assumes that all addresses of loads are protected
+- LLVM-aSLH abstains from protecting "fixed" address (both the memory base and memory index are known at compile time).
+  - [ ] Not safe for stack pointer?
+  - [ ] skip the instrution pointer
+
+*** Store address hardening
+- LLVM-aSLH does not harden addresses of store instruction
+- the projection logic should be same as the load
+
+*** branch hardening
+- branch conditons depend on the speculation predicate

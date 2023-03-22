@@ -1,0 +1,12 @@
+#+TITLE: Assembly
+#+DATE: Tue Mar 21 22:26:18 PDT 2023
+#+Summary: Assembly
+#+categories[]: program_languages
+#+tags[]: Assembly
+
+* Instruction Set Architecture
+
+** representation
+
+| LLVM       | Intel             | Meaning       |
+| *COMMONDq* | command qword ptr | qword (64bit) |

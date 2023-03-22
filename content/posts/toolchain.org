@@ -41,6 +41,7 @@ sudo pacman -S \
      qemu-full \
      docker \
      tmux \
+     ntfs-3g \  # mount windows partition
      go \  # golang
      rust  # rustc & Cargo
 
