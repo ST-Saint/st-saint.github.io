@@ -342,3 +342,23 @@ Match User yayu
 | option | description        |
 | -S     | install            |
 | -Ss    | search the package |
+
+* Bluetooth
+
+** pair
+#+begin_example
+$ bluetoothctl
+
+# power on
+# default-agent
+# scan on
+[NEW] Device 00:12:34:56:78:90 Air Pods
+# pair 00:12:34:56:78:90
+# connect 00:12:34:56:78:90
+#+end_example
+
+** airpods
+#+begin_src conf
+# /etc/bluetooth/main.conf
+ControllerMode = bredr
+#+end_src
