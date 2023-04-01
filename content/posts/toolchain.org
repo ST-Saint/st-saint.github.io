@@ -43,7 +43,9 @@ sudo pacman -S \
      tmux \
      ntfs-3g \  # mount windows partition
      go \  # golang
-     rust  # rustc & Cargo
+     rust \  # rustc & Cargo
+     ant  \
+     maven
 
 pip install epc six
 

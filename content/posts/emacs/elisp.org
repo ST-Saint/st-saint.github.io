@@ -18,6 +18,14 @@
 + 通过 interactive 可以把一个函数变成一个可交互的命令
 + interactive 的命令才可以通过 M-x 执行, 类似把这个函数对用户 public
 
+* file
+
+** get parent directory
+#+begin_src emacs-lisp
+(file-name-directory buffer-file-name)
+#+end_src
+
+
 * buffer & window
 ** get
 + 可以通过 =(get-buffer BUFFER_NAME)= / =(get-buffer-window= 直接拿到 =buffer= / =window=

@@ -111,3 +111,41 @@ $$[x \rightarrow e^{'}]e \Rightarrow [ x \rightarrow e^{'}](let y=e_1\; in\; e_2
 *** what would the refinement type system do if the conditions cannot be solved by SMT?
 - if the condition cannot be satisfied, then it should be a logic bug?
 *** it is a bit confusing that how could you verify termination with a recursion function?
+
+* Sized Types
+- Input makes the program unpredictable. The inputs can taint data or even the control-flow, making memory mess and analysis tricky.
+- Sized type system is to
+  - check computation of each stream element terminates.
+  - express bounds on the sizes of recursive data structures.
+
+** productive
+- a request for the first ~i~ element of the stream is guaranteed to be processed in finite time means the program is productive
+- I guess =head= is to read the first element of a stream and =tail= is the stream excluding the first element
+- so we introduce type: ~ST^i~ for streams with at least i elements
+- using sized types we can infer the lower bounds on the size of all the streams
+- if we can claim a function has a type: ~ST^i -> ST^j && i>j~ then we can prove termination
+
+** Primitive Recursion: Reverse
+- sized type system can prove termination or productivity of functions in primitive recursive form
+
+#+begin_src lisp
+reverse :: \forall i. \forall t. LIST_i t -> LIST_i t
+reverse xs =
+case xs of
+Nil -> Nil
+Cons y ys -> append (reverse ys) (Cons y Nil)
+#+end_src
+
+1. =Nil -> Nil= has type ~LIST_{i+1} t~ (why i+t though)
+2. append (Reverse ys) (Cons y Nil) :: LIST_{_{i+1}} -> t
+
+*** Accumulating Parameters
+- allow a limited form of polymorphic recursion: over sizes, but not types.
+
+** Array Bounds Check
+- We view an array as a function from indices to contents
+  - an array of t with 6 elements has type ~NAT_6 -> t~
+
+** questions
+- I guess ~Mk~ and ~ST~ are all special keywords and ~ST~ is stream. However I still don't get what how to combine a ~NAT~ and a ~ST~
+- Sized Type consider the length of the stream instead the value of streams. I think the value of input is also important. For example, the Array Bounds Check problem, a common scenario is the array having a dynamic length (i.e. depends on input), and the length becomes unknown to tpye system. So if we want to constrain the input refinement type sounds more reasonable but it will probably become a SAT problem. Even though I feel memory allocation is still a conflict between efficiency and safety. If you allow dynamically length it is more tricky to prove the safety but you gain some flexibility. Is it possible to combine sized type and refinement type to check more security properties of the program?

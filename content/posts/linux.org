@@ -339,9 +339,12 @@ Match User yayu
 ** pacman
 
 ** yay
-| option | description        |
-| -S     | install            |
-| -Ss    | search the package |
+| option               | description                                        |
+| -S                   | install                                            |
+| -Ss                  | search the package                                 |
+| --mflags --skipinteg | skip validaty check                                |
+| -R                   | remove                                             |
+| -Rs                  | Remove dependencies not required by other packages |
 
 * Bluetooth
 

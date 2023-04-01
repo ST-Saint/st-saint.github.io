@@ -4,3 +4,6 @@
 [submodule "doks"]
 	path = doks
 	url = https://github.com/st-saint/doks.git
+[submodule "themes/LoveIt"]
+	path = themes/LoveIt
+	url = https://github.com/dillonzq/LoveIt.git

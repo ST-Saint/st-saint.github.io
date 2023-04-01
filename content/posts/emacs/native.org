@@ -21,6 +21,13 @@
 
 
 
+* function
+| function            | key   | functionality                          |
+| file-exists-p       | nil   | file exisit                            |
+| file-name-directory | nil   | get the directory of a file            |
+| buffer-file-name    | nil   | current buffer/file name               |
+| backward-up-list    | C-M-u | upper level element  (method -> class) |
+
 
 
 * align
