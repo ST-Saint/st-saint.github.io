@@ -64,6 +64,8 @@ $$[x \rightarrow e^{'}]e \Rightarrow [ x \rightarrow e^{'}](let y=e_1\; in\; e_2
 
 ** Unification
 
+** 推导 (deduction)
+
 ** landin' knot
 - represent recursion
   + 13.5.8
@@ -149,3 +151,75 @@ Cons y ys -> append (reverse ys) (Cons y Nil)
 ** questions
 - I guess ~Mk~ and ~ST~ are all special keywords and ~ST~ is stream. However I still don't get what how to combine a ~NAT~ and a ~ST~
 - Sized Type consider the length of the stream instead the value of streams. I think the value of input is also important. For example, the Array Bounds Check problem, a common scenario is the array having a dynamic length (i.e. depends on input), and the length becomes unknown to tpye system. So if we want to constrain the input refinement type sounds more reasonable but it will probably become a SAT problem. Even though I feel memory allocation is still a conflict between efficiency and safety. If you allow dynamically length it is more tricky to prove the safety but you gain some flexibility. Is it possible to combine sized type and refinement type to check more security properties of the program?
+
+* typing vs typechecking
+- 顶不住了, 先看看中文文档吧 [[https://github.com/FrankHB/pl-docs/blob/master/zh-CN/typing-vs-typechecking.md][typing-vs-typechecking]]
+
+
+** 本体论(Ontology)
+- 类型是一种抽象的实体(entity)
+- 类型不是名称
+
+*** 类型 = 分类？
+- 不是
+- 不是为了对现有对象"分类", 因为被“分类”的对象都是先前毫无意义, 只是通过这个类型才确定的, 而且具有这样类型的值 *只可能有一种完全等价的* 构造方式, 这就是所谓的 ~unit type~ 的实例
+
+*** 类型是什么
+- 对于某个类型系统中的类型——这种人为设计中的一份子
+- 类型系统的设计者或者类型的设计者（类型系统的用户）希望它是什么
+
+*** 历史上的类型是什么
+- [[https://zh.wikipedia.org/zh-cn/%E7%BD%97%E7%B4%A0%E6%82%96%E8%AE%BA][罗素悖论]] - [[https://zh.wikipedia.org/zh-cn/%E7%B1%BB%E5%9E%8B%E8%AE%BA][类型论]]
+  - 任给一个性质(例如："年满三十岁"就是一个性质)，满足该性质的所有集合总可以组成一个集合
+  - 设有一性质P，并以一性质函数表示：P(x)，且其中的自变量x有此特性： x \notin x，
+    - 不是, x \notin x 是什么意思
+
+
+- 我靠我一直觉得 PL 讲的 type 本质都应该是数学集合, 好像还是有点道理, 然而类型系统好像是集合论的上位(也许)替代
+
+*** 类型的意义
+- 各种类型论中, 并没有要求"类型"成为和某种领域外实体的对应, 以作为建模或"分类"的基础, 而仅仅是项 (term) 上关联的一些抽象实体
+
+** 派生概念
+
+*** 类型正确(Type Correctness)
+
+- 符合期望
+
+- 类型是开发者对数据、对实体属性的描述, 显式类型是开发者对于程序设计的理解和限定的直接描述
+  - 原文对可读性和重构的考虑脱离实际
+  - 使用 ~var~, ~auto~ 借用 Type inference 省去对数据的描述是让开发者在上下文中丢失对数据的理解, 且不便于第三方审阅代码; 在重构时, 考虑代码改动对数据, 对上下文的影响是非常重要且易错的环节, 显式类型要求开发者对语义的改变进行考虑(当然如果开发者匆匆掠过是另一个问题), 类型推断提供了开发便利但不利于保证程序正确性
+  - 即使使用 ~var~, ~auto~ ，一个不可忽视的事实是, 编译器生成的 binary 并不包含 ~var~ 类型, 实际 runtime 类型有且只有一个具体类型(如果有 runtime type), 如果没有 runtime type 那么数据就只是纯粹的数据而不带任何限制, 这与源代码中 ~var~, ~auto~ 所表达的类型不匹配, 而开发者因代码和运行时的差异对程序行为做出错误预测是非常不理想的设计缺陷
+  - 一个可以接受的选择是type system在编译前就将 ~auto~ 替换成具体类型
+
+*** 类型识别(Type Identification)
+- 要判断类型是否相同, 比较给定的表示类型的数据结构（类型标识）和已知类型的对应数据结构是否相等
+
+*** 类型转换(Type Conversion)
+- 强制(coercion) 是一种隐式转换
+- 多态(ad-hoc polymorphsim) 而和铸型(casting) 显式转换
+
+
+*** 类型安全(Type Safety)
+- 较常用的一种安全机制的基本思路是，定义类型是某个域(domain)中值的集合, 保证类型安全即约束需要考察的值总是符合某一些类型的约束.
+  - 判断对象语言描述的程序是否符合类型安全这项任务能被程序表达和实现(包括语言自身的实现, 如编译时的检查).
+  - 这样, 类型安全可以视为某一些语言规则中蕴含的性质
+  - 当语言的规则不足以保证它表达的任意操作产生的值属于规则事先指定的值的集合之内, 这些规则就不是安全的
+
+- 安全一般考虑两个方面, 一个是 confidentiality, 一个是 integrity
+  - 未定义行为说成类型不安全其实是符合安全的描述的, 对应 integrity 的 control-flow & information-flow integrity
+
+*** 类型检查(Typechecking)
+- 现实的类型安全一般通过在语言设计中由两类手段提供支持
+  1. 语言的构造性规则限制不安全类型构造的表达 -- typing
+  2. 语言对潜在不安全的表达进行额外的语义检查 -- type checking (广义地也能包含typing)
+
+- 尽管一般实现 typechecking 蕴含解一个判定性问题 -- 即作用于代码上判断出一个表示 "通过" 或"不通过"的二元结果, 却并不一定表示接受或者拒绝接受程序
+  - 一条语言规则不会因为实现要求附加其它行为或不要求任何可预测的行为 (所谓未定义行为) 而不适合归类为 typechecking 规则; 举例: C 的许多使用非兼容类型 (compatible type) 的值的操作是未定义行为, 这不是 typing, 而指定了作用于指针类型上的 typechecking
+
+*** 静态/动态 类型
+- 静态类型或者动态类型都和 typing 的时机有关; 而单纯静态/动态, 对彻底不提供类型系统设计的 typeless 的语言都可能说得通
+
+*** 强类型
+- 强类型 (strong type/strong typing/strongly typed)
+- manifest typing/latent typing
