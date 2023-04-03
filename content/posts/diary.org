@@ -5,6 +5,10 @@
 #+tags[]: Diary
 
 
+* <2023-04-03 Mon>
+- Ok, I guess math is also philosophy
+- Programming language is also philosophy
+
 * <2023-03-19 Sun>[0/4]
 - 人贵自知
 - 它猫猫的

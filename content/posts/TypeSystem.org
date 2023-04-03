@@ -223,3 +223,99 @@ Cons y ys -> append (reverse ys) (Cons y Nil)
 *** 强类型
 - 强类型 (strong type/strong typing/strongly typed)
 - manifest typing/latent typing
+
+* Dependent typing
+# 依赖类型可对应于谓词逻辑中的全称量词和存在量词
+- a dependent type is a type whose definition depends on a value
+- dependent types are used to encode logic's quantifiers like "for all" and "there exists"
+
+  # 依赖类型的两个常见实例是依赖函数类型（又称依赖乘积类型、Π-类型）和依赖值对类型（又称依赖总和类型、Σ-类型）
+- 一个依赖类型函数的返回值类型可以依赖于某个参数的具体值, 而非仅仅参数的类型
+  - 例如, 一个输入参数为整型值n的函数可能返回一个长度为n的数组; 一个依赖类型值对中的第二个值可以依赖于第一个值, 例如, 依赖类型可表示这样的类型: 它由一对整数组成, 其中的第二个数总是大于第一个数。
+
+- Two common examples of dependent types are dependent functions, which correspond to "for all" and dependent pairs, which correspond to "there exists". The return type of a dependent function may depend on the value (not just type) of one of its arguments.
+
+  # 确定两个依赖于值的类型的等价性需要涉及具体的计算，若允许在依赖类型中使用任意值的话，其类型检查将会成为不可判定问题；
+- Deciding the equality of dependent types in a program may require computations. If arbitrary values are allowed in dependent types, then deciding type equality may involve deciding whether two arbitrary programs produce the same result
+  - the decidability of type checking may depend on the given type theory's semantics of equality, that is, whether the type theory is intensional or extensional.
+
+# 一些以证明辅助为主要目的的编程语言采用强函数式编程（total functional programming），这消除了停机问题，同时也意味着通过它们自身的核心语言无法实现任意无限递归，不是图灵完全的，如 Coq 和 Agda
+
+** Formal definition
+*** Π type
+- dependent types are similar to the type of an indexed family of sets
+- formally, given a type ~A: U~ in a universe of types ~U~, one may have a family of types ~B: A \to U~, which assigns to each term ~a: A~ a type ~B(a): U~. We say that the type ~B(a)~ varies with ~a~.
+- A function whose type of return value varies with its argument (i.e. there is no fixed codomain) is a dependent function and the type of this function is called dependent product type, pi-type (Π type) or dependent function type.
+  - Written as ~\Pi_{(x:A)} B(x)~
+*** Σ type
+- The dual of the dependent product type is the dependent pair type, dependent sum type, sigma-type
+- If, in the universe of types ~U~, there is a type ~A: U~ and a family of types ~B: A \to U~, then there is a dependent pair type ~\sum_{x:A} B(x)~
+- The dependent pair type captures the idea of an ordered pair where the type of the second term is dependent on the value of the first. If ~(a,b):\sum_{x:A}B(x)~ then ~a: A~ and ~b: B(a)~
+
+** Extra reading
+*** Extensional and intensional definitions
+
+**** Intensional definition
+- An intensional definition gives meaning to a term by specifying necessary and sufficient conditions for when the term should be used.
+- intensional definitions are best used when something has a clearly defined set of properties, and they work well for terms that have too many referents to list in an extensional definition.
+
+**** Extensional definition
+- An extensional definition gives meaning to a term by specifying its extension, that is, every object that falls under the definition of the term in question.
+- An explicit listing of the extension, which is only possible for finite sets and only practical for relatively small sets, is a type of enumerative definition.
+- Extensional definitions are used when listing examples would give more applicable information than other types of definition, and where listing the members of a set tells the questioner enough about the nature of that set.
+
+#+begin_quote
+A fundamental distinction is extensional vs intensional type theory. In extensional type theory, definitional (i.e., computational) equality is not distinguished from propositional equality, which requires proof. As a consequence type checking becomes undecidable in extensional type theory because programs in the theory might not terminate. For example, such a theory allows one to give a type to the Y-combinator; a detailed example of this can be found in Nordstöm and Petersson Programming in Martin-Löf's Type Theory.[2] However, this does not prevent extensional type theory from being a basis for a practical tool; for example, NuPRL is based on extensional type theory.
+#+end_quote
+
+*** intuitionistic logic
+- In the semantics of classical logic, propositional formulae are assigned truth values from the two-element set ~\top, \bot~ ("true" and "false" respectively)
+  - This is referred to as the 'law of excluded middle', because it excludes the possibility of any truth value besides 'true' or 'false'
+- Propositional formulae in intuitionistic logic are not assigned a definite truth value and are only considered "true" when we have direct evidence, hence proof.
+- if there is a constructive proof that an object exists, that constructive proof may be used as an algorithm for generating an example of that object, a principle known as the Curry–Howard correspondence between proofs and algorithms.
+- the double negation of the law is retained as a tautology of the system: that is, it is a theorem that ~\neg(\neg (P \vee \neg P))~ regardless of the proposition ~P~
+- In intuitionistic logic, only ~P \rightarrow \neg\neg P~ is theorem, ~\neg\neg P \rightarrow P~ is not
+
+*** First-order logic
+- First-order logic—also known as predicate logic, quantificational logic, and first-order predicate calculus
+- Predicate logic is an extension of propositional logic, adding quantifiers.
+
+
+*** Curry–Howard correspondence
+- Curry–Howard correspondence (also known as the Curry–Howard isomorphism or equivalence) is the direct relationship between computer programs and mathematical proofs.
+  - A proof is a program, and the formula it proves is the type for the program
+
+
+**** General formulation
+
+| Logic side                             | Programming side                             |
+| universal quantification               | generalised product type (Π type)            |
+| existential                            | quantification generalised sum type (Σ type) |
+| implication                            | function type                                |
+| conjunction                            | product type                                 |
+| disjunction                            | sum type                                     |
+| true formula                           | unit type or top type                        |
+| false formula                          | empty type or bottom type                    |
+| hypotheses                             | free variables                               |
+| implication elimination (modus ponens) | application                                  |
+| implication introduction               | abstraction                                  |
+| assumption                             | variable                                     |
+| axiom schemes                          | combinators                                  |
+| modus ponens                           | application                                  |
+| deduction theorem                      | abstraction elimination                      |
+
+**** Hilbert-style deduction systems
+
+***** axiom schemes
+1. α → (β → α)
+   A. K: \lambda xy.x
+2. (α → (β → γ)) → ((α → β) → (α → γ))
+   A. S: \lambda xyz.(x z (y z))
+
+***** formalization
+- Let Γ be a finite collection of formulas, considered as hypotheses. Then δ is derivable from Γ, denoted Γ ⊢ δ, in the following cases:
+  A) δ is an hypothesis, i.e. it is a formula of Γ,
+  B) δ is an instance of an axiom scheme; i.e., under the most common axiom system:
+     a) δ has the form α → (β → α), or
+     b) δ has the form (α → (β → γ)) → ((α → β) → (α → γ)),
+  C) δ follows by deduction, i.e., for some α, both α → δ and α are already derivable from Γ (this is the rule of modus ponens)

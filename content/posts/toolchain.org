@@ -146,7 +146,11 @@ sudo pamac build
   - zsh-syntax-highlighting
 
 *** Terminal Emulator
-+ alacritty
++ +alacritty+
+  - kitty
+  - Byobu
+  - Zellij
+  - wezterm
 + vterm
 
 ** Files
