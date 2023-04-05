@@ -79,11 +79,11 @@
     </item>
     
     <item>
-      <title>KVM</title>
-      <link>https://st-saint.github.io/posts/kvm/</link>
+      <title>VirtualMachine</title>
+      <link>https://st-saint.github.io/posts/virtualmachine/</link>
       <pubDate>Sat, 04 Feb 2023 18:22:26 +0000</pubDate>
       
-      <guid>https://st-saint.github.io/posts/kvm/</guid>
+      <guid>https://st-saint.github.io/posts/virtualmachine/</guid>
       <description>Setup KVM with customized Linux kernel</description>
     </item>
     
