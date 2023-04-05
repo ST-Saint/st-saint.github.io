@@ -13,7 +13,7 @@
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
 # example
-docker run --name sample_docker -it ubuntu:20.04 /bin/bash
+docker run -it --name sample_docker ubuntu:20.04 /bin/bash
 #+end_src
 
 *** description
@@ -40,6 +40,12 @@ docker attach docker_name/docker_id [-i]
 #+end_src
 
 - ~-i~ interact
+
+** volume
+#+begin_src shell
+docker run -v /local_path:/docker_path -it --name sample_docker ubuntu:20.04 /bin/bash
+#+end_src
+
 
 ** attach
 #+begin_src shell

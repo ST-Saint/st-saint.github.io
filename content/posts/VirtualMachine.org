@@ -1,8 +1,10 @@
-#+title: KVM
+#+title: VirtualMachine
 #+summary: Setup KVM with customized Linux kernel
 #+date: Sat Feb 04 18:22:26 PST 2023
 
-* bridge
+* KVM
+
+** bridge
 + *NOTE*: start =dhcpcd.service=
 #+begin_src shell
 nmcli connection add type bridge ifname br0 stp no
@@ -17,8 +19,8 @@ nmcli connection up bridge-br0
 nmcli connection up bridge-slave-enp7s0
 #+end_src
 
-* kernel
-** compilation
+** kernel
+*** compilation
 #+begin_src shell
 make -j24 && \
 sudo make -j24 modules_install headers_install install && \
@@ -28,17 +30,17 @@ sudo update-grub
 #+end_src
 
 
-*** Cannot find LILO
+**** Cannot find LILO
 + manually update boot loader
 #+begin_src shell
 sudo pacman -S grub
 #+end_src
-*** install
+**** install
 #+begin_src shell
 sudo make -j24 modules_install headers_install install
 #+end_src
 
-*** mkinitcpio
+**** mkinitcpio
 #+begin_src shell
 sudo mkinitcpio -p linux60
 #+end_src
@@ -62,7 +64,7 @@ fallback_options="-S autodetect"
 #+end_src
 
 
-* serial console
+** serial console
 - change the grub config
 #+begin_src conf
 # /etc/default/grub
@@ -74,13 +76,13 @@ systemctl enable serial-getty@ttyS0.service
 systemctl start serial-getty@ttyS0.service
 #+end_src
 
-* gdb
-** kernel config
+** gdb
+*** kernel config
 - Build the kernel with CONFIG_GDB_SCRIPTS enabled, but leave CONFIG_DEBUG_INFO_REDUCED off.
 - Turn off KASLR if necessary by adding “nokaslr” to the kernel command line.
 - If your architecture supports CONFIG_FRAME_POINTER, *Enable FRAME_POINTER!!!*
 
-** QEMU/KVM
+*** QEMU/KVM
 - Add qemu commandline
 - -s stands for -gdb & tcp:1234
 #+begin_src xml
@@ -96,7 +98,7 @@ systemctl start serial-getty@ttyS0.service
 </domain>
 #+end_src
 
-** Attach
+*** Attach
 - Copy vmlinux from Linux kernel root directory first
 #+begin_src gdb
 gdb ./vmlinux
@@ -106,4 +108,21 @@ lx-symbols
 - Edit ~~/.config/gdb/gdbinit~
 #+begin_src conf
 add-auto-load-safe-path /PATH/linux/scripts/gdb/vmlinux-gdb.py
+#+end_src
+
+** Image
+| qemu        | qcow2 |
+| virtual box | vmdk  |
+| vmware      | vmdk  |
+
+- unzip OVA \rightarrow
+
+#+begin_src shell
+tar -xf ova-file.ova
+qemu-img convert -O qcow2 vmdk-file.vmdk qcow2-file.qcow2
+#+end_src
+
+** boot from disk
+#+begin_src shell
+qemu-system-x86_64 -drive format=qcow2,file=fact.qcow2
 #+end_src

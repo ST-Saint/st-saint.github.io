@@ -77,3 +77,21 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
  + 多继承的时候, 直接 =super().func()= 会从 mro 中, 从第二个找拥有 =func()= 的类
    - 如果使用 =super(clazz, self).func()= 则会从 clazz.mro 中的第二个类开始找
+
+* plot
+
+- networkx \rightarrow graphviz
+
+** networkx to graphviz
+
+#+begin_src python
+import graphviz
+import networkx as nx
+
+G = nx.DiGraph()
+# G.add_node(u)
+# G.add_edge(u, v, label=label)
+A = nx.nx_agraph.to_agraph(G)
+A.layout("dot")
+A.draw('graph.pdf')
+#+end_src
