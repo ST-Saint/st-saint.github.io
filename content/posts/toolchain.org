@@ -58,7 +58,7 @@ sudo pamac \
 
 ** personal pakcages
 #+begin_src shell
-sudo pacman -S \
+yay -S \
      nitrogen \  # wallpapers
      discord \
      dunst \
@@ -72,6 +72,9 @@ sudo pacman -S \
      fzf \
      exa \
      pandoc \
+     wezterm \
+     chafa \
+     perl-image-exiftool \
      starship
 
 sudo pamac build

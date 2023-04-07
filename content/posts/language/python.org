@@ -23,12 +23,17 @@ return "abc123".encode("utf-8")
 
 * time
 #+begin_src python
-from time import gmtime, strftime
-return strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+from time import gmtime, localtime, strftime
+
+def print_gmtime():
+    strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+
+def print_localtime():
+    return strftime("%a, %d %b %Y %H:%M:%S +0000", localtime())
 #+end_src
 
 #+RESULTS:
-: Mon, 19 Sep 2022 23:21:00 +0000
+: None
 
 * socket
 
@@ -94,4 +99,34 @@ G = nx.DiGraph()
 A = nx.nx_agraph.to_agraph(G)
 A.layout("dot")
 A.draw('graph.pdf')
+#+end_src
+
+** dot
+- example
+#+begin_src example
+digraph {
+  rankdir=LR;
+  node [shape=ellipse];
+  edge [color=red];
+
+  A [label="Start"];
+  B [label="Read input"];
+  C [label="Process input"];
+  D [label="Write output"];
+  E [label="Stop"];
+
+  A -> B;
+  B -> C;
+  C -> D [label="Yes"];
+  D -> E;
+  C -> E [label="No"];
+
+  {rank=same; B C}
+}
+#+end_src
+
+
+*** cli
+#+begin_src shell
+dot -Tpng -Kdot -odot.png example.dot
 #+end_src

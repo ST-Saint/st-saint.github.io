@@ -338,13 +338,17 @@ Match User yayu
 
 ** pacman
 
+- refresh pgp =sudo pacman-key --refresh-keys=
+
 ** yay
-| option               | description                                        |
-| -S                   | install                                            |
-| -Ss                  | search the package                                 |
-| --mflags --skipinteg | skip validaty check                                |
-| -R                   | remove                                             |
-| -Rs                  | Remove dependencies not required by other packages |
+| option               | description                                                 |
+| -S                   | install                                                     |
+| -Ss                  | search the package                                          |
+| --mflags --skipinteg | skip validaty check                                         |
+| -R                   | remove                                                      |
+| -Rs                  | Remove dependencies not required by other packages          |
+| --overwrite <glob>   | Bypass file conflict checks and overwrite conflicting files |
+
 
 * Bluetooth
 
