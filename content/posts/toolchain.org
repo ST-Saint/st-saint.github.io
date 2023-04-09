@@ -7,66 +7,67 @@
 * arch packages
 + manjora plasma
 #+begin_src shell
-sudo pacman -S \
+sudo pacman -S --noconfirm \
      base-devel \
-     alacritty \  # terminal
+     linux-headers \
+     networkmanager \
+     xorg \
+     xorg-xinit \
+     wezterm \
      bear \
+     bc \
      cmake \
      boost \
      gdb \
      ctags \
      global \
-     cpio \  # linux kernel prerequisite
+     cpio \
      pahole \
      grub \
-     rofi \  # application launcher
-     words \  # dictionary complition
-     stow \  # dotconfig management
-     tree-sitter \
-     ibus-rime \  # Chinese input
-     nemo \
-     pavucontrol \
-     pasystray \
      ripgrep \
-     btop \  # resource monitor
-     picom \  #
-     aspell \  # dictionary completion
-     aspell-en \
      libgccjit \
-     libvirt \  # VM management
-     texlive-most \  # Latex
-     virt-manager \  # sudo usermod -a -G libvirt $USER
+     libvirt \
+     virt-manager \
      virt-install \
-     bridge-utils \  # VM bridge network
+     bridge-utils \
      qemu-full \
      docker \
-     tmux \
-     ntfs-3g \  # mount windows partition
-     go \  # golang
-     rust \  # rustc & Cargo
+     ntfs-3g \
+     go \
+     rust \
      ant  \
      maven
 
 pip install epc six
-
-sudo pamac \
-     build \
-     google-chrome \
-     nerd-fonts-complete \
-     mu-git
 #+end_src
 
 ** personal pakcages
 #+begin_src shell
-yay -S \
-     nitrogen \  # wallpapers
+yay -S --noconfirm \
+     nitrogen \
+     google-chrome \
+     nerd-fonts-git \
+     adobe-source-han-sans-cn-fonts \
+     adobe-source-han-serif-cn-fonts \
+     noto-fonts-cjk \
+     wqy-microhei \
+     wqy-microhei-lite \
+     wqy-bitmapfont \
+     wqy-zenhei \
      discord \
      dunst \
      zoom \
      slack \
-     flameshot \  # screen shot
+     flameshot \
+     btop \
      isync \
      msmtp \
+     neofetch \
+     pipewire-pulse \
+     pavumeter \
+     pavucontrol \
+     alsa-utils \
+     paprefs \
      pasystray \
      hugo \
      fzf \
@@ -75,18 +76,22 @@ yay -S \
      wezterm \
      chafa \
      perl-image-exiftool \
-     starship
-
-sudo pamac build
-           tree-sitter-yaml-git \  # tree-sitter yaml
-           tree-sitter-toml-git \
-           tree-sitter-javascript-git \
-           tree-sitter-typescript-git \
-           autojump \
-           krita \  # digital artists
-           netease-cloud-music \
-           lib32-udis86-git \
-           deepin-wine-wechat  # wine wechat
+     giflib \
+     starship \
+     rofi \
+     words \
+     stow \
+     tree-sitter \
+     ibus-rime \
+     nemo \
+     autojump \
+     krita \
+     netease-cloud-music \
+     picom \
+     mu-git \
+     aspell \
+     aspell-en \
+     texlive-most
 #+end_src
 
 
