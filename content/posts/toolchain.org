@@ -33,10 +33,14 @@ sudo pacman -S --noconfirm \
      qemu-full \
      docker \
      ntfs-3g \
+     llvm \
+     clang \
      go \
      rust \
      ant  \
+     lib32-glibc \
      maven
+
 
 pip install epc six
 #+end_src
@@ -49,7 +53,12 @@ yay -S --noconfirm \
      nerd-fonts-git \
      adobe-source-han-sans-cn-fonts \
      adobe-source-han-serif-cn-fonts \
+     ttf-symbola \
+     ttf-dejavu \
+     noto-fonts \
+     noto-fonts-emoji \
      noto-fonts-cjk \
+     ttf-dejavu-nerd \
      wqy-microhei \
      wqy-microhei-lite \
      wqy-bitmapfont \
@@ -81,6 +90,7 @@ yay -S --noconfirm \
      rofi \
      words \
      stow \
+     vlc \
      tree-sitter \
      ibus-rime \
      nemo \
@@ -91,7 +101,11 @@ yay -S --noconfirm \
      mu-git \
      aspell \
      aspell-en \
-     texlive-most
+     texlive-bin \
+     radare2 \
+     git-delta \
+     screenkey \
+     volnoti
 #+end_src
 
 
