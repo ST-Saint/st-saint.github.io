@@ -72,3 +72,11 @@
  |----------+--------------------|
  | d        | step through       |
  | c        | continue(step out) |
+
+* font
+
+** describe char
++ display current char info
+#+begin_src emacs-lisp
+C-u C-x =
+#+end_src

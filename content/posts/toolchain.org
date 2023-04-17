@@ -42,7 +42,11 @@ sudo pacman -S --noconfirm \
      maven
 
 
-pip install epc six
+pip install epc  \
+            six  \
+            pyright  \
+            matplotlib  \
+            networkx
 #+end_src
 
 ** personal pakcages
