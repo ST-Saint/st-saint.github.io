@@ -38,9 +38,11 @@ sudo pacman -S --noconfirm \
      clang \
      go \
      rust \
-     ant  \
+     ant \
      lib32-glibc \
-     maven
+     maven \
+     graphviz
+
 
 
 pip install epc  \
