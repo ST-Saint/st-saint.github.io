@@ -43,24 +43,24 @@ a derivation for ρ ⊢ e : t is a proof that in some context ρ (which assigns 
 \notag \large \dfrac{\dfrac{\dfrac{x:Bool \in x: Bool}{x:Bool \vdash x:Bool}}{\vdash \lambda x:Bool . x : Bool \rightarrow Bool} \qquad \dfrac{}{\vdash true: Bool} }{\vdash (\lambda x: Bool.x )\ true: Bool}
 \end{equation}
 
-\begin{align*}
-x&=\sqrt{b} \\
-&=b^{\frac{1}{2}}
-\end{align*}
 ** Reduction
 - Also known as *subject evaluation*, *type preservation* or simply *preservation*
 
-$$\frac{\Gamma \vdash e_1:\tau\qquad e_1 \rightarrow e_2}{\Gamma \vdash e_2:\tau}$$
+  A. $$\frac{\Gamma \vdash e_1:\tau\qquad e_1 \rightarrow e_2}{\Gamma \vdash e_2:\tau}$$
 
-$$\frac{}{if\ True\ then\ e1\ else\ e2 \rightarrow e1}$$
+  B. $$\frac{}{if\ True\ then\ e1\ else\ e2 \rightarrow e1}$$
 
-- $$\frac{e \Downarrow True}{if\ e\ then\ e1\ else\ e2}$$ $${if\ True\ then\ e1\ else\ e2\ \rightarrow\ e1}$$
+  C. $$\frac{e \Downarrow True}{if\ e\ then\ e1\ else\ e2}$$ $${if\ True\ then\ e1\ else\ e2\ \rightarrow\ e1}$$
 
 ** Substitution
 
-- $$e[x \backslash e^a]$$
+- $$[x \rightarrow s]x = s$$
+- $$e[x \backslash e^a] == [ x \rightarrow e^a] e$$
 
-$$[x \rightarrow e^{'}]e \Rightarrow [ x \rightarrow e^{'}](let y=e_1\; in\; e_2 ) = let y=[x \rightarrow e^{'}]e_1\; in\; [x \rightarrow e^{'}]e_2 $$
+\begin{align}
+& [ x \rightarrow e^{'}](let y=e_1\; in\; e_2 ) \\
+= & let y = [x \rightarrow e^{'}]e_1\; in\; [x \rightarrow e^{'}]e_2
+\end{align}
 
 ** Unification
 
@@ -174,7 +174,6 @@ Cons y ys -> append (reverse ys) (Cons y Nil)
   - 设有一性质P，并以一性质函数表示：P(x)，且其中的自变量x有此特性： x \notin x，
     - 不是, x \notin x 是什么意思
 
-
 - 我靠我一直觉得 PL 讲的 type 本质都应该是数学集合, 好像还是有点道理, 然而类型系统好像是集合论的上位(也许)替代
 
 *** 类型的意义
@@ -197,11 +196,11 @@ Cons y ys -> append (reverse ys) (Cons y Nil)
 
 *** 类型转换(Type Conversion)
 - 强制(coercion) 是一种隐式转换
-- 多态(ad-hoc polymorphsim) 而和铸型(casting) 显式转换
+- 多态(ad-hoc polymorphism) 而和铸型(casting) 显式转换
 
 
 *** 类型安全(Type Safety)
-- 较常用的一种安全机制的基本思路是，定义类型是某个域(domain)中值的集合, 保证类型安全即约束需要考察的值总是符合某一些类型的约束.
+- 较常用的一种安全机制的基本思路是，定义类型是某个域(domain)中值的集合, 保证类型安全需要考察的值是否总是符合其对应类型的约束.
   - 判断对象语言描述的程序是否符合类型安全这项任务能被程序表达和实现(包括语言自身的实现, 如编译时的检查).
   - 这样, 类型安全可以视为某一些语言规则中蕴含的性质
   - 当语言的规则不足以保证它表达的任意操作产生的值属于规则事先指定的值的集合之内, 这些规则就不是安全的
@@ -230,8 +229,8 @@ Cons y ys -> append (reverse ys) (Cons y Nil)
 - dependent types are used to encode logic's quantifiers like "for all" and "there exists"
 
   # 依赖类型的两个常见实例是依赖函数类型（又称依赖乘积类型、Π-类型）和依赖值对类型（又称依赖总和类型、Σ-类型）
-- 一个依赖类型函数的返回值类型可以依赖于某个参数的具体值, 而非仅仅参数的类型
-  - 例如, 一个输入参数为整型值n的函数可能返回一个长度为n的数组; 一个依赖类型值对中的第二个值可以依赖于第一个值, 例如, 依赖类型可表示这样的类型: 它由一对整数组成, 其中的第二个数总是大于第一个数。
+# - 一个依赖类型函数的返回值类型可以依赖于某个参数的具体值, 而非仅仅参数的类型
+#   - 例如, 一个输入参数为整型值n的函数可能返回一个长度为n的数组; 一个依赖类型值对中的第二个值可以依赖于第一个值, 例如, 依赖类型可表示这样的类型: 它由一对整数组成, 其中的第二个数总是大于第一个数。
 
 - Two common examples of dependent types are dependent functions, which correspond to "for all" and dependent pairs, which correspond to "there exists". The return type of a dependent function may depend on the value (not just type) of one of its arguments.
 
@@ -319,3 +318,107 @@ A fundamental distinction is extensional vs intensional type theory. In extensio
      a) δ has the form α → (β → α), or
      b) δ has the form (α → (β → γ)) → ((α → β) → (α → γ)),
   C) δ follows by deduction, i.e., for some α, both α → δ and α are already derivable from Γ (this is the rule of modus ponens)
+
+
+* From System F to Typed Assembly Language
+** abstract
+- type-preserving transformation from the System-F to Typed Assembly Language (TAL)
+- admit low-level compiler optimization
+- CPS & A polymorphic closure conversion phases
+- Get type-correct source program and map it to type-correct ASM
+- Compiler
+*** question
+- _suitable for use in systems where untrusted and potentially malicious code must be checked for safety before execution._ but in untrusted environment usually we could only access binary without source code
+- CPS conversion, closure conversion, unboxing, subsumption elimination, or region inference
+** introduction
+- some type information are lost
+- admits most conventional low-level optimizations such as
+  1. global register allocation
+  2. copy propagation
+  3. constant folding
+  4. dead-code elimination.
+- [ ] _Except for a small number of atomic code patterns_. What patterns?
+- support code motion
+  1. instruction scheduling
+  2. common-subexpression
+  3. elimination
+  4. loop-invariant removal
+- not support
+  1. run-time code generation
+  2. intensional polymorphism
+  3. array bounds check elimination
+*** SPIN
+- type-check in Linux kernel
+** overview
+*** TAL
+*** type-preserving compiler
+**** workflow
+1. \lambda^F -> CPS conversion
+2. \lambda^k -> Closure conversion
+3. \lambda^C -> Hoisting
+4. \lambda^H -> Allocation
+5. \lambda^A -> Code Generation
+** System-F
+- polymorphic \lambda-calculus
+** CPS
+- continuation passnig style -- eliminates the need for a control stack
+- all unconditional control transfer: function invocation and return are achieved via function call.
+** \lambda^K
+- \lambda^K consists of a series of let bindings followed by a function call
+- only one abstraction for both type and value variables
+- [ ] halt?
+- functions do not return values but it just jumps
+- expression never return values
+- ∆; Γ ⊢_K e indicates that the term e is well formed
+*** Translation
+- ~K_exp 〚 e 〛~  takes a continuation k, computes the value of e and hands that value to k
+- [ ] variable capture?
+- [ ] can all STLC be transformed into CPS?
+- a realistic CPS-converter would eliminate "administrative" redices and optimize tail recursion
+** Simplified polymorphic closure conversion
+- Making closure explicit and therby separating program code from data
+  1. [ ] rewrite functions so that there is no free varaibles. how?
+     A. function calls are performed by calling code with the environment as an addtional argument
+  2. hoisting: lift the code blocks to the top of the program
+  3. adopt the type-erasure interpretation of polymorphism which substitude the free type variables directly into code blocks
+*** Translation
+- ~C〚·〛~: \beta represent the type of the value environment for the closure
+*** Hoisting
+- =fix= is no longer a value form.
+- code blocks are defined by =letrec= prefix
+- [ ] =letrec= and mutually recursive and CPS?
+** Explicit allocation
+- eliminate the value form for tuples
+- introduce new declaration forms for allocating and initializing tuples
+  - n-element tuple can be separated into an allocation and n initialization
+*** Translation
+- [ ] memory layout of nested structure?
+** Typed Assembly language
+- simultaneously abstract
+  1. a type environment
+  2. a set of type arguments
+  3. a set of value arguments
+- assume an infinite supply of registers
+  - if it is finite, spilling registers into a tuple and reloading values from this tuple
+- distinguishable labels and registers
+*** TAL syntax
+- TAL machine state:
+  1. heap
+  2. register file
+  3. instructions
+*** TAL Operational Semantics
+- a type-erasure interpretation does not erase the type from the semantics
+*** TAL Static Semantics
+- specify when programs are well formed and ensure the program will not get stuck
+- formation judgments are for heaps + register file + instructions
+*** Code generation
+- For translation of function types, registers are assigned to value arguments
+  - x = v \Rightarrow mov r_x, v
+  - x = v_1 P v_2 \Rightarrow mov r_x, v1; arith r_x, r_x, v_2
+  - if0(v, e_1, e_2) \Rightarrow mov r_tmp, v; bnz r_tmp, \ell[α]; I_1
+  - ...
+** Optimization
+- how to reason the soundness of optimization?
+  - measure the equivalence?
+  - imaging a code snippet as a block-box ~B~. after some optimization, we can get a block-box ~B'~ which generates exactly some output as ~B~ for arbitrary input but require less latency.
+  - that sounds so weird how could know what attributes are lost or kept during the optimization?
