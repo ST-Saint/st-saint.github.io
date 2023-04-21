@@ -42,10 +42,19 @@ sed -E -i 's/SEARCH_REGEX/REPLACEMENT/g' INPUTFILE
 sed -E -i 's/Xft.dpi: [0-9]+/Xtf.dpi 144/g' ~/.Xresources
 #+end_src
 
-+ ~-i~ - Don't write the output to stdout.
++ ~-i~ - Edit a file and don't write the output to stdout.
 + ~s~ - The substitute command.
 + ~///~ - Delimiter character. It can be any character but usually the slash (/) character is used.
 + ~g~ - Global replacement flag. All occurrences are replaced if ~g~ provided.
+
+** awk
+- *NOTE* use '' instead of "" !
+#+begin_src shell
+pactl get-sink-volume 0 | head -n1 | awk '{print $5}' | sed "s/%//g"
+
+echo 'this is a test' | awk '{print $3}'
+#+end_src
+
 
 ** tmux
 
