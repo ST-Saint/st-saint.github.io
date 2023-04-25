@@ -80,3 +80,10 @@
 #+begin_src emacs-lisp
 C-u C-x =
 #+end_src
+
+* mu4e
+
+** init
+#+begin_src shell
+mu init --maildir=/home/yayu/.mail --my-address=@gmail.com --my-address=@ubc.ca
+#+end_src

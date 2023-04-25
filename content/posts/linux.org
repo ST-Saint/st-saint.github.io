@@ -182,10 +182,6 @@ uniq -u
 ** grep & rg
 *** grep
 
-** pacman
-*** 清除
-+ sudo pacman -R $(pacman -Qdtq)
-
 ** zip
 *** zip
 - -q 不显示命令
@@ -349,6 +345,9 @@ Match User yayu
 
 - refresh pgp =sudo pacman-key --refresh-keys=
 
+*** auto remove
++ sudo pacman -R $(pacman -Qdtq)
+
 ** yay
 | option               | description                                                 |
 | -S                   | install                                                     |
@@ -357,6 +356,8 @@ Match User yayu
 | -R                   | remove                                                      |
 | -Rs                  | Remove dependencies not required by other packages          |
 | --overwrite <glob>   | Bypass file conflict checks and overwrite conflicting files |
+| --editmenu           | edit pkgbuild before install                                |
+
 
 
 * Bluetooth

@@ -14,6 +14,7 @@ sudo pacman -S --noconfirm \
      xorg \
      xorg-xinit \
      wezterm \
+     wget \
      bear \
      bc \
      cmake \
@@ -46,7 +47,8 @@ pip install epc  \
             six  \
             pyright  \
             matplotlib  \
-            networkx
+            networkx  \
+            pygments
 #+end_src
 
 ** personal pakcages
