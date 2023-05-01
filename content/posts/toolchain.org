@@ -113,7 +113,9 @@ yay -S --noconfirm \
      radare2 \
      git-delta \
      screenkey \
-     volnoti
+     volnoti \
+     sayonara \
+     pypy3
 #+end_src
 
 
