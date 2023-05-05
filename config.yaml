@@ -22,34 +22,27 @@ author:
 menu:
   main:
     - weight: 1
-      identifier: home
-      pre: ''
-      post: ''
-      name: Home
-      url: /
-      title: 'home'
-    - weight: 2
       identifier: posts
       pre: ''
       post: ''
       name: Posts
       url: /posts/
       title: 'Posts'
-    - weight: 3
+    - weight: 2
       indentifier: archive
       pre: ''
       post: ''
       name: Archive
       url: /archive
       title: ''
-    - weight: 4
+    - weight: 3
       identifier: tags
       pre: ''
       post: ''
       name: Tags
       url: /tags/
       title: ''
-    - weight: 5
+    - weight: 4
       identifier: categories
       pre: ''
       post: ''
@@ -70,8 +63,8 @@ params:
     mobileMode: auto
     title:
       logo: ''
-      name: ''
-      pre: ''
+      name: 'Home'
+      pre: '<i class="nf nf-custom-emacs"></i>'
       post: ''
       typeit: false
   footer:
@@ -121,7 +114,7 @@ params:
       gravatarEmail: ''
       avatarURL: /profile.jpg
       title: 'Yayu Wang <br/> <br/> 王亚宇'
-      subtitle: "再次鼓起失去的勇气 <br/> Regain lost courage"
+      subtitle: "Regain lost courage <br/> 再次鼓起失去的勇气"
       typeit: true
       social: true
       disclaimer: ''
@@ -203,7 +196,7 @@ params:
     HackTheBox: ''
     RootMe: ''
     Phone: ''
-    Email: "https://st-saint.github.io/posts/email/"
+    Email: "https://st-saint.github.io/email/"
     RSS: true
   page:
     hiddenFromHomePage: false
