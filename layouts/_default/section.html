@@ -1,0 +1,22 @@
+{{- define "content" -}}
+    <div class="page home" data-home="posts">
+    <h1>Posts</h1>
+    {{- $posts := .Site.Params.home.posts -}}
+    {{- /* Paginate */ -}}
+    {{- $pages := where .Site.RegularPages "Type" "posts" -}}
+    {{- if .Site.Params.page.hiddenFromHomePage -}}
+        {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
+    {{- else -}}
+        {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
+    {{- end -}}
+    {{- with $posts.paginate | default .Site.Params.paginate -}}
+        {{- $pages = $.Paginate $pages . -}}
+    {{- else -}}
+        {{- $pages = .Paginate $pages -}}
+    {{- end -}}
+    {{- range $pages.Pages -}}
+        {{- .Render "summary" -}}
+    {{- end -}}
+    {{- partial "paginator.html" . -}}
+    </div>
+{{- end -}}

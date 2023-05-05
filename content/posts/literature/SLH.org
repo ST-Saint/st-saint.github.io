@@ -2,11 +2,10 @@
 #+DATE: Tue Mar 21 15:46:32 PDT 2023
 #+Summary: SLH & SSLH & USLH
 #+categories[]: side-channel
-#+tags[]: SLH, side-channel
+#+tags[]: SLH side-channel
 
 
 * SLH
-
 
 ** LLVM SLH
 - [[https://llvm.org/docs/SpeculativeLoadHardening.html]]

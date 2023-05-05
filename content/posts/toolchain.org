@@ -44,7 +44,6 @@ sudo pacman -S --noconfirm \
      graphviz
 
 
-
 pip install epc  \
             six  \
             pyright  \
@@ -74,7 +73,7 @@ yay -S --noconfirm \
      discord \
      dunst \
      zoom \
-     slack \
+     slack-desktop \
      flameshot \
      btop \
      isync \
@@ -115,7 +114,8 @@ yay -S --noconfirm \
      screenkey \
      volnoti \
      sayonara \
-     pypy3
+     pypy3 \
+     inkscape
 #+end_src
 
 
