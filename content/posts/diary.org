@@ -5,11 +5,18 @@
 #+tags[]: Diary
 
 
+* <2023-05-05 Fri>
+- 换到loveit咯, 不错不错
+  - [ ] taxonomy
+  - [ ] 排序
+  - [ ] 多语言
+- [ ] 用cherry是不是可以把 Spectre-STL 的表达式转成单个变量表达式判断相等呢
+
 * <2023-04-03 Mon>
 - Ok, I guess math is also philosophy
 - Programming language is also philosophy
 
-* <2023-03-19 Sun>[0/4]
+* <2023-03-19 Sun>[2/4]
 - 人贵自知
 - 它猫猫的
 - 怎么这么多b事
@@ -25,11 +32,11 @@
   - 真的有必要 USLH 吗, 又有点忘了
   - 还真要, USLH 多了 ~rep~, ~arith~ 虽然不知道为什么需要特殊处理 ~arith~
 
-** TODO type-system
+** DONE type-system
 - 做个 TAL/checked-C ++ 算了
 - 普通 taint analysis 分析 secret independent control-flow + memory access
 
-** TODO upfuzz dinv
+** DONE upfuzz dinv
 - reconstruct output stream
 - 普通记录个 =bytestream= 先
 

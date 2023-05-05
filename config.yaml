@@ -423,3 +423,7 @@ outputs:
     - RSS
   taxonomyTerm:
     - HTML
+taxonomies:
+  category: categories
+  tag: tags
+  archive: archive

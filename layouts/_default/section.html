@@ -1,22 +1,31 @@
+{{- define "title" }}
+    {{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" }} - {{ .Site.Title -}}
+{{- end -}}
+
 {{- define "content" -}}
-    <div class="page home" data-home="posts">
-    <h1>Posts</h1>
-    {{- $posts := .Site.Params.home.posts -}}
-    {{- /* Paginate */ -}}
-    {{- $pages := where .Site.RegularPages "Type" "posts" -}}
-    {{- if .Site.Params.page.hiddenFromHomePage -}}
-        {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
-    {{- else -}}
-        {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
-    {{- end -}}
-    {{- with $posts.paginate | default .Site.Params.paginate -}}
-        {{- $pages = $.Paginate $pages . -}}
-    {{- else -}}
-        {{- $pages = .Paginate $pages -}}
-    {{- end -}}
-    {{- range $pages.Pages -}}
-        {{- .Render "summary" -}}
-    {{- end -}}
-    {{- partial "paginator.html" . -}}
-    </div>
+
+      <div class="page home" data-home="posts">
+        {{- /* Title */ -}}
+        <h2 class="single-title animate__animated animate__pulse animate__faster">
+          {{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" -}}
+        </h2>
+
+        {{- $posts := .Site.Params.home.posts -}}
+        {{- /* Paginate */ -}}
+        {{- $pages := where .Site.RegularPages "Type" "posts" -}}
+        {{- if .Site.Params.page.hiddenFromHomePage -}}
+            {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
+        {{- else -}}
+            {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
+        {{- end -}}
+        {{- with $posts.paginate | default .Site.Params.paginate -}}
+            {{- $pages = $.Paginate $pages . -}}
+        {{- else -}}
+            {{- $pages = .Paginate $pages -}}
+        {{- end -}}
+        {{- range $pages.Pages -}}
+            {{- .Render "summary" -}}
+        {{- end -}}
+        {{- partial "paginator.html" . -}}
+        </div>
 {{- end -}}
