@@ -1,0 +1,32 @@
+# Doom
+
+
+* [[https://docs.projectile.mx/projectile/index.html][projectile]]
+
++ 好像并不是所有常见项目都会被识别成 projectile , 所以根目录加一个空 .projectile 文件
+
+** ignore
++ projectile ignore 依赖于 =projectile-indexing-method=
+
+*** projectile-indexing-method
+
+**** alien
++ 直接使用外部index, projectile do nothing
++ 效率最好
+**** hybrid
++ external tool + projectile filter
++ 直接用 .projectile 声明 ignore 好像不总有效
++ =.ignore= 中写 exclude/include 会更好点(因为用的是 *rg*)
+**** native
++ Emacs lisp indexing
++ 很慢
+
+* issue
+
+** balanced bracket
++ 理论上 Emacs native 的 sexp 是可以直接匹配的, 但是好像 evil 下行为模式有些不一样
+
+| Key           | Function                                   |
+|---------------+--------------------------------------------|
+| C-M-(f/b/n/p) | supposed to be jumping to balanced bracket |
+

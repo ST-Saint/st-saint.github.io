@@ -1,0 +1,34 @@
+# ctgrind
+
+
+* Constant-time
+- In order for a function to be constant time, the branches taken and memory addresses accessed must be independent of any secret inputs
+
+- Assuming that the fundamental processor instructions are constant time
+
+- Tough to write and modify. Hard to verify
+
+* Solutions
+
+
+- A typical input to exercise every instruction so type system may not be necessary
+
+- Valgrind could check all the branches and memory accesses to make sure that they haven't been tainted with secret data.
+
+- Keeping track of every bit in memory to know if it's secret or not, likewise for all the CPU registers at bit level.
+
+- *Memcheck* has done that. Just tell memcheck to treat the secret data as uninitialized
+
+** notes
+- The idea here is that any usage of secret data is unsafe. Memcheck helps to indentify all the usage of uninitialized data which is consistent with the secret data flow.
+
+- This memcheck mechanism can just track the usage of the secret data. It could detect and help to elimitate using secret data as a condition, an index (hopefully also include the the address/pointer).
+
+*** REVIEW I feel this is sound, so what is the problem of ctgrind?
+- Maybe it does not explore all the paths
+- and hardware is hard to model [[https://blog.cr.yp.to/20140517-insns.html]]
+
+
+* Misc
+- A type system could probably help here
+

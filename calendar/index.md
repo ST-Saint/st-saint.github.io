@@ -1,0 +1,29 @@
+# Calendar
+
+
+* [[https://github.com/kiwanami/emacs-calfw][calfw]]
++ A calendar framework for Emacs
+
+** [[https://github.com/myuhe/org-gcal.el][org-gcal]] - Synchronization with google calenda
+
++ 老项目不维护了, 新地址 **[[https://github.com/kidd/org-gcal.el][org-gcal]]**
+
+*** google cloud calendar
++ could api 改版了真的好难用, 文档给的也过时了
+
++ 还是勉勉强强按文档同步了, project 测试版就可以用
+
+*** sync
+
++ 直接 =org-ical-sync= 就可以fetch，但是怎么push呢
+
++ 在 org-heading 上 call =org-gcal-post-at-point= 加个 =properties=, =schedule= 也会被写到 =properties=, 感觉差不多能用
+
++ 有个小问题是，sync一次之后，老是出现 =rx--translate-bounded-repetition: rx ‘**’ range error=
+
+*** auto archive
+
++ auto archive g 了，sync的 =rx '**' range error= 是auto archive来的
+
++ [[https://github.com/kidd/org-gcal.el/issues/172][PR]] +还没+ merge了 +, 先disable掉吧+
+

@@ -1,0 +1,177 @@
+# Java
+
+
+
+* class
+** template
++ template 是 compilation feature, cannot instantiate a template with dynamic class at runtime
+** enum
++ enum 默认是 String
++ 用 =enum.valueOf(str)= convert to =enum=
++ integer enum
+#+begin_src java
+    public
+    enum Type {
+      SIGN_CREATE(0), SIGN_CREATE_BONUS(1), HOME_SCREEN(2), REGISTER_SCREEN(3);
+
+      private final int value;
+
+      Type(final int v){value = v;}
+
+    public int getValue() { return value; }
+    }
+#+end_src
++ 用 index 访问 =Type.values()[index]=
+
+* Project
+** classpath
++ 访问 resources 也是需要在 *classpath* 中声明的
+
+* Serialize
+** Gson
++ Gson 应该是还比较好的方案了吧, 没有什么CVE问题
+
+* Process
+** 阻塞
++ process 创建时默认重定向到 pipe, 如果主线程不及时读取 pipe 的内容, pipe buffer 会堵塞
+
+* format
+| Conversion | Argument Category | Description                                                                                                                                                                           |
+| 'b', 'B'   | general           | If the argument arg is null, then the result is "false". If arg is a boolean or Boolean, then the result is the string returned by String.valueOf(). Otherwise, the result is "true". |
+| 'h', 'H'   | general           | If the argument arg is null, then the result is "null". Otherwise, the result is obtained by invoking Integer.toHexString(arg.hashCode()).                                            |
+| 's', 'S'   | general           | If the argument arg is null, then the result is "null". If arg implements Formattable, then arg.formatTo is invoked. Otherwise, the result is obtained by invoking arg.toString().    |
+| 'c', 'C'   | character         | The result is a Unicode character                                                                                                                                                     |
+| 'd'        | integral          | The result is formatted as a decimal integer                                                                                                                                          |
+| 'o'        | integral          | The result is formatted as an octal integer                                                                                                                                           |
+| 'x', 'X'   | integral          | The result is formatted as a hexadecimal integer                                                                                                                                      |
+| 'e', 'E'   | floating point    | The result is formatted as a decimal number in computerized scientific notation                                                                                                       |
+| 'f'        | floating point    | The result is formatted as a decimal number                                                                                                                                           |
+| 'g', 'G'   | floating point    | The result is formatted using computerized scientific notation or decimal format, depending on the precision and the value after rounding.                                            |
+| 'a', 'A'   | floating point    | The result is formatted as a hexadecimal floating-point number with a significand and an exponent                                                                                     |
+| 't', 'T'   | date/time         | Prefix for date and time conversion characters. See Date/Time Conversions.                                                                                                            |
+| '%'        | percent           | The result is a literal '%' ('\u0025')                                                                                                                                                |
+| 'n'        | line separator    | The result is the platform-specific line separator                                                                                                                                    |
+
+
+* date
+** format
+#+begin_src java
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import org.apache.commons.lang3.time.DurationFormatUtils;
+
+DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+System.out.println(formatter.format(System.currentTimeMillis()));
+
+DurationFormatUtils.formatDuration(millis, "HH:mm:ss.SSS")
+#+end_src
+
+#+RESULTS:
+: 2022-04-18 20:53:33.000538
+
+** iterator
+*** iterator and remove
+#+begin_src java
+for(Iterator<Map.Entry<String, String>> it = map.entrySet().iterator(); it.hasNext(); ) {
+    Map.Entry<String, String> entry = it.next();
+    if(entry.getKey().equals("")) {
+        it.remove();
+    }
+}
+#+end_src
+
+* File
+** Path
++ 一般直接用 Path 处理路径
++ Path.toFile() 直接转 File
+*** join
+#+begin_src java
+Path currentPath = Paths.get(System.getProperty("user.dir"));
+Path filePath = Paths.get(currentPath.toString(), "data", "foo.txt");
+System.out.println(filePath.toString());
+#+end_src
+** list file
+#+begin_src java
+File[] files = new File("/home").listFiles();
+#+end_src
+** copy&move
+**** move
++ Option
+  A) REPLACE_EXISTING
+  B) ATOMIC_MOVE
+#+begin_src java
+Files.move(Paths.get(src), Paths.get(dest), null);
+#+end_src
+**** copy
+#+begin_src java
+Files.copy(Paths.get(src), Paths.get(dest), null);
+#+end_src
+
+** Write to File
+*** BufferedWriter 写 String
+#+begin_src java
+String str = "Hello";
+BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+writer.write(str);
+writer.close();
+#+end_src
+*** FileOutputStream 写 bytes
+#+begin_src java
+String str = "Hello";
+FileOutputStream outputStream = new FileOutputStream(fileName);
+byte[] strToBytes = str.getBytes();
+outputStream.write(strToBytes);
+outputStream.close();
+#+end_src
+
+* Reflect
+
+** from class
+#+begin_src java
+Field[] allFields = Person.class.getDeclaredFields();
+
+assertEquals(2, allFields.length);
+
+assertTrue(Arrays.stream(allFields).anyMatch(field ->
+                                             field.getName().equals(LAST_NAME_FIELD)
+                                             && field.getType().equals(String.class)));
+assertTrue(Arrays.stream(allFields).anyMatch(field ->
+                                             field.getName().equals(FIRST_NAME_FIELD)
+                                             && field.getType().equals(String.class)));
+#+end_src
+
+* Object
+** copy
+*** deep-copy
+**** problem
++ A common solution to the deep copy problem is to use Java Object Serialization (JOS).
+#+begin_quote
+Unfortunately, this approach has some problems, too:
+
+1. It will only work when the object being copied, as well as all of the other objects references directly or indirectly by the object, are serializable. (In other words, they must implement java.io.Serializable.) Fortunately it is often sufficient to simply declare that a given class implements java.io.Serializable and let Java’s default serialization mechanisms do their thing.
+
+2. Java Object Serialization is slow, and using it to make a deep copy requires both serializing and deserializing. There are ways to speed it up (e.g., by pre-computing serial version ids and defining custom readObject() and writeObject() methods), but this will usually be the primary bottleneck.
+
+3. The byte array stream implementations included in the java.io package are designed to be general enough to perform reasonable well for data of different sizes and to be safe to use in a multi-threaded environment. These characteristics, however, slow down ByteArrayOutputStream and (to a lesser extent) ByteArrayInputStream.
+#+end_quote
+
+* Disassembly
+
+** class
+- Parse class file
+#+begin_src shell
+javap [-c] <class_name>.class
+#+end_src
+| options | description          |
+| -c      | Disassemble the code |
+
+** jar
+- extract
+#+begin_src shell
+jar xf <jar_file>.jar
+#+end_src
+
+* Debug
+
+** jprofiler
+

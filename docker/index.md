@@ -1,0 +1,51 @@
+# Docker
+
+
+
+* Dockerfile
+
+* Docker command
+** run
+#+begin_src shell
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+# example
+docker run -it --name sample_docker ubuntu:20.04 /bin/bash
+#+end_src
+
+*** description
++ 创建和启动一个新的容器实例
++ create and start a new container instance
+*** options
+| Option | Description                          |
+| --name | Name                                 |
+| -i     | Keep STDIN open even if not attached |
+| -t     | Allocate a pseudo-TTY                |
+
+** exec
+*** description
++ 已运行的容器中, 执行命令
+*** options
+| Option | Description |
+| -i     | interaction |
+| -t     | terminal    |
+| -w     | workspace   |
+
+** start
+#+begin_src shell
+docker attach docker_name/docker_id [-i]
+#+end_src
+
+- ~-i~ interact
+
+** volume
+#+begin_src shell
+docker run -v /local_path:/docker_path -it --name sample_docker ubuntu:20.04 /bin/bash
+#+end_src
+
+
+** attach
+#+begin_src shell
+docker attach [docker_name/docker_id]
+#+end_src
+

@@ -1,0 +1,108 @@
+# Hugo
+
+
+* org
++ 理论上原生支持org, 好像直接解释为markdown了
++ 分割线
+  + 需要5个 ~dash -~
+-----
+** Front matter
++ 是个啥呢
+  + =#+__property__: __value__=
++ 这样设置一些属性
+*** example
+#+begin_src org
+#+date: Fri, 28 Jan 2022 23:05:33 +0800
+#+summary: hugo things
+#+tags[]: tagA tagB
+#+categories[] catA catB
+#+end_src
++ front matter 得有 =date= 才能识别到 =archive= 里面
+
+** TOC
++ +ORG 的 TOC 好像有点问题+
++ +不过是根据 theme 来的，所以应该还好+
++ _*<2022-02-23 Wed> UPDATE*_ toc 直接 ={{ .TableofContents }}= 就可以生成
+
+* 使用不同主题
++ hugo 并不支持在一个site中使用多个theme
+** Solution
++ 在不同子路径下创建多个仓库生成不同站点，生成到同一个public目录下
+
+-----
+
+* css
++ 与theme相关
++ 一般直接在assets/
+
++ 想给 =<h1>= 前加个 =<hr>= 加不上..
+
+** font
++ 不是很好看
++ 准备换一下
++ header 也改一下
+
++ +找不到好看字体摆烂了，直接 ~system ui~+
+
++ 换上 ~sauce code pro~ + ~dejavu~ 了
+
+* DateFormat
++ 折磨
++ 又 debug 一晚上, hugo 不会 build 超过当前日期的时间, 且 Hugo 默认采用的是格林尼治标准时间, 所以默认 8h 内的文章不会显示
+  1) 强制 build 未来文章: =hugo --buildFuture= / =buildFuture = true=
+  2) 用识别时区的格式 =Sat, 12 Mar 2022 23:43:48 +0800=
++ 文章 ~date~ 字段需要是以下格式
+#+begin_src go
+const (
+	Layout      = "01/02 03:04:05PM '06 -0700" // The reference time, in numerical order.
+	ANSIC       = "Mon Jan _2 15:04:05 2006"
+	UnixDate    = "Mon Jan _2 15:04:05 MST 2006"
+	RubyDate    = "Mon Jan 02 15:04:05 -0700 2006"
+	RFC822      = "02 Jan 06 15:04 MST"
+	RFC822Z     = "02 Jan 06 15:04 -0700" // RFC822 with numeric zone
+	RFC850      = "Monday, 02-Jan-06 15:04:05 MST"
+	RFC1123     = "Mon, 02 Jan 2006 15:04:05 MST"
+	RFC1123Z    = "Mon, 02 Jan 2006 15:04:05 -0700" // RFC1123 with numeric zone
+	RFC3339     = "2006-01-02T15:04:05Z07:00"
+	RFC3339Nano = "2006-01-02T15:04:05.999999999Z07:00"
+	Kitchen     = "3:04PM"
+	// Handy time stamps.
+	Stamp      = "Jan _2 15:04:05"
+	StampMilli = "Jan _2 15:04:05.000"
+	StampMicro = "Jan _2 15:04:05.000000"
+	StampNano  = "Jan _2 15:04:05.000000000"
+)
+#+end_src
+
++ 在 ~config.yaml~ 中可以设置 ~DateFormat~, format 格式为
+  + example: =DateFormat: "Jan 02, 2006  Mon 15:04"=
+
+
+#+ATTR_HTML: :class table
+| *Format Symbol* | *Description*                                                      | *Value*                  |
+|-----------------+--------------------------------------------------------------------+--------------------------|
+|          Monday | A full textual representation of the day of the week               | Monday through Sunday    |
+|             Mon | A textual representation of a day, three letters                   | Mon through Sun          |
+|            2006 | A full numeric representation of a year, 4 digits                  | 2017 or 1986             |
+|              06 | A two digit representation of a year                               | 17 or 86                 |
+|         January | A full textual representation of a month, such as January or March | January through December |
+|             Jan | A short textual representation of a month, three letters           | January through December |
+|              01 | Numeric representation of a month, with leading zeros              | 01 through 12            |
+|               1 | Numeric representation of a month, without leading zeros           | 1 through 12             |
+|              02 | Day of the month, 2 digits with leading zeros                      | 01 through 31            |
+|              15 | 24-hour format of an hour with leading zeros                       | 00 through 24            |
+|               3 | 12-hour format of an hour without leading zeros                    | 1 through 12             |
+|              03 | 12-hour format of an hour with leading zeros                       | 01 through 12            |
+|              PM | Indicator if AM or PM                                              | AM or PM                 |
+|               4 | Minutes without leading zeros                                      | 1 through 59             |
+|              04 | Minutes with leading zeros                                         | 01 through 59            |
+|               5 | Seconds, without leading zeros                                     | 1 through 59             |
+|              05 | Seconds, with leading zeros                                        | 01 through 59            |
+|             MST | Timezone                                                           | Example: UTC, MST        |
+|           -0700 | Difference to GMT as ±hhmm                                         | +0000                    |
+|          -07:00 | Difference to GMT as ±hh:mm                                        | +00:00                   |
+|             -07 | Difference to GMT as ±hh                                           | +00                      |
+|           Z0700 | Difference to GMT as Z or ±hhmm                                    | Z or ±hhmm               |
+|          Z07:00 | Difference to GMT as Z or ±hh:mm                                   | Z or ±hh:mm              |
+|             Z07 | Difference to GMT as Z or ±hh                                      | Z or ±hh                 |
+
