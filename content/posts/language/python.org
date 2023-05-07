@@ -21,7 +21,88 @@ return "abc123".encode("utf-8")
 #+RESULTS:
 : b'abc123'
 
-* time
+* Arguments
+
+** argparse
+#+begin_src python
+import argparse
+
+# Create the parser object
+parser = argparse.ArgumentParser(description='Process something')
+
+# Add an argument to the parser
+parser.add_argument('integers', metavar='N', type=int, help='an integer to be processed')
+
+# Parse the arguments
+args = parser.parse_args()
+
+# Access the parsed arguments
+print(args.integers)
+#+end_src
+
+
+* File
+
+** file exists
+#+begin_src python
+import os
+
+filename = "example.txt"
+if os.path.exists(filename):
+    print("File exists")
+else:
+    print("File does not exist")
+#+end_src
+
+* Json
+
+** load from file
+#+begin_src python
+with open('data.json', 'r') as f:
+    data = json.load(f)
+
+print(data)
+#+end_src
+
+** dump to file
+
+#+begin_src python
+with open('data.json', 'w') as f:
+    json.dump(data, f)
+#+end_src
+
+
+** dump class to file
+#+begin_src python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+person = Person("John Smith", 35)
+
+with open('person.json', 'w') as f:
+    json.dump(person.__dict__, f)
+#+end_src
+
+
+** load class from file
+
+#+begin_src python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+with open('person.json', 'r') as f:
+    data = json.load(f)
+    person = Person(data['name'], data['age'])
+
+print(person.name)
+print(person.age)
+#+end_src
+
+* Time
 #+begin_src python
 from time import gmtime, localtime, strftime
 
