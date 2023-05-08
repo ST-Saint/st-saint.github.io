@@ -158,6 +158,35 @@ Unfortunately, this approach has some problems, too:
 3. The byte array stream implementations included in the java.io package are designed to be general enough to perform reasonable well for data of different sizes and to be safe to use in a multi-threaded environment. These characteristics, however, slow down ByteArrayOutputStream and (to a lesser extent) ByteArrayInputStream.
 #+end_quote
 
+* log
+
+** log4j2
+
+*** dynamic setting
+
+**** from system property
+
+#+begin_src yaml
+Configutation:
+    name: Default
+    Properties:
+        Property:
+            name: logfile
+            value: "log"
+    Appenders:
+        File:
+            name: File_Appender
+            fileName: ${sys:logfile}
+            append: false
+            PatternLayout:
+                pattern: "%d [%t] %-5level %F:%M:%L: %msg%n%throwable"
+#+end_src
+
+#+begin_src shell
+java -Dlogfile="log4j2.log" main
+#+end_src
+
+
 * Disassembly
 
 ** class
@@ -173,6 +202,17 @@ javap [-c] <class_name>.class
 #+begin_src shell
 jar xf <jar_file>.jar
 #+end_src
+
+* java-version
+
+** archlinux
+
+#+begin_src shell
+archlinux-java status
+
+sudo archlinux-java set <java-environment>(e.g. java-11-openjdk)
+#+end_src
+
 
 * Debug
 
