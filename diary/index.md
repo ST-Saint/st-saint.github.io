@@ -2,6 +2,13 @@
 
 
 
+* <2023-05-08 Mon>
+#+begin_quote
+最痛的痛是原谅
+#+end_quote
+
+- 怎么会有人写得出这种词啊
+
 * <2023-05-05 Fri>
 - 换到loveit咯, 不错不错
   - [ ] taxonomy
