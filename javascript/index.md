@@ -23,3 +23,16 @@ V8 is the name of the JavaScript engine that powers Google Chrome. It's the thin
 - Liftoff is responsible for machine code generation in a highly optimized way. It generates code for each opcode and perform way better then Turbofan.
 - Orinoco is responsible for garbage collection. It looks for disconnected memory allocations and perform operations to free up more space. It also update the pointers to new memory locations.
 
+* Optional parameters
+#+begin_src typescript
+function buildName(firstName: string, lastName?: string) {
+  if (lastName) return firstName + " " + lastName;
+  else return firstName;
+}
+
+let result1 = buildName("Bob"); // works correctly now
+let result2 = buildName("Bob", "Adams", "Sr."); // error, too many parameters
+Expected 1-2 arguments, but got 3.
+let result3 = buildName("Bob", "Adams"); // ah, just right
+#+end_src
+
