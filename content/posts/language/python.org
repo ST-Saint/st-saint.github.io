@@ -1,6 +1,6 @@
 #+TITLE: Python
 #+date: Sun Apr 03 11:18:36 CST 2022
-#+categories[]: program_languages
+#+categories[]: programming_languages
 #+tags[]: python
 #+summary: Python
 

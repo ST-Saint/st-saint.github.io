@@ -1,6 +1,6 @@
 #+TITLE: Java
 #+date: Sun Mar 13 08:23:05 CST 2022
-#+categories[]: program_languages
+#+categories[]: programming_languages
 #+tags[]: java
 #+summary: Java
 

@@ -25,6 +25,11 @@
 (file-name-directory buffer-file-name)
 #+end_src
 
+** file name without suffix
+#+begin_src emacs-lisp
+(file-name-sans-extension (buffer-name))
+#+end_src
+
 
 * buffer & window
 ** get

@@ -1,6 +1,6 @@
 #+TITLE: Golang
 #+DATE: Wed Mar 01 17:42:23 PST 2022
-#+categories[]: program_languages
+#+categories[]: programming_languages
 #+tags[]: Golang
 #+summary: Golang
 

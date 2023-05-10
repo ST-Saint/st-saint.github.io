@@ -1,7 +1,7 @@
 #+TITLE: Rust
 #+DATE: Mon Mar 20 22:56:37 PDT 2023
 #+Summary: Rust
-#+categories[]: program_languages
+#+categories[]: programming_languages
 #+tags[]: Rust
 
 * Cargo

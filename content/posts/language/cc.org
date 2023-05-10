@@ -1,6 +1,6 @@
 #+TITLE: C - Cpp
 #+date: Wed Apr 20 13:04:55 CST 2022
-#+categories[]: program_languages
+#+categories[]: programming_languages
 #+tags[]: c cpp
 #+summary: cc
 
