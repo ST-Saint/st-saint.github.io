@@ -65,12 +65,20 @@ import org.apache.commons.lang3.time.DurationFormatUtils;
 
 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 System.out.println(formatter.format(System.currentTimeMillis()));
-
-DurationFormatUtils.formatDuration(millis, "HH:mm:ss.SSS")
 #+end_src
 
 #+RESULTS:
 : 2022-04-18 20:53:33.000538
+** duration
+#+begin_src java
+import org.apache.commons.lang3.time.DurationFormatUtils;
+
+Long begin = System.currentTimeMillis();
+Long end = System.currentTimeMillis();
+
+DurationFormatUtils.formatDuration(end-begin, "HH:mm:ss.SSS")
+#+end_src
+
 
 ** iterator
 *** iterator and remove
