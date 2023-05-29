@@ -4,6 +4,13 @@
 
 * Dockerfile
 
+** ubuntu timezone
+#+begin_src Dockerfile
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+#+end_src
+
+
+
 * Docker command
 ** run
 #+begin_src shell
