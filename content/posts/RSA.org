@@ -1,0 +1,32 @@
+#+TITLE: RSA
+#+DATE: Sun May 28 23:10:04 PDT 2023
+#+Summary: RSA
+#+categories[]: cryptography
+#+tags[]: cryptography RSA
+
+* theory
+- modular arithmetic
+- Euler's theorem
+- Euler's totient function
+
+* algorithm
+
+1. First, the receiver chooses two large prime numbers ~p~ and ~q~. Their product, ~n=pq~, will be half of the public key.
+2. The receiver calculates ~ϕ(pq)=(p−1)(q−1)~ and chooses a number ~e~ relatively prime to ~ϕ(pq)~. In practice, ~e~ is often chosen to be ~2^16+1=65537~, though it can be as small as 3 in some cases. ee will be the other half of the public key.
+3. The receiver calculates (=exgcd=) the modular inverse ~d~ of ~e~ modulo ~ϕ(n)~. In other words, ~de≡ 1 (mod ϕ(n))~. ~d~ is the private key.
+4. The receiver distributes both parts of the public key: ~n~ and ~e~. ~d~ is kept secret.
+
+* application
+- The public and private keys have been generated, they can be reused as often as wanted.
+- To transmit a message, follow these steps:
+  1. First, the sender converts his message into a number ~m~. One common conversion process uses the ASCII alphabet:
+     |  A |  B |  C |  D |  E |  F |  G |  H |  I |  J |  K |  L |  M |
+     | 65 | 66 | 67 | 68 | 69 | 70 | 71 | 72 | 73 | 74 | 75 | 76 | 77 |
+     |  N |  O |  P |  Q |  R |  S |  T |  U |  V |  W |  X |  Y |  Z |
+     | 78 | 79 | 80 | 81 | 82 | 83 | 84 | 85 | 86 | 87 | 88 | 89 | 90 |
+     if ~n~ is smaller than the message, it will be sent in pieces.
+
+  2. The sender then calculates ~c ≡ m^e(mod n)~. ~c~ is the ciphertext, or the encrypted message. Besides the public key, this is the only information an attacker will be able to steal.
+
+  3. The receiver computes ~c^d≡ m (mod n)~, thus retrieving the original number ~m~.
+  4. The receiver translates ~m~ back into letters, retrieving the original message.

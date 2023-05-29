@@ -357,6 +357,7 @@ Match User yayu
 | -Rs                  | Remove dependencies not required by other packages          |
 | --overwrite <glob>   | Bypass file conflict checks and overwrite conflicting files |
 | --editmenu           | edit pkgbuild before install                                |
+| -Ql                  | show package contents                                      |
 
 
 
