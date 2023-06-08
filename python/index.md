@@ -51,6 +51,67 @@ else:
     print("File does not exist")
 #+end_src
 
+** parent dir
+#+begin_src python
+import os
+
+parent_dir = os.path.dirname(file_path)
+#+end_src
+
+
+** path join
+#+begin_src python
+import os
+
+path1 = "/path/to/directory"
+path2 = "subdirectory"
+filename = "file.txt"
+joined_path = os.path.join(path1, path2, filename)
+print(joined_path)
+#+end_src
+
+** directory create
+#+begin_src python
+import os
+
+directory = "/path/to/directory"
+
+if not os.path.exists(directory):
+    os.makedirs(directory)
+    print("Directory created:", directory)
+else:
+    print("Directory already exists:", directory)
+#+end_src
+
+* threads
+
+** thread pool
+#+begin_src python
+import concurrent.futures
+
+def execute_command(command):
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    stdout, stderr = process.communicate()
+    return stdout, stderr
+
+commands = [
+    ['ls', '-l'],
+    ['echo', 'Hello, world!'],
+    ['pwd']
+]
+
+with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+    # Submit tasks to the thread pool
+    future_results = [executor.submit(execute_command, command) for command in commands]
+
+    # Get the results as they become available
+    for future in concurrent.futures.as_completed(future_results):
+        stdout, stderr = future.result()
+        print("Standard Output:")
+        print(stdout)
+#+end_src
+
+
 * Json
 
 ** load from file
@@ -173,6 +234,24 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
  + 多继承的时候, 直接 =super().func()= 会从 mro 中, 从第二个找拥有 =func()= 的类
    - 如果使用 =super(clazz, self).func()= 则会从 clazz.mro 中的第二个类开始找
+** enum
+#+begin_src python
+from enum import Enum
+
+class Color(Enum):
+    RED = 1
+    GREEN = 2
+    BLUE = 3
+
+print(Color.RED)         # Output: Color.RED
+print(Color.GREEN)       # Output: Color.GREEN
+print(Color.BLUE)        # Output: Color.BLUE
+
+print(Color.RED.value)   # Output: 1
+print(Color.GREEN.value) # Output: 2
+print(Color.BLUE.value)  # Output: 3
+#+end_src
+
 
 * plot
 
