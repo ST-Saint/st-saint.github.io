@@ -303,3 +303,75 @@ digraph {
 #+begin_src shell
 dot -Tpng -Kdot -odot.png example.dot
 #+end_src
+
+* pandas
+
+** from list
+#+begin_src python
+import pandas as pd
+
+df = pd.DataFrame(
+    [["wyy", "Pad Gra Paow", 80, "good", "2023-06-05 Mon"]],
+    columns=["reviewer", "dish", "score", "comment", "date"],
+)
+#+end_src
+
+** to json
+
+#+begin_src python
+import pandas as pd
+
+df = pd.DataFrame(
+    [["wyy", "Pad Gra Paow", 80, "good", "2023-06-05 Mon"]],
+    columns=["reviewer", "dish", "score", "comment", "date"],
+)
+
+return df.to_json(orient='split', force_ascii=False) # use unicode
+#+end_src
+
+** to markdown
+#+begin_src python
+import pandas as pd
+
+df = pd.DataFrame(
+    [["wyy", "Pad Gra Paow", 80, "good", "2023-06-05 Mon"]],
+    columns=["reviewer", "dish", "score", "comment", "date"],
+)
+return df.to_markdown()
+#+end_src
+
+** concat
+#+begin_src python
+import pandas as pd
+
+pd.concat([data1, data2])
+#+end_src
+
+*** horizontal
+#+begin_src python
+import pandas as pd
+
+pd.concat([data1, data2], axis=1)
+#+end_src
+
+** reset index
+#+begin_src python
+import pandas as pd
+
+pd.concat([...]).reset_index(drop=True)
+#+end_src
+
+* type
+
+** return void
+#+begin_src python
+def func() -> None:
+    return
+#+end_src
+
+* regex
+#+begin_src python
+import re
+
+re.sub('[a-z]+@', 'ABC@', s, 2)
+#+end_src
