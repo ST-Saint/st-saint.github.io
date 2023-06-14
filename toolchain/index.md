@@ -111,7 +111,7 @@ yay -S --noconfirm \
      git-delta \
      screenkey \
      volnoti \
-     sayonara \
+     sayonara-player \
      pypy3 \
      inkscape
 #+end_src

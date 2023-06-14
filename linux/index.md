@@ -253,6 +253,19 @@ nmcli device wifi list
 nmcli device wifi connect <SSID> password <password> [hidden yes]
 #+end_src
 
+** ip
+- device up/down
+#+begin_src shell
+sudo ip link set wlp1s0 up/down
+#+end_src
+
+** ss
+- ss is the alternative of netstat
+#+begin_src shell
+ss -tunpl
+#+end_src
+
+
 * High DPI
 
 ** Netease Music
@@ -355,6 +368,10 @@ Match User yayu
 | --editmenu           | edit pkgbuild before install                                |
 | -Ql                  | show package contents                                      |
 
+** check file ownership
+#+begin_src shell
+yay -Fy $FILE_PATH
+#+end_src
 
 
 * Bluetooth
