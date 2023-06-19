@@ -4,6 +4,8 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2023-06-18 Sun>
+- 心乱了
 
 * <2023-05-08 Mon>
 #+begin_quote
