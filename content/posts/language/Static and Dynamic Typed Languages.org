@@ -17,12 +17,20 @@ Static vs. Dynamic defines how a language expects you to declare data types. Sta
 #+end_quote
 
 - I think this is not accurate. if you have type inference (ML, OCaml, F#, Haskell...), type definitions are not always necessary
+- *Static Typed language do type-check at compile-time*
+- *Dynamic Typed language do type-check on-the-fly*
 
 * Strong vs. Weak
 #+begin_quote
 Strong vs. Weak defines how flexibly a language allows operations between data types. For example, strongly typed languages will not allow you to add a float to an integer, without you converting it first, even though they are both numbers. On the other hand, a weak language will try its best to accomodate what the programmer is asking and perform these operations.
 #+end_quote
 
+- Weak typed language can do implicit coercion, and strong typed language disallow that
+
+
+|        | Static | Dynamic    |
+| Strong | Java   | Python     |
+| Weak   | C/C++  | JavaScript |
 
 
 * Compiled vs. Interpreted
@@ -32,6 +40,10 @@ Strong vs. Weak defines how flexibly a language allows operations between data t
   - Interpreted: Code translated on the fly, during execution
 
 - So *all the languages can be both compiled and interpreted*
+
+* Why Should We Care About Data Types?
+- how to do computation based on the types
+- knowing types helps optimization
 
 * reference
 - https://www.sitepoint.com/typing-versus-dynamic-typing/
