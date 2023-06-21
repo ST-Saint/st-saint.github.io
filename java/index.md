@@ -114,6 +114,18 @@ Files.move(Paths.get(src), Paths.get(dest), null);
 #+begin_src java
 Files.copy(Paths.get(src), Paths.get(dest), null);
 #+end_src
+** file exist
+#+begin_src java
+import java.io.File;
+
+public class FileTest {
+    public static void main(String args[]) {
+      File f = new File("/path/to/file");
+      if(f.exists() && f.isFile()) {}
+    }
+}
+#+end_src
+
 
 ** Write to File
 *** BufferedWriter 写 String

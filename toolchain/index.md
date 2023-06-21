@@ -113,7 +113,8 @@ yay -S --noconfirm \
      volnoti \
      sayonara-player \
      pypy3 \
-     inkscape
+     inkscape \
+     ggtags
 #+end_src
 
 
