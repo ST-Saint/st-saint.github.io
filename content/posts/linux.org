@@ -361,6 +361,13 @@ Match User yayu
 *** auto remove
 + sudo pacman -R $(pacman -Qdtq)
 
+*** install deb
+#+begin_src shell
+debtap *.deb
+sudo pacman -U *.zst
+#+end_src
+
+
 ** yay
 | option               | description                                                 |
 | -S                   | install                                                     |
