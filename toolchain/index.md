@@ -114,7 +114,8 @@ yay -S --noconfirm \
      sayonara-player \
      pypy3 \
      inkscape \
-     ggtags
+     ggtags \
+     debtap
 #+end_src
 
 

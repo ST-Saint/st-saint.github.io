@@ -357,6 +357,13 @@ Match User yayu
 *** auto remove
 + sudo pacman -R $(pacman -Qdtq)
 
+*** install deb
+#+begin_src shell
+debtap *.deb
+sudo pacman -U *.zst
+#+end_src
+
+
 ** yay
 | option               | description                                                 |
 | -S                   | install                                                     |
@@ -364,9 +371,10 @@ Match User yayu
 | --mflags --skipinteg | skip validaty check                                         |
 | -R                   | remove                                                      |
 | -Rs                  | Remove dependencies not required by other packages          |
+| -Sc                  | remove all cache                                           |
 | --overwrite <glob>   | Bypass file conflict checks and overwrite conflicting files |
 | --editmenu           | edit pkgbuild before install                                |
-| -Ql                  | show package contents                                      |
+| -Ql                  | show package contents                                       |
 
 ** check file ownership
 #+begin_src shell

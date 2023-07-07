@@ -9,13 +9,15 @@
 #+end_quote
 
 * Static vs. Dynamic
-#+begin_quote
-Static vs. Dynamic defines how a language expects you to declare data types. Static typed languages +require explicit definition+ of a data type when they create a piece of data (e.g. variable, parameter, return value). Dynamic languages are the opposite and can infer, or at least try to guess, the type that we’re using.
-#+end_quote
 
 - I think this is not accurate. if you have type inference (ML, OCaml, F#, Haskell...), type definitions are not always necessary
 - *Static Typed language do type-check at compile-time*
 - *Dynamic Typed language do type-check on-the-fly*
+
+|        | Static | Dynamic    |
+| Strong | Java   | Python     |
+| Weak   | C/C++  | JavaScript |
+
 
 * Strong vs. Weak
 #+begin_quote
