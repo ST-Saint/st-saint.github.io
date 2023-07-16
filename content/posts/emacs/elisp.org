@@ -4,6 +4,48 @@
 #+tags[]: emacs
 #+summary: Elisp
 
+* equal
+
+** eq
+#+begin_src elisp
+(eq 'foo 'foo)
+;  ⇒ t
+
+
+(eq ?A ?A)
+;; ⇒ t
+
+
+(eq 3.0 3.0)
+;; ⇒ nil
+;; Equal floats may or may not be the same object.
+
+(eq "asdf" "asdf")
+;; ⇒ nil
+
+(eq [(1 2) 3] [(1 2) 3])
+;; ⇒ nil
+
+(eq (point-marker) (point-marker))
+;; ⇒ nil
+#+end_src
+
+
+** equal
+#+begin_src elisp
+(equal "asdf" "asdf")
+;; ⇒ t
+
+
+(equal [(1 2) 3] [(1 2) 3])
+;; ⇒ t
+
+
+(equal (point-marker) (point-marker))
+;; ⇒ t
+#+end_src
+
+
 * defun
 + =defun= define function
     #+begin_src emacs-lisp :tangle yes
