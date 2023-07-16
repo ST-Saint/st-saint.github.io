@@ -36,3 +36,106 @@ Expected 1-2 arguments, but got 3.
 let result3 = buildName("Bob", "Adams"); // ah, just right
 #+end_src
 
+* init project
+#+begin_src bash
+npm init
+#+end_src
+
+* type
+
+** typeof
+#+begin_src js
+console.log(typeof 42);
+// Expected output: "number"
+
+console.log(typeof 'blubber');
+// Expected output: "string"
+
+console.log(typeof true);
+// Expected output: "boolean"
+
+console.log(typeof undeclaredVariable);
+// Expected output: "undefined"
+
+console.log(typeof [1, 2, 3]);
+// Expected output: "object"
+
+console.log(typeof {"1": 2});
+// Expected output: "object"
+#+end_src
+
+#+RESULTS:
+: number
+: string
+: boolean
+: undefined
+: object
+: object
+: undefined
+
+** array
+
+*** length
+
+#+begin_src js
+const clothing = ['shoes', 'shirts', 'socks', 'sweaters'];
+
+console.log(clothing.length);
+// Expected output: 4
+#+end_src
+
+#+RESULTS:
+: 4
+: undefined
+
+*** concat
+#+begin_src js
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+#+end_src
+
+#+RESULTS:
+: undefined
+
+
+* statement
+
+** for
+*** for in
+#+begin_src js
+const object = { a: 1, b: 2, c: 3 };
+
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`);
+}
+#+end_src
+*** for each
+#+begin_src js
+const array1 = ['a', 'b', 'c'];
+
+array1.forEach(element => console.log(element));
+#+end_src
+
+#+RESULTS:
+: a
+: b
+: c
+: undefined
+
+* regex
+** construct
+1. ~/regex/~: / is keyword
+2. ~new RegExp(regex)~: / is literal
+
+** match
+#+begin_src js
+"GGGG".match(re)
+#+end_src
+* crawler
+** cheerio
+#+begin_src js
+const response = await axios.get(url);
+const $ = cheerio.load(response.data);
+#+end_src
+

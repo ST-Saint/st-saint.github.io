@@ -9,11 +9,18 @@ set history save on
 
 * Layout
 
+
 * Print
 
 ** address
 #+begin_src gdb
 x/nfu addr
+#+end_src
+
+* show all functions
+
+#+begin_src gdb
+info functions [regexp]
 #+end_src
 
 

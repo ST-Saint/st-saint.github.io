@@ -6,9 +6,12 @@
 ** for loop
 
 #+begin_src shell
-for it in $array; do
+colors=(red orange white "light gray")
+for item in ${colors[@]}; do
+    echo $item;
 done
 #+end_src
+
 
 ** time
 #+begin_src shell
@@ -328,6 +331,12 @@ chmod 700 ~/.ssh
 #+BEGIN_SRC bash
 scp root@10.105.250.92:/home/example/.ssh/ed25519 ~/.ssh/
 #+END_SRC
+
+** remove user
+#+begin_src bash
+userdel -r username
+#+end_src
+
 
 * ssh
 

@@ -46,4 +46,5 @@ Strong vs. Weak defines how flexibly a language allows operations between data t
 
 * reference
 - https://www.sitepoint.com/typing-versus-dynamic-typing/
+- https://hackernoon.com/i-finally-understand-static-vs-dynamic-typing-and-you-will-too-ad0c2bd0acc7
 
