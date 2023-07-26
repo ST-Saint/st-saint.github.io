@@ -107,6 +107,7 @@ yay -S --noconfirm \
      aspell \
      aspell-en \
      texlive-bin \
+     texlive-binextra \
      radare2 \
      git-delta \
      screenkey \
