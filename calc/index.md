@@ -48,7 +48,7 @@
 | Q         | Sqrt                 |
 | p         | set precision        |
 | BACKSPACE | pop/delete           |
-| D r       | change radix display |
+| d r       | change radix display |
 | U c       | unit conversion      |
 | a x       | calc expand          |
 | a s       | calc simplify        |

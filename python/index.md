@@ -342,6 +342,28 @@ df = pd.DataFrame(
 return df.to_json(orient='split', force_ascii=False) # use unicode
 #+end_src
 
+** groupby
+#+begin_src python
+df = df[["restaurant", "score"]].groupby('restaurant').mean()
+#+end_src
+
+*** count
+#+begin_src python
+review_df[["reviewer"]].groupby("reviewer").size().sort_values(ascending=False)
+#+end_src
+
+** unique
+#+begin_src python
+pd.unique(review_df["restaurant"])
+#+end_src
+
+
+** reverse
+#+begin_src python
+df = df.iloc[::-1]
+#+end_src
+
+
 ** to markdown
 #+begin_src python
 import pandas as pd
