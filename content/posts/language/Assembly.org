@@ -10,3 +10,56 @@
 
 | LLVM       | Intel             | Meaning       |
 | *COMMONDq* | command qword ptr | qword (64bit) |
+
+** divl
+| Opcode        | Instruction | Op/En | 64-Bit Mode | Compat/Leg Mode | Description                                                                                |
+| F6 /6         | DIV r/m8    | M     | Valid       | Valid           | Unsigned divide AX by r/m8, with result stored in AL := Quotient, AH := Remainder.         |
+| REX + F6 /6   | DIV r/m81   | M     | Valid       | N.E.            | Unsigned divide AX by r/m8, with result stored in AL := Quotient, AH := Remainder.         |
+| F7 /6         | DIV r/m16   | M     | Valid       | Valid           | Unsigned divide DX:AX by r/m16, with result stored in AX := Quotient, DX := Remainder.     |
+| F7 /6         | DIV r/m32   | M     | Valid       | Valid           | Unsigned divide EDX:EAX by r/m32, with result stored in EAX := Quotient, EDX := Remainder. |
+| REX.W + F7 /6 | DIV r/m64   | M     | Valid       | N.E.            | Unsigned divide RDX:RAX by r/m64, with result stored in RAX := Quotient, RDX := Remainder. |
+
+
+- dividend:  ~[%edx (high 32 bit), %eax (low 32 bit)]~
+- divisor:   ~operand~
+- remainder: ~[%edx (high 32 bit), %eax (low 32 bit)]~
+- quotient: ~rax~
+
+
+* AT&T -- Intel
+
+** syntax
+|                  | Intel                                     | AT&T                            |
+| Comments         | ;                                         | //                              |
+| Instructions     | Untagged add                              | Tagged with operand sizes: addq |
+| Registers        | eax, ebx, etc.                            | %eax,%ebx, etc.                 |
+| Immediates       | 0x100                                     | $0x100                          |
+| Indirect         | [eax]                                     | (%eax)                          |
+| General indirect | [base + reg + reg * scale + displacement] | displacement(reg, reg, scale)   |
+
+*** prefix
+
+| Intex Syntax     | AT&T Syntax        |
+| mov     eax,1    | movl    $1,%eax    |
+| mov     ebx,0ffh | movl    $0xff,%ebx |
+| int     80h      | int     $0x80      |
+
+*** direction
+
+| Intex Syntax        | AT&T Syntax         |
+| instr   dest,source | instr   source,dest |
+| mov     eax,[ecx]   | movl    (%ecx),%eax |
+
+
+
+
+
+** gdb
+#+begin_src gdb
+set disassembly-flavor att/intel
+#+end_src
+
+** objdump
+#+begin_src
+objdump -M intel
+#+end_src

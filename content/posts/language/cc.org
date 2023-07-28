@@ -5,6 +5,87 @@
 #+summary: cc
 
 
+* assembly
+#+begin_src c
+int src = 1;
+int dst;
+
+asm("mov %1, %0;"
+    "add $1, %0;"
+    : "=r"(dst)
+    : "r"(src));
+
+printf("%d\n", dst);
+#+end_src
+
+
+* typedef
+
+** syntax
+#+begin_src c
+typedef <existing_data_type> <new_data_type_name>;
+#+end_src
+
+** sample
+
+*** array
+#+begin_src c
+typedef int sixteen_int_array[16];
+// type \Rightarrow int(*)[16];
+sixteen_int_array arr;
+// equal uint32_t (*arr)[16];
+arr = calloc(16, sizeof(uint32_t));
+#+end_src
+
+*** struct
+#+begin_src c
+typedef struct sample_struct {
+  int a;
+  char b;
+} struct_t;
+#+end_src
+
+*** function pointer
+- return type: ~int~, arguments: ~(int, char)~
+#+begin_src c
+typedef int (*func_ptr_t)(int, char);
+#+end_src
+
+* memory
+
+** calloc
+- alocated with 0
+#+begin_src c
+void* calloc(size_t num, size_t size);
+int* arr;
+arr = (int*)calloc(16, sizeof(int)); // a[16] = {0}
+#+end_src
+
+* file
+
+** FILE write
+#+begin_src c
+char* filename = "file.txt";
+FILE* fp;
+// Open the file for writing in binary mode
+fp = fopen(filename, "wb");
+if (fp == NULL) {
+    fprintf(stderr, "Error opening file %s\n", filename);
+    exit(1);
+ }
+char buffer[128] = {};
+sprintf(buffer, "write to file: %s", filename);
+fwrite(buffer, sizeof(char), strlen(buffer), fp);
+#+end_src
+
+* cmake
+
+** add compilation options
+#+begin_src cmake
+add_compile_options(-g)
+#+end_src
+
+
 * clang-format
 #+begin_src shell
 # 语言: None, Cpp, Java, JavaScript, ObjC, Proto, TableGen, TextProto
@@ -269,70 +350,4 @@ TabWidth: 4
 
 # 使用tab字符: Never, ForIndentation, ForContinuationAndIndentation, Always
 UseTab: Never
-#+end_src
-
-* typedef
-
-** syntax
-#+begin_src c
-typedef <existing_data_type> <new_data_type_name>;
-#+end_src
-
-** sample
-
-*** array
-#+begin_src c
-typedef int sixteen_int_array[16];
-// type \Rightarrow int(*)[16];
-sixteen_int_array arr;
-// equal uint32_t (*arr)[16];
-arr = calloc(16, sizeof(uint32_t));
-#+end_src
-
-*** struct
-#+begin_src c
-typedef struct sample_struct {
-  int a;
-  char b;
-} struct_t;
-#+end_src
-
-*** function pointer
-- return type: ~int~, arguments: ~(int, char)~
-#+begin_src c
-typedef int (*func_ptr_t)(int, char);
-#+end_src
-
-* memory
-
-** calloc
-- alocated with 0
-#+begin_src c
-void* calloc(size_t num, size_t size);
-int* arr;
-arr = (int*)calloc(16, sizeof(int)); // a[16] = {0}
-#+end_src
-
-* file
-
-** FILE write
-#+begin_src c
-char* filename = "file.txt";
-FILE* fp;
-// Open the file for writing in binary mode
-fp = fopen(filename, "wb");
-if (fp == NULL) {
-    fprintf(stderr, "Error opening file %s\n", filename);
-    exit(1);
- }
-char buffer[128] = {};
-sprintf(buffer, "write to file: %s", filename);
-fwrite(buffer, sizeof(char), strlen(buffer), fp);
-#+end_src
-
-* cmake
-
-** add compilation options
-#+begin_src cmake
-add_compile_options(-g)
 #+end_src
