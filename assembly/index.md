@@ -43,12 +43,9 @@
 
 *** direction
 
-| Intex Syntax        | AT&T Syntax         |
-| instr   dest,source | instr   source,dest |
-| mov     eax,[ecx]   | movl    (%ecx),%eax |
-
-
-
+| Intex Syntax        | AT&T Syntax          |
+| instr   dest,source | instr   source,dest  |
+| mov     eax,[ebx+3] | movl    3(%ebx),%eax |
 
 
 ** gdb
