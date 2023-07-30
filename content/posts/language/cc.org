@@ -78,6 +78,12 @@ sprintf(buffer, "write to file: %s", filename);
 fwrite(buffer, sizeof(char), strlen(buffer), fp);
 #+end_src
 
+** errors
+*** error: variably modified ‘diff’ at file scope
+- use ~define~ in c instead of ~const~
+
+
+
 * cmake
 
 ** add compilation options
