@@ -42,6 +42,23 @@
 ;; ⇒ t
 #+end_src
 
+* list
+
+** add-to-list
+#+begin_src emacs-lisp
+(setq my-list '(1 2 3))
+(add-to-list 'my-list 4)
+;; Result: my-list is now (1 2 3 4)
+(add-to-list 'my-list 2)
+;; Result: my-list remains (1 2 3 4) since 2 is already in the list
+#+end_src
+
+** remove from list
+#+begin_src emacs-lisp
+(setq my-list '(1 2 3 2 4))
+(setq my-list (remove 2 my-list))
+;; Result: my-list is now (1 3 4) since all occurrences of 2 are removed
+#+end_src
 
 * defun
 + =defun= define function
