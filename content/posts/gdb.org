@@ -10,22 +10,48 @@
 set history save on
 #+end_src
 
-* Layout
-
-
 * Print
+
+** history command
+#+begin_src gdb
+C-r (reverse-i-search)`':
+#+end_src
 
 ** address
 #+begin_src gdb
-x/nfu addr
+  x/nfu addr
+
+  n: How many units to print (default 1).
+
+  f: Format character (like print)
+      o - octal
+      x - hexadecimal
+      d - decimal
+      u - unsigned decimal
+      t - binary
+      f - floating point
+      a - address
+      c - char
+      s - string
+      i - instruction
+
+      u: Unit.
+      b: Byte,
+      h: Half-word (two bytes)
+      w: Word (four bytes)
+      g: Giant word (eight bytes))
 #+end_src
 
-* show all functions
+** show all functions
 
 #+begin_src gdb
 info functions [regexp]
 #+end_src
 
+** show address info
+#+begin_src gdb
+info symbol addr
+#+end_src
 
 * Kernel Debugging
 #+begin_src
