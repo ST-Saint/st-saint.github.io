@@ -84,3 +84,12 @@ C-u C-x =
 mu init --maildir=/home/yayu/.mail --my-address=@gmail.com --my-address=@ubc.ca
 #+end_src
 
+* bugs
+
+** poll freeze
+#+begin_src c
+in poll () at /usr/lib/libc.so.6
+#+end_src
+
+- disable XIM (maybe) ref: [[https://gitlab.freedesktop.org/xorg/lib/libx11/-/issues/35]]
+

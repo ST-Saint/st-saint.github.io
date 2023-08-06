@@ -296,28 +296,35 @@ export DEEPIN_WINE_SCALE=2.00
 * user management
 
 ** add user
-- 连接到服务器
+
 #+BEGIN_SRC bash
-ssh root@10.105.250.92
+adduser miao
 #+END_SRC
 
-- 创建用户
+*** create home directory
+#+begin_src bash
+adduser -m miao
+#+end_src
+
+
+*** add sudo access
 #+BEGIN_SRC bash
-adduser example
+adduser miao sudo
 #+END_SRC
 
-- 添加 ~sudo~
-#+BEGIN_SRC bash
-adduser example sudo
-#+END_SRC
+** set passwd
+#+begin_src bash
+passwd miao
+#+end_src
+
 
 ** ssh pem
 
 - 生成密钥
 #+BEGIN_SRC bash
-sudo su example
+sudo su miao
 cd ~/.ssh
-ssh-keygen -t ed25519 -C "example@mail.com"
+ssh-keygen -t ed25519 -C "miao@mail.com"
 #+END_SRC
 
 - 修改权限
@@ -329,7 +336,7 @@ chmod 700 ~/.ssh
 
 - 拷贝密钥
 #+BEGIN_SRC bash
-scp root@10.105.250.92:/home/example/.ssh/ed25519 ~/.ssh/
+scp root@10.105.250.92:/home/miao/.ssh/ed25519 ~/.ssh/
 #+END_SRC
 
 ** remove user
