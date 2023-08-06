@@ -25,19 +25,26 @@ return "abc123".encode("utf-8")
 
 ** argparse
 #+begin_src python
-import argparse
+  import argparse
 
-# Create the parser object
-parser = argparse.ArgumentParser(description='Process something')
+  # Create the parser object
+  parser = argparse.ArgumentParser(description="Process something")
 
-# Add an argument to the parser
-parser.add_argument('integers', metavar='N', type=int, help='an integer to be processed')
+  # Add an argument to the parser
+  parser.add_argument(
+      "-i",
+      "--integers",
+      metavar="N",
+      required=True,
+      type=int,
+      help="an integer to be processed",
+  )
 
-# Parse the arguments
-args = parser.parse_args()
+  # Parse the arguments
+  args = parser.parse_args()
 
-# Access the parsed arguments
-print(args.integers)
+  # Access the parsed arguments
+  print(args.integers)
 #+end_src
 
 

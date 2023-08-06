@@ -76,12 +76,48 @@ if (fp == NULL) {
 char buffer[128] = {};
 sprintf(buffer, "write to file: %s", filename);
 fwrite(buffer, sizeof(char), strlen(buffer), fp);
+fclose(fp);
 #+end_src
 
 ** errors
 *** error: variably modified ‘diff’ at file scope
 - use ~define~ in c instead of ~const~
 
+* string
+
+** substring
+
+*** find first matching suffix
+#+begin_src c
+  #include <string.h>
+
+  char str[] = "This is a simple string";
+  char *pch;
+  pch = strstr(str, "simple"); // = "sample example"
+#+end_src
+
+** convert
+
+*** to integer
+#+begin_src c
+const char* istr = "123567";
+int i = atoi(istr);
+#+end_src
+
+*** to double
+#+begin_src c
+const char* dstr = "1.42857";
+double d = atof(dst);
+#+end_src
+
+
+** copy
+#+begin_src c
+#include<string.h>
+
+const char *password = "5pX!07&YpKNfnAFzSTWyyyyyyy";
+strncpy(passwd, password, 16); // = "5pX!07&YpKNfnAFz"
+#+end_src
 
 
 * cmake
