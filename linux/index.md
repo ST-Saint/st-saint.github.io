@@ -12,7 +12,6 @@ for item in ${colors[@]}; do
 done
 #+end_src
 
-
 ** time
 #+begin_src shell
 date "+%F %H:%M:%S.%N"
@@ -33,6 +32,34 @@ echo "copy" | xclip -set clip
 | *-h*        | 可读的数字(带单位) |
 | *-f*        | 忽略大小写         |
 *** example
+
+** path
+
+*** get script path
+#+begin_src sh
+DIR=$(dirname $(readlink -f "$0"))
+#+end_src
+
+*** get invocation path
+
+#+begin_src sh
+INV_DIR=$"PWD"
+#+end_src
+
+** background
+
+*** start a bg process and kill it
+
+#+begin_src sh
+sleep 60 &
+
+# Get last bg pid
+pid=$!
+
+# ...
+kill $pid
+#+end_src
+
 
 ** sed
 *** replace
