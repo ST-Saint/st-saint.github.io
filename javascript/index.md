@@ -123,6 +123,35 @@ array1.forEach(element => console.log(element));
 : c
 : undefined
 
+* JSON
+
+** from json to object
+#+begin_src js
+let obj: MyObj = JSON.parse('{ "myString": "string", "myNumber": 4 }');
+#+end_src
+
+* String
+
+** string to number
+#+begin_src js
+Number("12345.6657");
+#+end_src
+
+* For
+
+** for in
+#+begin_src js
+for(let key in Collection){
+}
+#+end_src
+
+** for of
+#+begin_src js
+for(let value in Collection){
+}
+#+end_src
+
+
 * regex
 ** construct
 1. ~/regex/~: / is keyword

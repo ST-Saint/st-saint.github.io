@@ -3,7 +3,8 @@
 
 * Initialize project
 #+begin_src shell
-
+npm i tsc
+npx tsc --init
 #+end_src
 
 
