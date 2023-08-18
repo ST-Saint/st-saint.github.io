@@ -21,6 +21,24 @@ return "abc123".encode("utf-8")
 #+RESULTS:
 : b'abc123'
 
+* Virtual Env
+
+** create
+#+begin_src shell
+python -m venv NAME
+#+end_src
+
+** activate
+#+begin_src shell
+source NAME/bin/activate
+#+end_src
+
+** deactivate
+#+begin_src shel
+deactivate
+#+end_src
+
+
 * Arguments
 
 ** argparse
