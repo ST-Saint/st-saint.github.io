@@ -109,6 +109,7 @@ yay -S --noconfirm \
      texlive-bin \
      texlive-binextra \
      radare2 \
+     ghidra \
      git-delta \
      screenkey \
      volnoti \
@@ -116,7 +117,8 @@ yay -S --noconfirm \
      pypy3 \
      inkscape \
      ggtags \
-     debtap
+     debtap \
+     phinger-cursors
 #+end_src
 
 

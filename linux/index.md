@@ -283,10 +283,10 @@ nmcli device wifi list
 nmcli device wifi connect <SSID> password <password> [hidden yes]
 #+end_src
 
-** ip
-- device up/down
+
+- connection up/down
 #+begin_src shell
-sudo ip link set wlp1s0 up/down
+nmcli connection up/down <connection>
 #+end_src
 
 ** ss
@@ -488,5 +488,10 @@ add control = Control_L Control_R
 *** setxkbmap -option caps:ctrl_modifier
 #+begin_src shell
 setxkbmap -option caps:ctrl_modifier
+#+end_src
+* misc
+** disable tab bell
+#+begin_src sh
+set bell-style none
 #+end_src
 
