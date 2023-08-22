@@ -496,6 +496,5 @@ setxkbmap -option caps:ctrl_modifier
 * misc
 ** disable tab bell
 #+begin_src sh
-# /etc/inputrc
 set bell-style none
 #+end_src
