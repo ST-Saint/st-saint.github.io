@@ -337,6 +337,13 @@ fig.colorbar(c, ax=ax)
 plt.show()
 #+end_src
 
+** standard deviation / std / error bar
+#+begin_src python
+import matplotlib.pyplot as plt
+
+plt.errorbar(x, y_mean, y_std, linestyle='None', marker='^')
+#+end_src
+
 
 ** dot
 - example
@@ -454,6 +461,13 @@ pd.concat([...]).reset_index(drop=True)
 import numpy as np
 np.percentile(arr, 99.9)
 #+end_src
+
+** std
+#+begin_src python
+import numpy as np
+np.std(array)
+#+end_src
+
 
 * type
 
