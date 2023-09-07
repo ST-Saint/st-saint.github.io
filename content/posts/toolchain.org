@@ -95,7 +95,7 @@ yay -S --noconfirm \
      perl-image-exiftool \
      giflib \
      starship \
-     rofi \
+     rofi-lbonn-wayland \
      words \
      stow \
      vlc \
