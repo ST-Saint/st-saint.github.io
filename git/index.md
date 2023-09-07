@@ -9,6 +9,14 @@
 ** git hash
 + =git rev-parse HEAD=
 
+* ssh key
+
+** key gen
+#+begin_src sh
+ssh-keygen -t id_ed25519 -f ~/.ssh/github -C "email@example.com"
+#+end_src
+
+
 * clone
 
 ** single branch
