@@ -494,4 +494,34 @@ setxkbmap -option caps:ctrl_modifier
 #+begin_src sh
 set bell-style none
 #+end_src
+* gpg
+** migrate
+
+*** list keys
+#+begin_src sh
+gpg --list-secret-keys --keyid-format LONG
+
+sec   rsa4096/[your key] 2018-03-30 [SC]
+      ABCDEFGHIJKLMNOPQRSTUVWXYZ
+uid                 [ unknown] wyy (KEY NAME) <user@domain>
+ssb   rsa4096/ABCDEFGHIJKL 2018-03-30 [E]
+#+end_src
+
+*** export
+#+begin_src
+gpg --export -a [your key] > gpg-pub.asc
+gpg --export-secret-keys -a [your key] > gpg-sc.asc
+#+end_src
+
+*** import
+#+begin_src sh
+gpg --import gpg-pub.asc
+gpg --import gpg-sc.asc
+gpg --edit-key [your key]
+#+end_src
+
+*** restart gpg-agent
+#+begin_src sh
+sudo gpgconf --kill gpg-agent
+#+end_src
 
