@@ -1,0 +1,10 @@
+#+TITLE: Krita
+#+DATE: Sat Sep 09 18:07:16 PDT 2023
+#+Summary: Krita
+#+categories[]: krita
+#+tags[]: krita digital-painting
+
+* canvas
+
+** change canvas size
+- =ctrl-alt-c=
