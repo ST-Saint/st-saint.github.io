@@ -140,6 +140,11 @@ let obj: MyObj = JSON.parse('{ "myString": "string", "myNumber": 4 }');
 Number("12345.6657");
 #+end_src
 
+** strip / trim
+#+begin_src js
+" zzz  zz ".trim()
+#+end_src
+
 * For
 
 ** for in
