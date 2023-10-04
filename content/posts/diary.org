@@ -4,6 +4,11 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2023-10-04 Wed>
+- tmlgbd ppt搞这么清楚干嘛, 花一年做个ppt非要把什么东西都在ppt里面写清楚, ppt这么清楚我直接把slides发给大家当paper读不就完了呗, 还要我上台讲个jb
+- Motivation Motivation Motivation Motivation Motivation
+  - 不是, 没有 motivation 我到底为什么要做啊
+
 * <2023-10-02 Mon>
 - 2023 年的冠军也很好, 只是偶尔还是会怀念 2018 年的夏天
 
