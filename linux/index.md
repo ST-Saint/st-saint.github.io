@@ -1,6 +1,11 @@
 # Linux Cheat Sheet
 
 
+* command cheatsheet
+  #+begin_src sh
+curl cheat.sh/command | bat
+  #+end_src
+
 
 * shell
 ** for loop
