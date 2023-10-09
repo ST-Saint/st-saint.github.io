@@ -527,6 +527,7 @@ gpg --export-secret-keys -a [your key] > gpg-sc.asc
 gpg --import gpg-pub.asc
 gpg --import gpg-sc.asc
 gpg --edit-key [your key]
+trust [your key]
 #+end_src
 
 *** restart gpg-agent
