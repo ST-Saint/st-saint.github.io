@@ -4,6 +4,9 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2023-10-14 Sat>
+- 呜呜, 好想打dota2
+
 * <2023-10-04 Wed>
 - tmlgbd ppt搞这么清楚干嘛, 花一年做个ppt非要把什么东西都在ppt里面写清楚, ppt这么清楚我直接把slides发给大家当paper读不就完了呗, 还要我上台讲个jb
 - Motivation Motivation Motivation Motivation Motivation
