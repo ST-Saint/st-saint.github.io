@@ -1,6 +1,10 @@
 # Diary
 
 
+* <2023-10-15 Sun>
+- 能把 Asahi 这东西跑搞起来的真是 nmd 天才
+[[../figures/AsahiLinux.png]]
+
 * <2023-10-14 Sat>
 - 呜呜, 好想打dota2
 

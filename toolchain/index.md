@@ -2,7 +2,11 @@
 
 
 * arch packages
-+ manjora plasma
+** yay
+  #+begin_src shell
+sudo pacman -Sy --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+  #+end_src
+** development
 #+begin_src shell
 sudo pacman -S --noconfirm \
      base-devel \
