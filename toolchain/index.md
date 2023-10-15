@@ -34,11 +34,12 @@ sudo pacman -S --noconfirm \
      llvm \
      clang \
      go \
-     rust \
+     rustup \
      ant \
      lib32-glibc \
      maven \
-     graphviz
+     graphviz \
+     opam # ocaml package manageer
 
 
 pip install epc  \
