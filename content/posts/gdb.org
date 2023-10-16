@@ -42,6 +42,12 @@ C-r (reverse-i-search)`':
       g: Giant word (eight bytes))
 #+end_src
 
+** print hex
+#+begin_src gdb
+p/x variable
+#+end_src
+
+
 ** show all functions
 
 #+begin_src gdb

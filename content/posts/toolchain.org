@@ -6,9 +6,10 @@
 
 * arch packages
 ** yay
-  #+begin_src shell
+#+begin_src shell
 sudo pacman -Sy --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-  #+end_src
+#+end_src
+
 ** development
 #+begin_src shell
 sudo pacman -S --noconfirm \
@@ -58,12 +59,42 @@ pip install epc  \
             pygments
 #+end_src
 
-** personal pakcages
+** desktop environment
+*** window manager
+- dwl
 #+begin_src shell
 yay -S --noconfirm \
-     nitrogen \
-     google-chrome \
-     nerd-fonts-git \
+    libinput \
+    wayland \
+    wlroots # (compiled with the libinput backend, compiled with X11 support) \
+    xkbcommon \
+    wayland-protocols # (compile-time only) \
+    pkg-config # (compile-time only) \
+    libxcb # (X11 support) \
+    libxcb-wm # (X11 support)
+#+end_src
+
+*** terminal
+- kitty
+#+begin_src shell
+yay -S --noconfirm \
+    kitty
+#+end_src
+
+*** launcher
+- rofi
+#+begin_src shell
+yay -S --noconfirm \
+    rofi-lbonn-wayland-git
+#+end_src
+
+
+** prettify
+
+*** fonts
+#+begin_src shell
+yay -S --noconfirm \
+    nerd-fonts-git \
      adobe-source-han-sans-cn-fonts \
      adobe-source-han-serif-cn-fonts \
      ttf-symbola \
@@ -76,6 +107,13 @@ yay -S --noconfirm \
      wqy-microhei-lite \
      wqy-bitmapfont \
      wqy-zenhei \
+#+end_src
+
+** personal pakcages
+#+begin_src shell
+yay -S --noconfirm \
+     nitrogen \
+     google-chrome \
      discord \
      dunst \
      zoom \
