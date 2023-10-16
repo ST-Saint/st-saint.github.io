@@ -294,6 +294,12 @@ nmcli device wifi connect <SSID> password <password> [hidden yes]
 nmcli connection up/down <connection>
 #+end_src
 
+** ubcsecure
+#+begin_src shell
+nmcli connection add type wifi con-name "ubcsecure" ifname wlan0 ssid "ubcsecure" -- wifi-sec.key-mgmt wpa-eap 802-1x.eap peap 802-1x.phase2-auth mschapv2 802-1x.identity "yayuwang" 802-1x.anonymous-identity "yayuwang" 802-1x.password "password..."
+#+end_src
+
+
 ** ss
 - ss is the alternative of netstat
 #+begin_src shell
@@ -374,6 +380,11 @@ scp root@10.105.250.92:/home/miao/.ssh/ed25519 ~/.ssh/
 ** remove user
 #+begin_src bash
 userdel -r username
+#+end_src
+
+** change shell
+#+begin_src shell
+chsh -s /usr/bin/zsh
 #+end_src
 
 

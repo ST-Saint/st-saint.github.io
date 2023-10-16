@@ -1,6 +1,9 @@
 # Diary
 
 
+* <2023-10-16 Mon>
+- c++ v8 wcnm
+
 * <2023-10-15 Sun>
 - 能把 Asahi 这东西跑搞起来的真是 nmd 天才
 [[../figures/AsahiLinux.png]]
