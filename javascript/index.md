@@ -99,30 +99,6 @@ const array3 = array1.concat(array2);
 : undefined
 
 
-* statement
-
-** for
-*** for in
-#+begin_src js
-const object = { a: 1, b: 2, c: 3 };
-
-for (const property in object) {
-  console.log(`${property}: ${object[property]}`);
-}
-#+end_src
-*** for each
-#+begin_src js
-const array1 = ['a', 'b', 'c'];
-
-array1.forEach(element => console.log(element));
-#+end_src
-
-#+RESULTS:
-: a
-: b
-: c
-: undefined
-
 * JSON
 
 ** from json to object
@@ -144,9 +120,20 @@ Number("12345.6657");
 
 * For
 
+** for range
+#+begin_src js
+[...Array(5).keys()]
+#+end_src
+
 ** for in
 #+begin_src js
 for(let key in Collection){
+}
+
+const object = { a: 1, b: 2, c: 3 };
+
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`);
 }
 #+end_src
 
@@ -154,6 +141,24 @@ for(let key in Collection){
 #+begin_src js
 for(let value in Collection){
 }
+#+end_src
+
+** for each
+#+begin_src js
+const array1 = ['a', 'b', 'c'];
+
+array1.forEach(element => console.log(element));
+#+end_src
+
+#+RESULTS:
+: a
+: b
+: c
+: undefined
+
+** for stream
+#+begin_src js
+[...Array(batch_size)].map(func);
 #+end_src
 
 
