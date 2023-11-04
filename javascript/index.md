@@ -88,6 +88,13 @@ console.log(clothing.length);
 : 4
 : undefined
 
+*** delete
+
+**** remove kth
+#+begin_src js
+arr.splice(k, 1);
+#+end_src
+
 *** concat
 #+begin_src js
 const array1 = ['a', 'b', 'c'];
