@@ -1,0 +1,37 @@
+#+TITLE: OCaml
+#+DATE: Wed Oct 11 16:08:40 PDT 2023
+#+Summary: OCaml
+#+categories[]: programming_language
+#+tags[]: OCaml Coq
+
+* Opam
+- Opam is the package manager for the OCaml programming language
+** Install
+#+begin_src sh
+yay -S opam
+# or
+bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
+
+# then
+opam init
+eval $(opam env)
+#+end_src
+
+** Opam Switch
+#+begin_src sh
+opam switch list-available ocaml-base-compiler
+opam switch create 4.14.0
+eval $(opam env)
+#+end_src
+
+** Opam Install
+
+*** Dependencies
+#+begin_src sh
+opam install . --deps-only
+#+end_src
+** Opam Clean
+- clean cache
+  #+begin_src sh
+  opam clean
+  #+end_src
