@@ -212,6 +212,10 @@ uniq -u
 
 ** grep & rg
 *** grep
+*** no ignore
+#+begin_src shell
+rg --no-ignore
+#+end_src
 
 ** zip
 *** zip
