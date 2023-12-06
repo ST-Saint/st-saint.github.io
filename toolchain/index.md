@@ -177,6 +177,8 @@ yay -S --noconfirm \
 
 ** Web browsers
 + Chrome
++ Firefox
++ nyxt
 
 ** Communication
 *** Email
@@ -195,6 +197,7 @@ yay -S --noconfirm \
 ** Image
 *** Image viewer
 + geeqie
++ feh
 *** Image processing
 + Krita
 *** font editor
@@ -225,10 +228,7 @@ yay -S --noconfirm \
 
 *** Terminal Emulator
 + +alacritty+
-  - kitty
-  - Byobu
-  - Zellij
-  - wezterm
++ kitty
 + vterm
 
 ** Files
@@ -240,15 +240,13 @@ yay -S --noconfirm \
 
 ** development
 *** Emacs
-+ doom emacs
++ emacs
 
 ** Text Input
-
 *** ibus
 + ibus-rime
 
 ** System
-
 *** Task managers
 + btop
 + htop
@@ -272,16 +270,15 @@ yay -S --noconfirm \
 * Others
 ** Desktop environments
 *** Window Manager
-+ Xmonad
-*** Task Bar
-+ Xmobar
++ dwm-flexipatch & dwl
+*** status bar
++ dwm bar
++ somebar
 *** System tray
-+ stalonetrayer
-+ trayer
 *** Wallpaper
-+ nitrogen
++ feh
 *** Notification
 + dunst
 *** Logout
-+ sddm
+- tty
 
