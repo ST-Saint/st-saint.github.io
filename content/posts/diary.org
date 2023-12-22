@@ -4,6 +4,10 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2023-12-21 Thu>
+- W2E 爷回来咯
+- WSL 爷来咯
+
 * <2023-12-12 Tue>
 - T人不能和F人谈恋爱
 
