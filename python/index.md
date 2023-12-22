@@ -143,6 +143,12 @@ import random
 
 random.choice([1, 2, 3, 4, 5])
 #+end_src
+** uuid
+#+begin_src python
+import uuid
+
+uuid.uuid4()
+#+end_src
 
 * Data process
 ** unique
@@ -452,6 +458,27 @@ pd.concat([data1, data2], axis=1)
 import pandas as pd
 
 pd.concat([...]).reset_index(drop=True)
+#+end_src
+
+** for loop/iterate
+#+begin_src python
+import pandas as pd
+
+df = pd.DataFrame({'c1': [10, 11, 12], 'c2': [100, 110, 120]})
+df = df.reset_index()  # make sure indexes pair with number of rows
+
+for index, row in df.iterrows():
+    print(index, row)
+#+end_src
+
+** convert to numeric
+#+begin_src python
+df['score'] = pd.to_numeric(df['score'])
+#+end_src
+
+** drop
+#+begin_src python
+df.drop(index='cow', columns='small')
 #+end_src
 
 * numpy

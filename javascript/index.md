@@ -106,6 +106,28 @@ const array3 = array1.concat(array2);
 : undefined
 
 
+*** reverse
+#+begin_src js
+const array1 = ['one', 'two', 'three'];
+console.log('array1:', array1);
+// Expected output: "array1:" Array ["one", "two", "three"]
+
+const reversed = array1.reverse();
+console.log('reversed:', reversed);
+// Expected output: "reversed:" Array ["three", "two", "one"]
+
+// Careful: reverse is destructive -- it changes the original array.
+console.log('array1:', array1);
+// Expected output: "array1:" Array ["three", "two", "one"]
+#+end_src
+
+*** last element
+#+begin_src js
+arr[arr.length - 1];
+arr.slice(-1);
+arr.pop();
+#+end_src
+
 * JSON
 
 ** from json to object
@@ -130,6 +152,8 @@ Number("12345.6657");
 ** for range
 #+begin_src js
 [...Array(5).keys()]
+
+[...Array(5).keys()].map((i) => 2*i)
 #+end_src
 
 ** for in
@@ -154,13 +178,13 @@ for(let value in Collection){
 #+begin_src js
 const array1 = ['a', 'b', 'c'];
 
-array1.forEach(element => console.log(element));
+array1.forEach((value, index) => console.log(value, index));
 #+end_src
 
 #+RESULTS:
-: a
-: b
-: c
+: a 0
+: b 1
+: c 2
 : undefined
 
 ** for stream

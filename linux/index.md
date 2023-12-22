@@ -104,6 +104,7 @@ set-option -ga terminal-overrides ",*256col*:Tc"
 + attach =tmux a -t *SESSION_NAME*=
 + detach =send-prefix d=
 + create window =send-prefix c=
++ show sessions =tmux list-sessions=
 
 ** jobs
 *** list background process
