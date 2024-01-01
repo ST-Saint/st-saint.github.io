@@ -241,6 +241,12 @@ tar -xzvf sample.tar.gz -C ./sample
 #+begin_src
 tar -czf sample.tar.gz ./sample
 #+end_src
+** git disable zsh status
+#+begin_src sh
+git config --add oh-my-zsh.hide-status 1
+git config --add oh-my-zsh.hide-dirty 1
+
+#+end_src
 
 * kernel
 
@@ -545,5 +551,17 @@ trust [your key]
 *** restart gpg-agent
 #+begin_src sh
 sudo gpgconf --kill gpg-agent
+#+end_src
+
+*** restart
+
+* swap file
+#+begin_src sh
+sudo fallocate -l 1G /swap
+sudo dd if=/dev/zero of=/swap bs=1024 count=1048576
+sudo chmod 600 /swap
+sudo mkswap /swap
+sudo swapon /swap
+sudo swapon --show
 #+end_src
 

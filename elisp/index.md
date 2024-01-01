@@ -207,6 +207,14 @@ use ~?~
 8. (current-local-map) (Major Mode)
 9. (current-global-map) (Global Map)
 
+* minor-mode
+
+
+** check if active
+#+begin_src emacs-lisp
+(bound-and-true-p which-key-mode)
+#+end_src
+
 * hotkeys
 
 | Keymap | Function                             |
@@ -298,4 +306,7 @@ in poll () at /usr/lib/libc.so.6
 #+end_src
 
 - disable XIM (maybe) ref: [[https://gitlab.freedesktop.org/xorg/lib/libx11/-/issues/35]]
+
+** search by value
+- ~apropos-value~
 

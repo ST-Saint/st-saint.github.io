@@ -84,6 +84,22 @@ parent_dir = os.path.dirname(file_path)
 #+end_src
 
 
+** list directory
+#+begin_src python
+import os
+
+path = os.getcwd()
+dir_list = os.listdir(path)
+#+end_src
+
+
+** rename
+#+begin_src python
+import os
+
+os.rename(old_name, new_name)
+#+end_src
+
 ** path join
 #+begin_src python
 import os
