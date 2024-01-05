@@ -245,7 +245,6 @@ tar -czf sample.tar.gz ./sample
 #+begin_src sh
 git config --add oh-my-zsh.hide-status 1
 git config --add oh-my-zsh.hide-dirty 1
-
 #+end_src
 
 * kernel
@@ -516,11 +515,6 @@ add control = Control_L Control_R
 #+begin_src shell
 setxkbmap -option caps:ctrl_modifier
 #+end_src
-* misc
-** disable tab bell
-#+begin_src sh
-set bell-style none
-#+end_src
 * gpg
 ** migrate
 
@@ -563,5 +557,16 @@ sudo chmod 600 /swap
 sudo mkswap /swap
 sudo swapon /swap
 sudo swapon --show
+#+end_src
+
+* misc
+** disable tab bell
+#+begin_src sh
+set bell-style none
+#+end_src
+
+** open terminal here
+#+begin_src sh
+gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 #+end_src
 
