@@ -2,7 +2,7 @@
 #+DATE: Wed Mar 01 22:10:34 PST 2023
 #+Summary: Dude, is my code constant time?
 #+categories[]: side-channel
-#+tags[]: constant-time, side-channel
+#+tags[]: constant-time side-channel
 
 * Related works
 1. [ ] ctgrind: dynamic analysis [Lan10]
