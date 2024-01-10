@@ -13,6 +13,7 @@
         {{- $posts := .Site.Params.home.posts -}}
         {{- /* Paginate */ -}}
         {{- $pages := where .Site.RegularPages "Type" "posts" -}}
+        {{- $pages := sort $pages "Lastmod" "desc" }}
         {{- if .Site.Params.page.hiddenFromHomePage -}}
             {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
         {{- else -}}

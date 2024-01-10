@@ -1,6 +1,8 @@
 #+Title: Memory
 #+DATE: Sun Jan 07 00:00:00 PST 2024
 #+Summary: 爷的memory烂到受不了了
+#+categories[]: Memory
+#+tags[]: Memory Cache
 
 
 * Virtual address & Translation
