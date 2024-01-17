@@ -1,0 +1,8 @@
+#+TITLE: Coq
+#+DATE: Sun Jan 14 04:11:19 PST 2024
+#+Summary: Coq
+#+categories[]: Coq
+#+tags[]: Coq
+* Theorem
+* Tutorial
+- http://michaeldnahas.com/doc/nahas_tutorial
