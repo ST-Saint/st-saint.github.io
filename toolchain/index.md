@@ -91,7 +91,7 @@ yay -S --noconfirm \
 *** fonts
 #+begin_src shell
 yay -S --noconfirm \
-    nerd-fonts-git \
+     nerd-fonts-git \
      adobe-source-han-sans-cn-fonts \
      adobe-source-han-serif-cn-fonts \
      ttf-symbola \
@@ -103,7 +103,7 @@ yay -S --noconfirm \
      wqy-microhei \
      wqy-microhei-lite \
      wqy-bitmapfont \
-     wqy-zenhei \
+     wqy-zenhei
 #+end_src
 
 ** personal pakcages
