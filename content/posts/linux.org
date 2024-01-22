@@ -27,6 +27,17 @@ date "+%F %H:%M:%S.%N"
 # 2023-01-25 23:55:00.152982295
 #+end_src
 
+*** set timezone
+#+begin_src sh
+sudo timedatectl set-timezone America/Vancouver
+#+end_src
+
+#+begin_src sh
+sudo ln -s /usr/share/zoneinfo/America/Vancouver /etc/localtime
+#+end_src
+
+
+
 ** copy to clipboard
 #+begin_src shell
 echo "copy" | xclip -set clip
@@ -572,4 +583,39 @@ set bell-style none
 ** open terminal here
 #+begin_src sh
 gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
+#+end_src
+
+* font
+
+** show fonts
+#+begin_src sh
+fc-list
+#+end_src
+
+* create systemd daemon
+
+** user
+#+begin_src conf
+# ~/.config/systemd/user/kmonad.service
+[Unit]
+Description=Kmonad Daemon
+
+[Service]
+ExecStart=/home/yayu/.local/bin/kmonad /home/yayu/.config/kmonad/kmonad.kbd
+
+[Install]
+WantedBy=default.target
+#+end_src
+
+** system
+#+begin_src conf
+# /etc/systemd/systemd/kmonad.service
+[Unit]
+Description=Kmonad Daemon
+
+[Service]
+ExecStart=/home/yayu/.local/bin/kmonad /home/yayu/.config/kmonad/kmonad.kbd
+
+[Install]
+WantedBy=default.target
 #+end_src
