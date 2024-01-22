@@ -44,6 +44,8 @@ sudo pacman -S --noconfirm \
      lib32-glibc \
      maven \
      graphviz \
+     termdown \
+     pfetch \
      opam # ocaml package manageer
 
 
@@ -91,7 +93,6 @@ yay -S --noconfirm \
 *** fonts
 #+begin_src shell
 yay -S --noconfirm \
-     nerd-fonts-git \
      adobe-source-han-sans-cn-fonts \
      adobe-source-han-serif-cn-fonts \
      ttf-symbola \
