@@ -312,3 +312,10 @@ in poll () at /usr/lib/libc.so.6
 
 ** search by value
 - ~apropos-value~
+
+* package
+
+** unload
+#+begin_src emacs-lisp
+(unload-feature 'miao)
+#+end_src

@@ -66,6 +66,11 @@ a derivation for ρ ⊢ e : t is a proof that in some context ρ (which assigns 
 
 ** 推导 (deduction)
 
+** Induction
+
+** Continuation
+
+** Encapsulation
 ** landin' knot
 - represent recursion
   + 13.5.8
