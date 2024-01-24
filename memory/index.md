@@ -22,8 +22,31 @@
 ** Cache line
 - Caches are organized in *fixed-size* lines, which are the units of allocation and transfer down the cache hierarchy. A typical line size B is 64 bytes.
 - The log_2(B) lowest-order *bits* of the address, called the line offset, are used to locate a datum in the cache line.
-** Cache Associativity
 
+** Cache Associativity
+- Caches today are usually set-associative, i.e., organized as S sets of W lines each, called a W-way set-associative cache. When the cache is accessed, the set index field of the address, log_2(S) consecutive bits starting from bit log2_(B), is used to locate a cache set. The remaining high-order bits are used as a tag for each cache line. After locating the cache set, the tag field of the address is matched against the tag of the W lines in the set to identify if one of the cache lines is a cache hit.
+
+** Modern LLC
+- The LLC is divided into per-core slices, which are connected by a ring bus (see Figure 3). Slices can be accessed con-currently and are effectively separate caches, although the bus ensures that each core can access the full LLC (with higher latency for remote slices).
+- Intel uses a carefully-designed but undocumented hash function to maps the address (excluding the line offset bits) into the slice id.
+- [[https://ieeexplore.ieee.org/document/6547110][Hund et al.]] found that on Sandy Bridge, only the tag field is used to compute the hash, but [[https://ieeexplore.ieee.org/document/7163050][Liu et al.]] find that this is only true if the number of cores is a power of two. For other core counts, the full address (minus line offset) is used.
+
+** Inclusiveness
+- The L_{}_{i+1} cache holds a strict superset of the contents of the L_{i}
 ** Index and Tag
 - The L1 is typically indexed by virtual address, while all other caches are indexed by physical address.
+
+* Pipeline
+** Out-of-order execution.
+- Dynamically-scheduled processors execute data-independent instructions in parallel, out of program order, and thereby exploit instruction-level parallelism to improve performance. Instructions are issued (enter the scheduling system) in program order, complete (execute and produce their results) possibly out of program order, and finally retire (irrevocably modify the architected system state) in program order. In-order retirement is implemented by queueing instructions in program order in a reorder buffer (ROB), and removing a completed instruction from the ROB only once it reaches the ROB head, i.e., after all prior instructions have retired.
+
+* Memory
+
+** Memory Consistency
+
+*** Total Store Order (TSO)
+- Total Store Order (TSO) is the memory model of the x86 architecture. TSO forbids all observable load and store reorderings except store→load reordering, which is when a load bypasses an earlier store to a different address. Implementations prevent observable load→load reordering by ensuring that the value a load reads when it is performed remains valid when the load retires. This guarantee is maintained by squashing a load that has performed, but not yet retired, if the core receives a cache invalidation request for (or suffers a cache eviction of) the line read by the load. Store→store reordering is prevented by using a FIFO write buffer, ensuring that stores perform in program order. If desired, store→load reordering can be prevented by separating the store and the load with a fence instruction, which does not complete until all prior accesses are performed. Atomic instructions have fence semantics.
+
+*** Release Consistency (RC)
+- Release Consistency (RC) allows any reordering, except across synchronization instructions. Loads and stores may not be reordered with a prior acquire or with a subsequent release. Therefore, RC implementations squash performed loads upon receiving an invalidation of their cache line only if there is a prior non-retired acquire, and have a non-FIFO write buffer.
 
