@@ -447,6 +447,11 @@ debtap *.deb
 sudo pacman -U *.zst
 #+end_src
 
+*** install image
+#+begin_src shell
+chmod +x ./app.AppImage
+./app.AppImage
+#+end_src
 
 ** yay
 | option               | description                                                 |
@@ -572,6 +577,7 @@ sudo chmod 600 /swap
 sudo mkswap /swap
 sudo swapon /swap
 sudo swapon --show
+genfstab / > /etc/fstab
 #+end_src
 
 * misc
