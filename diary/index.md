@@ -1,6 +1,9 @@
 # Diary
 
 
+* <2024-01-26 Fri>
+- 我也不是要说 haskell 不好但是 ntmd 这个系统包管理的设计是人能想出来的吗？dynamic linking 还分绑定版本能用个狗吧
+
 * <2024-01-22 Mon>
 - ubc secure你是真的傻逼啊
 

@@ -67,6 +67,7 @@ a derivation for ρ ⊢ e : t is a proof that in some context ρ (which assigns 
 
 ** Continuation
 
+** Foreign function interface (FFI)
 ** Encapsulation
 ** landin' knot
 - represent recursion

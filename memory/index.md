@@ -50,3 +50,5 @@
 *** Release Consistency (RC)
 - Release Consistency (RC) allows any reordering, except across synchronization instructions. Loads and stores may not be reordered with a prior acquire or with a subsequent release. Therefore, RC implementations squash performed loads upon receiving an invalidation of their cache line only if there is a prior non-retired acquire, and have a non-FIFO write buffer.
 
+*** MESI
+
