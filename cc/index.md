@@ -3,6 +3,7 @@
 
 
 * assembly
+** sample
 #+begin_src c
 int src = 1;
 int dst;
@@ -14,7 +15,69 @@ asm("mov %1, %0;"
 
 printf("%d\n", dst);
 #+end_src
+** syntax
+#+begin_src
+asm asm-qualifiers ( AssemblerTemplate
+                 : OutputOperands
+                 [ : InputOperands
+                 [ : Clobbers ] ])
+#+end_src
+*** Qualifiers
+- volatile
+- inline
+- goto
+*** Parameters
+**** [[AssemblerTemplate][AssemblerTemplate]]
+- This is a literal string that is the template for the assembler code. It is a combination of fixed text and tokens that refer to the input, output, and goto parameters.
+***** Special format strings
 
+****** %%
+- Outputs a single % into the assembler code.
+****** %=
+- Outputs a number that is unique to each instance of the asm statement in the entire compilation. This option is useful when creating local labels and referring to them multiple times in a single template that generates multiple assembler instructions.
+
+****** %{ %| %}
+- Outputs {, |, and } characters (respectively) into the assembler code. When unescaped, these characters have special meaning to indicate multiple assembler dialects, as described below.
+***** dialect
+#+begin_src c
+"bt{l %[Offset],%[Base] | %[Base],%[Offset]}; jc %l2"
+
+// is equivalent to one of
+
+"btl %[Offset],%[Base] ; jc %l2"   /* att dialect */
+"bt %[Base],%[Offset]; jc %l2"     /* intel dialect */
+#+end_src
+
+**** [[https://gcc.gnu.org/onlinedocs/gcc/extensions-to-the-c-language-family/how-to-use-inline-assembly-language-in-c-code.html#outputoperands][OutputOperands]]
+- A comma-separated list of the C variables modified by the instructions in the AssemblerTemplate. An empty list is permitted.
+- ~[ [asmSymbolicName] ] constraint (cvariablename)~
+***** asmSymbolicName
+- ~%[ref_name]~
+***** constraint
+- Output constraints must begin with either = (a variable overwriting an existing value) or + (when reading and writing).
+- Common constraints include r for register and m for memory. When you list more than one possible location (for example, "=rm"), the compiler chooses the most efficient one based on the current context.
+***** cvariablename
+- Specifies a C lvalue expression to hold the output, typically a variable name.
+
+**** [[https://gcc.gnu.org/onlinedocs/gcc/extensions-to-the-c-language-family/how-to-use-inline-assembly-language-in-c-code.html#inputoperands][InputOperands]]
+- A comma-separated list of C expressions read by the instructions in the AssemblerTemplate. An empty list is permitted.
+**** [[Clobbers][Clobbers]]
+- A comma-separated list of registers or other values changed by the AssemblerTemplate, beyond those listed as outputs. An empty list is permitted.
+**** GotoLabels
+- When you are using the goto form of asm, this section contains the list of all C labels to which the code in the AssemblerTemplate may jump.
+
+*** Constraints
+- Simple Constraints
+* keywords
+
+** static
+
+*** static function
+- A static function is visible only in the file it's declared in
+
+*** static variable
+- A static global variable is visible only in the file it's declared in
+- A static local variable is a Singleton in the block it's declared in
 
 * typedef
 
