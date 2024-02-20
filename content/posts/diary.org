@@ -4,6 +4,12 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2024-02-20 Tue>
+- g, 傻逼prime+probe
+
+* <2024-02-14 Wed>
+- nmd 受不了了, 跟他爆了
+
 * <2024-01-26 Fri>
 - 我也不是要说 haskell 不好但是 ntmd 这个系统包管理的设计是人能想出来的吗？dynamic linking 还分绑定版本能用个狗吧
 

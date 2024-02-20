@@ -625,3 +625,12 @@ ExecStart=/home/yayu/.local/bin/kmonad /home/yayu/.config/kmonad/kmonad.kbd
 [Install]
 WantedBy=default.target
 #+end_src
+
+* CRLF
+
+** CR - *Carriage Return*
+- \r, 0x0D in hexadecimal, 13 in decimal
+- moves the cursor to the beginning of the line without advancing to the next line
+** LF - *Line Feed*
+- \n, 0x0A in hexadecimal, 10 in decimal
+- moves the cursor down to the next line without returning to the beginning of the line
