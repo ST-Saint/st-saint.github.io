@@ -71,6 +71,12 @@ asm asm-qualifiers ( AssemblerTemplate
 
 *** Constraints
 - Simple Constraints
+* compile
+** object file
+#+begin_src sh
+gcc -g -O -c main.c
+#+end_src
+
 * keywords
 
 ** static
