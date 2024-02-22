@@ -1,6 +1,9 @@
 # Diary
 
 
+* <2024-02-22 Thu>
+- 什么b cpu啊，什么天才cache policy啊，玩不了了
+
 * <2024-02-20 Tue>
 - g, 傻逼prime+probe
 
