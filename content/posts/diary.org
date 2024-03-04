@@ -4,6 +4,9 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2024-03-03 Sun>
+- 呜呜，为什么不跟班长在一起，为什么要选坏女人
+
 * <2024-02-22 Thu>
 - 什么b cpu啊，什么天才cache policy啊，玩不了了
 
