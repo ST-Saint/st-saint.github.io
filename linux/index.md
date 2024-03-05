@@ -258,6 +258,16 @@ git config --add oh-my-zsh.hide-status 1
 git config --add oh-my-zsh.hide-dirty 1
 #+end_src
 
+** zsh keybind
+
+- ~^F~ ctrl-F
+- ~^[F~ alt-F
+
+*** list
+#+begin_src zsh
+bindkey -L
+#+end_src
+
 * kernel
 
 ** dependencies
