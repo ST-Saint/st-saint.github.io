@@ -4,6 +4,9 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2024-03-10 Sun>
+- 到底是 side channel 傻逼还是我傻逼
+
 * <2024-03-03 Sun>
 - 呜呜，为什么不跟班长在一起，为什么要选坏女人
 
