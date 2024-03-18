@@ -62,7 +62,6 @@ deactivate
   print(args.integers)
 #+end_src
 
-
 * File
 
 ** file exists

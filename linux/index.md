@@ -430,12 +430,17 @@ Match User yayu
       AllowTcpForwarding yes
 #+end_src
 
-** ssh
+** ssh client
 #+begin_src conf
  Host github.com
     HostName github.com
     User git
     IdentityFile ~/.ssh/yayu
+#+end_src
+
+** execute command
+#+begin_src shell
+ssh leapx16 -t 'cd /home/yayu/ && pwd'
 #+end_src
 
 * Archlinux
