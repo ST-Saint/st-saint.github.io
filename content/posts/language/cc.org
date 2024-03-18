@@ -88,6 +88,18 @@ gcc -g -O -c main.c
 - A static global variable is visible only in the file it's declared in
 - A static local variable is a Singleton in the block it's declared in
 
+* mutex/semaphore
+
+** across processes
+#+begin_src c
+sem_t* sem;
+sem = sem_open("/semaphore", O_CREAT, 0644, 1);
+sem_init(sem, 1, 0);
+
+sem_post(sem); // +1
+sem_wait(sem); // wait -1
+#+end_src
+
 * typedef
 
 ** syntax
