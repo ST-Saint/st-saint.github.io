@@ -529,6 +529,11 @@ ControllerMode = bredr
 
 * module
 
+** show loaded
+#+begin_src sh
+lsmod
+#+end_src
+
 ** install/load
 #+begin_src shell
 modprobe <module>
@@ -537,6 +542,7 @@ modprobe <module>
 
 ** remove
 #+begin_src shell
+modprobe -r <module>
 rmmod <module>
 #+end_src
 
