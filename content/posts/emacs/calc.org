@@ -52,6 +52,7 @@
 | Q         | Sqrt                 |
 | p         | set precision        |
 | BACKSPACE | pop/delete           |
+| TAB       | swap number in stack |
 | d r       | change radix display |
 | U c       | unit conversion      |
 | a x       | calc expand          |

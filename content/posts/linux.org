@@ -447,6 +447,17 @@ Match User yayu
 ssh leapx16 -t 'cd /home/yayu/ && pwd'
 #+end_src
 
+* Xorg
+
+** names
+
+*** xprop
+
+*** wmctrl
+#+begin_src sh
+wmctrl -x -l
+#+end_src
+
 * Archlinux
 
 ** pacman
