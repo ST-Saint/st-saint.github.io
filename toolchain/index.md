@@ -72,7 +72,15 @@ yay -S --noconfirm \
     libxcb # (X11 support) \
     libxcb-wm # (X11 support)
 #+end_src
-
+*** Keyboard remapper
+**** xremap
+-
+**** FAIL keyd
+CLOSED: [2024-03-18 Mon 16:30]
+- do not support scroll event
+**** FAIL Kmonad
+CLOSED: [2024-03-18 Mon 16:30]
+- do not support mac FN key
 *** terminal
 - kitty
 #+begin_src shell

@@ -1,6 +1,10 @@
 # Diary
 
 
+* <2024-03-19 Tue>
+- 肯定是 FLUSH+RELOAD 傻逼吧
+- Fedora 也好难用，为什么 ArchLinux ARM 搞不起来
+
 * <2024-03-10 Sun>
 - 到底是 side channel 傻逼还是我傻逼
 
