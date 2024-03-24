@@ -61,14 +61,14 @@ a derivation for ρ ⊢ e : t is a proof that in some context ρ (which assigns 
 
 ** Unification
 
-** 推导 (deduction)
+** Deduction
 
 ** Induction
 
 ** Continuation
 
 ** Foreign function interface (FFI)
-** Encapsulation
+
 ** landin' knot
 - represent recursion
   + 13.5.8
@@ -87,7 +87,7 @@ a derivation for ρ ⊢ e : t is a proof that in some context ρ (which assigns 
 - Refinement type system uses predicates to enrich the type information
 
 *** passes
-1) STCL
+1) STLC
 2) branch conditions -- path-sensitive
 3) infer refinements
 4) type polymorphism -- context-sensitive

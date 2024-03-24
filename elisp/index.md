@@ -173,6 +173,24 @@ use ~?~
 - lexical
   * Each binding scope (function, let syntax, …) creates a new table of variable names and values, organised in a hierarchy called “the environment”.
 
+* mode
+
+
+** major mode
+
+*** get major mode
+#+begin_src emacs-lisp
+major-mode
+#+end_src
+
+#+RESULTS:
+: org-mode
+
+*** get major mode keymap
+#+begin_src emacs-lisp
+(current-local-map)
+#+end_src
+
 * keymap
 
 ** create keymap
@@ -195,6 +213,11 @@ use ~?~
   #+end_src
 
 
+** unbind key
+#+begin_src emacs-lisp
+(define-key keymap key-sequence nil)
+#+end_src
+
 ** priority
 
 1. overriding-terminal-local-map
@@ -209,10 +232,35 @@ use ~?~
 
 * minor-mode
 
-
 ** check if active
 #+begin_src emacs-lisp
 (bound-and-true-p which-key-mode)
+#+end_src
+
+* list
+
+** range
+#+begin_src emacs-lisp
+(number-sequence ?a ?z)
+#+end_src
+
+** in list
+#+begin_src emacs-lisp
+(member 1 (number-sequence 2 3))
+#+end_src
+
+* loop
+
+** dotimes
+#+begin_src emacs-lisp
+(dotimes (it 10)
+  (message "%s" it))
+#+end_src
+
+** dolist
+#+begin_src emacs-lisp
+(dolist (elem (number-sequence 0 10))
+  (print elem))
 #+end_src
 
 * hotkeys

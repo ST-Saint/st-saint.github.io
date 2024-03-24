@@ -620,16 +620,16 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 fc-list
 #+end_src
 
-* create systemd daemon
+* systemd daemon
 
 ** user
 #+begin_src conf
-# ~/.config/systemd/user/kmonad.service
+# ~/.config/systemd/user/xremap.service
 [Unit]
-Description=Kmonad Daemon
+Description=Xremap Daemon
 
 [Service]
-ExecStart=/home/yayu/.local/bin/kmonad /home/yayu/.config/kmonad/kmonad.kbd
+ExecStart=xremap /home/yayu/.config/xremap/config.yml
 
 [Install]
 WantedBy=default.target
@@ -647,6 +647,24 @@ ExecStart=/home/yayu/.local/bin/kmonad /home/yayu/.config/kmonad/kmonad.kbd
 [Install]
 WantedBy=default.target
 #+end_src
+
+** journalctl
+
+*** kernel log
+#+begin_src sh
+journalctl -k
+#+end_src
+
+*** per service log
+#+begin_src sh
+journalctl -u httpd
+#+end_src
+
+*** recent first / reverse
+#+begin_src sh
+journalctl -r
+#+end_src
+
 
 * CRLF
 
