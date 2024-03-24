@@ -4,6 +4,9 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2024-03-24 Sun>
+- TMD Hero 和 青涩果实 听了一个晚上, 一点习没学
+
 * <2024-03-19 Tue>
 - 肯定是 FLUSH+RELOAD 傻逼吧
 - Fedora 也好难用，为什么 ArchLinux ARM 搞不起来
