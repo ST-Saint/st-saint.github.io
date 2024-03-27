@@ -475,6 +475,16 @@ chmod +x ./app.AppImage
 ./app.AppImage
 #+end_src
 
+** makepkg
+
+*** install
+- ~-s, --syncdeps~ install dependencies
+- ~-i, --install~ install package
+
+#+begin_src sh
+makepkg -si
+#+end_src
+
 ** yay
 | option               | description                                                 |
 | -S                   | install                                                     |
