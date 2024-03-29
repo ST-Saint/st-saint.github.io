@@ -635,6 +635,25 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 
 * font
 
+** utf-8 & locale
+
+*** check
+#+begin_src shell
+locale
+#+end_src
+
+*** set
+#+begin_src shell
+# /etc/locale.conf
+
+LANG=en_US.UTF-8
+#+end_src
+
+or
+#+begin_src shell
+localectl set-locale LANG=en_US.UTF-8
+#+end_src
+
 ** show fonts
 #+begin_src sh
 fc-list
