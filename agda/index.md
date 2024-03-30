@@ -1,6 +1,14 @@
 # Agda
 
 
+* Install
+
+** cabal
+#+begin_src sh
+cabal update
+cabel install Agda
+#+end_src
+
 * agda-mode
 - To load and type-check the file, use ~C-c C-l~.
 
@@ -77,4 +85,8 @@ open Eq.≡-Reasoning using (begin_; _≡⟨⟩_; _∎)
 
 ** underbars
 Agda uses underbars to indicate where terms appear in infix or mixfix operators. Thus, ~_≡_~ and ~_≡⟨⟩_~ are infix (each operator is written between two terms), while ~begin_~ is prefix (it is written before a term), and ~_∎~ is postfix (it is written after a term).
+
+* Currying
+
+- Function arrows associate to the right and application associates to the left
 

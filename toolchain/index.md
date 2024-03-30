@@ -174,6 +174,17 @@ yay -S --noconfirm \
 #+end_src
 
 
+* Development
+
+** Haskell
+
+*** GHCup
+#+begin_src sh
+yay -S ghcup-hs-bin
+
+ghcup tui
+#+end_src
+
 * Internet
 ** Network connection
 *** VPN

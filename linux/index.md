@@ -496,6 +496,7 @@ makepkg -si
 | --overwrite <glob>   | Bypass file conflict checks and overwrite conflicting files |
 | --editmenu           | edit pkgbuild before install                                |
 | -Ql                  | show package contents                                       |
+| -Qo                  | show file owner                                            |
 
 ** check file ownership
 #+begin_src shell
@@ -525,6 +526,11 @@ ControllerMode = bredr
 
 * module
 
+** show loaded
+#+begin_src sh
+lsmod
+#+end_src
+
 ** install/load
 #+begin_src shell
 modprobe <module>
@@ -533,6 +539,7 @@ modprobe <module>
 
 ** remove
 #+begin_src shell
+modprobe -r <module>
 rmmod <module>
 #+end_src
 
@@ -624,6 +631,25 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 #+end_src
 
 * font
+
+** utf-8 & locale
+
+*** check
+#+begin_src shell
+locale
+#+end_src
+
+*** set
+#+begin_src shell
+# /etc/locale.conf
+
+LANG=en_US.UTF-8
+#+end_src
+
+or
+#+begin_src shell
+localectl set-locale LANG=en_US.UTF-8
+#+end_src
 
 ** show fonts
 #+begin_src sh
