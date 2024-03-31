@@ -4,6 +4,9 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2024-03-31 Sun>
+- Proof Assistant 真好玩，又写了一晚上，一点习没学
+
 * <2024-03-24 Sun>
 - TMD Hero 和 青涩果实 听了一个晚上, 一点习没学
 

@@ -89,6 +89,34 @@ open Eq.≡-Reasoning using (begin_; _≡⟨⟩_; _∎)
 ** underbars
 Agda uses underbars to indicate where terms appear in infix or mixfix operators. Thus, ~_≡_~ and ~_≡⟨⟩_~ are infix (each operator is written between two terms), while ~begin_~ is prefix (it is written before a term), and ~_∎~ is postfix (it is written after a term).
 
-* Currying
-
+** Precedence
+- Application binds more tightly than (or has precedence over) any operator, and so we may write suc m + n to mean (suc m) + n
 - Function arrows associate to the right and application associates to the left
+
+  - ~ℕ → ℕ → ℕ~ stands for ~ℕ → (ℕ → ℕ)~
+  - ~_+_ 2 3~ stands for ~(_+_ 2) 3~
+
+#+begin_src agda
+infixl 6  _+_  _∸_
+infixl 7  _*_
+
+-- infixl level
+
+infixl ∸
+
+-- associate to the left
+
+infixr ∸
+
+-- associate to the right
+
+infix ∸
+
+-- () is always required
+#+end_src
+
+** Congruence
+- A relation is said to be a congruence for a given function if it is preserved by applying that function. If ~e~ is evidence that ~x ≡ y~, then ~cong f e~ is evidence that ~f x ≡ f y~, for any function ~f~.
+
+** symmetric
+- If ~e~ provides evidence for ~x ≡ y~ then ~sym e~ provides evidence for ~y ≡ x~.
