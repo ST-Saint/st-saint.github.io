@@ -1,6 +1,20 @@
 # C - Cpp
 
 
+* Dynamic library
+** compile
+- The ~-fPIC~ flag stands for 'Position Independent Code' generation
+#+begin_src sh
+gcc -shared -fPIC -o libFct.so fct.o
+#+end_src
+
+* Makefile
+
+** @
+- ~$@~ represents the target of the current rule
+
+** ^
+- ~$^~ represents all the prerequisites (dependencies) of the current rule
 
 * assembly
 ** sample
@@ -205,6 +219,11 @@ strncpy(passwd, password, 16); // = "5pX!07&YpKNfnAFz"
 add_compile_options(-g)
 #+end_src
 
+
+** cmake message
+#+begin_src cmake
+message("echo ${VARIABLE} in shell")
+#+end_src
 
 * clang-format
 #+begin_src shell

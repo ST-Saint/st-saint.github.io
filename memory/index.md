@@ -35,6 +35,21 @@
 - The L_{}_{i+1} cache holds a strict superset of the contents of the L_{i}
 ** Index and Tag
 - The L1 is typically indexed by virtual address, while all other caches are indexed by physical address.
+** Cache Coherence
+- 2 categories
+  1. Snoopy Bus
+  2. Directory
+*** Snoopy Bus
+**** VI protocol
+- Invalid
+- Valid
+**** MSI
+- *M* (odified): cache line is the only cached copy and is dirty
+- *S* (hared): cache line is potentially one of several cached copies
+- *I* (nvalid): cache line is not present in this cache
+**** MESI
+- *E* (clusive): cache line is the only cached copy
+
 
 * Pipeline
 ** Out-of-order execution.
@@ -49,6 +64,4 @@
 
 *** Release Consistency (RC)
 - Release Consistency (RC) allows any reordering, except across synchronization instructions. Loads and stores may not be reordered with a prior acquire or with a subsequent release. Therefore, RC implementations squash performed loads upon receiving an invalidation of their cache line only if there is a prior non-retired acquire, and have a non-FIFO write buffer.
-
-*** MESI
 

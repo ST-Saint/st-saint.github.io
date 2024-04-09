@@ -505,6 +505,11 @@ yay -Fy $FILE_PATH
 
 
 * Bluetooth
+** install
+#+begin_src sh
+yay -S bluez bluez-utils
+#+end_src
+
 
 ** pair
 #+begin_example

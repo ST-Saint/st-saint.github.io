@@ -114,7 +114,16 @@ infix ∸
 
 ** Congruence
 - A relation is said to be a congruence for a given function if it is preserved by applying that function. If ~e~ is evidence that ~x ≡ y~, then ~cong f e~ is evidence that ~f x ≡ f y~, for any function ~f~.
+ + Consecutive ~cong~
+  #+begin_src agda
+  cong (λ x → x O) (cong (λ x → x I) (to-from b))
+  #+end_src
+
 
 ** symmetric
 - If ~e~ provides evidence for ~x ≡ y~ then ~sym e~ provides evidence for ~y ≡ x~.
+
+** Implicit arguments
+- ~{ }~ in definition means arguments are implicit
+- ~_~ asks Agda to infer the value of the explicit argument from context
 
