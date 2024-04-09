@@ -49,6 +49,7 @@ sudo pacman -S --noconfirm \
      graphviz \
      termdown \
      pfetch \
+     screenkey \
      opam # ocaml package manageer
 
 
@@ -60,6 +61,64 @@ pip install epc  \
             networkx  \
             pygments
 #+end_src
+
+** personal packages
+#+begin_src shell
+yay -S --noconfirm \
+     nitrogen \
+     google-chrome \
+     discord \
+     dunst \
+     zoom \
+     slack-desktop \
+     flameshot \
+     btop \
+     isync \
+     msmtp \
+     fastfetch \
+     pipewire-pulse \
+     pavumeter \
+     pavucontrol \
+     alsa-utils \
+     paprefs \
+     pasystray \
+     hugo \
+     fzf \
+     exa \
+     pandoc \
+     wezterm \
+     chafa \
+     perl-image-exiftool \
+     giflib \
+     starship \
+     rofi-lbonn-wayland \
+     words \
+     stow \
+     vlc \
+     tree-sitter \
+     ibus-rime \
+     nemo \
+     autojump \
+     krita \
+     picom \
+     mu \
+     aspell \
+     aspell-en \
+     texlive-bin \
+     texlive-binextra \
+     radare2 \
+     ghidra \
+     git-delta \
+     screenkey \
+     volnoti \
+     sayonara-player \
+     pypy3 \
+     inkscape \
+     ggtags \
+     debtap \
+     phinger-cursors
+#+end_src
+
 
 ** desktop environment
 *** window manager
@@ -99,6 +158,9 @@ yay -S --noconfirm \
 #+end_src
 
 
+*** key visualizer
+- screenkey
+
 ** prettify
 
 *** fonts
@@ -117,65 +179,6 @@ yay -S --noconfirm \
      wqy-bitmapfont \
      wqy-zenhei
 #+end_src
-
-** personal pakcages
-#+begin_src shell
-yay -S --noconfirm \
-     nitrogen \
-     google-chrome \
-     discord \
-     dunst \
-     zoom \
-     slack-desktop \
-     flameshot \
-     btop \
-     isync \
-     msmtp \
-     neofetch \
-     pipewire-pulse \
-     pavumeter \
-     pavucontrol \
-     alsa-utils \
-     paprefs \
-     pasystray \
-     hugo \
-     fzf \
-     exa \
-     pandoc \
-     wezterm \
-     chafa \
-     perl-image-exiftool \
-     giflib \
-     starship \
-     rofi-lbonn-wayland \
-     words \
-     stow \
-     vlc \
-     tree-sitter \
-     ibus-rime \
-     nemo \
-     autojump \
-     krita \
-     netease-cloud-music \
-     picom \
-     mu-git \
-     aspell \
-     aspell-en \
-     texlive-bin \
-     texlive-binextra \
-     radare2 \
-     ghidra \
-     git-delta \
-     screenkey \
-     volnoti \
-     sayonara-player \
-     pypy3 \
-     inkscape \
-     ggtags \
-     debtap \
-     phinger-cursors
-#+end_src
-
 
 * Development
 
