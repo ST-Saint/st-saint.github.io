@@ -1,6 +1,9 @@
 # Diary
 
 
+* <2024-04-14 Sun>
+- 好热好热！好爽好爽！
+
 * <2024-04-09 Tue>
 - funk ubc housing
 
