@@ -616,6 +616,24 @@ sudo gpgconf --kill gpg-agent
 #+end_src
 
 *** restart
+* disk
+** format usb
+
+#+begin_src sh
+sudo fdisk /dev/sda
+
+m # menu
+p # print partition
+d # delete partition
+g # GPT partition table
+n # new partition
+
+sudo mkfs.ext4 -L Kingston -m 1 -b 4096 /dev/sda1
+sudo mkfs.fat -F 32 -n Kingston /dev/sda1
+sudo mkfs.exfat -n Kingston /dev/sda1
+
+sudo dd if=/dev/zero of=/dev/sda1
+#+end_src
 
 * swap file
 #+begin_src sh
