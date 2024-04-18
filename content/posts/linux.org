@@ -458,6 +458,20 @@ ssh leapx16 -t 'cd /home/yayu/ && pwd'
 wmctrl -x -l
 #+end_src
 
+** touchpad
+
+*** change scroll speed
+#+begin_src conf
+Section "InputClass"
+        Identifier "Enable natural scrolling by default"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        MatchDriver "libinput"
+        Option "Natural Scrolling" "on"
+        Option "ScrollPixelDistance" "25"
+EndSection
+#+end_src
+
 * Archlinux
 
 ** pacman
