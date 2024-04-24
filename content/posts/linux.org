@@ -649,6 +649,10 @@ sudo mkfs.exfat -n Kingston /dev/sda1
 sudo dd if=/dev/zero of=/dev/sda1 bs=1M status=progress
 #+end_src
 
+** install ISO
+1. ~ls -l /dev/disk/by-id/usb-*~
+2. ~cp path/to/archlinux-version-x86_64.iso /dev/disk/by-id/usb-My_flash_drive~
+
 * swap file
 #+begin_src sh
 sudo fallocate -l 1G /swap

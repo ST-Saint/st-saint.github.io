@@ -122,10 +122,13 @@ infix ∸
   cong (λ x → x O) (cong (λ x → x I) (to-from b))
   #+end_src
 
-
 ** symmetric
 - If ~e~ provides evidence for ~x ≡ y~ then ~sym e~ provides evidence for ~y ≡ x~.
 
 ** Implicit arguments
 - ~{ }~ in definition means arguments are implicit
 - ~_~ asks Agda to infer the value of the explicit argument from context
+
+** With
+- The keyword ~with~ is followed by an expression and one or more subsequent lines. Each line begins with an ellipsis (...) and a vertical bar (|), followed by a pattern to be matched against the expression and the right-hand side of the equation.
+- Equivalent to ~x = helper: y → x where helper y = ...~
