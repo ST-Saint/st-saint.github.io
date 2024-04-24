@@ -99,6 +99,11 @@ gcc -g -O -c main.c
 - A static global variable is visible only in the file it's declared in
 - A static local variable is a Singleton in the block it's declared in
 
+** volatile
+
+*** volatile variable
+=Volatile= keyword indicates that a value may change between different accesses, so compiler shall not to optimize anything related to the =volatile= varible
+
 * mutex/semaphore
 
 ** across processes
@@ -219,6 +224,10 @@ strncpy(passwd, password, 16); // = "5pX!07&YpKNfnAFz"
 add_compile_options(-g)
 #+end_src
 
+*** cmdline
+#+begin_src shell
+cmake .. -DCMAKE_BUILD_TYPE=Debug
+#+end_src
 
 ** cmake message
 #+begin_src cmake
