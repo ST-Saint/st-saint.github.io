@@ -4,6 +4,9 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2024-04-24 Wed>
+- 傻逼吧 LLC，相思
+
 * <2024-04-21 Sun>
 - =bokeh= 还挺好用的，不错不错
 
