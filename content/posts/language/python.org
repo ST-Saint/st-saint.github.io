@@ -252,6 +252,17 @@ print(elapsed_time * 1000, "ms")
 : 0.00015999830793589354
 
 
+** date
+#+begin_src python
+import datetime
+x = datetime.datetime.now()
+print(x)
+return str(x)
+#+end_src
+
+#+RESULTS:
+: 2024-04-25 20:05:59.259296
+
 * socket
 
 ** server
