@@ -231,6 +231,8 @@ rg --no-ignore
 
 ** zip
 *** zip
+
+**** compress
 - -q 不显示命令
 - -r 递归
 - -y 不解析 symbol link
@@ -239,19 +241,27 @@ rg --no-ignore
 zip -qry zip_file.zip file1 file2 dir1
 #+end_src
 
-- -d
+**** decompress
 #+begin_src shell
 unzip jacoco-0.8.7.zip -d jacoco
 #+end_src
-*** tar
-**** 解压
+
+**** list
 #+begin_src shell
-tar -xzvf sample.tar.gz -C ./sample
+unzip -l zipfile.zip
 #+end_src
-**** 压缩
+
+*** tar
+**** compress
 #+begin_src
 tar -czf sample.tar.gz ./sample
 #+end_src
+
+**** decompress
+#+begin_src shell
+tar -xzvf sample.tar.gz -C ./sample
+#+end_src
+
 ** git disable zsh status
 #+begin_src sh
 git config --add oh-my-zsh.hide-status 1
