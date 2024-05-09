@@ -395,6 +395,25 @@ adduser -m miao
 adduser miao sudo
 #+END_SRC
 
+** groups
+
+*** list groups
+#+begin_src sh
+groups $USER
+#+end_src
+
+** sudo
+
+*** list user's privilege
+#+begin_src shell
+sudo -l
+#+end_src
+
+** show login sessions
+#+begin_src shell
+w
+#+end_src
+
 ** set passwd
 #+begin_src bash
 passwd miao
