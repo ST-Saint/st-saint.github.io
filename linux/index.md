@@ -285,6 +285,14 @@ bindkey -L
 sudo apt-get install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf llvm
 #+end_src
 
+** build
+#+begin_src shell
+make menu_config
+make -j$(nproc)
+sudo make modules_install -j$(nproc)
+sudo make install -j$(nproc)
+#+end_src
+
 * network
 ** iw
 - 格式
@@ -313,6 +321,16 @@ iw dev <devname> link
 #+begin_src shell
 iw dev <devname> connect [-w] <SSID> [<freq in MHz>] [<bssid>] [key 0:abcde d:1:6162636465] [mfp:req/opt/no]
 # Join the network with the given SSID (and frequency, BSSID).
+#+end_src
+
+** iwd
+*** connect
+#+begin_src sh
+[iwd]# help
+[iwd]# device list
+[iwd]# station wlan0 scan
+[iwd]# station wlan0 get-networks
+[iwd]# station wlan0 connect SSID
 #+end_src
 
 ** Network Manager
