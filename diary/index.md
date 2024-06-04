@@ -1,6 +1,9 @@
 # Diary
 
 
+* <2024-06-03 Mon>
+- tml 一个个老逼登写的的 b 样的 c 代码没有clang-format，没有 editorconfig，你是全部是 ntmd 手摇 format 机自己 format 的吗? 给你加一行代码跟挖你家祖坟一样费劲，对齐一下还得把土再给你埋上
+
 * <2024-05-03 Fri>
 - 呜呜，姚贝娜，我的姚贝娜
 
