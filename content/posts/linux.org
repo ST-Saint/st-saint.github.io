@@ -297,6 +297,15 @@ sudo make modules_install -j$(nproc)
 sudo make install -j$(nproc)
 #+end_src
 
+** get current kernel config
+#+begin_src sh
+cat /boot/config
+
+# or
+
+zcat /proc/config.gz > config
+#+end_src
+
 * network
 ** iw
 - 格式
