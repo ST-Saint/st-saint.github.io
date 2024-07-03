@@ -16,18 +16,24 @@
 - Processors cache recently used page table entries in the ~translation look-aside buffer~ (TLB)
 
 * Cache
-** cache hierarchy
+** Cache Hierarchy
 - Each core typically has two private top-level caches, one each for data and instructions, called level-1 (L1) caches. A typical L1 cache size is 32 KiB with a 4-cycle access time
 
 - Modern x86 processors typically also support core-private, unified L2 caches of intermediate size and latency
 
 - The LLC is shared among all the cores of a multi-core chip and is a unified cache, i.e., it holds both data and instruction
-** Cache line
+*** Cache line
 - Caches are organized in *fixed-size* lines, which are the units of allocation and transfer down the cache hierarchy. A typical line size B is 64 bytes.
 - The log_2(B) lowest-order *bits* of the address, called the line offset, are used to locate a datum in the cache line.
 
-** Cache Associativity
+*** Cache Associativity
 - Caches today are usually set-associative, i.e., organized as S sets of W lines each, called a W-way set-associative cache. When the cache is accessed, the set index field of the address, log_2(S) consecutive bits starting from bit log2_(B), is used to locate a cache set. The remaining high-order bits are used as a tag for each cache line. After locating the cache set, the tag field of the address is matched against the tag of the W lines in the set to identify if one of the cache lines is a cache hit.
+** Latency^[[*ref-1][1]]
+
+- The L1 cache latency is typically within a few cycles.
+- The L2 cache latency is around 10-20 cycles.
+- The LLC has a latency of 40-60 cycles.
+- The main memory access latency is on the order of 200-300 cycles.
 
 ** Modern LLC
 - The LLC is divided into per-core slices, which are connected by a ring bus (see Figure 3). Slices can be accessed con-currently and are effectively separate caches, although the bus ensures that each core can access the full LLC (with higher latency for remote slices).
@@ -36,13 +42,21 @@
 
 ** Inclusiveness
 - The L_{}_{i+1} cache holds a strict superset of the contents of the L_{i}
+
+*** merit
+1. If the lower level cache is inclusive of the higher level cache and it is a miss in the lower level cache (e.g., L3), then the higher level cache (e.g., L2) need not be searched. Thus a shorter miss latency for an inclusive cache compared to exclusive and NINE (Non-Inclusive Non-Exclusive).
+2. Placing a cache line from higher level cache to lower level cache causes no involvement of higher level cache due to eviction.
+
 ** Index and Tag
 - The L1 is typically indexed by virtual address, while all other caches are indexed by physical address.
+- A cache consists of the data array, which stores the data or code, and the tag array, which stores the high-order bits of the addresses of the data or code.
+
 ** Cache Coherence
 - 2 categories
   1. Snoopy Bus
   2. Directory
 *** Snoopy Bus
+- As the number of cores is increased, the centralized bus quickly proves to be the bottleneck.
 **** VI protocol
 - Invalid
 - Valid
@@ -52,7 +66,10 @@
 - *I* (nvalid): cache line is not present in this cache
 **** MESI
 - *E* (clusive): cache line is the only cached copy
-
+**** MOESI
+- *O* (nwer): when synchronize via bus, transit the *Modified* state to *Shared* without writing back to memory but designate one *Owner* who is responsible to write the latest date to memory
+*** Directory
+- Idea: A logically-central directory keeps track of where the copies of each cache line reside and whether the line is dirty or clean. Caches consult this directory to ensure coherence.
 
 * Pipeline
 ** Out-of-order execution.
@@ -67,3 +84,7 @@
 
 *** Release Consistency (RC)
 - Release Consistency (RC) allows any reordering, except across synchronization instructions. Loads and stores may not be reordered with a prior acquire or with a subsequent release. Therefore, RC implementations squash performed loads upon receiving an invalidation of their cache line only if there is a prior non-retired acquire, and have a non-FIFO write buffer.
+
+* Reference
+** ref-1
+[[https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8835325][Attack Directories, Not Caches: Side-Channel Attacks in a Non-Inclusive World]]
