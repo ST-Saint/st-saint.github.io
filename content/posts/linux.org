@@ -306,6 +306,11 @@ cat /boot/config
 zcat /proc/config.gz > config
 #+end_src
 
+** kernel boot command
+#+begin_src sh
+cat /proc/cmdline
+#+end_src
+
 * network
 ** iw
 - 格式

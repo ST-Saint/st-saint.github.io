@@ -76,6 +76,22 @@ console.log(typeof {"1": 2});
 : object
 : undefined
 
+** check type
+
+*** instance
+#+begin_src js
+if( something instanceof xx ){
+}
+#+end_src
+
+
+*** typeof
+#+begin_src js
+if( typeof something === 'string') {
+}
+#+end_src
+
+
 ** array
 
 *** length

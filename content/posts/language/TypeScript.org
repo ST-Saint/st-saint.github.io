@@ -6,8 +6,7 @@
 
 * Initialize project
 #+begin_src shell
-npm i tsc
-npx tsc --init
+npx create-next-app@latest
 #+end_src
 
 
