@@ -281,6 +281,11 @@ ghcup tui
 + awesome font
 + SauceCodePro Nerd Font Mono
 
+** bluetooth
+- bluez
+- bluez-utils
+- blueman
+
 * Documents and texts
 ** Office
 + freeoffice
