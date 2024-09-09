@@ -573,11 +573,6 @@ makepkg -si
 | -Ql                  | show package contents                                       |
 | -Qo                  | show file owner                                            |
 
-** check file ownership
-#+begin_src shell
-yay -Fy $FILE_PATH
-#+end_src
-
 
 * Bluetooth
 ** install
