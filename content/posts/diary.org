@@ -4,6 +4,9 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2024-09-09 Mon>
+- 你不如直接让我死吧
+
 * <2024-09-08 Sun>
 - 最后一次了
 
