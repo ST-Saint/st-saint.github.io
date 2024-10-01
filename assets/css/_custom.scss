@@ -1,10 +1,19 @@
 @import url('https://www.nerdfonts.com/assets/css/webfont.css');
 
 .home {
+    .home-page {
+        display: flex;
+        flex-direction: row;
+        align-content: start;
+        align-items: start;
+        justify-content: space-around;
+    }
     .home-profile {
+        @include transform(translateY( 16vh));
         .home-avatar {
             img {
                 width: 12rem;
+                min-width: 200px;
             }
         }
         .home-title {
@@ -13,4 +22,17 @@
             line-height: 1.25rem;
         }
     }
+    .home-intro {
+        @include transform(translateY( 16vh));
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        font-size: 1.25rem;
+        margin: 20px;
+        .link {
+            color: #4D89FB;
+            white-space: nowrap;
+        }
+    }
+    min-width: 75%;
 }

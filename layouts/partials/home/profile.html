@@ -1,0 +1,219 @@
+{{- $profile := .Site.Params.home.profile -}}
+<div class="home-page">
+
+<div class="home-profile">
+    {{- $avatar := $profile.avatarURL -}}
+    {{- with $profile.gravatarEmail -}}
+        {{- $avatar = md5 . | printf "https://www.gravatar.com/avatar/%v?s=240&d=mp" -}}
+    {{- end -}}
+    {{- if $avatar -}}
+        <div class="home-avatar">
+            {{- $menus := $.Site.Menus.main | default slice -}}
+            {{- with index $menus 0 -}}
+                {{- $url := .URL | relLangURL -}}
+                {{- with .Page -}}
+                    {{- $url = .RelPermalink -}}
+                {{- end -}}
+                <a href="{{ $url }}"{{ with .Title | default .Name }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                    {{- dict "Src" $avatar | partial "plugin/img.html" -}}
+                </a>
+            {{- else -}}
+                {{- dict "Src" $avatar | partial "plugin/img.html" -}}
+            {{- end -}}
+        </div>
+    {{- end -}}
+
+    {{- with $profile.title -}}
+        <h1 class="home-title" onClick=smooth_scroll()>
+            {{- . | safeHTML -}}
+        </h1>
+    {{- end -}}
+
+    {{- with $profile.subtitle -}}
+        <div class="home-subtitle">
+            {{- if $profile.typeit -}}
+                {{- $id := dict "Content" . "Scratch" $.Scratch | partial "function/id.html" -}}
+                <div id="{{ $id }}" class="typeit"></div>
+                {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
+            {{- else -}}
+                {{- . | safeHTML -}}
+            {{- end -}}
+        </div>
+    {{- end -}}
+
+    {{- if $profile.social -}}
+        <div class="links">
+            {{- $socialMap := resources.Get "data/social.yml" | transform.Unmarshal -}}
+            {{- $socialArr := slice -}}
+            {{- range $key, $value := .Site.Params.social -}}
+                {{- $social := $key | lower | index $socialMap | default dict -}}
+                {{- if $value -}}
+                    {{- if reflect.IsMap $value -}}
+                        {{- with $value.weight -}}
+                            {{- $social = dict "Weight" . | merge $social -}}
+                        {{- end -}}
+                        {{- with $value.prefix -}}
+                            {{- $social = dict "Prefix" . | merge $social -}}
+                        {{- end -}}
+                        {{- with $value.template -}}
+                            {{- $social = dict "Template" . | merge $social -}}
+                        {{- end -}}
+                        {{- with $value.id -}}
+                            {{- $social = dict "Id" . | merge $social -}}
+                        {{- end -}}
+                        {{- with $value.url -}}
+                            {{- $social = dict "Url" . | merge $social -}}
+                        {{- end -}}
+                        {{- with $value.title -}}
+                            {{- $social = dict "Title" . | merge $social -}}
+                        {{- end -}}
+                        {{- with $value.newtab -}}
+                            {{- $social = dict "Newtab" . | merge $social -}}
+                        {{- end -}}
+                        {{- with $value.icon -}}
+                            {{- $social = dict "Icon" . | merge $social -}}
+                        {{- end -}}
+                        {{- with $value.rel -}}
+                            {{- $social = dict "Rel" . | merge $social -}}
+                        {{- end -}}
+                    {{- else if ne $value true -}}
+                        {{- $social = dict "Id" $value | merge $social -}}
+                    {{- end -}}
+                    {{- if $social.Icon.Simpleicons -}}
+                        {{- $prefix := ($.Scratch.Get "cdn" | default dict).simpleIconsPrefix -}}
+                        {{- $social = dict "Prefix" $prefix | dict "Icon" | merge $social -}}
+                    {{- end -}}
+                    {{- $socialArr = $socialArr | append $social -}}
+                {{- end -}}
+            {{- end -}}
+            {{- range sort $socialArr "Weight" -}}
+                {{- partial "plugin/social.html" . -}}
+            {{- end -}}
+        </div>
+        {{- end -}}
+    {{- with $profile.disclaimer -}}
+        <h3 class="home-disclaimer">
+            {{- . | safeHTML -}}
+        </h3>
+    {{- end -}}
+</div>
+
+  <div class="home-intro">
+      <h2 style="text-decoration: underline;">About</h2>
+      <p>I am a Master’s student in Computer Science at the University of British Columbia.
+        I work with
+        <a class="link" href="https://aasthakm.github.io/">Prof. Aastha Mehta</a>
+        and I am part of the
+        <a class="link" href="https://systopia.cs.ubc.ca/">Systopia Lab</a>.
+      </p>
+
+      <p>I am interested in system security and language-based security.</p>
+
+      <!-- <p>I obtained my bachelor degree in Beijing University of Posts and Telecommunications supervised by Prof. Haoyu Wang and Prof. Yajin Zhou.</p> -->
+  </div>
+
+
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+
+  <script>
+      function smooth_scroll(e) {
+          var targetID = $(".home-full-profile")
+          var scrollDistance = 0
+          if (targetID === "#home-full-profile") {
+              scrollDistance = 0
+          } else {
+              scrollDistance = $(targetID).offset().top - 80
+          }
+
+          $('html, body').animate({
+              scrollTop: scrollDistance
+          }, 1000);
+      }
+
+
+      var debounceTimeout;
+      var lastScrollTop = 0;
+      var cooldown = false;
+      var scrolling = false;
+      $(window).scroll(function(event){
+      });
+      $(document).ready(function() {
+          // Attach the scroll event listener to the window
+          const el = document.querySelector(".home-profile");
+          el.addEventListener("wheel", scrolll, { passive: false });
+          function scrolll(event) {
+              console.log(scrolling, cooldown);
+              if( scrolling ){
+                  $('html, body').stop();
+                  scrolling = false;
+              }else{
+                  if (event.deltaY > 0){
+                      // downscroll code
+                      if( !cooldown ){
+                          var targetID = $(".home-full-profile")
+                          scrollDistance = $(targetID).offset().top
+                          $('html, body').animate({
+                              scrollTop: scrollDistance
+                          }, 1000);
+                          console.log(scrollDistance);
+                          scrolling = true;
+                          cooldown = true;
+                          clearTimeout(debounceTimeout);
+                          debounceTimeout = setTimeout(function() {
+                              scrolling = false;
+                              cooldown = false;
+                              console.log("free ", scrolling, cooldown);
+                          }, 500);
+                      }
+                      console.log("down");
+                  }
+                  else if( event.deltaY< 0) {
+                      // upscroll code
+                      console.log("up");
+                  }
+              }
+          }
+          // $(window).scroll(function(event) {
+
+          //     event.preventDefault();
+          //     console.log(event.deltaY)
+          //     clearTimeout(debounceTimeout);
+          //     // Set a new timeout
+          //     debounceTimeout = setTimeout(function() {
+          //         // Your code to be executed after the user stops scrolling
+
+          //         var scrollPosition = $(this).scrollTop();
+          //         console.log(debounceTimeout)
+          //         console.log(lastScrollTop-scrollPosition)
+          //         if (scrollPosition > lastScrollTop){
+          //             // downscroll code
+          //             var targetID = $(".home-full-profile")
+          //             scrollDistance = $(targetID).offset().top - 80
+          //             $('html, body').animate({
+          //                 scrollTop: scrollDistance
+          //             }, 1000);
+          //             console.log(scrollDistance)
+          //             console.log("down");
+          //         } else {
+          //             // upscroll code
+          //             console.log("up");
+          //         }
+          //         lastScrollTop = scrollPosition;
+          //         console.log(debounceTimeout)
+          //         console.log('Scrolling has stopped.');
+          //     }, 200); // Adjust the delay as needed (in milliseconds)
+          // });
+      });
+
+      function myFunction(event) {
+          if (event.wheelDelta < 0 ) {
+              if (scrollTimeout) clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(function(){smoothScroll()},200);
+          }
+      }
+
+  </script>
+</div>
