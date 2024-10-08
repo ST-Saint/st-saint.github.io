@@ -15,7 +15,8 @@ sudo pacman -S --noconfirm \
      networkmanager \
      xorg \
      xorg-xinit \
-     wezterm \
+     yajl \
+     xterm \
      wget \
      bear \
      bc \
