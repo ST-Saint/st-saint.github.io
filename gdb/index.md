@@ -179,3 +179,27 @@ Usage: cpm member
 - ~SystemBreak~
 - [[https://source.chromium.org/chromium/v8/v8.git/+/05720af2b09a18be5c41bbf224a58f3f0618f6be:src/runtime/runtime.h;l=574][full commands]]
 
+* Radare2
+
+** analysis
+
+| Command    | Description      |
+| aa         | analyze all      |
+| afl        | list functions   |
+| s sym.main | seek to function |
+
+** inspecting
+
+| Command | Description          |
+| pdb     | basic block          |
+| pdf     | function disassembly |
+| afa     | function arguments   |
+| afv     | function variables   |
+| af      | analyze function     |
+
+** graph output
+
+| Command | Description           |
+| agfv    | Interactive Ascii Art |
+| agfd    | Graphviz dot          |
+

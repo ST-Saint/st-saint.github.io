@@ -345,6 +345,7 @@ iw dev <devname> connect [-w] <SSID> [<freq in MHz>] [<bssid>] [key 0:abcde d:1:
 [iwd]# station wlan0 scan
 [iwd]# station wlan0 get-networks
 [iwd]# station wlan0 connect SSID
+[iwd]# station wlan0 show
 #+end_src
 
 ** Network Manager
@@ -372,6 +373,20 @@ nmcli connection up/down <connection>
 nmcli connection add type wifi con-name "ubcsecure" ifname wlan0 ssid "ubcsecure" -- wifi-sec.key-mgmt wpa-eap 802-1x.eap peap 802-1x.phase2-auth mschapv2 802-1x.identity "yayuwang" 802-1x.anonymous-identity "yayuwang" 802-1x.password "password..."
 #+end_src
 
+
+*** iwd configuration
+#+begin_src sh
+# /var/lib/iwd/ubcsecure.8021x
+[Security]
+EAP-Method=PEAP
+EAP-Identity=username
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=username
+EAP-PEAP-Phase2-Password=password
+
+[Settings]
+AutoConnect=true
+#+end_src
 
 ** ss
 - ss is the alternative of netstat
@@ -409,18 +424,18 @@ export DEEPIN_WINE_SCALE=2.00
 ** add user
 
 #+BEGIN_SRC bash
-adduser miao
+useradd miao
 #+END_SRC
 
 *** create home directory
 #+begin_src bash
-adduser -m miao
+useradd -m miao
 #+end_src
 
 
 *** add sudo access
 #+BEGIN_SRC bash
-adduser miao sudo
+usermod -aG sudo username
 #+END_SRC
 
 ** groups
