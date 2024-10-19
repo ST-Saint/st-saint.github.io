@@ -377,6 +377,20 @@ nmcli connection add type wifi con-name "ubcsecure" ifname wlan0 ssid "ubcsecure
 #+end_src
 
 
+*** iwd configuration
+#+begin_src sh
+# /var/lib/iwd/ubcsecure.8021x
+[Security]
+EAP-Method=PEAP
+EAP-Identity=username
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=username
+EAP-PEAP-Phase2-Password=password
+
+[Settings]
+AutoConnect=true
+#+end_src
+
 ** ss
 - ss is the alternative of netstat
 #+begin_src shell
