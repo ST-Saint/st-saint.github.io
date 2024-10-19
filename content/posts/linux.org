@@ -349,6 +349,7 @@ iw dev <devname> connect [-w] <SSID> [<freq in MHz>] [<bssid>] [key 0:abcde d:1:
 [iwd]# station wlan0 scan
 [iwd]# station wlan0 get-networks
 [iwd]# station wlan0 connect SSID
+[iwd]# station wlan0 show
 #+end_src
 
 ** Network Manager
@@ -427,18 +428,18 @@ export DEEPIN_WINE_SCALE=2.00
 ** add user
 
 #+BEGIN_SRC bash
-adduser miao
+useradd miao
 #+END_SRC
 
 *** create home directory
 #+begin_src bash
-adduser -m miao
+useradd -m miao
 #+end_src
 
 
 *** add sudo access
 #+BEGIN_SRC bash
-adduser miao sudo
+usermod -aG sudo username
 #+END_SRC
 
 ** groups
