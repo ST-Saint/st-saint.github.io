@@ -590,7 +590,8 @@ makepkg -si
 | --overwrite <glob>   | Bypass file conflict checks and overwrite conflicting files |
 | --editmenu           | edit pkgbuild before install                                |
 | -Ql                  | show package contents                                       |
-| -Qo                  | show file owner                                            |
+| -Qo                  | show file owner                                             |
+| -Qi                  | show package info                                           |
 
 
 * Bluetooth

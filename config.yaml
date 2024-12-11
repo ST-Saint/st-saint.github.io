@@ -1,5 +1,5 @@
 baseURL: 'https://st-saint.github.io/'
-theme: LoveIt
+theme: DoIt
 title: Yayu Wang
 languageCode: en
 languageName: English
@@ -13,11 +13,6 @@ enableEmoji: true
 ignoreErrors:
   - error-remote-getjson
   - error-missing-instagram-accesstoken
-
-author:
-  name: Yayu Wang
-  email: 'https://st-saint.github.io/posts/email'
-  link: 'https://st-saint.github.io/'
 
 menu:
   main:
@@ -50,6 +45,10 @@ menu:
       url: /categories/
       title: ''
 params:
+  author:
+    name: Yayu Wang
+    email: 'https://st-saint.github.io/posts/email'
+    link: 'https://st-saint.github.io/'
   defaultTheme: auto
   gitRepo: ''
   fingerprint: ''
@@ -63,10 +62,10 @@ params:
     mobileMode: auto
     title:
       logo: ''
-      name: 'Home'
-      pre: '<i class="nf nf-custom-emacs"></i>'
+      name: '<i class="nf nf-custom-emacs"></i> Home'
+      pre: ''
       post: ''
-      typeit: false
+      typeit: true
   footer:
     enable: true
     custom: ''
@@ -205,7 +204,6 @@ params:
     lightgallery: false
     ruby: true
     fraction: true
-    fontawesome: true
     linkToMarkdown: true
     rssFullText: false
     toc:

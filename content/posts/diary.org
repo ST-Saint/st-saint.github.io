@@ -1,8 +1,21 @@
 #+TITLE: Diary
 #+DATE: Fri Mar 03 00:00:00 PST 2023
 #+Summary: Diary
+#+hidden: true
 #+categories[]: Diary
 #+tags[]: Diary
+
+* <2024-12-10 Tue>
+- 这b diary不能再给人看了
+
+* <2024-12-01 Sun>
+- 这邪了门了吧
+- 她是不是有毛病
+- 我需要个心理医生
+
+* <2024-11-29 Fri>
+- 我现在说话怎么这么温文尔雅
+- 太累了好像也是不想骂人的
 
 * <2024-10-19 Sat>
 - 诶嘿

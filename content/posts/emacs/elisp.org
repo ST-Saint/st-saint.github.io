@@ -15,6 +15,29 @@
 #+end_src
 
 
+* loop
+
+** for
+#+begin_src elisp
+(dotimes (i 5)
+  (message "Iteration %d" i))
+;; Iteration 0
+;; Iteration 1
+;; Iteration 2
+;; Iteration 3
+;; Iteration 4
+
+(dolist (item '(1 2 3 4 5))
+  (message "Item: %d" item))
+
+;; Item: 1
+;; Item: 2
+;; Item: 3
+;; Item: 4
+;; Item: 5
+#+end_src
+
+
 * equal
 
 ** eq
