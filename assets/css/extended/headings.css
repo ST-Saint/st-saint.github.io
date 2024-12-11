@@ -1,0 +1,13 @@
+.post-content h2 {
+  font-size: 40px;
+}
+
+.post-content h3 {
+  font-size: 30px;
+}
+
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  font-size: 24px;
+}
