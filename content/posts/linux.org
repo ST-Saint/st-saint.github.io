@@ -827,3 +827,8 @@ journalctl -r
 ** LF - *Line Feed*
 - \n, 0x0A in hexadecimal, 10 in decimal
 - moves the cursor down to the next line without returning to the beginning of the line
+
+* Trouble Shooting
+** Read-only file system
+1. check permission ~mount | grep ' / '~
+2. remount ~mount | grep ' / '~
