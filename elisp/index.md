@@ -286,6 +286,15 @@ major-mode
   (print elem))
 #+end_src
 
+* hash
+
+
+** put
+#+begin_src emacs-lisp
+(puthash key val hash-table)
+#+end_src
+
+
 * hotkeys
 
 | Keymap | Function                             |

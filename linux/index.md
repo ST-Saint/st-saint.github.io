@@ -457,6 +457,16 @@ sudo -l
 w
 #+end_src
 
+** show login history
+#+begin_src shell
+last
+#+end_src
+
+#+begin_src shell
+lastlog
+#+end_src
+
+
 ** set passwd
 #+begin_src bash
 passwd miao
