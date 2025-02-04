@@ -86,6 +86,8 @@ params:
     paginate: 20
     dateFormat: 01-02
     rss: 10
+  terms:
+    paginate: 20
   app:
     title: My cool site
     noFavicon: false

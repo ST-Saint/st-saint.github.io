@@ -3,7 +3,7 @@
 #+date: Fri, 28 Jan 2022 23:14:25 +0800
 #+hidden: true
 #+categories[]: 高论
-#+tags[]: diary, wechat
+#+tags[]: diary wechat
 
 * WX的十宗罪
 + 说实话啊， wx真nmd不是个人啊

@@ -1,7 +1,7 @@
 #+TITLE: JavaScript
 #+DATE: Sat May 06 15:01:54 PDT 2023
 #+Summary: JavaScript
-#+categories[]: programming_language
+#+categories[]: programming_languages
 #+tags[]: JavaScript
 
 

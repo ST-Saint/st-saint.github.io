@@ -1,7 +1,7 @@
 #+TITLE: TypeScript
 #+DATE: Thu Jun 08 18:11:08 PDT 2023
 #+Summary: TypeScript
-#+categories[]: programming_language
+#+categories[]: programming_languages
 #+tags[]: TypeScript
 
 * Initialize project

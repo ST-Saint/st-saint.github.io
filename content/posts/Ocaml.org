@@ -1,7 +1,7 @@
 #+TITLE: OCaml
 #+DATE: Wed Oct 11 16:08:40 PDT 2023
 #+Summary: OCaml
-#+categories[]: programming_language
+#+categories[]: programming_languages
 #+tags[]: OCaml Coq
 
 * Opam

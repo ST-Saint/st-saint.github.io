@@ -1,7 +1,7 @@
 #+TITLE: Agda
 #+DATE: Sun Mar 17 22:16:08 PDT 2024
 #+Summary: Agda
-#+categories[]: program_languages
+#+categories[]: programming_languages
 #+tags[]: Agda
 
 * Install
