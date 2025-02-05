@@ -1,6 +1,9 @@
 # Diary
 
 
+* <2025-02-04 Tue>
+- apple photos wcnm
+
 * <2025-02-03 Mon>
 - 故地重游不过是刻舟求剑
 
