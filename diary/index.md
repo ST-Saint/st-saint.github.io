@@ -1,6 +1,9 @@
 # Diary
 
 
+* <2025-02-09 Sun>
+- 傻逼人干傻逼事傻逼傻逼聚一堆
+
 * <2025-02-04 Tue>
 - apple photos wcnm
 
