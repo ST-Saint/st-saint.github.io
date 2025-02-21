@@ -15,4 +15,6 @@
   + ~_+_ 2 3~ stands for ~(_+_ 2) 3~
 ** Congruence
 - A relation is said to be a congruence for a given function if it is preserved by applying that function. If e is evidence that ~x ≡ y~, then ~cong f e~ is evidence that ~f x ≡ f y~, for any function ~f~.
+** Gradual Type
+** Effect Handlers
 

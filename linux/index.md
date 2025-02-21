@@ -467,7 +467,7 @@ lastlog
 #+end_src
 
 
-** set passwd
+** set password
 #+begin_src bash
 passwd miao
 #+end_src
