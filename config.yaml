@@ -97,7 +97,7 @@ params:
     tileColor: '#da532c'
   search:
     enable: true
-    type: pagefind
+    type: fuse
     contentLength: 4000
     placeholder: ''
     maxResultLength: 10
