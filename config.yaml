@@ -97,17 +97,13 @@ params:
     tileColor: '#da532c'
   search:
     enable: true
-    type: lunr
+    type: pagefind
     contentLength: 4000
     placeholder: ''
     maxResultLength: 10
     snippetLength: 30
     highlightTag: em
     absoluteURL: false
-    algolia:
-      index: ''
-      appID: ''
-      searchKey: ''
   home:
     rss: 10
     profile:
