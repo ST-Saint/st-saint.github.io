@@ -58,4 +58,4 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://st-saint.github.io/sitemap.xml
+Sitemap: https://www.yayuwang.org/sitemap.xml
