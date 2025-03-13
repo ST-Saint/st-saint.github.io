@@ -449,6 +449,11 @@ usermod -aG sudo username
 groups $USER
 #+end_src
 
+*** add user to a group
+#+begin_src shell
+usermod -aG group user
+#+end_src
+
 ** sudo
 
 *** list user's privilege

@@ -10,19 +10,29 @@
 sudo pacman -Sy --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 #+end_src
 
-** development
+** essentials
 #+begin_src shell
-sudo pacman -S --noconfirm \
+sudo pacman -Sy --noconfirm --needed \
+     git \
      base-devel \
-     linux-headers \
-     networkmanager \
      xorg \
-     xorg-xinit \
      yajl \
-     xterm \
+     stow \
+     xinit \
+     kitty \
+     rofi \
+     ttf-dejavu \
+     ttf-sourcecodepro-nerd
+#+end_src
+
+
+** development
+*** extensive
+#+begin_src shell
+yay -S --noconfirm \
+     networkmanager \
      wget \
-     bear \
-     bc \
+     linux-headers \
      cmake \
      boost \
      gdb \
@@ -121,8 +131,7 @@ yay -S --noconfirm \
 #+end_src
 
 
-** desktop environment
-*** window manager
+** window manager
 - dwl
 #+begin_src shell
 yay -S --noconfirm \
@@ -135,32 +144,7 @@ yay -S --noconfirm \
     libxcb # (X11 support) \
     libxcb-wm # (X11 support)
 #+end_src
-*** Keyboard remapper
-**** xremap
-**** FAIL keyd
-CLOSED: [2024-03-18 Mon 16:30]
-- do not support scroll event
-**** FAIL Kmonad
-CLOSED: [2024-03-18 Mon 16:30]
-- do not support mac FN key
 
-*** terminal
-- kitty
-#+begin_src shell
-yay -S --noconfirm \
-    kitty
-#+end_src
-
-*** launcher
-- rofi
-#+begin_src shell
-yay -S --noconfirm \
-    rofi-lbonn-wayland-git
-#+end_src
-
-
-*** key visualizer
-- screenkey
 
 ** prettify
 
@@ -246,12 +230,12 @@ ghcup tui
 * Utilities
 ** Terminal
 *** Command shells
-+ +fish+ (bash incompatible)
 + zsh
   - oh-my-zsh
   - starship
   - fzf-tab
   - zsh-syntax-highlighting
+
 #+begin_src sh
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -268,20 +252,27 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 #+end_src
 
 *** Terminal Emulator
-+ +alacritty+
 + kitty
 + vterm
 
+** Key visualizer
+- screenkey
+
 ** Files
 *** File Manager
-+ +SpaceFM+ (severe problem: NO TRASH FOLDER)
 + nemo
+
 *** Archive managers
 + 7zip
 
 ** development
 *** Emacs
 + emacs
+  #+begin_src shell
+  yay -S imagemagick
+  ./configure --with-pop --with-mailutils --with-native-compilation=aot --with-imagemagick --with-tree-sitter
+  #+end_src
+
 
 ** Text Input
 *** ibus
@@ -290,11 +281,13 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 ** System
 *** Task managers
 + btop
-+ htop
+
 *** System log viewers
 + journalctl
+
 *** Font Viewer
 + NA
+
 *** Fonts
 + awesome font
 + SauceCodePro Nerd Font Mono
@@ -309,6 +302,9 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 + freeoffice
 ** Readers and viewers
 + pdfstudioviewer
++ evince
++ okular
+
 * Security
 ** Password managers
 + gpg
@@ -317,13 +313,19 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 ** Desktop environments
 *** Window Manager
 + dwm-flexipatch & dwl
+
 *** status bar
 + dwm bar
 + somebar
+
 *** System tray
+- dwm systray
+
 *** Wallpaper
 + feh
+
 *** Notification
 + dunst
+
 *** Logout
 - tty

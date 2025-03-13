@@ -1,4 +1,4 @@
-baseURL: 'https://st-saint.github.io/'
+baseURL: 'https://www.yayuwang.org/'
 theme: DoIt
 title: Yayu Wang
 languageCode: en
@@ -47,8 +47,8 @@ menu:
 params:
   author:
     name: Yayu Wang
-    email: 'https://st-saint.github.io/posts/email'
-    link: 'https://st-saint.github.io/'
+    email: 'https://www.yayuwang.org/posts/email'
+    link: 'https://www.yayuwang.org/'
   defaultTheme: auto
   gitRepo: ''
   fingerprint: ''
@@ -193,7 +193,7 @@ params:
     HackTheBox: ''
     RootMe: ''
     Phone: ''
-    Email: "https://st-saint.github.io/email/"
+    Email: "https://www.yayuwang.org/email/"
     RSS: true
   page:
     hiddenFromHomePage: false
