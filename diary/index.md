@@ -2,6 +2,13 @@
 
 
 
+* <2025-03-17 Mon>
+- “但我觉得乔越很人机啊”
+- 为什么 tb 老是断网?
+
+* <2026-03-15 Sun>
+- Let’s add that to the words of wisdom
+
 * <2025-03-12 Wed>
 - tmmd 结果我 paper 还是比老子 thesis 先交了
 
