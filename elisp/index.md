@@ -238,7 +238,41 @@ major-mode
 
 ** unbind key
 #+begin_src emacs-lisp
-(define-key keymap key-sequence nil)
+(define-key 'keymap key-sequence nil)
+
+(unbind-key key 'keymap)
+#+end_src
+
+** Quoting
+#+begin_src emacs-lisp
+(quote (+ 1 2))
+;;     ⇒ (+ 1 2)
+
+(quote foo)
+;;     ⇒ foo
+
+'foo
+;;     ⇒ foo
+
+'(quote foo)
+;;     ⇒ 'foo
+
+['foo]
+;;     ⇒ ['foo]
+#+end_src
+
+
+*** Backquote
+#+begin_src emacs-lisp
+`(a list of (+ 2 3) elements)
+;;     ⇒ (a list of (+ 2 3) elements)
+
+`(a list of ,(+ 2 3) elements)
+;;     ⇒ (a list of 5 elements)
+
+(setq list '(hack foo bar)) ;;     ⇒ (hack foo bar)
+`(use the words ,@(cdr list) as elements)
+;;     ⇒ (use the words foo bar as elements)
 #+end_src
 
 ** priority
