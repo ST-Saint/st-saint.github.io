@@ -1,4 +1,4 @@
-baseURL: 'https://www.yayuwang.org/'
+baseURL: 'https://yayuwang.org/'
 theme: DoIt
 title: Yayu Wang
 languageCode: en
@@ -47,8 +47,8 @@ menu:
 params:
   author:
     name: Yayu Wang
-    email: 'https://www.yayuwang.org/posts/email'
-    link: 'https://www.yayuwang.org/'
+    email: 'https://yayuwang.org/posts/email'
+    link: 'https://yayuwang.org/'
   defaultTheme: auto
   gitRepo: ''
   fingerprint: ''
@@ -193,7 +193,7 @@ params:
     HackTheBox: ''
     RootMe: ''
     Phone: ''
-    Email: "https://www.yayuwang.org/email/"
+    Email: "https://yayuwang.org/email/"
     RSS: true
   page:
     hiddenFromHomePage: false
