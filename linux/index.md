@@ -34,6 +34,18 @@ sudo ln -s /usr/share/zoneinfo/America/Vancouver /etc/localtime
 
 
 
+*** use RTC in UTC
+#+begin_src sh
+sudo timedatectl set-local-rtc 0
+#+end_src
+
+
+*** System clock synchronized
+#+begin_src sh
+sudo timedatectl set-ntp true
+#+end_src
+
+
 ** copy to clipboard
 #+begin_src shell
 echo "copy" | xclip -set clip
@@ -733,8 +745,7 @@ sudo dd if=/dev/zero of=/dev/sda1 bs=1M status=progress
 #+end_src
 
 ** install ISO
-1. ~ls -l /dev/disk/by-id/usb-*~
-2. ~cp path/to/archlinux-version-x86_64.iso /dev/disk/by-id/usb-My_flash_drive~
+- ~dd if=/archlinux-x86_64.iso of=/dev/sda bs=4M status=progress && sync~
 
 * swap file
 #+begin_src sh
