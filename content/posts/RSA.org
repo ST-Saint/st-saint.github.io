@@ -1,8 +1,8 @@
 #+TITLE: RSA
 #+DATE: Sun May 28 23:10:04 PDT 2023
 #+Summary: RSA
-#+categories[]: cryptography
-#+tags[]: cryptography RSA
+#+categories[]: crypto
+#+tags[]: crypto RSA
 
 * theory
 - modular arithmetic
