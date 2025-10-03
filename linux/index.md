@@ -853,5 +853,5 @@ journalctl -r
 * Trouble Shooting
 ** Read-only file system
 1. check permission ~mount | grep ' / '~
-2. remount ~mount | grep ' / '~
+2. remount ~mount -o remount,rw /~
 
