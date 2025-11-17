@@ -5,6 +5,11 @@
 #+categories[]: Diary
 #+tags[]: Diary
 
+* <2025-11-17 Mon>
+- tb 洗衣房衣服占着烘干机放一晚的四个傻逼 wcnm
+- tnt 买六个东西三个没货还要送货当天才通知退款，补的优惠券不能跟免运费一起用 wcnm
+- adobe 合并个 pdf security 权限去不掉逼我用盗版 wcnm
+
 * <2025-10-30 Thu>
 - 傻逼 gpt wcnm，b ai能不能赶紧滚啊
 
