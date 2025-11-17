@@ -11,7 +11,11 @@
         .home-profile {
             .home-avatar {
                 img {
+                    height: 12rem;
                     width: 12rem;
+                    object-fit: contain;
+                    border-radius: 50%;
+                    background-color: #fff;
                 }
             }
 
