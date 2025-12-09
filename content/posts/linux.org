@@ -624,12 +624,13 @@ makepkg -si
 * Bluetooth
 ** install
 #+begin_src sh
-yay -S bluez bluez-utils
+yay -S pipewire pipewire-pulse pipewire-alsa pipewire-audio wireplumber bluez bluez-utils
 #+end_src
 
 
 ** pair
 #+begin_example
+$ sudo systemctl start bluetooth.service
 $ bluetoothctl
 
 # power on
