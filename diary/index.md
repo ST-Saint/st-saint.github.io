@@ -1,6 +1,10 @@
 # Diary
 
 
+* <2025-12-07 Sun>
+- 原来是 point grey 呀，British Columbia british 在这了
+- 学习的时光为何如此短暂？
+
 * <2025-12-06 Sat>
 - 傻逼 point gray 轻松拿下
 - 我靠我怎么这么想学习啊，我一定是有病
