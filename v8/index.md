@@ -241,6 +241,116 @@ Handler table is about exceptions finding catch blocks.
 | DEOPT_*                    | No      | (skipped by GC)        | Debug annotations only        |
 | CONST_POOL / VENEER_POOL   | No      | (skipped by GC)        | Pool position markers only    |
 
+* Value tagging in V8
+- V8 uses [[https://en.wikipedia.org/wiki/Tagged_pointer][pointer tagging]] technique to store additional or alternative data in V8 heap pointers.
+- On 32-bit architectures, V8 uses the least significant bit to distinguish Smis from heap object pointers. For heap pointers, it uses the second least significant bit to distinguish strong references from weak ones:
+
+* Pointer Compression
+** Compressed tagged values and new heap layout
+We need to fit both kinds of tagged values into 32 bits on 64-bit architectures by:
+1. making sure all V8 objects are allocated within a 4-GB memory range
+2. representing pointers as offsets within this range
+
+*** v1
+[[../figures/v8_heap-layout-1.svg]]
+
+Decode:
+#+begin_src c
+uint32_t compressed_tagged;
+
+uint64_t uncompressed_tagged;
+if (compressed_tagged & 1) {
+  // pointer case
+  uncompressed_tagged = base + uint64_t(compressed_tagged);
+} else {
+  // Smi case
+  uncompressed_tagged = int64_t(compressed_tagged);
+}
+#+end_src
+
+#+begin_src text
+                                        |----- 32 bits -----|
+Pointer:                                |_____address_____w1|
+Smi:                                    |___int31_value____0|
+
+                    |----- 32 bits -----|----- 32 bits -----|
+Pointer:            |________________address______________w1|
+Smi:                |____int32_value____|0000000000000000000|
+
+# After compression
+
+                    |----- 32 bits -----|----- 32 bits -----|
+Pointer:            |________base_______|______offset_____w1|
+
+                    |----- 32 bits -----|----- 32 bits -----|
+Smi:                |sssssssssssssssssss|____int31_value___0|
+#+end_src
+
+
+*** v2
+v[[../figures/v8_heap-layout-2.svg]]
+
+#+begin_src text
+                                        |----- 32 bits -----|
+Pointer:                                |_____address_____w1|
+Smi:                                    |___int31_value____0|
+
+                    |----- 32 bits -----|----- 32 bits -----|
+Pointer:            |________________address______________w1|
+Smi:                |____int32_value____|0000000000000000000|
+
+# After compression
+
+                    |----- 32 bits -----|----- 32 bits -----|
+Compressed pointer:                     |______offset_____w1|
+Compressed Smi:                         |____int31_value___0|
+#+end_src
+
+
+Decode
+
+#+begin_src c
+int32_t compressed_tagged;
+
+// Same code for both pointer and Smi cases
+int64_t sign_extended_tagged = int64_t(compressed_tagged);
+int64_t selector_mask = -(sign_extended_tagged & 1);
+// Mask is 0 in case of Smi or all 1s in case of pointer
+int64_t uncompressed_tagged =
+    sign_extended_tagged + (base & selector_mask);
+#+end_src
+
+** Performance evolution
+
+*** [[https://v8.dev/blog/pointer-compression#bump-(1)%2C-%2B7%25][Bump (1), +7%]]
+- V2-Branchless is actually slower.
+
+*** [[https://v8.dev/blog/pointer-compression#bump-(2)%2C-%2B2%25][Bump (2), +2%]]
+- Adding Decompression Elimination phase in TurboFan.
+
+*** [[https://v8.dev/blog/pointer-compression#bump-(3)%2C-%2B2%25][Bump (3), +2%]]
+- Better instruction selection.
+
+*** [[https://v8.dev/blog/pointer-compression#bump-(4)%2C-%2B11%25][Bump (4), +11%]]
+- Better TurboFan optimization -- pattern matching.
+
+*** [[https://v8.dev/blog/pointer-compression#bump-(5)%2C-%2B0.5%25][Bump (5), +0.5%]]
+- A simpler way of supporting Pointer Compression in TurboFan.
+
+*** [[https://v8.dev/blog/pointer-compression#bump-(6)%2C-%2B2.5%25][Bump (6), +2.5%]]
+- Smi-corrupting: assume the upper 32-bits undefined.
+- Return to heap layout v1.
+
+*** [[https://v8.dev/blog/pointer-compression#32-bit-smi-optimization-(7)%2C--1%25][32-bit Smi optimization (7), -1%]]
+- Unable to represent 32-bit smi, only 31 bits available.
+
+*** [[https://v8.dev/blog/pointer-compression#double-field-unboxing-(8)%2C--3%25][Double field unboxing (8), -3%]]
+- [[Https://v8.dev/blog/fast-properties][Hidden classes and properties and elements backing stores]].
+
+** Implementation Details
+*** POD
+Passive data structure (plain old data, POD) is represented only as passive collections of field values (instance variables), without using object-oriented features.
+
 * Pipeline
 ** Turbofan
 
@@ -543,7 +653,7 @@ https://v8.dev/docs/gdb-jit
 ** debug jit
 - object fields:
 #+begin_src gdb
-p *(uintptr_t*)((void*)code.ptr_ + Code::kInstructionStartOffset - kHeapObjectTag)
+p *(uintptr_t*)(((void*)(*(Code*)code)->ptr_) + Code::kInstructionStartOffset - kHeapObjectTag)
 #+end_src
 
 - AssembleCode
@@ -631,6 +741,17 @@ Usage: cpm member
 - ~SystemBreak~
 - [[https://source.chromium.org/chromium/v8/v8.git/+/05720af2b09a18be5c41bbf224a58f3f0618f6be:src/runtime/runtime.h;l=574][full commands]]
 
+
+* Test
+
+
+| Suite                                                                                   | Type | Binary         | Status                    |
+| mjsunit, message, intl, debugger, wasm-js, wasm-spec-tests, test262, webkit, benchmarks | JS   | d8             | already synced            |
+| inspector                                                                               | JS   | inspector-test | now added                 |
+| cctest                                                                                  | C++  | cctest         | now added                 |
+| unittests                                                                               | C++  | v8_unittests   | already synced            |
+| wasm-api-tests                                                                          | C++  | wasm_api_tests | not built (wasm disabled) |
+| fuzzer                                                                                  | C++  | none           | no binary needed          |
 
 * CHERI
 - fork commit: 0c4044b7336787781646e48b2f98f0c7d1b400a5
